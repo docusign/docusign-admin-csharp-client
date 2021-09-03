@@ -26,7 +26,7 @@ namespace DocuSign.Admin.Client
         /// Version of the package.
         /// </summary>
         /// <value>Version of the package.</value>
-        public const string Version = "1.0.0-alpha";
+        public const string Version = "1.0.0-beta";
 
         /// <summary>
         /// Identifier for ISO 8601 DateTime Format
