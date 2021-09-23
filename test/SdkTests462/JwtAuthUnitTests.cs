@@ -56,7 +56,7 @@ namespace SdkTests462
         {
             GetOrgsTest();
             var bulkImportApi = new BulkImportsApi(testConfig.ApiClient);
-            var csvFile = "../../../docs/organization-user-import.csv";
+            var csvFile = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "docs", "organization-user-import.csv");
             var str = File.ReadAllText(csvFile);
             str = str.Replace("<accountId>", testConfig.AccountId);
             File.WriteAllText(csvFile, str);
