@@ -32,10 +32,8 @@ namespace DocuSign.Admin.Api
         /// </remarks>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">The organization ID Guid</param>
-        
-        
         /// <returns></returns>
-        IdentityProvidersResponse GetIdentityProviders (Guid? organizationId);
+        IdentityProvidersResponse GetIdentityProviders(Guid? organizationId);
 
         /// <summary>
         /// Returns the list of identity providers for the organization.
@@ -45,8 +43,6 @@ namespace DocuSign.Admin.Api
         /// </remarks>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">The organization ID Guid</param>
-        
-        
         /// <returns>ApiResponse of </returns>
         ApiResponse<IdentityProvidersResponse> GetIdentityProvidersWithHttpInfo(Guid? organizationId);
         #endregion Synchronous Operations
@@ -59,10 +55,8 @@ namespace DocuSign.Admin.Api
         /// </remarks>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">The organization ID Guid</param>
-        
-        
         /// <returns>Task of IdentityProvidersResponse</returns>
-        System.Threading.Tasks.Task<IdentityProvidersResponse> GetIdentityProvidersAsync (Guid? organizationId);
+        System.Threading.Tasks.Task<IdentityProvidersResponse> GetIdentityProvidersAsync(Guid? organizationId);
 
         /// <summary>
         /// Returns the list of identity providers for the organization.
@@ -72,10 +66,8 @@ namespace DocuSign.Admin.Api
         /// </remarks>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">The organization ID Guid</param>
-        
-        
         /// <returns>Task of ApiResponse (IdentityProvidersResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<IdentityProvidersResponse>> GetIdentityProvidersAsyncWithHttpInfo (Guid? organizationId);
+        System.Threading.Tasks.Task<ApiResponse<IdentityProvidersResponse>> GetIdentityProvidersAsyncWithHttpInfo(Guid? organizationId);
         #endregion Asynchronous Operations
     }
 
@@ -137,12 +129,11 @@ namespace DocuSign.Admin.Api
         /// </summary>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">The organization ID Guid</param>
-        
-        
         /// <returns>IdentityProvidersResponse</returns>
-        public IdentityProvidersResponse GetIdentityProviders (Guid? organizationId){
-            ApiResponse<IdentityProvidersResponse> localVarResponse = GetIdentityProvidersWithHttpInfo(organizationId);
-            return localVarResponse.Data;
+        public IdentityProvidersResponse GetIdentityProviders(Guid? organizationId)
+        {
+             ApiResponse<IdentityProvidersResponse> localVarResponse = GetIdentityProvidersWithHttpInfo(organizationId);
+             return localVarResponse.Data;
         }
 
         /// <summary>
@@ -150,10 +141,8 @@ namespace DocuSign.Admin.Api
         /// </summary>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">The organization ID Guid</param>
-        
-        
         /// <returns>ApiResponse of IdentityProvidersResponse</returns>
-        public ApiResponse< IdentityProvidersResponse > GetIdentityProvidersWithHttpInfo (Guid? organizationId)
+        public ApiResponse<IdentityProvidersResponse> GetIdentityProvidersWithHttpInfo(Guid? organizationId)
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
@@ -190,11 +179,11 @@ namespace DocuSign.Admin.Api
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.ApiClient.CallApi(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -206,11 +195,11 @@ namespace DocuSign.Admin.Api
             // DocuSign: Handle for PDF return types
             if (localVarResponse.ContentType != null && !localVarResponse.ContentType.ToLower().Contains("json"))
             {
-                return new ApiResponse<IdentityProvidersResponse>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (IdentityProvidersResponse) this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(IdentityProvidersResponse)));
+                return new ApiResponse<IdentityProvidersResponse>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (IdentityProvidersResponse)this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(IdentityProvidersResponse)));
             }
             else
             {
-                return new ApiResponse<IdentityProvidersResponse>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (IdentityProvidersResponse) this.ApiClient.Deserialize(localVarResponse, typeof(IdentityProvidersResponse)));
+                return new ApiResponse<IdentityProvidersResponse>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (IdentityProvidersResponse)this.ApiClient.Deserialize(localVarResponse, typeof(IdentityProvidersResponse)));
             }
             
         }
@@ -220,14 +209,11 @@ namespace DocuSign.Admin.Api
         /// </summary>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">The organization ID Guid</param>
-        
-        
         /// <returns>Task of IdentityProvidersResponse</returns>
-        public async System.Threading.Tasks.Task<IdentityProvidersResponse> GetIdentityProvidersAsync (Guid? organizationId)
+        public async System.Threading.Tasks.Task<IdentityProvidersResponse> GetIdentityProvidersAsync(Guid? organizationId)
         {
              ApiResponse<IdentityProvidersResponse> localVarResponse = await GetIdentityProvidersAsyncWithHttpInfo(organizationId);
              return localVarResponse.Data;
-
         }
 
         /// <summary>
@@ -235,10 +221,8 @@ namespace DocuSign.Admin.Api
         /// </summary>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">The organization ID Guid</param>
-        
-        
         /// <returns>Task of ApiResponse (IdentityProvidersResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<IdentityProvidersResponse>> GetIdentityProvidersAsyncWithHttpInfo (Guid? organizationId)
+        public async System.Threading.Tasks.Task<ApiResponse<IdentityProvidersResponse>> GetIdentityProvidersAsyncWithHttpInfo(Guid? organizationId)
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
@@ -272,14 +256,12 @@ namespace DocuSign.Admin.Api
             if (organizationId != null) localVarPathParams.Add("organizationId", this.ApiClient.ParameterToString(organizationId)); // path parameter
 
 
-
-
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.ApiClient.CallApiAsync(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -289,7 +271,7 @@ namespace DocuSign.Admin.Api
 
             return new ApiResponse<IdentityProvidersResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (IdentityProvidersResponse) this.ApiClient.Deserialize(localVarResponse, typeof(IdentityProvidersResponse)));
+                (IdentityProvidersResponse)this.ApiClient.Deserialize(localVarResponse, typeof(IdentityProvidersResponse)));
             
         }
 

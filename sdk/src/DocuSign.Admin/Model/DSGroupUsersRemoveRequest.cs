@@ -38,18 +38,12 @@ namespace DocuSign.Admin.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="DSGroupUsersRemoveRequest" /> class.
         /// </summary>
-        /// <param name="UserIds">UserIds (required).</param>
-        public DSGroupUsersRemoveRequest(List<Guid?> UserIds = default(List<Guid?>))
+        /// <param name="UserIds">UserIds.</param>
+        /// <param name="UserEmails">UserEmails.</param>
+        public DSGroupUsersRemoveRequest(List<Guid?> UserIds = default(List<Guid?>), List<string> UserEmails = default(List<string>))
         {
-            // to ensure "UserIds" is required (not null)
-            if (UserIds == null)
-            {
-                throw new InvalidDataException("UserIds is a required property for DSGroupUsersRemoveRequest and cannot be null");
-            }
-            else
-            {
-                this.UserIds = UserIds;
-            }
+            this.UserIds = UserIds;
+            this.UserEmails = UserEmails;
         }
         
         /// <summary>
@@ -57,6 +51,11 @@ namespace DocuSign.Admin.Model
         /// </summary>
         [DataMember(Name="user_ids", EmitDefaultValue=false)]
         public List<Guid?> UserIds { get; set; }
+        /// <summary>
+        /// Gets or Sets UserEmails
+        /// </summary>
+        [DataMember(Name="user_emails", EmitDefaultValue=false)]
+        public List<string> UserEmails { get; set; }
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
@@ -66,6 +65,7 @@ namespace DocuSign.Admin.Model
             var sb = new StringBuilder();
             sb.Append("class DSGroupUsersRemoveRequest {\n");
             sb.Append("  UserIds: ").Append(UserIds).Append("\n");
+            sb.Append("  UserEmails: ").Append(UserEmails).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -106,6 +106,11 @@ namespace DocuSign.Admin.Model
                     this.UserIds == other.UserIds ||
                     this.UserIds != null &&
                     this.UserIds.SequenceEqual(other.UserIds)
+                ) && 
+                (
+                    this.UserEmails == other.UserEmails ||
+                    this.UserEmails != null &&
+                    this.UserEmails.SequenceEqual(other.UserEmails)
                 );
         }
 
@@ -122,6 +127,8 @@ namespace DocuSign.Admin.Model
                 // Suitable nullity checks etc, of course :)
                 if (this.UserIds != null)
                     hash = hash * 59 + this.UserIds.GetHashCode();
+                if (this.UserEmails != null)
+                    hash = hash * 59 + this.UserEmails.GetHashCode();
                 return hash;
             }
         }

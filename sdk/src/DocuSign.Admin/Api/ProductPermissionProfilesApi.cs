@@ -31,11 +31,12 @@ namespace DocuSign.Admin.Api
         /// Required scopes: user_write
         /// </remarks>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">The organization ID GUID</param>/// <param name="accountId">The account ID GUID</param>/// <param name="userId">The user ID GUID</param>
+        /// <param name="organizationId">The organization ID GUID</param>
+        /// <param name="accountId">The account ID GUID</param>
+        /// <param name="userId">The user ID GUID</param>
         /// <param name="productPermissionProfilesRequest">Request object</param>
-        
         /// <returns></returns>
-        UserProductPermissionProfilesResponse AddUserProductPermissionProfiles (Guid? organizationId, Guid? accountId, Guid? userId, ProductPermissionProfilesRequest productPermissionProfilesRequest);
+        UserProductPermissionProfilesResponse AddUserProductPermissionProfiles(Guid? organizationId, Guid? accountId, Guid? userId, ProductPermissionProfilesRequest productPermissionProfilesRequest);
 
         /// <summary>
         /// Assign user to permission profiles for one or more products
@@ -44,11 +45,37 @@ namespace DocuSign.Admin.Api
         /// Required scopes: user_write
         /// </remarks>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">The organization ID GUID</param>/// <param name="accountId">The account ID GUID</param>/// <param name="userId">The user ID GUID</param>
+        /// <param name="organizationId">The organization ID GUID</param>
+        /// <param name="accountId">The account ID GUID</param>
+        /// <param name="userId">The user ID GUID</param>
         /// <param name="productPermissionProfilesRequest">Request object</param>
-        
         /// <returns>ApiResponse of </returns>
         ApiResponse<UserProductPermissionProfilesResponse> AddUserProductPermissionProfilesWithHttpInfo(Guid? organizationId, Guid? accountId, Guid? userId, ProductPermissionProfilesRequest productPermissionProfilesRequest);
+        /// <summary>
+        /// Assign user to permission profiles for one or more products
+        /// </summary>
+        /// <remarks>
+        /// Required scopes: user_write
+        /// </remarks>
+        /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">The organization ID GUID</param>
+        /// <param name="accountId">The account ID GUID</param>
+        /// <param name="userProductPermissionProfilesRequest">Request object</param>
+        /// <returns></returns>
+        UserProductPermissionProfilesResponse AddUserProductPermissionProfilesByEmail(Guid? organizationId, Guid? accountId, UserProductPermissionProfilesRequest userProductPermissionProfilesRequest);
+
+        /// <summary>
+        /// Assign user to permission profiles for one or more products
+        /// </summary>
+        /// <remarks>
+        /// Required scopes: user_write
+        /// </remarks>
+        /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">The organization ID GUID</param>
+        /// <param name="accountId">The account ID GUID</param>
+        /// <param name="userProductPermissionProfilesRequest">Request object</param>
+        /// <returns>ApiResponse of </returns>
+        ApiResponse<UserProductPermissionProfilesResponse> AddUserProductPermissionProfilesByEmailWithHttpInfo(Guid? organizationId, Guid? accountId, UserProductPermissionProfilesRequest userProductPermissionProfilesRequest);
         /// <summary>
         /// Get products associated with the account and the available permission profiles
         /// </summary>
@@ -56,11 +83,10 @@ namespace DocuSign.Admin.Api
         /// Required scopes: user_read
         /// </remarks>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">The organization ID GUID</param>/// <param name="accountId">The account ID GUID</param>
-        
-        
+        /// <param name="organizationId">The organization ID GUID</param>
+        /// <param name="accountId">The account ID GUID</param>
         /// <returns></returns>
-        ProductPermissionProfilesResponse GetProductPermissionProfiles (Guid? organizationId, Guid? accountId);
+        ProductPermissionProfilesResponse GetProductPermissionProfiles(Guid? organizationId, Guid? accountId);
 
         /// <summary>
         /// Get products associated with the account and the available permission profiles
@@ -69,9 +95,8 @@ namespace DocuSign.Admin.Api
         /// Required scopes: user_read
         /// </remarks>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">The organization ID GUID</param>/// <param name="accountId">The account ID GUID</param>
-        
-        
+        /// <param name="organizationId">The organization ID GUID</param>
+        /// <param name="accountId">The account ID GUID</param>
         /// <returns>ApiResponse of </returns>
         ApiResponse<ProductPermissionProfilesResponse> GetProductPermissionProfilesWithHttpInfo(Guid? organizationId, Guid? accountId);
         /// <summary>
@@ -81,11 +106,11 @@ namespace DocuSign.Admin.Api
         /// Required scopes: user_read
         /// </remarks>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">The organization ID GUID</param>/// <param name="accountId">The account ID GUID</param>/// <param name="userId">The user ID GUID</param>
-        
-        
+        /// <param name="organizationId">The organization ID GUID</param>
+        /// <param name="accountId">The account ID GUID</param>
+        /// <param name="userId">The user ID GUID</param>
         /// <returns></returns>
-        ProductPermissionProfilesResponse GetUserProductPermissionProfiles (Guid? organizationId, Guid? accountId, Guid? userId);
+        ProductPermissionProfilesResponse GetUserProductPermissionProfiles(Guid? organizationId, Guid? accountId, Guid? userId);
 
         /// <summary>
         /// Retrieve list of user&#39;s permission profiles for each account&#39;s product
@@ -94,11 +119,61 @@ namespace DocuSign.Admin.Api
         /// Required scopes: user_read
         /// </remarks>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">The organization ID GUID</param>/// <param name="accountId">The account ID GUID</param>/// <param name="userId">The user ID GUID</param>
-        
-        
+        /// <param name="organizationId">The organization ID GUID</param>
+        /// <param name="accountId">The account ID GUID</param>
+        /// <param name="userId">The user ID GUID</param>
         /// <returns>ApiResponse of </returns>
         ApiResponse<ProductPermissionProfilesResponse> GetUserProductPermissionProfilesWithHttpInfo(Guid? organizationId, Guid? accountId, Guid? userId);
+        /// <summary>
+        /// Remove user from permission profiles for one or more products
+        /// </summary>
+        /// <remarks>
+        /// Required scopes: user_write
+        /// </remarks>
+        /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">The organization ID GUID</param>
+        /// <param name="accountId">The account ID GUID</param>
+        /// <param name="options">Options for modifying the behavior of the function.</param>
+        /// <returns></returns>
+        UserProductPermissionProfilesResponse GetUserProductPermissionProfilesByEmail(Guid? organizationId, Guid? accountId, ProductPermissionProfilesApi.GetUserProductPermissionProfilesByEmailOptions options = null);
+
+        /// <summary>
+        /// Remove user from permission profiles for one or more products
+        /// </summary>
+        /// <remarks>
+        /// Required scopes: user_write
+        /// </remarks>
+        /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">The organization ID GUID</param>
+        /// <param name="accountId">The account ID GUID</param>
+        /// <param name="options">Options for modifying the behavior of the function.</param>
+        /// <returns>ApiResponse of </returns>
+        ApiResponse<UserProductPermissionProfilesResponse> GetUserProductPermissionProfilesByEmailWithHttpInfo(Guid? organizationId, Guid? accountId, ProductPermissionProfilesApi.GetUserProductPermissionProfilesByEmailOptions options = null);
+        /// <summary>
+        /// Remove user from permission profiles for one or more products
+        /// </summary>
+        /// <remarks>
+        /// Required scopes: user_write
+        /// </remarks>
+        /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">The organization ID GUID</param>
+        /// <param name="accountId">The account ID GUID</param>
+        /// <param name="userProductPermissionProfilesRequest">Request object</param>
+        /// <returns></returns>
+        RemoveUserProductsResponse RemoveUserProductPermission(Guid? organizationId, Guid? accountId, UserProductProfileDeleteRequest userProductPermissionProfilesRequest);
+
+        /// <summary>
+        /// Remove user from permission profiles for one or more products
+        /// </summary>
+        /// <remarks>
+        /// Required scopes: user_write
+        /// </remarks>
+        /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">The organization ID GUID</param>
+        /// <param name="accountId">The account ID GUID</param>
+        /// <param name="userProductPermissionProfilesRequest">Request object</param>
+        /// <returns>ApiResponse of </returns>
+        ApiResponse<RemoveUserProductsResponse> RemoveUserProductPermissionWithHttpInfo(Guid? organizationId, Guid? accountId, UserProductProfileDeleteRequest userProductPermissionProfilesRequest);
         #endregion Synchronous Operations
         #region Asynchronous Operations
         /// <summary>
@@ -108,11 +183,12 @@ namespace DocuSign.Admin.Api
         /// Required scopes: user_write
         /// </remarks>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">The organization ID GUID</param>/// <param name="accountId">The account ID GUID</param>/// <param name="userId">The user ID GUID</param>
+        /// <param name="organizationId">The organization ID GUID</param>
+        /// <param name="accountId">The account ID GUID</param>
+        /// <param name="userId">The user ID GUID</param>
         /// <param name="productPermissionProfilesRequest">Request object</param>
-        
         /// <returns>Task of UserProductPermissionProfilesResponse</returns>
-        System.Threading.Tasks.Task<UserProductPermissionProfilesResponse> AddUserProductPermissionProfilesAsync (Guid? organizationId, Guid? accountId, Guid? userId, ProductPermissionProfilesRequest productPermissionProfilesRequest);
+        System.Threading.Tasks.Task<UserProductPermissionProfilesResponse> AddUserProductPermissionProfilesAsync(Guid? organizationId, Guid? accountId, Guid? userId, ProductPermissionProfilesRequest productPermissionProfilesRequest);
 
         /// <summary>
         /// Assign user to permission profiles for one or more products
@@ -121,11 +197,37 @@ namespace DocuSign.Admin.Api
         /// Required scopes: user_write
         /// </remarks>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">The organization ID GUID</param>/// <param name="accountId">The account ID GUID</param>/// <param name="userId">The user ID GUID</param>
+        /// <param name="organizationId">The organization ID GUID</param>
+        /// <param name="accountId">The account ID GUID</param>
+        /// <param name="userId">The user ID GUID</param>
         /// <param name="productPermissionProfilesRequest">Request object</param>
-        
         /// <returns>Task of ApiResponse (UserProductPermissionProfilesResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<UserProductPermissionProfilesResponse>> AddUserProductPermissionProfilesAsyncWithHttpInfo (Guid? organizationId, Guid? accountId, Guid? userId, ProductPermissionProfilesRequest productPermissionProfilesRequest);
+        System.Threading.Tasks.Task<ApiResponse<UserProductPermissionProfilesResponse>> AddUserProductPermissionProfilesAsyncWithHttpInfo(Guid? organizationId, Guid? accountId, Guid? userId, ProductPermissionProfilesRequest productPermissionProfilesRequest);
+        /// <summary>
+        /// Assign user to permission profiles for one or more products
+        /// </summary>
+        /// <remarks>
+        /// Required scopes: user_write
+        /// </remarks>
+        /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">The organization ID GUID</param>
+        /// <param name="accountId">The account ID GUID</param>
+        /// <param name="userProductPermissionProfilesRequest">Request object</param>
+        /// <returns>Task of UserProductPermissionProfilesResponse</returns>
+        System.Threading.Tasks.Task<UserProductPermissionProfilesResponse> AddUserProductPermissionProfilesByEmailAsync(Guid? organizationId, Guid? accountId, UserProductPermissionProfilesRequest userProductPermissionProfilesRequest);
+
+        /// <summary>
+        /// Assign user to permission profiles for one or more products
+        /// </summary>
+        /// <remarks>
+        /// Required scopes: user_write
+        /// </remarks>
+        /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">The organization ID GUID</param>
+        /// <param name="accountId">The account ID GUID</param>
+        /// <param name="userProductPermissionProfilesRequest">Request object</param>
+        /// <returns>Task of ApiResponse (UserProductPermissionProfilesResponse)</returns>
+        System.Threading.Tasks.Task<ApiResponse<UserProductPermissionProfilesResponse>> AddUserProductPermissionProfilesByEmailAsyncWithHttpInfo(Guid? organizationId, Guid? accountId, UserProductPermissionProfilesRequest userProductPermissionProfilesRequest);
         /// <summary>
         /// Get products associated with the account and the available permission profiles
         /// </summary>
@@ -133,11 +235,10 @@ namespace DocuSign.Admin.Api
         /// Required scopes: user_read
         /// </remarks>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">The organization ID GUID</param>/// <param name="accountId">The account ID GUID</param>
-        
-        
+        /// <param name="organizationId">The organization ID GUID</param>
+        /// <param name="accountId">The account ID GUID</param>
         /// <returns>Task of ProductPermissionProfilesResponse</returns>
-        System.Threading.Tasks.Task<ProductPermissionProfilesResponse> GetProductPermissionProfilesAsync (Guid? organizationId, Guid? accountId);
+        System.Threading.Tasks.Task<ProductPermissionProfilesResponse> GetProductPermissionProfilesAsync(Guid? organizationId, Guid? accountId);
 
         /// <summary>
         /// Get products associated with the account and the available permission profiles
@@ -146,11 +247,10 @@ namespace DocuSign.Admin.Api
         /// Required scopes: user_read
         /// </remarks>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">The organization ID GUID</param>/// <param name="accountId">The account ID GUID</param>
-        
-        
+        /// <param name="organizationId">The organization ID GUID</param>
+        /// <param name="accountId">The account ID GUID</param>
         /// <returns>Task of ApiResponse (ProductPermissionProfilesResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<ProductPermissionProfilesResponse>> GetProductPermissionProfilesAsyncWithHttpInfo (Guid? organizationId, Guid? accountId);
+        System.Threading.Tasks.Task<ApiResponse<ProductPermissionProfilesResponse>> GetProductPermissionProfilesAsyncWithHttpInfo(Guid? organizationId, Guid? accountId);
         /// <summary>
         /// Retrieve list of user&#39;s permission profiles for each account&#39;s product
         /// </summary>
@@ -158,11 +258,11 @@ namespace DocuSign.Admin.Api
         /// Required scopes: user_read
         /// </remarks>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">The organization ID GUID</param>/// <param name="accountId">The account ID GUID</param>/// <param name="userId">The user ID GUID</param>
-        
-        
+        /// <param name="organizationId">The organization ID GUID</param>
+        /// <param name="accountId">The account ID GUID</param>
+        /// <param name="userId">The user ID GUID</param>
         /// <returns>Task of ProductPermissionProfilesResponse</returns>
-        System.Threading.Tasks.Task<ProductPermissionProfilesResponse> GetUserProductPermissionProfilesAsync (Guid? organizationId, Guid? accountId, Guid? userId);
+        System.Threading.Tasks.Task<ProductPermissionProfilesResponse> GetUserProductPermissionProfilesAsync(Guid? organizationId, Guid? accountId, Guid? userId);
 
         /// <summary>
         /// Retrieve list of user&#39;s permission profiles for each account&#39;s product
@@ -171,11 +271,61 @@ namespace DocuSign.Admin.Api
         /// Required scopes: user_read
         /// </remarks>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">The organization ID GUID</param>/// <param name="accountId">The account ID GUID</param>/// <param name="userId">The user ID GUID</param>
-        
-        
+        /// <param name="organizationId">The organization ID GUID</param>
+        /// <param name="accountId">The account ID GUID</param>
+        /// <param name="userId">The user ID GUID</param>
         /// <returns>Task of ApiResponse (ProductPermissionProfilesResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<ProductPermissionProfilesResponse>> GetUserProductPermissionProfilesAsyncWithHttpInfo (Guid? organizationId, Guid? accountId, Guid? userId);
+        System.Threading.Tasks.Task<ApiResponse<ProductPermissionProfilesResponse>> GetUserProductPermissionProfilesAsyncWithHttpInfo(Guid? organizationId, Guid? accountId, Guid? userId);
+        /// <summary>
+        /// Remove user from permission profiles for one or more products
+        /// </summary>
+        /// <remarks>
+        /// Required scopes: user_write
+        /// </remarks>
+        /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">The organization ID GUID</param>
+        /// <param name="accountId">The account ID GUID</param>
+        /// <param name="options">Options for modifying the behavior of the function.</param>
+        /// <returns>Task of UserProductPermissionProfilesResponse</returns>
+        System.Threading.Tasks.Task<UserProductPermissionProfilesResponse> GetUserProductPermissionProfilesByEmailAsync(Guid? organizationId, Guid? accountId, ProductPermissionProfilesApi.GetUserProductPermissionProfilesByEmailOptions options = null);
+
+        /// <summary>
+        /// Remove user from permission profiles for one or more products
+        /// </summary>
+        /// <remarks>
+        /// Required scopes: user_write
+        /// </remarks>
+        /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">The organization ID GUID</param>
+        /// <param name="accountId">The account ID GUID</param>
+        /// <param name="options">Options for modifying the behavior of the function.</param>
+        /// <returns>Task of ApiResponse (UserProductPermissionProfilesResponse)</returns>
+        System.Threading.Tasks.Task<ApiResponse<UserProductPermissionProfilesResponse>> GetUserProductPermissionProfilesByEmailAsyncWithHttpInfo(Guid? organizationId, Guid? accountId, ProductPermissionProfilesApi.GetUserProductPermissionProfilesByEmailOptions options = null);
+        /// <summary>
+        /// Remove user from permission profiles for one or more products
+        /// </summary>
+        /// <remarks>
+        /// Required scopes: user_write
+        /// </remarks>
+        /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">The organization ID GUID</param>
+        /// <param name="accountId">The account ID GUID</param>
+        /// <param name="userProductPermissionProfilesRequest">Request object</param>
+        /// <returns>Task of RemoveUserProductsResponse</returns>
+        System.Threading.Tasks.Task<RemoveUserProductsResponse> RemoveUserProductPermissionAsync(Guid? organizationId, Guid? accountId, UserProductProfileDeleteRequest userProductPermissionProfilesRequest);
+
+        /// <summary>
+        /// Remove user from permission profiles for one or more products
+        /// </summary>
+        /// <remarks>
+        /// Required scopes: user_write
+        /// </remarks>
+        /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">The organization ID GUID</param>
+        /// <param name="accountId">The account ID GUID</param>
+        /// <param name="userProductPermissionProfilesRequest">Request object</param>
+        /// <returns>Task of ApiResponse (RemoveUserProductsResponse)</returns>
+        System.Threading.Tasks.Task<ApiResponse<RemoveUserProductsResponse>> RemoveUserProductPermissionAsyncWithHttpInfo(Guid? organizationId, Guid? accountId, UserProductProfileDeleteRequest userProductPermissionProfilesRequest);
         #endregion Asynchronous Operations
     }
 
@@ -236,24 +386,27 @@ namespace DocuSign.Admin.Api
         /// Assign user to permission profiles for one or more products Required scopes: user_write
         /// </summary>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">The organization ID GUID</param>/// <param name="accountId">The account ID GUID</param>/// <param name="userId">The user ID GUID</param>
+        /// <param name="organizationId">The organization ID GUID</param>
+        /// <param name="accountId">The account ID GUID</param>
+        /// <param name="userId">The user ID GUID</param>
         /// <param name="productPermissionProfilesRequest">Request object</param>
-        
         /// <returns>UserProductPermissionProfilesResponse</returns>
-        public UserProductPermissionProfilesResponse AddUserProductPermissionProfiles (Guid? organizationId, Guid? accountId, Guid? userId, ProductPermissionProfilesRequest productPermissionProfilesRequest){
-            ApiResponse<UserProductPermissionProfilesResponse> localVarResponse = AddUserProductPermissionProfilesWithHttpInfo(organizationId, accountId, userId, productPermissionProfilesRequest);
-            return localVarResponse.Data;
+        public UserProductPermissionProfilesResponse AddUserProductPermissionProfiles(Guid? organizationId, Guid? accountId, Guid? userId, ProductPermissionProfilesRequest productPermissionProfilesRequest)
+        {
+             ApiResponse<UserProductPermissionProfilesResponse> localVarResponse = AddUserProductPermissionProfilesWithHttpInfo(organizationId, accountId, userId, productPermissionProfilesRequest);
+             return localVarResponse.Data;
         }
 
         /// <summary>
         /// Assign user to permission profiles for one or more products Required scopes: user_write
         /// </summary>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">The organization ID GUID</param>/// <param name="accountId">The account ID GUID</param>/// <param name="userId">The user ID GUID</param>
+        /// <param name="organizationId">The organization ID GUID</param>
+        /// <param name="accountId">The account ID GUID</param>
+        /// <param name="userId">The user ID GUID</param>
         /// <param name="productPermissionProfilesRequest">Request object</param>
-        
         /// <returns>ApiResponse of UserProductPermissionProfilesResponse</returns>
-        public ApiResponse< UserProductPermissionProfilesResponse > AddUserProductPermissionProfilesWithHttpInfo (Guid? organizationId, Guid? accountId, Guid? userId, ProductPermissionProfilesRequest productPermissionProfilesRequest)
+        public ApiResponse<UserProductPermissionProfilesResponse> AddUserProductPermissionProfilesWithHttpInfo(Guid? organizationId, Guid? accountId, Guid? userId, ProductPermissionProfilesRequest productPermissionProfilesRequest)
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
@@ -309,11 +462,11 @@ namespace DocuSign.Admin.Api
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.ApiClient.CallApi(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -325,11 +478,11 @@ namespace DocuSign.Admin.Api
             // DocuSign: Handle for PDF return types
             if (localVarResponse.ContentType != null && !localVarResponse.ContentType.ToLower().Contains("json"))
             {
-                return new ApiResponse<UserProductPermissionProfilesResponse>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (UserProductPermissionProfilesResponse) this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(UserProductPermissionProfilesResponse)));
+                return new ApiResponse<UserProductPermissionProfilesResponse>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (UserProductPermissionProfilesResponse)this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(UserProductPermissionProfilesResponse)));
             }
             else
             {
-                return new ApiResponse<UserProductPermissionProfilesResponse>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (UserProductPermissionProfilesResponse) this.ApiClient.Deserialize(localVarResponse, typeof(UserProductPermissionProfilesResponse)));
+                return new ApiResponse<UserProductPermissionProfilesResponse>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (UserProductPermissionProfilesResponse)this.ApiClient.Deserialize(localVarResponse, typeof(UserProductPermissionProfilesResponse)));
             }
             
         }
@@ -338,26 +491,27 @@ namespace DocuSign.Admin.Api
         /// Assign user to permission profiles for one or more products Required scopes: user_write
         /// </summary>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">The organization ID GUID</param>/// <param name="accountId">The account ID GUID</param>/// <param name="userId">The user ID GUID</param>
+        /// <param name="organizationId">The organization ID GUID</param>
+        /// <param name="accountId">The account ID GUID</param>
+        /// <param name="userId">The user ID GUID</param>
         /// <param name="productPermissionProfilesRequest">Request object</param>
-        
         /// <returns>Task of UserProductPermissionProfilesResponse</returns>
-        public async System.Threading.Tasks.Task<UserProductPermissionProfilesResponse> AddUserProductPermissionProfilesAsync (Guid? organizationId, Guid? accountId, Guid? userId, ProductPermissionProfilesRequest productPermissionProfilesRequest)
+        public async System.Threading.Tasks.Task<UserProductPermissionProfilesResponse> AddUserProductPermissionProfilesAsync(Guid? organizationId, Guid? accountId, Guid? userId, ProductPermissionProfilesRequest productPermissionProfilesRequest)
         {
              ApiResponse<UserProductPermissionProfilesResponse> localVarResponse = await AddUserProductPermissionProfilesAsyncWithHttpInfo(organizationId, accountId, userId, productPermissionProfilesRequest);
              return localVarResponse.Data;
-
         }
 
         /// <summary>
         /// Assign user to permission profiles for one or more products Required scopes: user_write
         /// </summary>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">The organization ID GUID</param>/// <param name="accountId">The account ID GUID</param>/// <param name="userId">The user ID GUID</param>
+        /// <param name="organizationId">The organization ID GUID</param>
+        /// <param name="accountId">The account ID GUID</param>
+        /// <param name="userId">The user ID GUID</param>
         /// <param name="productPermissionProfilesRequest">Request object</param>
-        
         /// <returns>Task of ApiResponse (UserProductPermissionProfilesResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<UserProductPermissionProfilesResponse>> AddUserProductPermissionProfilesAsyncWithHttpInfo (Guid? organizationId, Guid? accountId, Guid? userId, ProductPermissionProfilesRequest productPermissionProfilesRequest)
+        public async System.Threading.Tasks.Task<ApiResponse<UserProductPermissionProfilesResponse>> AddUserProductPermissionProfilesAsyncWithHttpInfo(Guid? organizationId, Guid? accountId, Guid? userId, ProductPermissionProfilesRequest productPermissionProfilesRequest)
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
@@ -400,8 +554,6 @@ namespace DocuSign.Admin.Api
             if (organizationId != null) localVarPathParams.Add("organizationId", this.ApiClient.ParameterToString(organizationId)); // path parameter
             if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
             if (userId != null) localVarPathParams.Add("userId", this.ApiClient.ParameterToString(userId)); // path parameter
-
-
             if (productPermissionProfilesRequest != null && productPermissionProfilesRequest.GetType() != typeof(byte[]))
             {
                 localVarPostBody = this.ApiClient.Serialize(productPermissionProfilesRequest); // http body (model) parameter
@@ -413,11 +565,11 @@ namespace DocuSign.Admin.Api
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.ApiClient.CallApiAsync(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -427,7 +579,198 @@ namespace DocuSign.Admin.Api
 
             return new ApiResponse<UserProductPermissionProfilesResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (UserProductPermissionProfilesResponse) this.ApiClient.Deserialize(localVarResponse, typeof(UserProductPermissionProfilesResponse)));
+                (UserProductPermissionProfilesResponse)this.ApiClient.Deserialize(localVarResponse, typeof(UserProductPermissionProfilesResponse)));
+            
+        }
+
+
+
+        /// <summary>
+        /// Assign user to permission profiles for one or more products Required scopes: user_write
+        /// </summary>
+        /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">The organization ID GUID</param>
+        /// <param name="accountId">The account ID GUID</param>
+        /// <param name="userProductPermissionProfilesRequest">Request object</param>
+        /// <returns>UserProductPermissionProfilesResponse</returns>
+        public UserProductPermissionProfilesResponse AddUserProductPermissionProfilesByEmail(Guid? organizationId, Guid? accountId, UserProductPermissionProfilesRequest userProductPermissionProfilesRequest)
+        {
+             ApiResponse<UserProductPermissionProfilesResponse> localVarResponse = AddUserProductPermissionProfilesByEmailWithHttpInfo(organizationId, accountId, userProductPermissionProfilesRequest);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Assign user to permission profiles for one or more products Required scopes: user_write
+        /// </summary>
+        /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">The organization ID GUID</param>
+        /// <param name="accountId">The account ID GUID</param>
+        /// <param name="userProductPermissionProfilesRequest">Request object</param>
+        /// <returns>ApiResponse of UserProductPermissionProfilesResponse</returns>
+        public ApiResponse<UserProductPermissionProfilesResponse> AddUserProductPermissionProfilesByEmailWithHttpInfo(Guid? organizationId, Guid? accountId, UserProductPermissionProfilesRequest userProductPermissionProfilesRequest)
+        {
+            // verify the required parameter 'organizationId' is set
+            if (organizationId == null)
+                throw new ApiException(400, "Missing required parameter 'organizationId' when calling ProductPermissionProfilesApi->AddUserProductPermissionProfilesByEmail");
+            // verify the required parameter 'accountId' is set
+            if (accountId == null)
+                throw new ApiException(400, "Missing required parameter 'accountId' when calling ProductPermissionProfilesApi->AddUserProductPermissionProfilesByEmail");
+            // verify the required parameter 'userProductPermissionProfilesRequest' is set
+            if (userProductPermissionProfilesRequest == null)
+                throw new ApiException(400, "Missing required parameter 'userProductPermissionProfilesRequest' when calling ProductPermissionProfilesApi->AddUserProductPermissionProfilesByEmail");
+
+            var localVarPath = "/v2.1/organizations/{organizationId}/accounts/{accountId}/products/permission_profiles/users";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new Dictionary<String, String>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+            if (organizationId != null) localVarPathParams.Add("organizationId", this.ApiClient.ParameterToString(organizationId)); // path parameter
+            if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
+
+
+            if (userProductPermissionProfilesRequest != null && userProductPermissionProfilesRequest.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = this.ApiClient.Serialize(userProductPermissionProfilesRequest); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = userProductPermissionProfilesRequest; // byte array
+            }
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse)this.ApiClient.CallApi(localVarPath,
+                Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("AddUserProductPermissionProfilesByEmail", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            
+            // DocuSign: Handle for PDF return types
+            if (localVarResponse.ContentType != null && !localVarResponse.ContentType.ToLower().Contains("json"))
+            {
+                return new ApiResponse<UserProductPermissionProfilesResponse>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (UserProductPermissionProfilesResponse)this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(UserProductPermissionProfilesResponse)));
+            }
+            else
+            {
+                return new ApiResponse<UserProductPermissionProfilesResponse>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (UserProductPermissionProfilesResponse)this.ApiClient.Deserialize(localVarResponse, typeof(UserProductPermissionProfilesResponse)));
+            }
+            
+        }
+
+        /// <summary>
+        /// Assign user to permission profiles for one or more products Required scopes: user_write
+        /// </summary>
+        /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">The organization ID GUID</param>
+        /// <param name="accountId">The account ID GUID</param>
+        /// <param name="userProductPermissionProfilesRequest">Request object</param>
+        /// <returns>Task of UserProductPermissionProfilesResponse</returns>
+        public async System.Threading.Tasks.Task<UserProductPermissionProfilesResponse> AddUserProductPermissionProfilesByEmailAsync(Guid? organizationId, Guid? accountId, UserProductPermissionProfilesRequest userProductPermissionProfilesRequest)
+        {
+             ApiResponse<UserProductPermissionProfilesResponse> localVarResponse = await AddUserProductPermissionProfilesByEmailAsyncWithHttpInfo(organizationId, accountId, userProductPermissionProfilesRequest);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Assign user to permission profiles for one or more products Required scopes: user_write
+        /// </summary>
+        /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">The organization ID GUID</param>
+        /// <param name="accountId">The account ID GUID</param>
+        /// <param name="userProductPermissionProfilesRequest">Request object</param>
+        /// <returns>Task of ApiResponse (UserProductPermissionProfilesResponse)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<UserProductPermissionProfilesResponse>> AddUserProductPermissionProfilesByEmailAsyncWithHttpInfo(Guid? organizationId, Guid? accountId, UserProductPermissionProfilesRequest userProductPermissionProfilesRequest)
+        {
+            // verify the required parameter 'organizationId' is set
+            if (organizationId == null)
+                throw new ApiException(400, "Missing required parameter 'organizationId' when calling ProductPermissionProfilesApi->AddUserProductPermissionProfilesByEmail");
+            // verify the required parameter 'accountId' is set
+            if (accountId == null)
+                throw new ApiException(400, "Missing required parameter 'accountId' when calling ProductPermissionProfilesApi->AddUserProductPermissionProfilesByEmail");
+            // verify the required parameter 'userProductPermissionProfilesRequest' is set
+            if (userProductPermissionProfilesRequest == null)
+                throw new ApiException(400, "Missing required parameter 'userProductPermissionProfilesRequest' when calling ProductPermissionProfilesApi->AddUserProductPermissionProfilesByEmail");
+
+            var localVarPath = "/v2.1/organizations/{organizationId}/accounts/{accountId}/products/permission_profiles/users";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new Dictionary<String, String>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+            if (organizationId != null) localVarPathParams.Add("organizationId", this.ApiClient.ParameterToString(organizationId)); // path parameter
+            if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
+            if (userProductPermissionProfilesRequest != null && userProductPermissionProfilesRequest.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = this.ApiClient.Serialize(userProductPermissionProfilesRequest); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = userProductPermissionProfilesRequest; // byte array
+            }
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse)await this.ApiClient.CallApiAsync(localVarPath,
+                Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("AddUserProductPermissionProfilesByEmail", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<UserProductPermissionProfilesResponse>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (UserProductPermissionProfilesResponse)this.ApiClient.Deserialize(localVarResponse, typeof(UserProductPermissionProfilesResponse)));
             
         }
 
@@ -437,24 +780,23 @@ namespace DocuSign.Admin.Api
         /// Get products associated with the account and the available permission profiles Required scopes: user_read
         /// </summary>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">The organization ID GUID</param>/// <param name="accountId">The account ID GUID</param>
-        
-        
+        /// <param name="organizationId">The organization ID GUID</param>
+        /// <param name="accountId">The account ID GUID</param>
         /// <returns>ProductPermissionProfilesResponse</returns>
-        public ProductPermissionProfilesResponse GetProductPermissionProfiles (Guid? organizationId, Guid? accountId){
-            ApiResponse<ProductPermissionProfilesResponse> localVarResponse = GetProductPermissionProfilesWithHttpInfo(organizationId, accountId);
-            return localVarResponse.Data;
+        public ProductPermissionProfilesResponse GetProductPermissionProfiles(Guid? organizationId, Guid? accountId)
+        {
+             ApiResponse<ProductPermissionProfilesResponse> localVarResponse = GetProductPermissionProfilesWithHttpInfo(organizationId, accountId);
+             return localVarResponse.Data;
         }
 
         /// <summary>
         /// Get products associated with the account and the available permission profiles Required scopes: user_read
         /// </summary>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">The organization ID GUID</param>/// <param name="accountId">The account ID GUID</param>
-        
-        
+        /// <param name="organizationId">The organization ID GUID</param>
+        /// <param name="accountId">The account ID GUID</param>
         /// <returns>ApiResponse of ProductPermissionProfilesResponse</returns>
-        public ApiResponse< ProductPermissionProfilesResponse > GetProductPermissionProfilesWithHttpInfo (Guid? organizationId, Guid? accountId)
+        public ApiResponse<ProductPermissionProfilesResponse> GetProductPermissionProfilesWithHttpInfo(Guid? organizationId, Guid? accountId)
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
@@ -495,11 +837,11 @@ namespace DocuSign.Admin.Api
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.ApiClient.CallApi(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -511,11 +853,11 @@ namespace DocuSign.Admin.Api
             // DocuSign: Handle for PDF return types
             if (localVarResponse.ContentType != null && !localVarResponse.ContentType.ToLower().Contains("json"))
             {
-                return new ApiResponse<ProductPermissionProfilesResponse>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (ProductPermissionProfilesResponse) this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(ProductPermissionProfilesResponse)));
+                return new ApiResponse<ProductPermissionProfilesResponse>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (ProductPermissionProfilesResponse)this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(ProductPermissionProfilesResponse)));
             }
             else
             {
-                return new ApiResponse<ProductPermissionProfilesResponse>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (ProductPermissionProfilesResponse) this.ApiClient.Deserialize(localVarResponse, typeof(ProductPermissionProfilesResponse)));
+                return new ApiResponse<ProductPermissionProfilesResponse>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (ProductPermissionProfilesResponse)this.ApiClient.Deserialize(localVarResponse, typeof(ProductPermissionProfilesResponse)));
             }
             
         }
@@ -524,26 +866,23 @@ namespace DocuSign.Admin.Api
         /// Get products associated with the account and the available permission profiles Required scopes: user_read
         /// </summary>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">The organization ID GUID</param>/// <param name="accountId">The account ID GUID</param>
-        
-        
+        /// <param name="organizationId">The organization ID GUID</param>
+        /// <param name="accountId">The account ID GUID</param>
         /// <returns>Task of ProductPermissionProfilesResponse</returns>
-        public async System.Threading.Tasks.Task<ProductPermissionProfilesResponse> GetProductPermissionProfilesAsync (Guid? organizationId, Guid? accountId)
+        public async System.Threading.Tasks.Task<ProductPermissionProfilesResponse> GetProductPermissionProfilesAsync(Guid? organizationId, Guid? accountId)
         {
              ApiResponse<ProductPermissionProfilesResponse> localVarResponse = await GetProductPermissionProfilesAsyncWithHttpInfo(organizationId, accountId);
              return localVarResponse.Data;
-
         }
 
         /// <summary>
         /// Get products associated with the account and the available permission profiles Required scopes: user_read
         /// </summary>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">The organization ID GUID</param>/// <param name="accountId">The account ID GUID</param>
-        
-        
+        /// <param name="organizationId">The organization ID GUID</param>
+        /// <param name="accountId">The account ID GUID</param>
         /// <returns>Task of ApiResponse (ProductPermissionProfilesResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<ProductPermissionProfilesResponse>> GetProductPermissionProfilesAsyncWithHttpInfo (Guid? organizationId, Guid? accountId)
+        public async System.Threading.Tasks.Task<ApiResponse<ProductPermissionProfilesResponse>> GetProductPermissionProfilesAsyncWithHttpInfo(Guid? organizationId, Guid? accountId)
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
@@ -581,14 +920,12 @@ namespace DocuSign.Admin.Api
             if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
 
 
-
-
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.ApiClient.CallApiAsync(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -598,7 +935,7 @@ namespace DocuSign.Admin.Api
 
             return new ApiResponse<ProductPermissionProfilesResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (ProductPermissionProfilesResponse) this.ApiClient.Deserialize(localVarResponse, typeof(ProductPermissionProfilesResponse)));
+                (ProductPermissionProfilesResponse)this.ApiClient.Deserialize(localVarResponse, typeof(ProductPermissionProfilesResponse)));
             
         }
 
@@ -608,24 +945,25 @@ namespace DocuSign.Admin.Api
         /// Retrieve list of user&#39;s permission profiles for each account&#39;s product Required scopes: user_read
         /// </summary>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">The organization ID GUID</param>/// <param name="accountId">The account ID GUID</param>/// <param name="userId">The user ID GUID</param>
-        
-        
+        /// <param name="organizationId">The organization ID GUID</param>
+        /// <param name="accountId">The account ID GUID</param>
+        /// <param name="userId">The user ID GUID</param>
         /// <returns>ProductPermissionProfilesResponse</returns>
-        public ProductPermissionProfilesResponse GetUserProductPermissionProfiles (Guid? organizationId, Guid? accountId, Guid? userId){
-            ApiResponse<ProductPermissionProfilesResponse> localVarResponse = GetUserProductPermissionProfilesWithHttpInfo(organizationId, accountId, userId);
-            return localVarResponse.Data;
+        public ProductPermissionProfilesResponse GetUserProductPermissionProfiles(Guid? organizationId, Guid? accountId, Guid? userId)
+        {
+             ApiResponse<ProductPermissionProfilesResponse> localVarResponse = GetUserProductPermissionProfilesWithHttpInfo(organizationId, accountId, userId);
+             return localVarResponse.Data;
         }
 
         /// <summary>
         /// Retrieve list of user&#39;s permission profiles for each account&#39;s product Required scopes: user_read
         /// </summary>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">The organization ID GUID</param>/// <param name="accountId">The account ID GUID</param>/// <param name="userId">The user ID GUID</param>
-        
-        
+        /// <param name="organizationId">The organization ID GUID</param>
+        /// <param name="accountId">The account ID GUID</param>
+        /// <param name="userId">The user ID GUID</param>
         /// <returns>ApiResponse of ProductPermissionProfilesResponse</returns>
-        public ApiResponse< ProductPermissionProfilesResponse > GetUserProductPermissionProfilesWithHttpInfo (Guid? organizationId, Guid? accountId, Guid? userId)
+        public ApiResponse<ProductPermissionProfilesResponse> GetUserProductPermissionProfilesWithHttpInfo(Guid? organizationId, Guid? accountId, Guid? userId)
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
@@ -670,11 +1008,11 @@ namespace DocuSign.Admin.Api
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.ApiClient.CallApi(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -686,11 +1024,11 @@ namespace DocuSign.Admin.Api
             // DocuSign: Handle for PDF return types
             if (localVarResponse.ContentType != null && !localVarResponse.ContentType.ToLower().Contains("json"))
             {
-                return new ApiResponse<ProductPermissionProfilesResponse>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (ProductPermissionProfilesResponse) this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(ProductPermissionProfilesResponse)));
+                return new ApiResponse<ProductPermissionProfilesResponse>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (ProductPermissionProfilesResponse)this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(ProductPermissionProfilesResponse)));
             }
             else
             {
-                return new ApiResponse<ProductPermissionProfilesResponse>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (ProductPermissionProfilesResponse) this.ApiClient.Deserialize(localVarResponse, typeof(ProductPermissionProfilesResponse)));
+                return new ApiResponse<ProductPermissionProfilesResponse>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (ProductPermissionProfilesResponse)this.ApiClient.Deserialize(localVarResponse, typeof(ProductPermissionProfilesResponse)));
             }
             
         }
@@ -699,26 +1037,25 @@ namespace DocuSign.Admin.Api
         /// Retrieve list of user&#39;s permission profiles for each account&#39;s product Required scopes: user_read
         /// </summary>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">The organization ID GUID</param>/// <param name="accountId">The account ID GUID</param>/// <param name="userId">The user ID GUID</param>
-        
-        
+        /// <param name="organizationId">The organization ID GUID</param>
+        /// <param name="accountId">The account ID GUID</param>
+        /// <param name="userId">The user ID GUID</param>
         /// <returns>Task of ProductPermissionProfilesResponse</returns>
-        public async System.Threading.Tasks.Task<ProductPermissionProfilesResponse> GetUserProductPermissionProfilesAsync (Guid? organizationId, Guid? accountId, Guid? userId)
+        public async System.Threading.Tasks.Task<ProductPermissionProfilesResponse> GetUserProductPermissionProfilesAsync(Guid? organizationId, Guid? accountId, Guid? userId)
         {
              ApiResponse<ProductPermissionProfilesResponse> localVarResponse = await GetUserProductPermissionProfilesAsyncWithHttpInfo(organizationId, accountId, userId);
              return localVarResponse.Data;
-
         }
 
         /// <summary>
         /// Retrieve list of user&#39;s permission profiles for each account&#39;s product Required scopes: user_read
         /// </summary>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">The organization ID GUID</param>/// <param name="accountId">The account ID GUID</param>/// <param name="userId">The user ID GUID</param>
-        
-        
+        /// <param name="organizationId">The organization ID GUID</param>
+        /// <param name="accountId">The account ID GUID</param>
+        /// <param name="userId">The user ID GUID</param>
         /// <returns>Task of ApiResponse (ProductPermissionProfilesResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<ProductPermissionProfilesResponse>> GetUserProductPermissionProfilesAsyncWithHttpInfo (Guid? organizationId, Guid? accountId, Guid? userId)
+        public async System.Threading.Tasks.Task<ApiResponse<ProductPermissionProfilesResponse>> GetUserProductPermissionProfilesAsyncWithHttpInfo(Guid? organizationId, Guid? accountId, Guid? userId)
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
@@ -760,14 +1097,12 @@ namespace DocuSign.Admin.Api
             if (userId != null) localVarPathParams.Add("userId", this.ApiClient.ParameterToString(userId)); // path parameter
 
 
-
-
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.ApiClient.CallApiAsync(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -777,7 +1112,383 @@ namespace DocuSign.Admin.Api
 
             return new ApiResponse<ProductPermissionProfilesResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (ProductPermissionProfilesResponse) this.ApiClient.Deserialize(localVarResponse, typeof(ProductPermissionProfilesResponse)));
+                (ProductPermissionProfilesResponse)this.ApiClient.Deserialize(localVarResponse, typeof(ProductPermissionProfilesResponse)));
+            
+        }
+
+
+        /// <summary>
+        /// Remove user from permission profiles for one or more products Required scopes: user_write
+        /// </summary>
+        public class GetUserProductPermissionProfilesByEmailOptions
+        {
+            /// Email address of the requested user 
+            public string email {get; set;}
+        }
+
+        /// <summary>
+        /// Remove user from permission profiles for one or more products Required scopes: user_write
+        /// </summary>
+        /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">The organization ID GUID</param>
+        /// <param name="accountId">The account ID GUID</param>
+        /// <param name="options">Options for modifying the behavior of the function.</param>
+        /// <returns>UserProductPermissionProfilesResponse</returns>
+        public UserProductPermissionProfilesResponse GetUserProductPermissionProfilesByEmail(Guid? organizationId, Guid? accountId, ProductPermissionProfilesApi.GetUserProductPermissionProfilesByEmailOptions options = null)
+        {
+             ApiResponse<UserProductPermissionProfilesResponse> localVarResponse = GetUserProductPermissionProfilesByEmailWithHttpInfo(organizationId, accountId, options);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Remove user from permission profiles for one or more products Required scopes: user_write
+        /// </summary>
+        /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">The organization ID GUID</param>
+        /// <param name="accountId">The account ID GUID</param>
+        /// <param name="options">Options for modifying the behavior of the function.</param>
+        /// <returns>ApiResponse of UserProductPermissionProfilesResponse</returns>
+        public ApiResponse<UserProductPermissionProfilesResponse> GetUserProductPermissionProfilesByEmailWithHttpInfo(Guid? organizationId, Guid? accountId, ProductPermissionProfilesApi.GetUserProductPermissionProfilesByEmailOptions options = null)
+        {
+            // verify the required parameter 'organizationId' is set
+            if (organizationId == null)
+                throw new ApiException(400, "Missing required parameter 'organizationId' when calling ProductPermissionProfilesApi->GetUserProductPermissionProfilesByEmail");
+            // verify the required parameter 'accountId' is set
+            if (accountId == null)
+                throw new ApiException(400, "Missing required parameter 'accountId' when calling ProductPermissionProfilesApi->GetUserProductPermissionProfilesByEmail");
+
+            var localVarPath = "/v2.1/organizations/{organizationId}/accounts/{accountId}/products/permission_profiles/users";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new Dictionary<String, String>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+            if (organizationId != null) localVarPathParams.Add("organizationId", this.ApiClient.ParameterToString(organizationId)); // path parameter
+            if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
+
+            if (options != null)
+            {
+                if (options.email != null) localVarQueryParams.Add("email", this.ApiClient.ParameterToString(options.email)); // query parameter
+            }
+
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse)this.ApiClient.CallApi(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("GetUserProductPermissionProfilesByEmail", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            
+            // DocuSign: Handle for PDF return types
+            if (localVarResponse.ContentType != null && !localVarResponse.ContentType.ToLower().Contains("json"))
+            {
+                return new ApiResponse<UserProductPermissionProfilesResponse>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (UserProductPermissionProfilesResponse)this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(UserProductPermissionProfilesResponse)));
+            }
+            else
+            {
+                return new ApiResponse<UserProductPermissionProfilesResponse>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (UserProductPermissionProfilesResponse)this.ApiClient.Deserialize(localVarResponse, typeof(UserProductPermissionProfilesResponse)));
+            }
+            
+        }
+
+        /// <summary>
+        /// Remove user from permission profiles for one or more products Required scopes: user_write
+        /// </summary>
+        /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">The organization ID GUID</param>
+        /// <param name="accountId">The account ID GUID</param>
+        /// <param name="options">Options for modifying the behavior of the function.</param>
+        /// <returns>Task of UserProductPermissionProfilesResponse</returns>
+        public async System.Threading.Tasks.Task<UserProductPermissionProfilesResponse> GetUserProductPermissionProfilesByEmailAsync(Guid? organizationId, Guid? accountId, ProductPermissionProfilesApi.GetUserProductPermissionProfilesByEmailOptions options = null)
+        {
+             ApiResponse<UserProductPermissionProfilesResponse> localVarResponse = await GetUserProductPermissionProfilesByEmailAsyncWithHttpInfo(organizationId, accountId, options);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Remove user from permission profiles for one or more products Required scopes: user_write
+        /// </summary>
+        /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">The organization ID GUID</param>
+        /// <param name="accountId">The account ID GUID</param>
+        /// <param name="options">Options for modifying the behavior of the function.</param>
+        /// <returns>Task of ApiResponse (UserProductPermissionProfilesResponse)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<UserProductPermissionProfilesResponse>> GetUserProductPermissionProfilesByEmailAsyncWithHttpInfo(Guid? organizationId, Guid? accountId, ProductPermissionProfilesApi.GetUserProductPermissionProfilesByEmailOptions options = null)
+        {
+            // verify the required parameter 'organizationId' is set
+            if (organizationId == null)
+                throw new ApiException(400, "Missing required parameter 'organizationId' when calling ProductPermissionProfilesApi->GetUserProductPermissionProfilesByEmail");
+            // verify the required parameter 'accountId' is set
+            if (accountId == null)
+                throw new ApiException(400, "Missing required parameter 'accountId' when calling ProductPermissionProfilesApi->GetUserProductPermissionProfilesByEmail");
+
+            var localVarPath = "/v2.1/organizations/{organizationId}/accounts/{accountId}/products/permission_profiles/users";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new Dictionary<String, String>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+            if (organizationId != null) localVarPathParams.Add("organizationId", this.ApiClient.ParameterToString(organizationId)); // path parameter
+            if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
+            if (options != null)
+            {
+                if (options.email != null) localVarQueryParams.Add("email", this.ApiClient.ParameterToString(options.email)); // query parameter
+            }
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse)await this.ApiClient.CallApiAsync(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("GetUserProductPermissionProfilesByEmail", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<UserProductPermissionProfilesResponse>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (UserProductPermissionProfilesResponse)this.ApiClient.Deserialize(localVarResponse, typeof(UserProductPermissionProfilesResponse)));
+            
+        }
+
+
+
+        /// <summary>
+        /// Remove user from permission profiles for one or more products Required scopes: user_write
+        /// </summary>
+        /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">The organization ID GUID</param>
+        /// <param name="accountId">The account ID GUID</param>
+        /// <param name="userProductPermissionProfilesRequest">Request object</param>
+        /// <returns>RemoveUserProductsResponse</returns>
+        public RemoveUserProductsResponse RemoveUserProductPermission(Guid? organizationId, Guid? accountId, UserProductProfileDeleteRequest userProductPermissionProfilesRequest)
+        {
+             ApiResponse<RemoveUserProductsResponse> localVarResponse = RemoveUserProductPermissionWithHttpInfo(organizationId, accountId, userProductPermissionProfilesRequest);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Remove user from permission profiles for one or more products Required scopes: user_write
+        /// </summary>
+        /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">The organization ID GUID</param>
+        /// <param name="accountId">The account ID GUID</param>
+        /// <param name="userProductPermissionProfilesRequest">Request object</param>
+        /// <returns>ApiResponse of RemoveUserProductsResponse</returns>
+        public ApiResponse<RemoveUserProductsResponse> RemoveUserProductPermissionWithHttpInfo(Guid? organizationId, Guid? accountId, UserProductProfileDeleteRequest userProductPermissionProfilesRequest)
+        {
+            // verify the required parameter 'organizationId' is set
+            if (organizationId == null)
+                throw new ApiException(400, "Missing required parameter 'organizationId' when calling ProductPermissionProfilesApi->RemoveUserProductPermission");
+            // verify the required parameter 'accountId' is set
+            if (accountId == null)
+                throw new ApiException(400, "Missing required parameter 'accountId' when calling ProductPermissionProfilesApi->RemoveUserProductPermission");
+            // verify the required parameter 'userProductPermissionProfilesRequest' is set
+            if (userProductPermissionProfilesRequest == null)
+                throw new ApiException(400, "Missing required parameter 'userProductPermissionProfilesRequest' when calling ProductPermissionProfilesApi->RemoveUserProductPermission");
+
+            var localVarPath = "/v2.1/organizations/{organizationId}/accounts/{accountId}/products/users";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new Dictionary<String, String>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+            if (organizationId != null) localVarPathParams.Add("organizationId", this.ApiClient.ParameterToString(organizationId)); // path parameter
+            if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
+
+
+            if (userProductPermissionProfilesRequest != null && userProductPermissionProfilesRequest.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = this.ApiClient.Serialize(userProductPermissionProfilesRequest); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = userProductPermissionProfilesRequest; // byte array
+            }
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse)this.ApiClient.CallApi(localVarPath,
+                Method.DELETE, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("RemoveUserProductPermission", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            
+            // DocuSign: Handle for PDF return types
+            if (localVarResponse.ContentType != null && !localVarResponse.ContentType.ToLower().Contains("json"))
+            {
+                return new ApiResponse<RemoveUserProductsResponse>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (RemoveUserProductsResponse)this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(RemoveUserProductsResponse)));
+            }
+            else
+            {
+                return new ApiResponse<RemoveUserProductsResponse>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (RemoveUserProductsResponse)this.ApiClient.Deserialize(localVarResponse, typeof(RemoveUserProductsResponse)));
+            }
+            
+        }
+
+        /// <summary>
+        /// Remove user from permission profiles for one or more products Required scopes: user_write
+        /// </summary>
+        /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">The organization ID GUID</param>
+        /// <param name="accountId">The account ID GUID</param>
+        /// <param name="userProductPermissionProfilesRequest">Request object</param>
+        /// <returns>Task of RemoveUserProductsResponse</returns>
+        public async System.Threading.Tasks.Task<RemoveUserProductsResponse> RemoveUserProductPermissionAsync(Guid? organizationId, Guid? accountId, UserProductProfileDeleteRequest userProductPermissionProfilesRequest)
+        {
+             ApiResponse<RemoveUserProductsResponse> localVarResponse = await RemoveUserProductPermissionAsyncWithHttpInfo(organizationId, accountId, userProductPermissionProfilesRequest);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Remove user from permission profiles for one or more products Required scopes: user_write
+        /// </summary>
+        /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">The organization ID GUID</param>
+        /// <param name="accountId">The account ID GUID</param>
+        /// <param name="userProductPermissionProfilesRequest">Request object</param>
+        /// <returns>Task of ApiResponse (RemoveUserProductsResponse)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<RemoveUserProductsResponse>> RemoveUserProductPermissionAsyncWithHttpInfo(Guid? organizationId, Guid? accountId, UserProductProfileDeleteRequest userProductPermissionProfilesRequest)
+        {
+            // verify the required parameter 'organizationId' is set
+            if (organizationId == null)
+                throw new ApiException(400, "Missing required parameter 'organizationId' when calling ProductPermissionProfilesApi->RemoveUserProductPermission");
+            // verify the required parameter 'accountId' is set
+            if (accountId == null)
+                throw new ApiException(400, "Missing required parameter 'accountId' when calling ProductPermissionProfilesApi->RemoveUserProductPermission");
+            // verify the required parameter 'userProductPermissionProfilesRequest' is set
+            if (userProductPermissionProfilesRequest == null)
+                throw new ApiException(400, "Missing required parameter 'userProductPermissionProfilesRequest' when calling ProductPermissionProfilesApi->RemoveUserProductPermission");
+
+            var localVarPath = "/v2.1/organizations/{organizationId}/accounts/{accountId}/products/users";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new Dictionary<String, String>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+            if (organizationId != null) localVarPathParams.Add("organizationId", this.ApiClient.ParameterToString(organizationId)); // path parameter
+            if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
+            if (userProductPermissionProfilesRequest != null && userProductPermissionProfilesRequest.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = this.ApiClient.Serialize(userProductPermissionProfilesRequest); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = userProductPermissionProfilesRequest; // byte array
+            }
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse)await this.ApiClient.CallApiAsync(localVarPath,
+                Method.DELETE, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("RemoveUserProductPermission", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<RemoveUserProductsResponse>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (RemoveUserProductsResponse)this.ApiClient.Deserialize(localVarResponse, typeof(RemoveUserProductsResponse)));
             
         }
 

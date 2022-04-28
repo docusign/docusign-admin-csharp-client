@@ -33,9 +33,8 @@ namespace DocuSign.Admin.Api
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">The organization ID Guid</param>
         /// <param name="request">Request body containing details about the accounts be compared</param>
-        
         /// <returns></returns>
-        OrganizationExportResponse CreateAccountSettingsExport (Guid? organizationId, OrganizationAccountsRequest request);
+        OrganizationExportResponse CreateAccountSettingsExport(Guid? organizationId, OrganizationAccountsRequest request);
 
         /// <summary>
         /// Creates a  new Account Setting Export request.
@@ -46,7 +45,6 @@ namespace DocuSign.Admin.Api
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">The organization ID Guid</param>
         /// <param name="request">Request body containing details about the accounts be compared</param>
-        
         /// <returns>ApiResponse of </returns>
         ApiResponse<OrganizationExportResponse> CreateAccountSettingsExportWithHttpInfo(Guid? organizationId, OrganizationAccountsRequest request);
         /// <summary>
@@ -58,9 +56,8 @@ namespace DocuSign.Admin.Api
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">The organization ID Guid</param>
         /// <param name="request">Request body containing details about what is to be exported</param>
-        
         /// <returns></returns>
-        OrganizationExportResponse CreateUserListExport (Guid? organizationId, OrganizationExportRequest request);
+        OrganizationExportResponse CreateUserListExport(Guid? organizationId, OrganizationExportRequest request);
 
         /// <summary>
         /// Creates a new User List Export request.
@@ -71,7 +68,6 @@ namespace DocuSign.Admin.Api
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">The organization ID Guid</param>
         /// <param name="request">Request body containing details about what is to be exported</param>
-        
         /// <returns>ApiResponse of </returns>
         ApiResponse<OrganizationExportResponse> CreateUserListExportWithHttpInfo(Guid? organizationId, OrganizationExportRequest request);
         /// <summary>
@@ -81,11 +77,10 @@ namespace DocuSign.Admin.Api
         /// Required scopes: account_read
         /// </remarks>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">The organization ID Guid</param>/// <param name="exportId">The export ID Guid for the request</param>
-        
-        
+        /// <param name="organizationId">The organization ID Guid</param>
+        /// <param name="exportId">The export ID Guid for the request</param>
         /// <returns></returns>
-        Object DeleteAccountSettingsExport (Guid? organizationId, Guid? exportId);
+        Object DeleteAccountSettingsExport(Guid? organizationId, Guid? exportId);
 
         /// <summary>
         /// Deletes a single Account Settings Export request
@@ -94,9 +89,8 @@ namespace DocuSign.Admin.Api
         /// Required scopes: account_read
         /// </remarks>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">The organization ID Guid</param>/// <param name="exportId">The export ID Guid for the request</param>
-        
-        
+        /// <param name="organizationId">The organization ID Guid</param>
+        /// <param name="exportId">The export ID Guid for the request</param>
         /// <returns>ApiResponse of </returns>
         ApiResponse<Object> DeleteAccountSettingsExportWithHttpInfo(Guid? organizationId, Guid? exportId);
         /// <summary>
@@ -106,11 +100,10 @@ namespace DocuSign.Admin.Api
         /// Required scopes: user_read
         /// </remarks>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">The organization ID Guid</param>/// <param name="exportId">The export ID Guid for the request</param>
-        
-        
+        /// <param name="organizationId">The organization ID Guid</param>
+        /// <param name="exportId">The export ID Guid for the request</param>
         /// <returns></returns>
-        Object DeleteUserListExport (Guid? organizationId, Guid? exportId);
+        Object DeleteUserListExport(Guid? organizationId, Guid? exportId);
 
         /// <summary>
         /// Deletes a single User List Export request
@@ -119,9 +112,8 @@ namespace DocuSign.Admin.Api
         /// Required scopes: user_read
         /// </remarks>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">The organization ID Guid</param>/// <param name="exportId">The export ID Guid for the request</param>
-        
-        
+        /// <param name="organizationId">The organization ID Guid</param>
+        /// <param name="exportId">The export ID Guid for the request</param>
         /// <returns>ApiResponse of </returns>
         ApiResponse<Object> DeleteUserListExportWithHttpInfo(Guid? organizationId, Guid? exportId);
         /// <summary>
@@ -131,11 +123,10 @@ namespace DocuSign.Admin.Api
         /// Required scopes: account_read
         /// </remarks>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">The organization ID Guid</param>/// <param name="exportId">The export ID Guid for the request</param>
-        
-        
+        /// <param name="organizationId">The organization ID Guid</param>
+        /// <param name="exportId">The export ID Guid for the request</param>
         /// <returns></returns>
-        OrganizationExportResponse GetAccountSettingsExport (Guid? organizationId, Guid? exportId);
+        OrganizationExportResponse GetAccountSettingsExport(Guid? organizationId, Guid? exportId);
 
         /// <summary>
         /// Returns the details/metadata for a single Account Setting Export request
@@ -144,9 +135,8 @@ namespace DocuSign.Admin.Api
         /// Required scopes: account_read
         /// </remarks>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">The organization ID Guid</param>/// <param name="exportId">The export ID Guid for the request</param>
-        
-        
+        /// <param name="organizationId">The organization ID Guid</param>
+        /// <param name="exportId">The export ID Guid for the request</param>
         /// <returns>ApiResponse of </returns>
         ApiResponse<OrganizationExportResponse> GetAccountSettingsExportWithHttpInfo(Guid? organizationId, Guid? exportId);
         /// <summary>
@@ -157,10 +147,8 @@ namespace DocuSign.Admin.Api
         /// </remarks>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">The organization ID Guid</param>
-        
-        
         /// <returns></returns>
-        OrganizationExportsResponse GetAccountSettingsExports (Guid? organizationId);
+        OrganizationExportsResponse GetAccountSettingsExports(Guid? organizationId);
 
         /// <summary>
         /// Returns the details/metadata for Account Setting Export requests
@@ -170,8 +158,6 @@ namespace DocuSign.Admin.Api
         /// </remarks>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">The organization ID Guid</param>
-        
-        
         /// <returns>ApiResponse of </returns>
         ApiResponse<OrganizationExportsResponse> GetAccountSettingsExportsWithHttpInfo(Guid? organizationId);
         /// <summary>
@@ -181,11 +167,10 @@ namespace DocuSign.Admin.Api
         /// Required scopes: user_read
         /// </remarks>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">The organization ID Guid</param>/// <param name="exportId">The export ID Guid for the request</param>
-        
-        
+        /// <param name="organizationId">The organization ID Guid</param>
+        /// <param name="exportId">The export ID Guid for the request</param>
         /// <returns></returns>
-        OrganizationExportResponse GetUserListExport (Guid? organizationId, Guid? exportId);
+        OrganizationExportResponse GetUserListExport(Guid? organizationId, Guid? exportId);
 
         /// <summary>
         /// Returns the details/metadata for a single User List Export request
@@ -194,9 +179,8 @@ namespace DocuSign.Admin.Api
         /// Required scopes: user_read
         /// </remarks>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">The organization ID Guid</param>/// <param name="exportId">The export ID Guid for the request</param>
-        
-        
+        /// <param name="organizationId">The organization ID Guid</param>
+        /// <param name="exportId">The export ID Guid for the request</param>
         /// <returns>ApiResponse of </returns>
         ApiResponse<OrganizationExportResponse> GetUserListExportWithHttpInfo(Guid? organizationId, Guid? exportId);
         /// <summary>
@@ -207,10 +191,8 @@ namespace DocuSign.Admin.Api
         /// </remarks>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">The organization ID Guid</param>
-        
-        
         /// <returns></returns>
-        OrganizationExportsResponse GetUserListExports (Guid? organizationId);
+        OrganizationExportsResponse GetUserListExports(Guid? organizationId);
 
         /// <summary>
         /// Returns a list of existing User List Exports (requests and completed exports) and their details/metadata
@@ -220,8 +202,6 @@ namespace DocuSign.Admin.Api
         /// </remarks>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">The organization ID Guid</param>
-        
-        
         /// <returns>ApiResponse of </returns>
         ApiResponse<OrganizationExportsResponse> GetUserListExportsWithHttpInfo(Guid? organizationId);
         #endregion Synchronous Operations
@@ -235,9 +215,8 @@ namespace DocuSign.Admin.Api
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">The organization ID Guid</param>
         /// <param name="request">Request body containing details about the accounts be compared</param>
-        
         /// <returns>Task of OrganizationExportResponse</returns>
-        System.Threading.Tasks.Task<OrganizationExportResponse> CreateAccountSettingsExportAsync (Guid? organizationId, OrganizationAccountsRequest request);
+        System.Threading.Tasks.Task<OrganizationExportResponse> CreateAccountSettingsExportAsync(Guid? organizationId, OrganizationAccountsRequest request);
 
         /// <summary>
         /// Creates a  new Account Setting Export request.
@@ -248,9 +227,8 @@ namespace DocuSign.Admin.Api
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">The organization ID Guid</param>
         /// <param name="request">Request body containing details about the accounts be compared</param>
-        
         /// <returns>Task of ApiResponse (OrganizationExportResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<OrganizationExportResponse>> CreateAccountSettingsExportAsyncWithHttpInfo (Guid? organizationId, OrganizationAccountsRequest request);
+        System.Threading.Tasks.Task<ApiResponse<OrganizationExportResponse>> CreateAccountSettingsExportAsyncWithHttpInfo(Guid? organizationId, OrganizationAccountsRequest request);
         /// <summary>
         /// Creates a new User List Export request.
         /// </summary>
@@ -260,9 +238,8 @@ namespace DocuSign.Admin.Api
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">The organization ID Guid</param>
         /// <param name="request">Request body containing details about what is to be exported</param>
-        
         /// <returns>Task of OrganizationExportResponse</returns>
-        System.Threading.Tasks.Task<OrganizationExportResponse> CreateUserListExportAsync (Guid? organizationId, OrganizationExportRequest request);
+        System.Threading.Tasks.Task<OrganizationExportResponse> CreateUserListExportAsync(Guid? organizationId, OrganizationExportRequest request);
 
         /// <summary>
         /// Creates a new User List Export request.
@@ -273,9 +250,8 @@ namespace DocuSign.Admin.Api
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">The organization ID Guid</param>
         /// <param name="request">Request body containing details about what is to be exported</param>
-        
         /// <returns>Task of ApiResponse (OrganizationExportResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<OrganizationExportResponse>> CreateUserListExportAsyncWithHttpInfo (Guid? organizationId, OrganizationExportRequest request);
+        System.Threading.Tasks.Task<ApiResponse<OrganizationExportResponse>> CreateUserListExportAsyncWithHttpInfo(Guid? organizationId, OrganizationExportRequest request);
         /// <summary>
         /// Deletes a single Account Settings Export request
         /// </summary>
@@ -283,11 +259,10 @@ namespace DocuSign.Admin.Api
         /// Required scopes: account_read
         /// </remarks>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">The organization ID Guid</param>/// <param name="exportId">The export ID Guid for the request</param>
-        
-        
+        /// <param name="organizationId">The organization ID Guid</param>
+        /// <param name="exportId">The export ID Guid for the request</param>
         /// <returns>Task of Object</returns>
-        System.Threading.Tasks.Task<Object> DeleteAccountSettingsExportAsync (Guid? organizationId, Guid? exportId);
+        System.Threading.Tasks.Task<Object> DeleteAccountSettingsExportAsync(Guid? organizationId, Guid? exportId);
 
         /// <summary>
         /// Deletes a single Account Settings Export request
@@ -296,11 +271,10 @@ namespace DocuSign.Admin.Api
         /// Required scopes: account_read
         /// </remarks>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">The organization ID Guid</param>/// <param name="exportId">The export ID Guid for the request</param>
-        
-        
+        /// <param name="organizationId">The organization ID Guid</param>
+        /// <param name="exportId">The export ID Guid for the request</param>
         /// <returns>Task of ApiResponse (Object)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> DeleteAccountSettingsExportAsyncWithHttpInfo (Guid? organizationId, Guid? exportId);
+        System.Threading.Tasks.Task<ApiResponse<Object>> DeleteAccountSettingsExportAsyncWithHttpInfo(Guid? organizationId, Guid? exportId);
         /// <summary>
         /// Deletes a single User List Export request
         /// </summary>
@@ -308,11 +282,10 @@ namespace DocuSign.Admin.Api
         /// Required scopes: user_read
         /// </remarks>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">The organization ID Guid</param>/// <param name="exportId">The export ID Guid for the request</param>
-        
-        
+        /// <param name="organizationId">The organization ID Guid</param>
+        /// <param name="exportId">The export ID Guid for the request</param>
         /// <returns>Task of Object</returns>
-        System.Threading.Tasks.Task<Object> DeleteUserListExportAsync (Guid? organizationId, Guid? exportId);
+        System.Threading.Tasks.Task<Object> DeleteUserListExportAsync(Guid? organizationId, Guid? exportId);
 
         /// <summary>
         /// Deletes a single User List Export request
@@ -321,11 +294,10 @@ namespace DocuSign.Admin.Api
         /// Required scopes: user_read
         /// </remarks>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">The organization ID Guid</param>/// <param name="exportId">The export ID Guid for the request</param>
-        
-        
+        /// <param name="organizationId">The organization ID Guid</param>
+        /// <param name="exportId">The export ID Guid for the request</param>
         /// <returns>Task of ApiResponse (Object)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> DeleteUserListExportAsyncWithHttpInfo (Guid? organizationId, Guid? exportId);
+        System.Threading.Tasks.Task<ApiResponse<Object>> DeleteUserListExportAsyncWithHttpInfo(Guid? organizationId, Guid? exportId);
         /// <summary>
         /// Returns the details/metadata for a single Account Setting Export request
         /// </summary>
@@ -333,11 +305,10 @@ namespace DocuSign.Admin.Api
         /// Required scopes: account_read
         /// </remarks>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">The organization ID Guid</param>/// <param name="exportId">The export ID Guid for the request</param>
-        
-        
+        /// <param name="organizationId">The organization ID Guid</param>
+        /// <param name="exportId">The export ID Guid for the request</param>
         /// <returns>Task of OrganizationExportResponse</returns>
-        System.Threading.Tasks.Task<OrganizationExportResponse> GetAccountSettingsExportAsync (Guid? organizationId, Guid? exportId);
+        System.Threading.Tasks.Task<OrganizationExportResponse> GetAccountSettingsExportAsync(Guid? organizationId, Guid? exportId);
 
         /// <summary>
         /// Returns the details/metadata for a single Account Setting Export request
@@ -346,11 +317,10 @@ namespace DocuSign.Admin.Api
         /// Required scopes: account_read
         /// </remarks>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">The organization ID Guid</param>/// <param name="exportId">The export ID Guid for the request</param>
-        
-        
+        /// <param name="organizationId">The organization ID Guid</param>
+        /// <param name="exportId">The export ID Guid for the request</param>
         /// <returns>Task of ApiResponse (OrganizationExportResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<OrganizationExportResponse>> GetAccountSettingsExportAsyncWithHttpInfo (Guid? organizationId, Guid? exportId);
+        System.Threading.Tasks.Task<ApiResponse<OrganizationExportResponse>> GetAccountSettingsExportAsyncWithHttpInfo(Guid? organizationId, Guid? exportId);
         /// <summary>
         /// Returns the details/metadata for Account Setting Export requests
         /// </summary>
@@ -359,10 +329,8 @@ namespace DocuSign.Admin.Api
         /// </remarks>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">The organization ID Guid</param>
-        
-        
         /// <returns>Task of OrganizationExportsResponse</returns>
-        System.Threading.Tasks.Task<OrganizationExportsResponse> GetAccountSettingsExportsAsync (Guid? organizationId);
+        System.Threading.Tasks.Task<OrganizationExportsResponse> GetAccountSettingsExportsAsync(Guid? organizationId);
 
         /// <summary>
         /// Returns the details/metadata for Account Setting Export requests
@@ -372,10 +340,8 @@ namespace DocuSign.Admin.Api
         /// </remarks>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">The organization ID Guid</param>
-        
-        
         /// <returns>Task of ApiResponse (OrganizationExportsResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<OrganizationExportsResponse>> GetAccountSettingsExportsAsyncWithHttpInfo (Guid? organizationId);
+        System.Threading.Tasks.Task<ApiResponse<OrganizationExportsResponse>> GetAccountSettingsExportsAsyncWithHttpInfo(Guid? organizationId);
         /// <summary>
         /// Returns the details/metadata for a single User List Export request
         /// </summary>
@@ -383,11 +349,10 @@ namespace DocuSign.Admin.Api
         /// Required scopes: user_read
         /// </remarks>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">The organization ID Guid</param>/// <param name="exportId">The export ID Guid for the request</param>
-        
-        
+        /// <param name="organizationId">The organization ID Guid</param>
+        /// <param name="exportId">The export ID Guid for the request</param>
         /// <returns>Task of OrganizationExportResponse</returns>
-        System.Threading.Tasks.Task<OrganizationExportResponse> GetUserListExportAsync (Guid? organizationId, Guid? exportId);
+        System.Threading.Tasks.Task<OrganizationExportResponse> GetUserListExportAsync(Guid? organizationId, Guid? exportId);
 
         /// <summary>
         /// Returns the details/metadata for a single User List Export request
@@ -396,11 +361,10 @@ namespace DocuSign.Admin.Api
         /// Required scopes: user_read
         /// </remarks>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">The organization ID Guid</param>/// <param name="exportId">The export ID Guid for the request</param>
-        
-        
+        /// <param name="organizationId">The organization ID Guid</param>
+        /// <param name="exportId">The export ID Guid for the request</param>
         /// <returns>Task of ApiResponse (OrganizationExportResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<OrganizationExportResponse>> GetUserListExportAsyncWithHttpInfo (Guid? organizationId, Guid? exportId);
+        System.Threading.Tasks.Task<ApiResponse<OrganizationExportResponse>> GetUserListExportAsyncWithHttpInfo(Guid? organizationId, Guid? exportId);
         /// <summary>
         /// Returns a list of existing User List Exports (requests and completed exports) and their details/metadata
         /// </summary>
@@ -409,10 +373,8 @@ namespace DocuSign.Admin.Api
         /// </remarks>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">The organization ID Guid</param>
-        
-        
         /// <returns>Task of OrganizationExportsResponse</returns>
-        System.Threading.Tasks.Task<OrganizationExportsResponse> GetUserListExportsAsync (Guid? organizationId);
+        System.Threading.Tasks.Task<OrganizationExportsResponse> GetUserListExportsAsync(Guid? organizationId);
 
         /// <summary>
         /// Returns a list of existing User List Exports (requests and completed exports) and their details/metadata
@@ -422,10 +384,8 @@ namespace DocuSign.Admin.Api
         /// </remarks>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">The organization ID Guid</param>
-        
-        
         /// <returns>Task of ApiResponse (OrganizationExportsResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<OrganizationExportsResponse>> GetUserListExportsAsyncWithHttpInfo (Guid? organizationId);
+        System.Threading.Tasks.Task<ApiResponse<OrganizationExportsResponse>> GetUserListExportsAsyncWithHttpInfo(Guid? organizationId);
         #endregion Asynchronous Operations
     }
 
@@ -488,11 +448,11 @@ namespace DocuSign.Admin.Api
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">The organization ID Guid</param>
         /// <param name="request">Request body containing details about the accounts be compared</param>
-        
         /// <returns>OrganizationExportResponse</returns>
-        public OrganizationExportResponse CreateAccountSettingsExport (Guid? organizationId, OrganizationAccountsRequest request){
-            ApiResponse<OrganizationExportResponse> localVarResponse = CreateAccountSettingsExportWithHttpInfo(organizationId, request);
-            return localVarResponse.Data;
+        public OrganizationExportResponse CreateAccountSettingsExport(Guid? organizationId, OrganizationAccountsRequest request)
+        {
+             ApiResponse<OrganizationExportResponse> localVarResponse = CreateAccountSettingsExportWithHttpInfo(organizationId, request);
+             return localVarResponse.Data;
         }
 
         /// <summary>
@@ -501,9 +461,8 @@ namespace DocuSign.Admin.Api
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">The organization ID Guid</param>
         /// <param name="request">Request body containing details about the accounts be compared</param>
-        
         /// <returns>ApiResponse of OrganizationExportResponse</returns>
-        public ApiResponse< OrganizationExportResponse > CreateAccountSettingsExportWithHttpInfo (Guid? organizationId, OrganizationAccountsRequest request)
+        public ApiResponse<OrganizationExportResponse> CreateAccountSettingsExportWithHttpInfo(Guid? organizationId, OrganizationAccountsRequest request)
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
@@ -551,11 +510,11 @@ namespace DocuSign.Admin.Api
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.ApiClient.CallApi(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -567,11 +526,11 @@ namespace DocuSign.Admin.Api
             // DocuSign: Handle for PDF return types
             if (localVarResponse.ContentType != null && !localVarResponse.ContentType.ToLower().Contains("json"))
             {
-                return new ApiResponse<OrganizationExportResponse>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (OrganizationExportResponse) this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(OrganizationExportResponse)));
+                return new ApiResponse<OrganizationExportResponse>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (OrganizationExportResponse)this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(OrganizationExportResponse)));
             }
             else
             {
-                return new ApiResponse<OrganizationExportResponse>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (OrganizationExportResponse) this.ApiClient.Deserialize(localVarResponse, typeof(OrganizationExportResponse)));
+                return new ApiResponse<OrganizationExportResponse>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (OrganizationExportResponse)this.ApiClient.Deserialize(localVarResponse, typeof(OrganizationExportResponse)));
             }
             
         }
@@ -582,13 +541,11 @@ namespace DocuSign.Admin.Api
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">The organization ID Guid</param>
         /// <param name="request">Request body containing details about the accounts be compared</param>
-        
         /// <returns>Task of OrganizationExportResponse</returns>
-        public async System.Threading.Tasks.Task<OrganizationExportResponse> CreateAccountSettingsExportAsync (Guid? organizationId, OrganizationAccountsRequest request)
+        public async System.Threading.Tasks.Task<OrganizationExportResponse> CreateAccountSettingsExportAsync(Guid? organizationId, OrganizationAccountsRequest request)
         {
              ApiResponse<OrganizationExportResponse> localVarResponse = await CreateAccountSettingsExportAsyncWithHttpInfo(organizationId, request);
              return localVarResponse.Data;
-
         }
 
         /// <summary>
@@ -597,9 +554,8 @@ namespace DocuSign.Admin.Api
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">The organization ID Guid</param>
         /// <param name="request">Request body containing details about the accounts be compared</param>
-        
         /// <returns>Task of ApiResponse (OrganizationExportResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<OrganizationExportResponse>> CreateAccountSettingsExportAsyncWithHttpInfo (Guid? organizationId, OrganizationAccountsRequest request)
+        public async System.Threading.Tasks.Task<ApiResponse<OrganizationExportResponse>> CreateAccountSettingsExportAsyncWithHttpInfo(Guid? organizationId, OrganizationAccountsRequest request)
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
@@ -634,8 +590,6 @@ namespace DocuSign.Admin.Api
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             localVarPathParams.Add("format", "json");
             if (organizationId != null) localVarPathParams.Add("organizationId", this.ApiClient.ParameterToString(organizationId)); // path parameter
-
-
             if (request != null && request.GetType() != typeof(byte[]))
             {
                 localVarPostBody = this.ApiClient.Serialize(request); // http body (model) parameter
@@ -647,11 +601,11 @@ namespace DocuSign.Admin.Api
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.ApiClient.CallApiAsync(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -661,7 +615,7 @@ namespace DocuSign.Admin.Api
 
             return new ApiResponse<OrganizationExportResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (OrganizationExportResponse) this.ApiClient.Deserialize(localVarResponse, typeof(OrganizationExportResponse)));
+                (OrganizationExportResponse)this.ApiClient.Deserialize(localVarResponse, typeof(OrganizationExportResponse)));
             
         }
 
@@ -673,11 +627,11 @@ namespace DocuSign.Admin.Api
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">The organization ID Guid</param>
         /// <param name="request">Request body containing details about what is to be exported</param>
-        
         /// <returns>OrganizationExportResponse</returns>
-        public OrganizationExportResponse CreateUserListExport (Guid? organizationId, OrganizationExportRequest request){
-            ApiResponse<OrganizationExportResponse> localVarResponse = CreateUserListExportWithHttpInfo(organizationId, request);
-            return localVarResponse.Data;
+        public OrganizationExportResponse CreateUserListExport(Guid? organizationId, OrganizationExportRequest request)
+        {
+             ApiResponse<OrganizationExportResponse> localVarResponse = CreateUserListExportWithHttpInfo(organizationId, request);
+             return localVarResponse.Data;
         }
 
         /// <summary>
@@ -686,9 +640,8 @@ namespace DocuSign.Admin.Api
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">The organization ID Guid</param>
         /// <param name="request">Request body containing details about what is to be exported</param>
-        
         /// <returns>ApiResponse of OrganizationExportResponse</returns>
-        public ApiResponse< OrganizationExportResponse > CreateUserListExportWithHttpInfo (Guid? organizationId, OrganizationExportRequest request)
+        public ApiResponse<OrganizationExportResponse> CreateUserListExportWithHttpInfo(Guid? organizationId, OrganizationExportRequest request)
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
@@ -736,11 +689,11 @@ namespace DocuSign.Admin.Api
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.ApiClient.CallApi(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -752,11 +705,11 @@ namespace DocuSign.Admin.Api
             // DocuSign: Handle for PDF return types
             if (localVarResponse.ContentType != null && !localVarResponse.ContentType.ToLower().Contains("json"))
             {
-                return new ApiResponse<OrganizationExportResponse>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (OrganizationExportResponse) this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(OrganizationExportResponse)));
+                return new ApiResponse<OrganizationExportResponse>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (OrganizationExportResponse)this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(OrganizationExportResponse)));
             }
             else
             {
-                return new ApiResponse<OrganizationExportResponse>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (OrganizationExportResponse) this.ApiClient.Deserialize(localVarResponse, typeof(OrganizationExportResponse)));
+                return new ApiResponse<OrganizationExportResponse>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (OrganizationExportResponse)this.ApiClient.Deserialize(localVarResponse, typeof(OrganizationExportResponse)));
             }
             
         }
@@ -767,13 +720,11 @@ namespace DocuSign.Admin.Api
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">The organization ID Guid</param>
         /// <param name="request">Request body containing details about what is to be exported</param>
-        
         /// <returns>Task of OrganizationExportResponse</returns>
-        public async System.Threading.Tasks.Task<OrganizationExportResponse> CreateUserListExportAsync (Guid? organizationId, OrganizationExportRequest request)
+        public async System.Threading.Tasks.Task<OrganizationExportResponse> CreateUserListExportAsync(Guid? organizationId, OrganizationExportRequest request)
         {
              ApiResponse<OrganizationExportResponse> localVarResponse = await CreateUserListExportAsyncWithHttpInfo(organizationId, request);
              return localVarResponse.Data;
-
         }
 
         /// <summary>
@@ -782,9 +733,8 @@ namespace DocuSign.Admin.Api
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">The organization ID Guid</param>
         /// <param name="request">Request body containing details about what is to be exported</param>
-        
         /// <returns>Task of ApiResponse (OrganizationExportResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<OrganizationExportResponse>> CreateUserListExportAsyncWithHttpInfo (Guid? organizationId, OrganizationExportRequest request)
+        public async System.Threading.Tasks.Task<ApiResponse<OrganizationExportResponse>> CreateUserListExportAsyncWithHttpInfo(Guid? organizationId, OrganizationExportRequest request)
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
@@ -819,8 +769,6 @@ namespace DocuSign.Admin.Api
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             localVarPathParams.Add("format", "json");
             if (organizationId != null) localVarPathParams.Add("organizationId", this.ApiClient.ParameterToString(organizationId)); // path parameter
-
-
             if (request != null && request.GetType() != typeof(byte[]))
             {
                 localVarPostBody = this.ApiClient.Serialize(request); // http body (model) parameter
@@ -832,11 +780,11 @@ namespace DocuSign.Admin.Api
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.ApiClient.CallApiAsync(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -846,7 +794,7 @@ namespace DocuSign.Admin.Api
 
             return new ApiResponse<OrganizationExportResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (OrganizationExportResponse) this.ApiClient.Deserialize(localVarResponse, typeof(OrganizationExportResponse)));
+                (OrganizationExportResponse)this.ApiClient.Deserialize(localVarResponse, typeof(OrganizationExportResponse)));
             
         }
 
@@ -856,24 +804,23 @@ namespace DocuSign.Admin.Api
         /// Deletes a single Account Settings Export request Required scopes: account_read
         /// </summary>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">The organization ID Guid</param>/// <param name="exportId">The export ID Guid for the request</param>
-        
-        
+        /// <param name="organizationId">The organization ID Guid</param>
+        /// <param name="exportId">The export ID Guid for the request</param>
         /// <returns>Object</returns>
-        public Object DeleteAccountSettingsExport (Guid? organizationId, Guid? exportId){
-            ApiResponse<Object> localVarResponse = DeleteAccountSettingsExportWithHttpInfo(organizationId, exportId);
-            return localVarResponse.Data;
+        public Object DeleteAccountSettingsExport(Guid? organizationId, Guid? exportId)
+        {
+             ApiResponse<Object> localVarResponse = DeleteAccountSettingsExportWithHttpInfo(organizationId, exportId);
+             return localVarResponse.Data;
         }
 
         /// <summary>
         /// Deletes a single Account Settings Export request Required scopes: account_read
         /// </summary>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">The organization ID Guid</param>/// <param name="exportId">The export ID Guid for the request</param>
-        
-        
+        /// <param name="organizationId">The organization ID Guid</param>
+        /// <param name="exportId">The export ID Guid for the request</param>
         /// <returns>ApiResponse of Object</returns>
-        public ApiResponse< Object > DeleteAccountSettingsExportWithHttpInfo (Guid? organizationId, Guid? exportId)
+        public ApiResponse<Object> DeleteAccountSettingsExportWithHttpInfo(Guid? organizationId, Guid? exportId)
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
@@ -914,11 +861,11 @@ namespace DocuSign.Admin.Api
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.ApiClient.CallApi(localVarPath,
                 Method.DELETE, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -930,11 +877,11 @@ namespace DocuSign.Admin.Api
             // DocuSign: Handle for PDF return types
             if (localVarResponse.ContentType != null && !localVarResponse.ContentType.ToLower().Contains("json"))
             {
-                return new ApiResponse<Object>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (Object) this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(Object)));
+                return new ApiResponse<Object>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (Object)this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(Object)));
             }
             else
             {
-                return new ApiResponse<Object>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (Object) this.ApiClient.Deserialize(localVarResponse, typeof(Object)));
+                return new ApiResponse<Object>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (Object)this.ApiClient.Deserialize(localVarResponse, typeof(Object)));
             }
             
         }
@@ -943,26 +890,23 @@ namespace DocuSign.Admin.Api
         /// Deletes a single Account Settings Export request Required scopes: account_read
         /// </summary>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">The organization ID Guid</param>/// <param name="exportId">The export ID Guid for the request</param>
-        
-        
+        /// <param name="organizationId">The organization ID Guid</param>
+        /// <param name="exportId">The export ID Guid for the request</param>
         /// <returns>Task of Object</returns>
-        public async System.Threading.Tasks.Task<Object> DeleteAccountSettingsExportAsync (Guid? organizationId, Guid? exportId)
+        public async System.Threading.Tasks.Task<Object> DeleteAccountSettingsExportAsync(Guid? organizationId, Guid? exportId)
         {
              ApiResponse<Object> localVarResponse = await DeleteAccountSettingsExportAsyncWithHttpInfo(organizationId, exportId);
              return localVarResponse.Data;
-
         }
 
         /// <summary>
         /// Deletes a single Account Settings Export request Required scopes: account_read
         /// </summary>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">The organization ID Guid</param>/// <param name="exportId">The export ID Guid for the request</param>
-        
-        
+        /// <param name="organizationId">The organization ID Guid</param>
+        /// <param name="exportId">The export ID Guid for the request</param>
         /// <returns>Task of ApiResponse (Object)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Object>> DeleteAccountSettingsExportAsyncWithHttpInfo (Guid? organizationId, Guid? exportId)
+        public async System.Threading.Tasks.Task<ApiResponse<Object>> DeleteAccountSettingsExportAsyncWithHttpInfo(Guid? organizationId, Guid? exportId)
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
@@ -1000,14 +944,12 @@ namespace DocuSign.Admin.Api
             if (exportId != null) localVarPathParams.Add("exportId", this.ApiClient.ParameterToString(exportId)); // path parameter
 
 
-
-
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.ApiClient.CallApiAsync(localVarPath,
                 Method.DELETE, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -1017,7 +959,7 @@ namespace DocuSign.Admin.Api
 
             return new ApiResponse<Object>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (Object) this.ApiClient.Deserialize(localVarResponse, typeof(Object)));
+                (Object)this.ApiClient.Deserialize(localVarResponse, typeof(Object)));
             
         }
 
@@ -1027,24 +969,23 @@ namespace DocuSign.Admin.Api
         /// Deletes a single User List Export request Required scopes: user_read
         /// </summary>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">The organization ID Guid</param>/// <param name="exportId">The export ID Guid for the request</param>
-        
-        
+        /// <param name="organizationId">The organization ID Guid</param>
+        /// <param name="exportId">The export ID Guid for the request</param>
         /// <returns>Object</returns>
-        public Object DeleteUserListExport (Guid? organizationId, Guid? exportId){
-            ApiResponse<Object> localVarResponse = DeleteUserListExportWithHttpInfo(organizationId, exportId);
-            return localVarResponse.Data;
+        public Object DeleteUserListExport(Guid? organizationId, Guid? exportId)
+        {
+             ApiResponse<Object> localVarResponse = DeleteUserListExportWithHttpInfo(organizationId, exportId);
+             return localVarResponse.Data;
         }
 
         /// <summary>
         /// Deletes a single User List Export request Required scopes: user_read
         /// </summary>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">The organization ID Guid</param>/// <param name="exportId">The export ID Guid for the request</param>
-        
-        
+        /// <param name="organizationId">The organization ID Guid</param>
+        /// <param name="exportId">The export ID Guid for the request</param>
         /// <returns>ApiResponse of Object</returns>
-        public ApiResponse< Object > DeleteUserListExportWithHttpInfo (Guid? organizationId, Guid? exportId)
+        public ApiResponse<Object> DeleteUserListExportWithHttpInfo(Guid? organizationId, Guid? exportId)
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
@@ -1085,11 +1026,11 @@ namespace DocuSign.Admin.Api
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.ApiClient.CallApi(localVarPath,
                 Method.DELETE, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -1101,11 +1042,11 @@ namespace DocuSign.Admin.Api
             // DocuSign: Handle for PDF return types
             if (localVarResponse.ContentType != null && !localVarResponse.ContentType.ToLower().Contains("json"))
             {
-                return new ApiResponse<Object>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (Object) this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(Object)));
+                return new ApiResponse<Object>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (Object)this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(Object)));
             }
             else
             {
-                return new ApiResponse<Object>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (Object) this.ApiClient.Deserialize(localVarResponse, typeof(Object)));
+                return new ApiResponse<Object>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (Object)this.ApiClient.Deserialize(localVarResponse, typeof(Object)));
             }
             
         }
@@ -1114,26 +1055,23 @@ namespace DocuSign.Admin.Api
         /// Deletes a single User List Export request Required scopes: user_read
         /// </summary>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">The organization ID Guid</param>/// <param name="exportId">The export ID Guid for the request</param>
-        
-        
+        /// <param name="organizationId">The organization ID Guid</param>
+        /// <param name="exportId">The export ID Guid for the request</param>
         /// <returns>Task of Object</returns>
-        public async System.Threading.Tasks.Task<Object> DeleteUserListExportAsync (Guid? organizationId, Guid? exportId)
+        public async System.Threading.Tasks.Task<Object> DeleteUserListExportAsync(Guid? organizationId, Guid? exportId)
         {
              ApiResponse<Object> localVarResponse = await DeleteUserListExportAsyncWithHttpInfo(organizationId, exportId);
              return localVarResponse.Data;
-
         }
 
         /// <summary>
         /// Deletes a single User List Export request Required scopes: user_read
         /// </summary>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">The organization ID Guid</param>/// <param name="exportId">The export ID Guid for the request</param>
-        
-        
+        /// <param name="organizationId">The organization ID Guid</param>
+        /// <param name="exportId">The export ID Guid for the request</param>
         /// <returns>Task of ApiResponse (Object)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Object>> DeleteUserListExportAsyncWithHttpInfo (Guid? organizationId, Guid? exportId)
+        public async System.Threading.Tasks.Task<ApiResponse<Object>> DeleteUserListExportAsyncWithHttpInfo(Guid? organizationId, Guid? exportId)
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
@@ -1171,14 +1109,12 @@ namespace DocuSign.Admin.Api
             if (exportId != null) localVarPathParams.Add("exportId", this.ApiClient.ParameterToString(exportId)); // path parameter
 
 
-
-
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.ApiClient.CallApiAsync(localVarPath,
                 Method.DELETE, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -1188,7 +1124,7 @@ namespace DocuSign.Admin.Api
 
             return new ApiResponse<Object>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (Object) this.ApiClient.Deserialize(localVarResponse, typeof(Object)));
+                (Object)this.ApiClient.Deserialize(localVarResponse, typeof(Object)));
             
         }
 
@@ -1198,24 +1134,23 @@ namespace DocuSign.Admin.Api
         /// Returns the details/metadata for a single Account Setting Export request Required scopes: account_read
         /// </summary>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">The organization ID Guid</param>/// <param name="exportId">The export ID Guid for the request</param>
-        
-        
+        /// <param name="organizationId">The organization ID Guid</param>
+        /// <param name="exportId">The export ID Guid for the request</param>
         /// <returns>OrganizationExportResponse</returns>
-        public OrganizationExportResponse GetAccountSettingsExport (Guid? organizationId, Guid? exportId){
-            ApiResponse<OrganizationExportResponse> localVarResponse = GetAccountSettingsExportWithHttpInfo(organizationId, exportId);
-            return localVarResponse.Data;
+        public OrganizationExportResponse GetAccountSettingsExport(Guid? organizationId, Guid? exportId)
+        {
+             ApiResponse<OrganizationExportResponse> localVarResponse = GetAccountSettingsExportWithHttpInfo(organizationId, exportId);
+             return localVarResponse.Data;
         }
 
         /// <summary>
         /// Returns the details/metadata for a single Account Setting Export request Required scopes: account_read
         /// </summary>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">The organization ID Guid</param>/// <param name="exportId">The export ID Guid for the request</param>
-        
-        
+        /// <param name="organizationId">The organization ID Guid</param>
+        /// <param name="exportId">The export ID Guid for the request</param>
         /// <returns>ApiResponse of OrganizationExportResponse</returns>
-        public ApiResponse< OrganizationExportResponse > GetAccountSettingsExportWithHttpInfo (Guid? organizationId, Guid? exportId)
+        public ApiResponse<OrganizationExportResponse> GetAccountSettingsExportWithHttpInfo(Guid? organizationId, Guid? exportId)
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
@@ -1256,11 +1191,11 @@ namespace DocuSign.Admin.Api
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.ApiClient.CallApi(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -1272,11 +1207,11 @@ namespace DocuSign.Admin.Api
             // DocuSign: Handle for PDF return types
             if (localVarResponse.ContentType != null && !localVarResponse.ContentType.ToLower().Contains("json"))
             {
-                return new ApiResponse<OrganizationExportResponse>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (OrganizationExportResponse) this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(OrganizationExportResponse)));
+                return new ApiResponse<OrganizationExportResponse>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (OrganizationExportResponse)this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(OrganizationExportResponse)));
             }
             else
             {
-                return new ApiResponse<OrganizationExportResponse>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (OrganizationExportResponse) this.ApiClient.Deserialize(localVarResponse, typeof(OrganizationExportResponse)));
+                return new ApiResponse<OrganizationExportResponse>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (OrganizationExportResponse)this.ApiClient.Deserialize(localVarResponse, typeof(OrganizationExportResponse)));
             }
             
         }
@@ -1285,26 +1220,23 @@ namespace DocuSign.Admin.Api
         /// Returns the details/metadata for a single Account Setting Export request Required scopes: account_read
         /// </summary>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">The organization ID Guid</param>/// <param name="exportId">The export ID Guid for the request</param>
-        
-        
+        /// <param name="organizationId">The organization ID Guid</param>
+        /// <param name="exportId">The export ID Guid for the request</param>
         /// <returns>Task of OrganizationExportResponse</returns>
-        public async System.Threading.Tasks.Task<OrganizationExportResponse> GetAccountSettingsExportAsync (Guid? organizationId, Guid? exportId)
+        public async System.Threading.Tasks.Task<OrganizationExportResponse> GetAccountSettingsExportAsync(Guid? organizationId, Guid? exportId)
         {
              ApiResponse<OrganizationExportResponse> localVarResponse = await GetAccountSettingsExportAsyncWithHttpInfo(organizationId, exportId);
              return localVarResponse.Data;
-
         }
 
         /// <summary>
         /// Returns the details/metadata for a single Account Setting Export request Required scopes: account_read
         /// </summary>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">The organization ID Guid</param>/// <param name="exportId">The export ID Guid for the request</param>
-        
-        
+        /// <param name="organizationId">The organization ID Guid</param>
+        /// <param name="exportId">The export ID Guid for the request</param>
         /// <returns>Task of ApiResponse (OrganizationExportResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<OrganizationExportResponse>> GetAccountSettingsExportAsyncWithHttpInfo (Guid? organizationId, Guid? exportId)
+        public async System.Threading.Tasks.Task<ApiResponse<OrganizationExportResponse>> GetAccountSettingsExportAsyncWithHttpInfo(Guid? organizationId, Guid? exportId)
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
@@ -1342,14 +1274,12 @@ namespace DocuSign.Admin.Api
             if (exportId != null) localVarPathParams.Add("exportId", this.ApiClient.ParameterToString(exportId)); // path parameter
 
 
-
-
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.ApiClient.CallApiAsync(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -1359,7 +1289,7 @@ namespace DocuSign.Admin.Api
 
             return new ApiResponse<OrganizationExportResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (OrganizationExportResponse) this.ApiClient.Deserialize(localVarResponse, typeof(OrganizationExportResponse)));
+                (OrganizationExportResponse)this.ApiClient.Deserialize(localVarResponse, typeof(OrganizationExportResponse)));
             
         }
 
@@ -1370,12 +1300,11 @@ namespace DocuSign.Admin.Api
         /// </summary>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">The organization ID Guid</param>
-        
-        
         /// <returns>OrganizationExportsResponse</returns>
-        public OrganizationExportsResponse GetAccountSettingsExports (Guid? organizationId){
-            ApiResponse<OrganizationExportsResponse> localVarResponse = GetAccountSettingsExportsWithHttpInfo(organizationId);
-            return localVarResponse.Data;
+        public OrganizationExportsResponse GetAccountSettingsExports(Guid? organizationId)
+        {
+             ApiResponse<OrganizationExportsResponse> localVarResponse = GetAccountSettingsExportsWithHttpInfo(organizationId);
+             return localVarResponse.Data;
         }
 
         /// <summary>
@@ -1383,10 +1312,8 @@ namespace DocuSign.Admin.Api
         /// </summary>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">The organization ID Guid</param>
-        
-        
         /// <returns>ApiResponse of OrganizationExportsResponse</returns>
-        public ApiResponse< OrganizationExportsResponse > GetAccountSettingsExportsWithHttpInfo (Guid? organizationId)
+        public ApiResponse<OrganizationExportsResponse> GetAccountSettingsExportsWithHttpInfo(Guid? organizationId)
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
@@ -1423,11 +1350,11 @@ namespace DocuSign.Admin.Api
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.ApiClient.CallApi(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -1439,11 +1366,11 @@ namespace DocuSign.Admin.Api
             // DocuSign: Handle for PDF return types
             if (localVarResponse.ContentType != null && !localVarResponse.ContentType.ToLower().Contains("json"))
             {
-                return new ApiResponse<OrganizationExportsResponse>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (OrganizationExportsResponse) this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(OrganizationExportsResponse)));
+                return new ApiResponse<OrganizationExportsResponse>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (OrganizationExportsResponse)this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(OrganizationExportsResponse)));
             }
             else
             {
-                return new ApiResponse<OrganizationExportsResponse>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (OrganizationExportsResponse) this.ApiClient.Deserialize(localVarResponse, typeof(OrganizationExportsResponse)));
+                return new ApiResponse<OrganizationExportsResponse>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (OrganizationExportsResponse)this.ApiClient.Deserialize(localVarResponse, typeof(OrganizationExportsResponse)));
             }
             
         }
@@ -1453,14 +1380,11 @@ namespace DocuSign.Admin.Api
         /// </summary>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">The organization ID Guid</param>
-        
-        
         /// <returns>Task of OrganizationExportsResponse</returns>
-        public async System.Threading.Tasks.Task<OrganizationExportsResponse> GetAccountSettingsExportsAsync (Guid? organizationId)
+        public async System.Threading.Tasks.Task<OrganizationExportsResponse> GetAccountSettingsExportsAsync(Guid? organizationId)
         {
              ApiResponse<OrganizationExportsResponse> localVarResponse = await GetAccountSettingsExportsAsyncWithHttpInfo(organizationId);
              return localVarResponse.Data;
-
         }
 
         /// <summary>
@@ -1468,10 +1392,8 @@ namespace DocuSign.Admin.Api
         /// </summary>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">The organization ID Guid</param>
-        
-        
         /// <returns>Task of ApiResponse (OrganizationExportsResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<OrganizationExportsResponse>> GetAccountSettingsExportsAsyncWithHttpInfo (Guid? organizationId)
+        public async System.Threading.Tasks.Task<ApiResponse<OrganizationExportsResponse>> GetAccountSettingsExportsAsyncWithHttpInfo(Guid? organizationId)
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
@@ -1505,14 +1427,12 @@ namespace DocuSign.Admin.Api
             if (organizationId != null) localVarPathParams.Add("organizationId", this.ApiClient.ParameterToString(organizationId)); // path parameter
 
 
-
-
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.ApiClient.CallApiAsync(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -1522,7 +1442,7 @@ namespace DocuSign.Admin.Api
 
             return new ApiResponse<OrganizationExportsResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (OrganizationExportsResponse) this.ApiClient.Deserialize(localVarResponse, typeof(OrganizationExportsResponse)));
+                (OrganizationExportsResponse)this.ApiClient.Deserialize(localVarResponse, typeof(OrganizationExportsResponse)));
             
         }
 
@@ -1532,24 +1452,23 @@ namespace DocuSign.Admin.Api
         /// Returns the details/metadata for a single User List Export request Required scopes: user_read
         /// </summary>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">The organization ID Guid</param>/// <param name="exportId">The export ID Guid for the request</param>
-        
-        
+        /// <param name="organizationId">The organization ID Guid</param>
+        /// <param name="exportId">The export ID Guid for the request</param>
         /// <returns>OrganizationExportResponse</returns>
-        public OrganizationExportResponse GetUserListExport (Guid? organizationId, Guid? exportId){
-            ApiResponse<OrganizationExportResponse> localVarResponse = GetUserListExportWithHttpInfo(organizationId, exportId);
-            return localVarResponse.Data;
+        public OrganizationExportResponse GetUserListExport(Guid? organizationId, Guid? exportId)
+        {
+             ApiResponse<OrganizationExportResponse> localVarResponse = GetUserListExportWithHttpInfo(organizationId, exportId);
+             return localVarResponse.Data;
         }
 
         /// <summary>
         /// Returns the details/metadata for a single User List Export request Required scopes: user_read
         /// </summary>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">The organization ID Guid</param>/// <param name="exportId">The export ID Guid for the request</param>
-        
-        
+        /// <param name="organizationId">The organization ID Guid</param>
+        /// <param name="exportId">The export ID Guid for the request</param>
         /// <returns>ApiResponse of OrganizationExportResponse</returns>
-        public ApiResponse< OrganizationExportResponse > GetUserListExportWithHttpInfo (Guid? organizationId, Guid? exportId)
+        public ApiResponse<OrganizationExportResponse> GetUserListExportWithHttpInfo(Guid? organizationId, Guid? exportId)
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
@@ -1590,11 +1509,11 @@ namespace DocuSign.Admin.Api
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.ApiClient.CallApi(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -1606,11 +1525,11 @@ namespace DocuSign.Admin.Api
             // DocuSign: Handle for PDF return types
             if (localVarResponse.ContentType != null && !localVarResponse.ContentType.ToLower().Contains("json"))
             {
-                return new ApiResponse<OrganizationExportResponse>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (OrganizationExportResponse) this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(OrganizationExportResponse)));
+                return new ApiResponse<OrganizationExportResponse>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (OrganizationExportResponse)this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(OrganizationExportResponse)));
             }
             else
             {
-                return new ApiResponse<OrganizationExportResponse>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (OrganizationExportResponse) this.ApiClient.Deserialize(localVarResponse, typeof(OrganizationExportResponse)));
+                return new ApiResponse<OrganizationExportResponse>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (OrganizationExportResponse)this.ApiClient.Deserialize(localVarResponse, typeof(OrganizationExportResponse)));
             }
             
         }
@@ -1619,26 +1538,23 @@ namespace DocuSign.Admin.Api
         /// Returns the details/metadata for a single User List Export request Required scopes: user_read
         /// </summary>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">The organization ID Guid</param>/// <param name="exportId">The export ID Guid for the request</param>
-        
-        
+        /// <param name="organizationId">The organization ID Guid</param>
+        /// <param name="exportId">The export ID Guid for the request</param>
         /// <returns>Task of OrganizationExportResponse</returns>
-        public async System.Threading.Tasks.Task<OrganizationExportResponse> GetUserListExportAsync (Guid? organizationId, Guid? exportId)
+        public async System.Threading.Tasks.Task<OrganizationExportResponse> GetUserListExportAsync(Guid? organizationId, Guid? exportId)
         {
              ApiResponse<OrganizationExportResponse> localVarResponse = await GetUserListExportAsyncWithHttpInfo(organizationId, exportId);
              return localVarResponse.Data;
-
         }
 
         /// <summary>
         /// Returns the details/metadata for a single User List Export request Required scopes: user_read
         /// </summary>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">The organization ID Guid</param>/// <param name="exportId">The export ID Guid for the request</param>
-        
-        
+        /// <param name="organizationId">The organization ID Guid</param>
+        /// <param name="exportId">The export ID Guid for the request</param>
         /// <returns>Task of ApiResponse (OrganizationExportResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<OrganizationExportResponse>> GetUserListExportAsyncWithHttpInfo (Guid? organizationId, Guid? exportId)
+        public async System.Threading.Tasks.Task<ApiResponse<OrganizationExportResponse>> GetUserListExportAsyncWithHttpInfo(Guid? organizationId, Guid? exportId)
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
@@ -1676,14 +1592,12 @@ namespace DocuSign.Admin.Api
             if (exportId != null) localVarPathParams.Add("exportId", this.ApiClient.ParameterToString(exportId)); // path parameter
 
 
-
-
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.ApiClient.CallApiAsync(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -1693,7 +1607,7 @@ namespace DocuSign.Admin.Api
 
             return new ApiResponse<OrganizationExportResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (OrganizationExportResponse) this.ApiClient.Deserialize(localVarResponse, typeof(OrganizationExportResponse)));
+                (OrganizationExportResponse)this.ApiClient.Deserialize(localVarResponse, typeof(OrganizationExportResponse)));
             
         }
 
@@ -1704,12 +1618,11 @@ namespace DocuSign.Admin.Api
         /// </summary>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">The organization ID Guid</param>
-        
-        
         /// <returns>OrganizationExportsResponse</returns>
-        public OrganizationExportsResponse GetUserListExports (Guid? organizationId){
-            ApiResponse<OrganizationExportsResponse> localVarResponse = GetUserListExportsWithHttpInfo(organizationId);
-            return localVarResponse.Data;
+        public OrganizationExportsResponse GetUserListExports(Guid? organizationId)
+        {
+             ApiResponse<OrganizationExportsResponse> localVarResponse = GetUserListExportsWithHttpInfo(organizationId);
+             return localVarResponse.Data;
         }
 
         /// <summary>
@@ -1717,10 +1630,8 @@ namespace DocuSign.Admin.Api
         /// </summary>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">The organization ID Guid</param>
-        
-        
         /// <returns>ApiResponse of OrganizationExportsResponse</returns>
-        public ApiResponse< OrganizationExportsResponse > GetUserListExportsWithHttpInfo (Guid? organizationId)
+        public ApiResponse<OrganizationExportsResponse> GetUserListExportsWithHttpInfo(Guid? organizationId)
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
@@ -1757,11 +1668,11 @@ namespace DocuSign.Admin.Api
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.ApiClient.CallApi(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -1773,11 +1684,11 @@ namespace DocuSign.Admin.Api
             // DocuSign: Handle for PDF return types
             if (localVarResponse.ContentType != null && !localVarResponse.ContentType.ToLower().Contains("json"))
             {
-                return new ApiResponse<OrganizationExportsResponse>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (OrganizationExportsResponse) this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(OrganizationExportsResponse)));
+                return new ApiResponse<OrganizationExportsResponse>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (OrganizationExportsResponse)this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(OrganizationExportsResponse)));
             }
             else
             {
-                return new ApiResponse<OrganizationExportsResponse>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (OrganizationExportsResponse) this.ApiClient.Deserialize(localVarResponse, typeof(OrganizationExportsResponse)));
+                return new ApiResponse<OrganizationExportsResponse>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (OrganizationExportsResponse)this.ApiClient.Deserialize(localVarResponse, typeof(OrganizationExportsResponse)));
             }
             
         }
@@ -1787,14 +1698,11 @@ namespace DocuSign.Admin.Api
         /// </summary>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">The organization ID Guid</param>
-        
-        
         /// <returns>Task of OrganizationExportsResponse</returns>
-        public async System.Threading.Tasks.Task<OrganizationExportsResponse> GetUserListExportsAsync (Guid? organizationId)
+        public async System.Threading.Tasks.Task<OrganizationExportsResponse> GetUserListExportsAsync(Guid? organizationId)
         {
              ApiResponse<OrganizationExportsResponse> localVarResponse = await GetUserListExportsAsyncWithHttpInfo(organizationId);
              return localVarResponse.Data;
-
         }
 
         /// <summary>
@@ -1802,10 +1710,8 @@ namespace DocuSign.Admin.Api
         /// </summary>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">The organization ID Guid</param>
-        
-        
         /// <returns>Task of ApiResponse (OrganizationExportsResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<OrganizationExportsResponse>> GetUserListExportsAsyncWithHttpInfo (Guid? organizationId)
+        public async System.Threading.Tasks.Task<ApiResponse<OrganizationExportsResponse>> GetUserListExportsAsyncWithHttpInfo(Guid? organizationId)
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
@@ -1839,14 +1745,12 @@ namespace DocuSign.Admin.Api
             if (organizationId != null) localVarPathParams.Add("organizationId", this.ApiClient.ParameterToString(organizationId)); // path parameter
 
 
-
-
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.ApiClient.CallApiAsync(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -1856,7 +1760,7 @@ namespace DocuSign.Admin.Api
 
             return new ApiResponse<OrganizationExportsResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (OrganizationExportsResponse) this.ApiClient.Deserialize(localVarResponse, typeof(OrganizationExportsResponse)));
+                (OrganizationExportsResponse)this.ApiClient.Deserialize(localVarResponse, typeof(OrganizationExportsResponse)));
             
         }
 

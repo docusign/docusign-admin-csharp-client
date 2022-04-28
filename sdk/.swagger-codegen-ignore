@@ -21,3 +21,31 @@
 #docs/*.md
 # Then explicitly reverse the ignore rule for a single file:
 #!docs/README.md
+
+# Swagger and Git files
+.swagger-codegen-ignore
+.gitignore
+CHANGELOG.md
+README.md
+sdk/git_push.sh
+sdk/.swagger-codegen-ignore
+sdk/.gitignore
+sdk/README.md
+sdk/CHANGELOG.md
+sdk/best_practices.md
+
+# Project files
+LICENSE
+sdk/.travis.yml
+sdk/appveyor.yml
+sdk/DocuSign.Admin.sln
+sdk/build.bat
+sdk/build.sh
+sdk/csharp-build.ps1
+sdk/mono_nunit_test.sh
+
+# Specific src and test files
+src/DocuSign.Admin/packages.config
+
+# Nuspec files
+src/**/*.nuspec

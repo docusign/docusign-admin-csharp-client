@@ -25,25 +25,53 @@ using SwaggerDateConverter = DocuSign.Admin.Client.SwaggerDateConverter;
 namespace DocuSign.Admin.Model
 {
     /// <summary>
-    /// ProductPermissionProfilesResponse
+    /// UserProductPermissionProfilesRequest
     /// </summary>
     [DataContract]
-    public partial class ProductPermissionProfilesResponse :  IEquatable<ProductPermissionProfilesResponse>, IValidatableObject
+    public partial class UserProductPermissionProfilesRequest :  IEquatable<UserProductPermissionProfilesRequest>, IValidatableObject
     {
+        public UserProductPermissionProfilesRequest()
+        {
+            // Empty Constructor
+        }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="ProductPermissionProfilesResponse" /> class.
+        /// Initializes a new instance of the <see cref="UserProductPermissionProfilesRequest" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
-        public ProductPermissionProfilesResponse()
+        /// <param name="Email">Email (required).</param>
+        /// <param name="ProductPermissionProfiles">ProductPermissionProfiles (required).</param>
+        public UserProductPermissionProfilesRequest(string Email = default(string), List<ProductPermissionProfileRequest> ProductPermissionProfiles = default(List<ProductPermissionProfileRequest>))
         {
+            // to ensure "Email" is required (not null)
+            if (Email == null)
+            {
+                throw new InvalidDataException("Email is a required property for UserProductPermissionProfilesRequest and cannot be null");
+            }
+            else
+            {
+                this.Email = Email;
+            }
+            // to ensure "ProductPermissionProfiles" is required (not null)
+            if (ProductPermissionProfiles == null)
+            {
+                throw new InvalidDataException("ProductPermissionProfiles is a required property for UserProductPermissionProfilesRequest and cannot be null");
+            }
+            else
+            {
+                this.ProductPermissionProfiles = ProductPermissionProfiles;
+            }
         }
         
+        /// <summary>
+        /// Gets or Sets Email
+        /// </summary>
+        [DataMember(Name="email", EmitDefaultValue=false)]
+        public string Email { get; set; }
         /// <summary>
         /// Gets or Sets ProductPermissionProfiles
         /// </summary>
         [DataMember(Name="product_permission_profiles", EmitDefaultValue=false)]
-        public List<ProductPermissionProfileResponse> ProductPermissionProfiles { get; private set; }
+        public List<ProductPermissionProfileRequest> ProductPermissionProfiles { get; set; }
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
@@ -51,7 +79,8 @@ namespace DocuSign.Admin.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class ProductPermissionProfilesResponse {\n");
+            sb.Append("class UserProductPermissionProfilesRequest {\n");
+            sb.Append("  Email: ").Append(Email).Append("\n");
             sb.Append("  ProductPermissionProfiles: ").Append(ProductPermissionProfiles).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -74,21 +103,26 @@ namespace DocuSign.Admin.Model
         public override bool Equals(object obj)
         {
             // credit: http://stackoverflow.com/a/10454552/677735
-            return this.Equals(obj as ProductPermissionProfilesResponse);
+            return this.Equals(obj as UserProductPermissionProfilesRequest);
         }
 
         /// <summary>
-        /// Returns true if ProductPermissionProfilesResponse instances are equal
+        /// Returns true if UserProductPermissionProfilesRequest instances are equal
         /// </summary>
-        /// <param name="other">Instance of ProductPermissionProfilesResponse to be compared</param>
+        /// <param name="other">Instance of UserProductPermissionProfilesRequest to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(ProductPermissionProfilesResponse other)
+        public bool Equals(UserProductPermissionProfilesRequest other)
         {
             // credit: http://stackoverflow.com/a/10454552/677735
             if (other == null)
                 return false;
 
             return 
+                (
+                    this.Email == other.Email ||
+                    this.Email != null &&
+                    this.Email.Equals(other.Email)
+                ) && 
                 (
                     this.ProductPermissionProfiles == other.ProductPermissionProfiles ||
                     this.ProductPermissionProfiles != null &&
@@ -107,6 +141,8 @@ namespace DocuSign.Admin.Model
             {
                 int hash = 41;
                 // Suitable nullity checks etc, of course :)
+                if (this.Email != null)
+                    hash = hash * 59 + this.Email.GetHashCode();
                 if (this.ProductPermissionProfiles != null)
                     hash = hash * 59 + this.ProductPermissionProfiles.GetHashCode();
                 return hash;

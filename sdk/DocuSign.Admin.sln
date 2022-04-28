@@ -1,8 +1,8 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.29509.3
-MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DocuSign.Admin", "src\DocuSign.Admin\DocuSign.Admin.csproj", "{83D3552E-4606-426A-AB27-A15BD96947B7}"
+# Visual Studio 2012
+VisualStudioVersion = 12.0.0.0
+MinimumVisualStudioVersion = 10.0.0.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DocuSign.Admin", "src\DocuSign.Admin\DocuSign.Admin.csproj", "{D6ADB06A-AE61-4E6F-BF87-20646E8F019C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -10,15 +10,16 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{83D3552E-4606-426A-AB27-A15BD96947B7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{83D3552E-4606-426A-AB27-A15BD96947B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{83D3552E-4606-426A-AB27-A15BD96947B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{83D3552E-4606-426A-AB27-A15BD96947B7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D6ADB06A-AE61-4E6F-BF87-20646E8F019C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D6ADB06A-AE61-4E6F-BF87-20646E8F019C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D6ADB06A-AE61-4E6F-BF87-20646E8F019C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D6ADB06A-AE61-4E6F-BF87-20646E8F019C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{19F1DEBC-DE5E-4517-8062-F000CD499087}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{19F1DEBC-DE5E-4517-8062-F000CD499087}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{19F1DEBC-DE5E-4517-8062-F000CD499087}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{19F1DEBC-DE5E-4517-8062-F000CD499087}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {CA303803-4024-4EE9-8A5C-EAFB2427F8CF}
 	EndGlobalSection
 EndGlobal

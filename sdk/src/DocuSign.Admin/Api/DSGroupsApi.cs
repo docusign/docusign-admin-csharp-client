@@ -31,11 +31,11 @@ namespace DocuSign.Admin.Api
         /// Required scopes: user_write
         /// </remarks>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">The organization ID GUID</param>/// <param name="accountId">The account ID GUID</param>
+        /// <param name="organizationId">The organization ID GUID</param>
+        /// <param name="accountId">The account ID GUID</param>
         /// <param name="addRequest">Add DSGroup request object</param>
-        
         /// <returns></returns>
-        DSGroupResponse AddDSGroup (Guid? organizationId, Guid? accountId, DSGroupAddRequest addRequest);
+        DSGroupResponse AddDSGroup(Guid? organizationId, Guid? accountId, DSGroupAddRequest addRequest);
 
         /// <summary>
         /// Add a new DSGroup
@@ -44,9 +44,9 @@ namespace DocuSign.Admin.Api
         /// Required scopes: user_write
         /// </remarks>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">The organization ID GUID</param>/// <param name="accountId">The account ID GUID</param>
+        /// <param name="organizationId">The organization ID GUID</param>
+        /// <param name="accountId">The account ID GUID</param>
         /// <param name="addRequest">Add DSGroup request object</param>
-        
         /// <returns>ApiResponse of </returns>
         ApiResponse<DSGroupResponse> AddDSGroupWithHttpInfo(Guid? organizationId, Guid? accountId, DSGroupAddRequest addRequest);
         /// <summary>
@@ -56,11 +56,12 @@ namespace DocuSign.Admin.Api
         /// Required scopes: user_write
         /// </remarks>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">The organization ID GUID</param>/// <param name="accountId">The account ID GUID</param>/// <param name="dsGroupId">The DSGroup ID GUID</param>
+        /// <param name="organizationId">The organization ID GUID</param>
+        /// <param name="accountId">The account ID GUID</param>
+        /// <param name="dsGroupId">The DSGroup ID GUID</param>
         /// <param name="dSGroupUsersAddRequest">Add DSGroup users request object</param>
-        
         /// <returns></returns>
-        AddDSGroupAndUsersResponse AddDSGroupUsers (Guid? organizationId, Guid? accountId, Guid? dsGroupId, DSGroupUsersAddRequest dSGroupUsersAddRequest);
+        AddDSGroupAndUsersResponse AddDSGroupUsers(Guid? organizationId, Guid? accountId, Guid? dsGroupId, DSGroupUsersAddRequest dSGroupUsersAddRequest);
 
         /// <summary>
         /// Add list of users to a DSGroup
@@ -69,9 +70,10 @@ namespace DocuSign.Admin.Api
         /// Required scopes: user_write
         /// </remarks>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">The organization ID GUID</param>/// <param name="accountId">The account ID GUID</param>/// <param name="dsGroupId">The DSGroup ID GUID</param>
+        /// <param name="organizationId">The organization ID GUID</param>
+        /// <param name="accountId">The account ID GUID</param>
+        /// <param name="dsGroupId">The DSGroup ID GUID</param>
         /// <param name="dSGroupUsersAddRequest">Add DSGroup users request object</param>
-        
         /// <returns>ApiResponse of </returns>
         ApiResponse<AddDSGroupAndUsersResponse> AddDSGroupUsersWithHttpInfo(Guid? organizationId, Guid? accountId, Guid? dsGroupId, DSGroupUsersAddRequest dSGroupUsersAddRequest);
         /// <summary>
@@ -81,11 +83,11 @@ namespace DocuSign.Admin.Api
         /// Required scopes: user_write
         /// </remarks>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">The organization ID GUID</param>/// <param name="accountId">The account ID GUID</param>/// <param name="dsGroupId">The DSGroup ID GUID</param>
-        
-        
+        /// <param name="organizationId">The organization ID GUID</param>
+        /// <param name="accountId">The account ID GUID</param>
+        /// <param name="dsGroupId">The DSGroup ID GUID</param>
         /// <returns></returns>
-        void DeleteDSGroup (Guid? organizationId, Guid? accountId, Guid? dsGroupId);
+        void DeleteDSGroup(Guid? organizationId, Guid? accountId, Guid? dsGroupId);
 
         /// <summary>
         /// Delete a DSGroup
@@ -94,9 +96,9 @@ namespace DocuSign.Admin.Api
         /// Required scopes: user_write
         /// </remarks>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">The organization ID GUID</param>/// <param name="accountId">The account ID GUID</param>/// <param name="dsGroupId">The DSGroup ID GUID</param>
-        
-        
+        /// <param name="organizationId">The organization ID GUID</param>
+        /// <param name="accountId">The account ID GUID</param>
+        /// <param name="dsGroupId">The DSGroup ID GUID</param>
         /// <returns>ApiResponse of Object(void)</returns>
         ApiResponse<Object> DeleteDSGroupWithHttpInfo(Guid? organizationId, Guid? accountId, Guid? dsGroupId);
         /// <summary>
@@ -106,11 +108,11 @@ namespace DocuSign.Admin.Api
         /// Required scopes: user_read
         /// </remarks>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">The organization ID GUID</param>/// <param name="accountId">The account ID GUID</param>/// <param name="dsGroupId">The dsGroup ID GUID</param>
-        
-        
+        /// <param name="organizationId">The organization ID GUID</param>
+        /// <param name="accountId">The account ID GUID</param>
+        /// <param name="dsGroupId">The dsGroup ID GUID</param>
         /// <returns></returns>
-        DSGroupResponse GetDSGroup (Guid? organizationId, Guid? accountId, Guid? dsGroupId);
+        DSGroupResponse GetDSGroup(Guid? organizationId, Guid? accountId, Guid? dsGroupId);
 
         /// <summary>
         /// Get list of DSGroup
@@ -119,9 +121,9 @@ namespace DocuSign.Admin.Api
         /// Required scopes: user_read
         /// </remarks>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">The organization ID GUID</param>/// <param name="accountId">The account ID GUID</param>/// <param name="dsGroupId">The dsGroup ID GUID</param>
-        
-        
+        /// <param name="organizationId">The organization ID GUID</param>
+        /// <param name="accountId">The account ID GUID</param>
+        /// <param name="dsGroupId">The dsGroup ID GUID</param>
         /// <returns>ApiResponse of </returns>
         ApiResponse<DSGroupResponse> GetDSGroupWithHttpInfo(Guid? organizationId, Guid? accountId, Guid? dsGroupId);
         /// <summary>
@@ -131,11 +133,12 @@ namespace DocuSign.Admin.Api
         /// Required scopes: user_read
         /// </remarks>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">The organization ID GUID</param>/// <param name="accountId">The account ID GUID</param>/// <param name="dsGroupId">The DSGroup ID GUID</param>
-        
+        /// <param name="organizationId">The organization ID GUID</param>
+        /// <param name="accountId">The account ID GUID</param>
+        /// <param name="dsGroupId">The DSGroup ID GUID</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns></returns>
-        DSGroupAndUsersResponse GetDSGroupUsers (Guid? organizationId, Guid? accountId, Guid? dsGroupId, DSGroupsApi.GetDSGroupUsersOptions options = null);
+        DSGroupAndUsersResponse GetDSGroupUsers(Guid? organizationId, Guid? accountId, Guid? dsGroupId, DSGroupsApi.GetDSGroupUsersOptions options = null);
 
         /// <summary>
         /// Get list of users in a DSGroup
@@ -144,8 +147,9 @@ namespace DocuSign.Admin.Api
         /// Required scopes: user_read
         /// </remarks>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">The organization ID GUID</param>/// <param name="accountId">The account ID GUID</param>/// <param name="dsGroupId">The DSGroup ID GUID</param>
-        
+        /// <param name="organizationId">The organization ID GUID</param>
+        /// <param name="accountId">The account ID GUID</param>
+        /// <param name="dsGroupId">The DSGroup ID GUID</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>ApiResponse of </returns>
         ApiResponse<DSGroupAndUsersResponse> GetDSGroupUsersWithHttpInfo(Guid? organizationId, Guid? accountId, Guid? dsGroupId, DSGroupsApi.GetDSGroupUsersOptions options = null);
@@ -156,11 +160,11 @@ namespace DocuSign.Admin.Api
         /// Required scopes: user_read
         /// </remarks>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">The organization ID GUID</param>/// <param name="accountId">The account ID GUID</param>
-        
+        /// <param name="organizationId">The organization ID GUID</param>
+        /// <param name="accountId">The account ID GUID</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns></returns>
-        DSGroupListResponse GetDSGroups (Guid? organizationId, Guid? accountId, DSGroupsApi.GetDSGroupsOptions options = null);
+        DSGroupListResponse GetDSGroups(Guid? organizationId, Guid? accountId, DSGroupsApi.GetDSGroupsOptions options = null);
 
         /// <summary>
         /// Get list of DSGroups
@@ -169,8 +173,8 @@ namespace DocuSign.Admin.Api
         /// Required scopes: user_read
         /// </remarks>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">The organization ID GUID</param>/// <param name="accountId">The account ID GUID</param>
-        
+        /// <param name="organizationId">The organization ID GUID</param>
+        /// <param name="accountId">The account ID GUID</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>ApiResponse of </returns>
         ApiResponse<DSGroupListResponse> GetDSGroupsWithHttpInfo(Guid? organizationId, Guid? accountId, DSGroupsApi.GetDSGroupsOptions options = null);
@@ -181,11 +185,12 @@ namespace DocuSign.Admin.Api
         /// Required scopes: user_write
         /// </remarks>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">The organization ID GUID</param>/// <param name="accountId">The account ID GUID</param>/// <param name="dsGroupId">The DSGroup ID GUID</param>
+        /// <param name="organizationId">The organization ID GUID</param>
+        /// <param name="accountId">The account ID GUID</param>
+        /// <param name="dsGroupId">The DSGroup ID GUID</param>
         /// <param name="dSGroupUsersRemoveRequest">Remove DSGroup users request object</param>
-        
         /// <returns></returns>
-        RemoveDSGroupUsersResponse RemoveDSGroupUsers (Guid? organizationId, Guid? accountId, Guid? dsGroupId, DSGroupUsersRemoveRequest dSGroupUsersRemoveRequest);
+        RemoveDSGroupUsersResponse RemoveDSGroupUsers(Guid? organizationId, Guid? accountId, Guid? dsGroupId, DSGroupUsersRemoveRequest dSGroupUsersRemoveRequest);
 
         /// <summary>
         /// Remove users from a DSGroup
@@ -194,9 +199,10 @@ namespace DocuSign.Admin.Api
         /// Required scopes: user_write
         /// </remarks>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">The organization ID GUID</param>/// <param name="accountId">The account ID GUID</param>/// <param name="dsGroupId">The DSGroup ID GUID</param>
+        /// <param name="organizationId">The organization ID GUID</param>
+        /// <param name="accountId">The account ID GUID</param>
+        /// <param name="dsGroupId">The DSGroup ID GUID</param>
         /// <param name="dSGroupUsersRemoveRequest">Remove DSGroup users request object</param>
-        
         /// <returns>ApiResponse of </returns>
         ApiResponse<RemoveDSGroupUsersResponse> RemoveDSGroupUsersWithHttpInfo(Guid? organizationId, Guid? accountId, Guid? dsGroupId, DSGroupUsersRemoveRequest dSGroupUsersRemoveRequest);
         #endregion Synchronous Operations
@@ -208,11 +214,11 @@ namespace DocuSign.Admin.Api
         /// Required scopes: user_write
         /// </remarks>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">The organization ID GUID</param>/// <param name="accountId">The account ID GUID</param>
+        /// <param name="organizationId">The organization ID GUID</param>
+        /// <param name="accountId">The account ID GUID</param>
         /// <param name="addRequest">Add DSGroup request object</param>
-        
         /// <returns>Task of DSGroupResponse</returns>
-        System.Threading.Tasks.Task<DSGroupResponse> AddDSGroupAsync (Guid? organizationId, Guid? accountId, DSGroupAddRequest addRequest);
+        System.Threading.Tasks.Task<DSGroupResponse> AddDSGroupAsync(Guid? organizationId, Guid? accountId, DSGroupAddRequest addRequest);
 
         /// <summary>
         /// Add a new DSGroup
@@ -221,11 +227,11 @@ namespace DocuSign.Admin.Api
         /// Required scopes: user_write
         /// </remarks>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">The organization ID GUID</param>/// <param name="accountId">The account ID GUID</param>
+        /// <param name="organizationId">The organization ID GUID</param>
+        /// <param name="accountId">The account ID GUID</param>
         /// <param name="addRequest">Add DSGroup request object</param>
-        
         /// <returns>Task of ApiResponse (DSGroupResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<DSGroupResponse>> AddDSGroupAsyncWithHttpInfo (Guid? organizationId, Guid? accountId, DSGroupAddRequest addRequest);
+        System.Threading.Tasks.Task<ApiResponse<DSGroupResponse>> AddDSGroupAsyncWithHttpInfo(Guid? organizationId, Guid? accountId, DSGroupAddRequest addRequest);
         /// <summary>
         /// Add list of users to a DSGroup
         /// </summary>
@@ -233,11 +239,12 @@ namespace DocuSign.Admin.Api
         /// Required scopes: user_write
         /// </remarks>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">The organization ID GUID</param>/// <param name="accountId">The account ID GUID</param>/// <param name="dsGroupId">The DSGroup ID GUID</param>
+        /// <param name="organizationId">The organization ID GUID</param>
+        /// <param name="accountId">The account ID GUID</param>
+        /// <param name="dsGroupId">The DSGroup ID GUID</param>
         /// <param name="dSGroupUsersAddRequest">Add DSGroup users request object</param>
-        
         /// <returns>Task of AddDSGroupAndUsersResponse</returns>
-        System.Threading.Tasks.Task<AddDSGroupAndUsersResponse> AddDSGroupUsersAsync (Guid? organizationId, Guid? accountId, Guid? dsGroupId, DSGroupUsersAddRequest dSGroupUsersAddRequest);
+        System.Threading.Tasks.Task<AddDSGroupAndUsersResponse> AddDSGroupUsersAsync(Guid? organizationId, Guid? accountId, Guid? dsGroupId, DSGroupUsersAddRequest dSGroupUsersAddRequest);
 
         /// <summary>
         /// Add list of users to a DSGroup
@@ -246,11 +253,12 @@ namespace DocuSign.Admin.Api
         /// Required scopes: user_write
         /// </remarks>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">The organization ID GUID</param>/// <param name="accountId">The account ID GUID</param>/// <param name="dsGroupId">The DSGroup ID GUID</param>
+        /// <param name="organizationId">The organization ID GUID</param>
+        /// <param name="accountId">The account ID GUID</param>
+        /// <param name="dsGroupId">The DSGroup ID GUID</param>
         /// <param name="dSGroupUsersAddRequest">Add DSGroup users request object</param>
-        
         /// <returns>Task of ApiResponse (AddDSGroupAndUsersResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<AddDSGroupAndUsersResponse>> AddDSGroupUsersAsyncWithHttpInfo (Guid? organizationId, Guid? accountId, Guid? dsGroupId, DSGroupUsersAddRequest dSGroupUsersAddRequest);
+        System.Threading.Tasks.Task<ApiResponse<AddDSGroupAndUsersResponse>> AddDSGroupUsersAsyncWithHttpInfo(Guid? organizationId, Guid? accountId, Guid? dsGroupId, DSGroupUsersAddRequest dSGroupUsersAddRequest);
         /// <summary>
         /// Delete a DSGroup
         /// </summary>
@@ -258,11 +266,11 @@ namespace DocuSign.Admin.Api
         /// Required scopes: user_write
         /// </remarks>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">The organization ID GUID</param>/// <param name="accountId">The account ID GUID</param>/// <param name="dsGroupId">The DSGroup ID GUID</param>
-        
-        
+        /// <param name="organizationId">The organization ID GUID</param>
+        /// <param name="accountId">The account ID GUID</param>
+        /// <param name="dsGroupId">The DSGroup ID GUID</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task DeleteDSGroupAsync (Guid? organizationId, Guid? accountId, Guid? dsGroupId);
+        System.Threading.Tasks.Task DeleteDSGroupAsync(Guid? organizationId, Guid? accountId, Guid? dsGroupId);
 
         /// <summary>
         /// Delete a DSGroup
@@ -271,11 +279,11 @@ namespace DocuSign.Admin.Api
         /// Required scopes: user_write
         /// </remarks>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">The organization ID GUID</param>/// <param name="accountId">The account ID GUID</param>/// <param name="dsGroupId">The DSGroup ID GUID</param>
-        
-        
+        /// <param name="organizationId">The organization ID GUID</param>
+        /// <param name="accountId">The account ID GUID</param>
+        /// <param name="dsGroupId">The DSGroup ID GUID</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> DeleteDSGroupAsyncWithHttpInfo (Guid? organizationId, Guid? accountId, Guid? dsGroupId);
+        System.Threading.Tasks.Task<ApiResponse<Object>> DeleteDSGroupAsyncWithHttpInfo(Guid? organizationId, Guid? accountId, Guid? dsGroupId);
         /// <summary>
         /// Get list of DSGroup
         /// </summary>
@@ -283,11 +291,11 @@ namespace DocuSign.Admin.Api
         /// Required scopes: user_read
         /// </remarks>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">The organization ID GUID</param>/// <param name="accountId">The account ID GUID</param>/// <param name="dsGroupId">The dsGroup ID GUID</param>
-        
-        
+        /// <param name="organizationId">The organization ID GUID</param>
+        /// <param name="accountId">The account ID GUID</param>
+        /// <param name="dsGroupId">The dsGroup ID GUID</param>
         /// <returns>Task of DSGroupResponse</returns>
-        System.Threading.Tasks.Task<DSGroupResponse> GetDSGroupAsync (Guid? organizationId, Guid? accountId, Guid? dsGroupId);
+        System.Threading.Tasks.Task<DSGroupResponse> GetDSGroupAsync(Guid? organizationId, Guid? accountId, Guid? dsGroupId);
 
         /// <summary>
         /// Get list of DSGroup
@@ -296,11 +304,11 @@ namespace DocuSign.Admin.Api
         /// Required scopes: user_read
         /// </remarks>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">The organization ID GUID</param>/// <param name="accountId">The account ID GUID</param>/// <param name="dsGroupId">The dsGroup ID GUID</param>
-        
-        
+        /// <param name="organizationId">The organization ID GUID</param>
+        /// <param name="accountId">The account ID GUID</param>
+        /// <param name="dsGroupId">The dsGroup ID GUID</param>
         /// <returns>Task of ApiResponse (DSGroupResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<DSGroupResponse>> GetDSGroupAsyncWithHttpInfo (Guid? organizationId, Guid? accountId, Guid? dsGroupId);
+        System.Threading.Tasks.Task<ApiResponse<DSGroupResponse>> GetDSGroupAsyncWithHttpInfo(Guid? organizationId, Guid? accountId, Guid? dsGroupId);
         /// <summary>
         /// Get list of users in a DSGroup
         /// </summary>
@@ -308,11 +316,12 @@ namespace DocuSign.Admin.Api
         /// Required scopes: user_read
         /// </remarks>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">The organization ID GUID</param>/// <param name="accountId">The account ID GUID</param>/// <param name="dsGroupId">The DSGroup ID GUID</param>
-        
+        /// <param name="organizationId">The organization ID GUID</param>
+        /// <param name="accountId">The account ID GUID</param>
+        /// <param name="dsGroupId">The DSGroup ID GUID</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of DSGroupAndUsersResponse</returns>
-        System.Threading.Tasks.Task<DSGroupAndUsersResponse> GetDSGroupUsersAsync (Guid? organizationId, Guid? accountId, Guid? dsGroupId, DSGroupsApi.GetDSGroupUsersOptions options = null);
+        System.Threading.Tasks.Task<DSGroupAndUsersResponse> GetDSGroupUsersAsync(Guid? organizationId, Guid? accountId, Guid? dsGroupId, DSGroupsApi.GetDSGroupUsersOptions options = null);
 
         /// <summary>
         /// Get list of users in a DSGroup
@@ -321,11 +330,12 @@ namespace DocuSign.Admin.Api
         /// Required scopes: user_read
         /// </remarks>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">The organization ID GUID</param>/// <param name="accountId">The account ID GUID</param>/// <param name="dsGroupId">The DSGroup ID GUID</param>
-        
+        /// <param name="organizationId">The organization ID GUID</param>
+        /// <param name="accountId">The account ID GUID</param>
+        /// <param name="dsGroupId">The DSGroup ID GUID</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of ApiResponse (DSGroupAndUsersResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<DSGroupAndUsersResponse>> GetDSGroupUsersAsyncWithHttpInfo (Guid? organizationId, Guid? accountId, Guid? dsGroupId, DSGroupsApi.GetDSGroupUsersOptions options = null);
+        System.Threading.Tasks.Task<ApiResponse<DSGroupAndUsersResponse>> GetDSGroupUsersAsyncWithHttpInfo(Guid? organizationId, Guid? accountId, Guid? dsGroupId, DSGroupsApi.GetDSGroupUsersOptions options = null);
         /// <summary>
         /// Get list of DSGroups
         /// </summary>
@@ -333,11 +343,11 @@ namespace DocuSign.Admin.Api
         /// Required scopes: user_read
         /// </remarks>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">The organization ID GUID</param>/// <param name="accountId">The account ID GUID</param>
-        
+        /// <param name="organizationId">The organization ID GUID</param>
+        /// <param name="accountId">The account ID GUID</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of DSGroupListResponse</returns>
-        System.Threading.Tasks.Task<DSGroupListResponse> GetDSGroupsAsync (Guid? organizationId, Guid? accountId, DSGroupsApi.GetDSGroupsOptions options = null);
+        System.Threading.Tasks.Task<DSGroupListResponse> GetDSGroupsAsync(Guid? organizationId, Guid? accountId, DSGroupsApi.GetDSGroupsOptions options = null);
 
         /// <summary>
         /// Get list of DSGroups
@@ -346,11 +356,11 @@ namespace DocuSign.Admin.Api
         /// Required scopes: user_read
         /// </remarks>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">The organization ID GUID</param>/// <param name="accountId">The account ID GUID</param>
-        
+        /// <param name="organizationId">The organization ID GUID</param>
+        /// <param name="accountId">The account ID GUID</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of ApiResponse (DSGroupListResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<DSGroupListResponse>> GetDSGroupsAsyncWithHttpInfo (Guid? organizationId, Guid? accountId, DSGroupsApi.GetDSGroupsOptions options = null);
+        System.Threading.Tasks.Task<ApiResponse<DSGroupListResponse>> GetDSGroupsAsyncWithHttpInfo(Guid? organizationId, Guid? accountId, DSGroupsApi.GetDSGroupsOptions options = null);
         /// <summary>
         /// Remove users from a DSGroup
         /// </summary>
@@ -358,11 +368,12 @@ namespace DocuSign.Admin.Api
         /// Required scopes: user_write
         /// </remarks>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">The organization ID GUID</param>/// <param name="accountId">The account ID GUID</param>/// <param name="dsGroupId">The DSGroup ID GUID</param>
+        /// <param name="organizationId">The organization ID GUID</param>
+        /// <param name="accountId">The account ID GUID</param>
+        /// <param name="dsGroupId">The DSGroup ID GUID</param>
         /// <param name="dSGroupUsersRemoveRequest">Remove DSGroup users request object</param>
-        
         /// <returns>Task of RemoveDSGroupUsersResponse</returns>
-        System.Threading.Tasks.Task<RemoveDSGroupUsersResponse> RemoveDSGroupUsersAsync (Guid? organizationId, Guid? accountId, Guid? dsGroupId, DSGroupUsersRemoveRequest dSGroupUsersRemoveRequest);
+        System.Threading.Tasks.Task<RemoveDSGroupUsersResponse> RemoveDSGroupUsersAsync(Guid? organizationId, Guid? accountId, Guid? dsGroupId, DSGroupUsersRemoveRequest dSGroupUsersRemoveRequest);
 
         /// <summary>
         /// Remove users from a DSGroup
@@ -371,11 +382,12 @@ namespace DocuSign.Admin.Api
         /// Required scopes: user_write
         /// </remarks>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">The organization ID GUID</param>/// <param name="accountId">The account ID GUID</param>/// <param name="dsGroupId">The DSGroup ID GUID</param>
+        /// <param name="organizationId">The organization ID GUID</param>
+        /// <param name="accountId">The account ID GUID</param>
+        /// <param name="dsGroupId">The DSGroup ID GUID</param>
         /// <param name="dSGroupUsersRemoveRequest">Remove DSGroup users request object</param>
-        
         /// <returns>Task of ApiResponse (RemoveDSGroupUsersResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<RemoveDSGroupUsersResponse>> RemoveDSGroupUsersAsyncWithHttpInfo (Guid? organizationId, Guid? accountId, Guid? dsGroupId, DSGroupUsersRemoveRequest dSGroupUsersRemoveRequest);
+        System.Threading.Tasks.Task<ApiResponse<RemoveDSGroupUsersResponse>> RemoveDSGroupUsersAsyncWithHttpInfo(Guid? organizationId, Guid? accountId, Guid? dsGroupId, DSGroupUsersRemoveRequest dSGroupUsersRemoveRequest);
         #endregion Asynchronous Operations
     }
 
@@ -436,24 +448,25 @@ namespace DocuSign.Admin.Api
         /// Add a new DSGroup Required scopes: user_write
         /// </summary>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">The organization ID GUID</param>/// <param name="accountId">The account ID GUID</param>
+        /// <param name="organizationId">The organization ID GUID</param>
+        /// <param name="accountId">The account ID GUID</param>
         /// <param name="addRequest">Add DSGroup request object</param>
-        
         /// <returns>DSGroupResponse</returns>
-        public DSGroupResponse AddDSGroup (Guid? organizationId, Guid? accountId, DSGroupAddRequest addRequest){
-            ApiResponse<DSGroupResponse> localVarResponse = AddDSGroupWithHttpInfo(organizationId, accountId, addRequest);
-            return localVarResponse.Data;
+        public DSGroupResponse AddDSGroup(Guid? organizationId, Guid? accountId, DSGroupAddRequest addRequest)
+        {
+             ApiResponse<DSGroupResponse> localVarResponse = AddDSGroupWithHttpInfo(organizationId, accountId, addRequest);
+             return localVarResponse.Data;
         }
 
         /// <summary>
         /// Add a new DSGroup Required scopes: user_write
         /// </summary>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">The organization ID GUID</param>/// <param name="accountId">The account ID GUID</param>
+        /// <param name="organizationId">The organization ID GUID</param>
+        /// <param name="accountId">The account ID GUID</param>
         /// <param name="addRequest">Add DSGroup request object</param>
-        
         /// <returns>ApiResponse of DSGroupResponse</returns>
-        public ApiResponse< DSGroupResponse > AddDSGroupWithHttpInfo (Guid? organizationId, Guid? accountId, DSGroupAddRequest addRequest)
+        public ApiResponse<DSGroupResponse> AddDSGroupWithHttpInfo(Guid? organizationId, Guid? accountId, DSGroupAddRequest addRequest)
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
@@ -505,11 +518,11 @@ namespace DocuSign.Admin.Api
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.ApiClient.CallApi(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -521,11 +534,11 @@ namespace DocuSign.Admin.Api
             // DocuSign: Handle for PDF return types
             if (localVarResponse.ContentType != null && !localVarResponse.ContentType.ToLower().Contains("json"))
             {
-                return new ApiResponse<DSGroupResponse>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (DSGroupResponse) this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(DSGroupResponse)));
+                return new ApiResponse<DSGroupResponse>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (DSGroupResponse)this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(DSGroupResponse)));
             }
             else
             {
-                return new ApiResponse<DSGroupResponse>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (DSGroupResponse) this.ApiClient.Deserialize(localVarResponse, typeof(DSGroupResponse)));
+                return new ApiResponse<DSGroupResponse>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (DSGroupResponse)this.ApiClient.Deserialize(localVarResponse, typeof(DSGroupResponse)));
             }
             
         }
@@ -534,26 +547,25 @@ namespace DocuSign.Admin.Api
         /// Add a new DSGroup Required scopes: user_write
         /// </summary>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">The organization ID GUID</param>/// <param name="accountId">The account ID GUID</param>
+        /// <param name="organizationId">The organization ID GUID</param>
+        /// <param name="accountId">The account ID GUID</param>
         /// <param name="addRequest">Add DSGroup request object</param>
-        
         /// <returns>Task of DSGroupResponse</returns>
-        public async System.Threading.Tasks.Task<DSGroupResponse> AddDSGroupAsync (Guid? organizationId, Guid? accountId, DSGroupAddRequest addRequest)
+        public async System.Threading.Tasks.Task<DSGroupResponse> AddDSGroupAsync(Guid? organizationId, Guid? accountId, DSGroupAddRequest addRequest)
         {
              ApiResponse<DSGroupResponse> localVarResponse = await AddDSGroupAsyncWithHttpInfo(organizationId, accountId, addRequest);
              return localVarResponse.Data;
-
         }
 
         /// <summary>
         /// Add a new DSGroup Required scopes: user_write
         /// </summary>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">The organization ID GUID</param>/// <param name="accountId">The account ID GUID</param>
+        /// <param name="organizationId">The organization ID GUID</param>
+        /// <param name="accountId">The account ID GUID</param>
         /// <param name="addRequest">Add DSGroup request object</param>
-        
         /// <returns>Task of ApiResponse (DSGroupResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<DSGroupResponse>> AddDSGroupAsyncWithHttpInfo (Guid? organizationId, Guid? accountId, DSGroupAddRequest addRequest)
+        public async System.Threading.Tasks.Task<ApiResponse<DSGroupResponse>> AddDSGroupAsyncWithHttpInfo(Guid? organizationId, Guid? accountId, DSGroupAddRequest addRequest)
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
@@ -592,8 +604,6 @@ namespace DocuSign.Admin.Api
             localVarPathParams.Add("format", "json");
             if (organizationId != null) localVarPathParams.Add("organizationId", this.ApiClient.ParameterToString(organizationId)); // path parameter
             if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
-
-
             if (addRequest != null && addRequest.GetType() != typeof(byte[]))
             {
                 localVarPostBody = this.ApiClient.Serialize(addRequest); // http body (model) parameter
@@ -605,11 +615,11 @@ namespace DocuSign.Admin.Api
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.ApiClient.CallApiAsync(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -619,7 +629,7 @@ namespace DocuSign.Admin.Api
 
             return new ApiResponse<DSGroupResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (DSGroupResponse) this.ApiClient.Deserialize(localVarResponse, typeof(DSGroupResponse)));
+                (DSGroupResponse)this.ApiClient.Deserialize(localVarResponse, typeof(DSGroupResponse)));
             
         }
 
@@ -629,24 +639,27 @@ namespace DocuSign.Admin.Api
         /// Add list of users to a DSGroup Required scopes: user_write
         /// </summary>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">The organization ID GUID</param>/// <param name="accountId">The account ID GUID</param>/// <param name="dsGroupId">The DSGroup ID GUID</param>
+        /// <param name="organizationId">The organization ID GUID</param>
+        /// <param name="accountId">The account ID GUID</param>
+        /// <param name="dsGroupId">The DSGroup ID GUID</param>
         /// <param name="dSGroupUsersAddRequest">Add DSGroup users request object</param>
-        
         /// <returns>AddDSGroupAndUsersResponse</returns>
-        public AddDSGroupAndUsersResponse AddDSGroupUsers (Guid? organizationId, Guid? accountId, Guid? dsGroupId, DSGroupUsersAddRequest dSGroupUsersAddRequest){
-            ApiResponse<AddDSGroupAndUsersResponse> localVarResponse = AddDSGroupUsersWithHttpInfo(organizationId, accountId, dsGroupId, dSGroupUsersAddRequest);
-            return localVarResponse.Data;
+        public AddDSGroupAndUsersResponse AddDSGroupUsers(Guid? organizationId, Guid? accountId, Guid? dsGroupId, DSGroupUsersAddRequest dSGroupUsersAddRequest)
+        {
+             ApiResponse<AddDSGroupAndUsersResponse> localVarResponse = AddDSGroupUsersWithHttpInfo(organizationId, accountId, dsGroupId, dSGroupUsersAddRequest);
+             return localVarResponse.Data;
         }
 
         /// <summary>
         /// Add list of users to a DSGroup Required scopes: user_write
         /// </summary>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">The organization ID GUID</param>/// <param name="accountId">The account ID GUID</param>/// <param name="dsGroupId">The DSGroup ID GUID</param>
+        /// <param name="organizationId">The organization ID GUID</param>
+        /// <param name="accountId">The account ID GUID</param>
+        /// <param name="dsGroupId">The DSGroup ID GUID</param>
         /// <param name="dSGroupUsersAddRequest">Add DSGroup users request object</param>
-        
         /// <returns>ApiResponse of AddDSGroupAndUsersResponse</returns>
-        public ApiResponse< AddDSGroupAndUsersResponse > AddDSGroupUsersWithHttpInfo (Guid? organizationId, Guid? accountId, Guid? dsGroupId, DSGroupUsersAddRequest dSGroupUsersAddRequest)
+        public ApiResponse<AddDSGroupAndUsersResponse> AddDSGroupUsersWithHttpInfo(Guid? organizationId, Guid? accountId, Guid? dsGroupId, DSGroupUsersAddRequest dSGroupUsersAddRequest)
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
@@ -702,11 +715,11 @@ namespace DocuSign.Admin.Api
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.ApiClient.CallApi(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -718,11 +731,11 @@ namespace DocuSign.Admin.Api
             // DocuSign: Handle for PDF return types
             if (localVarResponse.ContentType != null && !localVarResponse.ContentType.ToLower().Contains("json"))
             {
-                return new ApiResponse<AddDSGroupAndUsersResponse>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (AddDSGroupAndUsersResponse) this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(AddDSGroupAndUsersResponse)));
+                return new ApiResponse<AddDSGroupAndUsersResponse>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (AddDSGroupAndUsersResponse)this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(AddDSGroupAndUsersResponse)));
             }
             else
             {
-                return new ApiResponse<AddDSGroupAndUsersResponse>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (AddDSGroupAndUsersResponse) this.ApiClient.Deserialize(localVarResponse, typeof(AddDSGroupAndUsersResponse)));
+                return new ApiResponse<AddDSGroupAndUsersResponse>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (AddDSGroupAndUsersResponse)this.ApiClient.Deserialize(localVarResponse, typeof(AddDSGroupAndUsersResponse)));
             }
             
         }
@@ -731,26 +744,27 @@ namespace DocuSign.Admin.Api
         /// Add list of users to a DSGroup Required scopes: user_write
         /// </summary>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">The organization ID GUID</param>/// <param name="accountId">The account ID GUID</param>/// <param name="dsGroupId">The DSGroup ID GUID</param>
+        /// <param name="organizationId">The organization ID GUID</param>
+        /// <param name="accountId">The account ID GUID</param>
+        /// <param name="dsGroupId">The DSGroup ID GUID</param>
         /// <param name="dSGroupUsersAddRequest">Add DSGroup users request object</param>
-        
         /// <returns>Task of AddDSGroupAndUsersResponse</returns>
-        public async System.Threading.Tasks.Task<AddDSGroupAndUsersResponse> AddDSGroupUsersAsync (Guid? organizationId, Guid? accountId, Guid? dsGroupId, DSGroupUsersAddRequest dSGroupUsersAddRequest)
+        public async System.Threading.Tasks.Task<AddDSGroupAndUsersResponse> AddDSGroupUsersAsync(Guid? organizationId, Guid? accountId, Guid? dsGroupId, DSGroupUsersAddRequest dSGroupUsersAddRequest)
         {
              ApiResponse<AddDSGroupAndUsersResponse> localVarResponse = await AddDSGroupUsersAsyncWithHttpInfo(organizationId, accountId, dsGroupId, dSGroupUsersAddRequest);
              return localVarResponse.Data;
-
         }
 
         /// <summary>
         /// Add list of users to a DSGroup Required scopes: user_write
         /// </summary>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">The organization ID GUID</param>/// <param name="accountId">The account ID GUID</param>/// <param name="dsGroupId">The DSGroup ID GUID</param>
+        /// <param name="organizationId">The organization ID GUID</param>
+        /// <param name="accountId">The account ID GUID</param>
+        /// <param name="dsGroupId">The DSGroup ID GUID</param>
         /// <param name="dSGroupUsersAddRequest">Add DSGroup users request object</param>
-        
         /// <returns>Task of ApiResponse (AddDSGroupAndUsersResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<AddDSGroupAndUsersResponse>> AddDSGroupUsersAsyncWithHttpInfo (Guid? organizationId, Guid? accountId, Guid? dsGroupId, DSGroupUsersAddRequest dSGroupUsersAddRequest)
+        public async System.Threading.Tasks.Task<ApiResponse<AddDSGroupAndUsersResponse>> AddDSGroupUsersAsyncWithHttpInfo(Guid? organizationId, Guid? accountId, Guid? dsGroupId, DSGroupUsersAddRequest dSGroupUsersAddRequest)
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
@@ -793,8 +807,6 @@ namespace DocuSign.Admin.Api
             if (organizationId != null) localVarPathParams.Add("organizationId", this.ApiClient.ParameterToString(organizationId)); // path parameter
             if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
             if (dsGroupId != null) localVarPathParams.Add("dsGroupId", this.ApiClient.ParameterToString(dsGroupId)); // path parameter
-
-
             if (dSGroupUsersAddRequest != null && dSGroupUsersAddRequest.GetType() != typeof(byte[]))
             {
                 localVarPostBody = this.ApiClient.Serialize(dSGroupUsersAddRequest); // http body (model) parameter
@@ -806,11 +818,11 @@ namespace DocuSign.Admin.Api
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.ApiClient.CallApiAsync(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -820,7 +832,7 @@ namespace DocuSign.Admin.Api
 
             return new ApiResponse<AddDSGroupAndUsersResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (AddDSGroupAndUsersResponse) this.ApiClient.Deserialize(localVarResponse, typeof(AddDSGroupAndUsersResponse)));
+                (AddDSGroupAndUsersResponse)this.ApiClient.Deserialize(localVarResponse, typeof(AddDSGroupAndUsersResponse)));
             
         }
 
@@ -830,23 +842,24 @@ namespace DocuSign.Admin.Api
         /// Delete a DSGroup Required scopes: user_write
         /// </summary>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">The organization ID GUID</param>/// <param name="accountId">The account ID GUID</param>/// <param name="dsGroupId">The DSGroup ID GUID</param>
-        
-        
+        /// <param name="organizationId">The organization ID GUID</param>
+        /// <param name="accountId">The account ID GUID</param>
+        /// <param name="dsGroupId">The DSGroup ID GUID</param>
         /// <returns></returns>
-        public void DeleteDSGroup (Guid? organizationId, Guid? accountId, Guid? dsGroupId){
-            DeleteDSGroupWithHttpInfo(organizationId, accountId, dsGroupId);
+        public void DeleteDSGroup(Guid? organizationId, Guid? accountId, Guid? dsGroupId)
+        {
+             DeleteDSGroupWithHttpInfo(organizationId, accountId, dsGroupId);
         }
 
         /// <summary>
         /// Delete a DSGroup Required scopes: user_write
         /// </summary>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">The organization ID GUID</param>/// <param name="accountId">The account ID GUID</param>/// <param name="dsGroupId">The DSGroup ID GUID</param>
-        
-        
+        /// <param name="organizationId">The organization ID GUID</param>
+        /// <param name="accountId">The account ID GUID</param>
+        /// <param name="dsGroupId">The DSGroup ID GUID</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public ApiResponse<Object> DeleteDSGroupWithHttpInfo (Guid? organizationId, Guid? accountId, Guid? dsGroupId)
+        public ApiResponse<Object> DeleteDSGroupWithHttpInfo(Guid? organizationId, Guid? accountId, Guid? dsGroupId)
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
@@ -891,11 +904,11 @@ namespace DocuSign.Admin.Api
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.ApiClient.CallApi(localVarPath,
                 Method.DELETE, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -912,25 +925,24 @@ namespace DocuSign.Admin.Api
         /// Delete a DSGroup Required scopes: user_write
         /// </summary>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">The organization ID GUID</param>/// <param name="accountId">The account ID GUID</param>/// <param name="dsGroupId">The DSGroup ID GUID</param>
-        
-        
+        /// <param name="organizationId">The organization ID GUID</param>
+        /// <param name="accountId">The account ID GUID</param>
+        /// <param name="dsGroupId">The DSGroup ID GUID</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task DeleteDSGroupAsync (Guid? organizationId, Guid? accountId, Guid? dsGroupId)
+        public async System.Threading.Tasks.Task DeleteDSGroupAsync(Guid? organizationId, Guid? accountId, Guid? dsGroupId)
         {
              await DeleteDSGroupAsyncWithHttpInfo(organizationId, accountId, dsGroupId);
-
         }
 
         /// <summary>
         /// Delete a DSGroup Required scopes: user_write
         /// </summary>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">The organization ID GUID</param>/// <param name="accountId">The account ID GUID</param>/// <param name="dsGroupId">The DSGroup ID GUID</param>
-        
-        
+        /// <param name="organizationId">The organization ID GUID</param>
+        /// <param name="accountId">The account ID GUID</param>
+        /// <param name="dsGroupId">The DSGroup ID GUID</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Object>> DeleteDSGroupAsyncWithHttpInfo (Guid? organizationId, Guid? accountId, Guid? dsGroupId)
+        public async System.Threading.Tasks.Task<ApiResponse<Object>> DeleteDSGroupAsyncWithHttpInfo(Guid? organizationId, Guid? accountId, Guid? dsGroupId)
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
@@ -972,14 +984,12 @@ namespace DocuSign.Admin.Api
             if (dsGroupId != null) localVarPathParams.Add("dsGroupId", this.ApiClient.ParameterToString(dsGroupId)); // path parameter
 
 
-
-
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.ApiClient.CallApiAsync(localVarPath,
                 Method.DELETE, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -999,24 +1009,25 @@ namespace DocuSign.Admin.Api
         /// Get list of DSGroup Required scopes: user_read
         /// </summary>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">The organization ID GUID</param>/// <param name="accountId">The account ID GUID</param>/// <param name="dsGroupId">The dsGroup ID GUID</param>
-        
-        
+        /// <param name="organizationId">The organization ID GUID</param>
+        /// <param name="accountId">The account ID GUID</param>
+        /// <param name="dsGroupId">The dsGroup ID GUID</param>
         /// <returns>DSGroupResponse</returns>
-        public DSGroupResponse GetDSGroup (Guid? organizationId, Guid? accountId, Guid? dsGroupId){
-            ApiResponse<DSGroupResponse> localVarResponse = GetDSGroupWithHttpInfo(organizationId, accountId, dsGroupId);
-            return localVarResponse.Data;
+        public DSGroupResponse GetDSGroup(Guid? organizationId, Guid? accountId, Guid? dsGroupId)
+        {
+             ApiResponse<DSGroupResponse> localVarResponse = GetDSGroupWithHttpInfo(organizationId, accountId, dsGroupId);
+             return localVarResponse.Data;
         }
 
         /// <summary>
         /// Get list of DSGroup Required scopes: user_read
         /// </summary>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">The organization ID GUID</param>/// <param name="accountId">The account ID GUID</param>/// <param name="dsGroupId">The dsGroup ID GUID</param>
-        
-        
+        /// <param name="organizationId">The organization ID GUID</param>
+        /// <param name="accountId">The account ID GUID</param>
+        /// <param name="dsGroupId">The dsGroup ID GUID</param>
         /// <returns>ApiResponse of DSGroupResponse</returns>
-        public ApiResponse< DSGroupResponse > GetDSGroupWithHttpInfo (Guid? organizationId, Guid? accountId, Guid? dsGroupId)
+        public ApiResponse<DSGroupResponse> GetDSGroupWithHttpInfo(Guid? organizationId, Guid? accountId, Guid? dsGroupId)
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
@@ -1061,11 +1072,11 @@ namespace DocuSign.Admin.Api
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.ApiClient.CallApi(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -1077,11 +1088,11 @@ namespace DocuSign.Admin.Api
             // DocuSign: Handle for PDF return types
             if (localVarResponse.ContentType != null && !localVarResponse.ContentType.ToLower().Contains("json"))
             {
-                return new ApiResponse<DSGroupResponse>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (DSGroupResponse) this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(DSGroupResponse)));
+                return new ApiResponse<DSGroupResponse>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (DSGroupResponse)this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(DSGroupResponse)));
             }
             else
             {
-                return new ApiResponse<DSGroupResponse>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (DSGroupResponse) this.ApiClient.Deserialize(localVarResponse, typeof(DSGroupResponse)));
+                return new ApiResponse<DSGroupResponse>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (DSGroupResponse)this.ApiClient.Deserialize(localVarResponse, typeof(DSGroupResponse)));
             }
             
         }
@@ -1090,26 +1101,25 @@ namespace DocuSign.Admin.Api
         /// Get list of DSGroup Required scopes: user_read
         /// </summary>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">The organization ID GUID</param>/// <param name="accountId">The account ID GUID</param>/// <param name="dsGroupId">The dsGroup ID GUID</param>
-        
-        
+        /// <param name="organizationId">The organization ID GUID</param>
+        /// <param name="accountId">The account ID GUID</param>
+        /// <param name="dsGroupId">The dsGroup ID GUID</param>
         /// <returns>Task of DSGroupResponse</returns>
-        public async System.Threading.Tasks.Task<DSGroupResponse> GetDSGroupAsync (Guid? organizationId, Guid? accountId, Guid? dsGroupId)
+        public async System.Threading.Tasks.Task<DSGroupResponse> GetDSGroupAsync(Guid? organizationId, Guid? accountId, Guid? dsGroupId)
         {
              ApiResponse<DSGroupResponse> localVarResponse = await GetDSGroupAsyncWithHttpInfo(organizationId, accountId, dsGroupId);
              return localVarResponse.Data;
-
         }
 
         /// <summary>
         /// Get list of DSGroup Required scopes: user_read
         /// </summary>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">The organization ID GUID</param>/// <param name="accountId">The account ID GUID</param>/// <param name="dsGroupId">The dsGroup ID GUID</param>
-        
-        
+        /// <param name="organizationId">The organization ID GUID</param>
+        /// <param name="accountId">The account ID GUID</param>
+        /// <param name="dsGroupId">The dsGroup ID GUID</param>
         /// <returns>Task of ApiResponse (DSGroupResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<DSGroupResponse>> GetDSGroupAsyncWithHttpInfo (Guid? organizationId, Guid? accountId, Guid? dsGroupId)
+        public async System.Threading.Tasks.Task<ApiResponse<DSGroupResponse>> GetDSGroupAsyncWithHttpInfo(Guid? organizationId, Guid? accountId, Guid? dsGroupId)
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
@@ -1151,14 +1161,12 @@ namespace DocuSign.Admin.Api
             if (dsGroupId != null) localVarPathParams.Add("dsGroupId", this.ApiClient.ParameterToString(dsGroupId)); // path parameter
 
 
-
-
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.ApiClient.CallApiAsync(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -1168,7 +1176,7 @@ namespace DocuSign.Admin.Api
 
             return new ApiResponse<DSGroupResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (DSGroupResponse) this.ApiClient.Deserialize(localVarResponse, typeof(DSGroupResponse)));
+                (DSGroupResponse)this.ApiClient.Deserialize(localVarResponse, typeof(DSGroupResponse)));
             
         }
 
@@ -1188,24 +1196,27 @@ namespace DocuSign.Admin.Api
         /// Get list of users in a DSGroup Required scopes: user_read
         /// </summary>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">The organization ID GUID</param>/// <param name="accountId">The account ID GUID</param>/// <param name="dsGroupId">The DSGroup ID GUID</param>
-        
+        /// <param name="organizationId">The organization ID GUID</param>
+        /// <param name="accountId">The account ID GUID</param>
+        /// <param name="dsGroupId">The DSGroup ID GUID</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>DSGroupAndUsersResponse</returns>
-        public DSGroupAndUsersResponse GetDSGroupUsers (Guid? organizationId, Guid? accountId, Guid? dsGroupId, DSGroupsApi.GetDSGroupUsersOptions options = null){
-            ApiResponse<DSGroupAndUsersResponse> localVarResponse = GetDSGroupUsersWithHttpInfo(organizationId, accountId, dsGroupId, options);
-            return localVarResponse.Data;
+        public DSGroupAndUsersResponse GetDSGroupUsers(Guid? organizationId, Guid? accountId, Guid? dsGroupId, DSGroupsApi.GetDSGroupUsersOptions options = null)
+        {
+             ApiResponse<DSGroupAndUsersResponse> localVarResponse = GetDSGroupUsersWithHttpInfo(organizationId, accountId, dsGroupId, options);
+             return localVarResponse.Data;
         }
 
         /// <summary>
         /// Get list of users in a DSGroup Required scopes: user_read
         /// </summary>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">The organization ID GUID</param>/// <param name="accountId">The account ID GUID</param>/// <param name="dsGroupId">The DSGroup ID GUID</param>
-        
+        /// <param name="organizationId">The organization ID GUID</param>
+        /// <param name="accountId">The account ID GUID</param>
+        /// <param name="dsGroupId">The DSGroup ID GUID</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>ApiResponse of DSGroupAndUsersResponse</returns>
-        public ApiResponse< DSGroupAndUsersResponse > GetDSGroupUsersWithHttpInfo (Guid? organizationId, Guid? accountId, Guid? dsGroupId, DSGroupsApi.GetDSGroupUsersOptions options = null)
+        public ApiResponse<DSGroupAndUsersResponse> GetDSGroupUsersWithHttpInfo(Guid? organizationId, Guid? accountId, Guid? dsGroupId, DSGroupsApi.GetDSGroupUsersOptions options = null)
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
@@ -1255,11 +1266,11 @@ namespace DocuSign.Admin.Api
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.ApiClient.CallApi(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -1271,11 +1282,11 @@ namespace DocuSign.Admin.Api
             // DocuSign: Handle for PDF return types
             if (localVarResponse.ContentType != null && !localVarResponse.ContentType.ToLower().Contains("json"))
             {
-                return new ApiResponse<DSGroupAndUsersResponse>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (DSGroupAndUsersResponse) this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(DSGroupAndUsersResponse)));
+                return new ApiResponse<DSGroupAndUsersResponse>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (DSGroupAndUsersResponse)this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(DSGroupAndUsersResponse)));
             }
             else
             {
-                return new ApiResponse<DSGroupAndUsersResponse>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (DSGroupAndUsersResponse) this.ApiClient.Deserialize(localVarResponse, typeof(DSGroupAndUsersResponse)));
+                return new ApiResponse<DSGroupAndUsersResponse>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (DSGroupAndUsersResponse)this.ApiClient.Deserialize(localVarResponse, typeof(DSGroupAndUsersResponse)));
             }
             
         }
@@ -1284,26 +1295,27 @@ namespace DocuSign.Admin.Api
         /// Get list of users in a DSGroup Required scopes: user_read
         /// </summary>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">The organization ID GUID</param>/// <param name="accountId">The account ID GUID</param>/// <param name="dsGroupId">The DSGroup ID GUID</param>
-        
+        /// <param name="organizationId">The organization ID GUID</param>
+        /// <param name="accountId">The account ID GUID</param>
+        /// <param name="dsGroupId">The DSGroup ID GUID</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of DSGroupAndUsersResponse</returns>
-        public async System.Threading.Tasks.Task<DSGroupAndUsersResponse> GetDSGroupUsersAsync (Guid? organizationId, Guid? accountId, Guid? dsGroupId, DSGroupsApi.GetDSGroupUsersOptions options = null)
+        public async System.Threading.Tasks.Task<DSGroupAndUsersResponse> GetDSGroupUsersAsync(Guid? organizationId, Guid? accountId, Guid? dsGroupId, DSGroupsApi.GetDSGroupUsersOptions options = null)
         {
              ApiResponse<DSGroupAndUsersResponse> localVarResponse = await GetDSGroupUsersAsyncWithHttpInfo(organizationId, accountId, dsGroupId, options);
              return localVarResponse.Data;
-
         }
 
         /// <summary>
         /// Get list of users in a DSGroup Required scopes: user_read
         /// </summary>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">The organization ID GUID</param>/// <param name="accountId">The account ID GUID</param>/// <param name="dsGroupId">The DSGroup ID GUID</param>
-        
+        /// <param name="organizationId">The organization ID GUID</param>
+        /// <param name="accountId">The account ID GUID</param>
+        /// <param name="dsGroupId">The DSGroup ID GUID</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of ApiResponse (DSGroupAndUsersResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<DSGroupAndUsersResponse>> GetDSGroupUsersAsyncWithHttpInfo (Guid? organizationId, Guid? accountId, Guid? dsGroupId, DSGroupsApi.GetDSGroupUsersOptions options = null)
+        public async System.Threading.Tasks.Task<ApiResponse<DSGroupAndUsersResponse>> GetDSGroupUsersAsyncWithHttpInfo(Guid? organizationId, Guid? accountId, Guid? dsGroupId, DSGroupsApi.GetDSGroupUsersOptions options = null)
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
@@ -1343,7 +1355,6 @@ namespace DocuSign.Admin.Api
             if (organizationId != null) localVarPathParams.Add("organizationId", this.ApiClient.ParameterToString(organizationId)); // path parameter
             if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
             if (dsGroupId != null) localVarPathParams.Add("dsGroupId", this.ApiClient.ParameterToString(dsGroupId)); // path parameter
-
             if (options != null)
             {
                 if (options.page != null) localVarQueryParams.Add("page", this.ApiClient.ParameterToString(options.page)); // query parameter
@@ -1351,13 +1362,12 @@ namespace DocuSign.Admin.Api
             }
 
 
-
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.ApiClient.CallApiAsync(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -1367,7 +1377,7 @@ namespace DocuSign.Admin.Api
 
             return new ApiResponse<DSGroupAndUsersResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (DSGroupAndUsersResponse) this.ApiClient.Deserialize(localVarResponse, typeof(DSGroupAndUsersResponse)));
+                (DSGroupAndUsersResponse)this.ApiClient.Deserialize(localVarResponse, typeof(DSGroupAndUsersResponse)));
             
         }
 
@@ -1387,24 +1397,25 @@ namespace DocuSign.Admin.Api
         /// Get list of DSGroups Required scopes: user_read
         /// </summary>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">The organization ID GUID</param>/// <param name="accountId">The account ID GUID</param>
-        
+        /// <param name="organizationId">The organization ID GUID</param>
+        /// <param name="accountId">The account ID GUID</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>DSGroupListResponse</returns>
-        public DSGroupListResponse GetDSGroups (Guid? organizationId, Guid? accountId, DSGroupsApi.GetDSGroupsOptions options = null){
-            ApiResponse<DSGroupListResponse> localVarResponse = GetDSGroupsWithHttpInfo(organizationId, accountId, options);
-            return localVarResponse.Data;
+        public DSGroupListResponse GetDSGroups(Guid? organizationId, Guid? accountId, DSGroupsApi.GetDSGroupsOptions options = null)
+        {
+             ApiResponse<DSGroupListResponse> localVarResponse = GetDSGroupsWithHttpInfo(organizationId, accountId, options);
+             return localVarResponse.Data;
         }
 
         /// <summary>
         /// Get list of DSGroups Required scopes: user_read
         /// </summary>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">The organization ID GUID</param>/// <param name="accountId">The account ID GUID</param>
-        
+        /// <param name="organizationId">The organization ID GUID</param>
+        /// <param name="accountId">The account ID GUID</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>ApiResponse of DSGroupListResponse</returns>
-        public ApiResponse< DSGroupListResponse > GetDSGroupsWithHttpInfo (Guid? organizationId, Guid? accountId, DSGroupsApi.GetDSGroupsOptions options = null)
+        public ApiResponse<DSGroupListResponse> GetDSGroupsWithHttpInfo(Guid? organizationId, Guid? accountId, DSGroupsApi.GetDSGroupsOptions options = null)
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
@@ -1450,11 +1461,11 @@ namespace DocuSign.Admin.Api
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.ApiClient.CallApi(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -1466,11 +1477,11 @@ namespace DocuSign.Admin.Api
             // DocuSign: Handle for PDF return types
             if (localVarResponse.ContentType != null && !localVarResponse.ContentType.ToLower().Contains("json"))
             {
-                return new ApiResponse<DSGroupListResponse>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (DSGroupListResponse) this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(DSGroupListResponse)));
+                return new ApiResponse<DSGroupListResponse>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (DSGroupListResponse)this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(DSGroupListResponse)));
             }
             else
             {
-                return new ApiResponse<DSGroupListResponse>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (DSGroupListResponse) this.ApiClient.Deserialize(localVarResponse, typeof(DSGroupListResponse)));
+                return new ApiResponse<DSGroupListResponse>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (DSGroupListResponse)this.ApiClient.Deserialize(localVarResponse, typeof(DSGroupListResponse)));
             }
             
         }
@@ -1479,26 +1490,25 @@ namespace DocuSign.Admin.Api
         /// Get list of DSGroups Required scopes: user_read
         /// </summary>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">The organization ID GUID</param>/// <param name="accountId">The account ID GUID</param>
-        
+        /// <param name="organizationId">The organization ID GUID</param>
+        /// <param name="accountId">The account ID GUID</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of DSGroupListResponse</returns>
-        public async System.Threading.Tasks.Task<DSGroupListResponse> GetDSGroupsAsync (Guid? organizationId, Guid? accountId, DSGroupsApi.GetDSGroupsOptions options = null)
+        public async System.Threading.Tasks.Task<DSGroupListResponse> GetDSGroupsAsync(Guid? organizationId, Guid? accountId, DSGroupsApi.GetDSGroupsOptions options = null)
         {
              ApiResponse<DSGroupListResponse> localVarResponse = await GetDSGroupsAsyncWithHttpInfo(organizationId, accountId, options);
              return localVarResponse.Data;
-
         }
 
         /// <summary>
         /// Get list of DSGroups Required scopes: user_read
         /// </summary>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">The organization ID GUID</param>/// <param name="accountId">The account ID GUID</param>
-        
+        /// <param name="organizationId">The organization ID GUID</param>
+        /// <param name="accountId">The account ID GUID</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of ApiResponse (DSGroupListResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<DSGroupListResponse>> GetDSGroupsAsyncWithHttpInfo (Guid? organizationId, Guid? accountId, DSGroupsApi.GetDSGroupsOptions options = null)
+        public async System.Threading.Tasks.Task<ApiResponse<DSGroupListResponse>> GetDSGroupsAsyncWithHttpInfo(Guid? organizationId, Guid? accountId, DSGroupsApi.GetDSGroupsOptions options = null)
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
@@ -1534,7 +1544,6 @@ namespace DocuSign.Admin.Api
             localVarPathParams.Add("format", "json");
             if (organizationId != null) localVarPathParams.Add("organizationId", this.ApiClient.ParameterToString(organizationId)); // path parameter
             if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
-
             if (options != null)
             {
                 if (options.page != null) localVarQueryParams.Add("page", this.ApiClient.ParameterToString(options.page)); // query parameter
@@ -1542,13 +1551,12 @@ namespace DocuSign.Admin.Api
             }
 
 
-
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.ApiClient.CallApiAsync(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -1558,7 +1566,7 @@ namespace DocuSign.Admin.Api
 
             return new ApiResponse<DSGroupListResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (DSGroupListResponse) this.ApiClient.Deserialize(localVarResponse, typeof(DSGroupListResponse)));
+                (DSGroupListResponse)this.ApiClient.Deserialize(localVarResponse, typeof(DSGroupListResponse)));
             
         }
 
@@ -1568,24 +1576,27 @@ namespace DocuSign.Admin.Api
         /// Remove users from a DSGroup Required scopes: user_write
         /// </summary>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">The organization ID GUID</param>/// <param name="accountId">The account ID GUID</param>/// <param name="dsGroupId">The DSGroup ID GUID</param>
+        /// <param name="organizationId">The organization ID GUID</param>
+        /// <param name="accountId">The account ID GUID</param>
+        /// <param name="dsGroupId">The DSGroup ID GUID</param>
         /// <param name="dSGroupUsersRemoveRequest">Remove DSGroup users request object</param>
-        
         /// <returns>RemoveDSGroupUsersResponse</returns>
-        public RemoveDSGroupUsersResponse RemoveDSGroupUsers (Guid? organizationId, Guid? accountId, Guid? dsGroupId, DSGroupUsersRemoveRequest dSGroupUsersRemoveRequest){
-            ApiResponse<RemoveDSGroupUsersResponse> localVarResponse = RemoveDSGroupUsersWithHttpInfo(organizationId, accountId, dsGroupId, dSGroupUsersRemoveRequest);
-            return localVarResponse.Data;
+        public RemoveDSGroupUsersResponse RemoveDSGroupUsers(Guid? organizationId, Guid? accountId, Guid? dsGroupId, DSGroupUsersRemoveRequest dSGroupUsersRemoveRequest)
+        {
+             ApiResponse<RemoveDSGroupUsersResponse> localVarResponse = RemoveDSGroupUsersWithHttpInfo(organizationId, accountId, dsGroupId, dSGroupUsersRemoveRequest);
+             return localVarResponse.Data;
         }
 
         /// <summary>
         /// Remove users from a DSGroup Required scopes: user_write
         /// </summary>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">The organization ID GUID</param>/// <param name="accountId">The account ID GUID</param>/// <param name="dsGroupId">The DSGroup ID GUID</param>
+        /// <param name="organizationId">The organization ID GUID</param>
+        /// <param name="accountId">The account ID GUID</param>
+        /// <param name="dsGroupId">The DSGroup ID GUID</param>
         /// <param name="dSGroupUsersRemoveRequest">Remove DSGroup users request object</param>
-        
         /// <returns>ApiResponse of RemoveDSGroupUsersResponse</returns>
-        public ApiResponse< RemoveDSGroupUsersResponse > RemoveDSGroupUsersWithHttpInfo (Guid? organizationId, Guid? accountId, Guid? dsGroupId, DSGroupUsersRemoveRequest dSGroupUsersRemoveRequest)
+        public ApiResponse<RemoveDSGroupUsersResponse> RemoveDSGroupUsersWithHttpInfo(Guid? organizationId, Guid? accountId, Guid? dsGroupId, DSGroupUsersRemoveRequest dSGroupUsersRemoveRequest)
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
@@ -1641,11 +1652,11 @@ namespace DocuSign.Admin.Api
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.ApiClient.CallApi(localVarPath,
                 Method.DELETE, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -1657,11 +1668,11 @@ namespace DocuSign.Admin.Api
             // DocuSign: Handle for PDF return types
             if (localVarResponse.ContentType != null && !localVarResponse.ContentType.ToLower().Contains("json"))
             {
-                return new ApiResponse<RemoveDSGroupUsersResponse>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (RemoveDSGroupUsersResponse) this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(RemoveDSGroupUsersResponse)));
+                return new ApiResponse<RemoveDSGroupUsersResponse>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (RemoveDSGroupUsersResponse)this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(RemoveDSGroupUsersResponse)));
             }
             else
             {
-                return new ApiResponse<RemoveDSGroupUsersResponse>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (RemoveDSGroupUsersResponse) this.ApiClient.Deserialize(localVarResponse, typeof(RemoveDSGroupUsersResponse)));
+                return new ApiResponse<RemoveDSGroupUsersResponse>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (RemoveDSGroupUsersResponse)this.ApiClient.Deserialize(localVarResponse, typeof(RemoveDSGroupUsersResponse)));
             }
             
         }
@@ -1670,26 +1681,27 @@ namespace DocuSign.Admin.Api
         /// Remove users from a DSGroup Required scopes: user_write
         /// </summary>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">The organization ID GUID</param>/// <param name="accountId">The account ID GUID</param>/// <param name="dsGroupId">The DSGroup ID GUID</param>
+        /// <param name="organizationId">The organization ID GUID</param>
+        /// <param name="accountId">The account ID GUID</param>
+        /// <param name="dsGroupId">The DSGroup ID GUID</param>
         /// <param name="dSGroupUsersRemoveRequest">Remove DSGroup users request object</param>
-        
         /// <returns>Task of RemoveDSGroupUsersResponse</returns>
-        public async System.Threading.Tasks.Task<RemoveDSGroupUsersResponse> RemoveDSGroupUsersAsync (Guid? organizationId, Guid? accountId, Guid? dsGroupId, DSGroupUsersRemoveRequest dSGroupUsersRemoveRequest)
+        public async System.Threading.Tasks.Task<RemoveDSGroupUsersResponse> RemoveDSGroupUsersAsync(Guid? organizationId, Guid? accountId, Guid? dsGroupId, DSGroupUsersRemoveRequest dSGroupUsersRemoveRequest)
         {
              ApiResponse<RemoveDSGroupUsersResponse> localVarResponse = await RemoveDSGroupUsersAsyncWithHttpInfo(organizationId, accountId, dsGroupId, dSGroupUsersRemoveRequest);
              return localVarResponse.Data;
-
         }
 
         /// <summary>
         /// Remove users from a DSGroup Required scopes: user_write
         /// </summary>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">The organization ID GUID</param>/// <param name="accountId">The account ID GUID</param>/// <param name="dsGroupId">The DSGroup ID GUID</param>
+        /// <param name="organizationId">The organization ID GUID</param>
+        /// <param name="accountId">The account ID GUID</param>
+        /// <param name="dsGroupId">The DSGroup ID GUID</param>
         /// <param name="dSGroupUsersRemoveRequest">Remove DSGroup users request object</param>
-        
         /// <returns>Task of ApiResponse (RemoveDSGroupUsersResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<RemoveDSGroupUsersResponse>> RemoveDSGroupUsersAsyncWithHttpInfo (Guid? organizationId, Guid? accountId, Guid? dsGroupId, DSGroupUsersRemoveRequest dSGroupUsersRemoveRequest)
+        public async System.Threading.Tasks.Task<ApiResponse<RemoveDSGroupUsersResponse>> RemoveDSGroupUsersAsyncWithHttpInfo(Guid? organizationId, Guid? accountId, Guid? dsGroupId, DSGroupUsersRemoveRequest dSGroupUsersRemoveRequest)
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
@@ -1732,8 +1744,6 @@ namespace DocuSign.Admin.Api
             if (organizationId != null) localVarPathParams.Add("organizationId", this.ApiClient.ParameterToString(organizationId)); // path parameter
             if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
             if (dsGroupId != null) localVarPathParams.Add("dsGroupId", this.ApiClient.ParameterToString(dsGroupId)); // path parameter
-
-
             if (dSGroupUsersRemoveRequest != null && dSGroupUsersRemoveRequest.GetType() != typeof(byte[]))
             {
                 localVarPostBody = this.ApiClient.Serialize(dSGroupUsersRemoveRequest); // http body (model) parameter
@@ -1745,11 +1755,11 @@ namespace DocuSign.Admin.Api
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.ApiClient.CallApiAsync(localVarPath,
                 Method.DELETE, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -1759,7 +1769,7 @@ namespace DocuSign.Admin.Api
 
             return new ApiResponse<RemoveDSGroupUsersResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (RemoveDSGroupUsersResponse) this.ApiClient.Deserialize(localVarResponse, typeof(RemoveDSGroupUsersResponse)));
+                (RemoveDSGroupUsersResponse)this.ApiClient.Deserialize(localVarResponse, typeof(RemoveDSGroupUsersResponse)));
             
         }
 
