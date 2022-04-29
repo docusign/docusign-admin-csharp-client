@@ -32,10 +32,9 @@ namespace DocuSign.Admin.Api
         /// </remarks>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">The organization ID Guid</param>
-        /// <param name="fileCsv"></param>
-
+        /// <param name="fileCsv">CSV file.</param>
         /// <returns></returns>
-        OrganizationAccountSettingsImportResponse AddBulkAccountSettingsImport(Guid? organizationId, byte[] fileCsv);
+        OrganizationAccountSettingsImportResponse AddBulkAccountSettingsImport(Guid? organizationId,  byte[] fileCsv);
 
         /// <summary>
         /// Creates a new account settings import request.
@@ -45,10 +44,9 @@ namespace DocuSign.Admin.Api
         /// </remarks>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">The organization ID Guid</param>
-        /// <param name="fileCsv"></param>
-
+        /// <param name="fileCsv">CSV file.</param>
         /// <returns>ApiResponse of </returns>
-        ApiResponse<OrganizationAccountSettingsImportResponse> AddBulkAccountSettingsImportWithHttpInfo(Guid? organizationId, byte[] fileCsv);
+        ApiResponse<OrganizationAccountSettingsImportResponse> AddBulkAccountSettingsImportWithHttpInfo(Guid? organizationId,  byte[] fileCsv);
         /// <summary>
         /// Import request for adding users to accounts within the organization.
         /// </summary>
@@ -57,10 +55,9 @@ namespace DocuSign.Admin.Api
         /// </remarks>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">The organization ID Guid</param>
-        /// <param name="fileCsv"></param>
-
+        /// <param name="fileCsv">CSV file.</param>
         /// <returns></returns>
-        OrganizationImportResponse CreateBulkImportAddUsersRequest(Guid? organizationId, byte[] fileCsv);
+        OrganizationImportResponse CreateBulkImportAddUsersRequest(Guid? organizationId,  byte[] fileCsv);
 
         /// <summary>
         /// Import request for adding users to accounts within the organization.
@@ -70,10 +67,9 @@ namespace DocuSign.Admin.Api
         /// </remarks>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">The organization ID Guid</param>
-        /// <param name="fileCsv"></param>
-
+        /// <param name="fileCsv">CSV file.</param>
         /// <returns>ApiResponse of </returns>
-        ApiResponse<OrganizationImportResponse> CreateBulkImportAddUsersRequestWithHttpInfo(Guid? organizationId, byte[] fileCsv);
+        ApiResponse<OrganizationImportResponse> CreateBulkImportAddUsersRequestWithHttpInfo(Guid? organizationId,  byte[] fileCsv);
         /// <summary>
         /// Closes the Bulk User Import request
         /// </summary>
@@ -82,8 +78,6 @@ namespace DocuSign.Admin.Api
         /// </remarks>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">The organization ID Guid</param>
-
-
         /// <returns></returns>
         OrganizationImportResponse CreateBulkImportCloseUsersRequest(Guid? organizationId);
 
@@ -95,8 +89,6 @@ namespace DocuSign.Admin.Api
         /// </remarks>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">The organization ID Guid</param>
-
-
         /// <returns>ApiResponse of </returns>
         ApiResponse<OrganizationImportResponse> CreateBulkImportCloseUsersRequestWithHttpInfo(Guid? organizationId);
         /// <summary>
@@ -107,8 +99,6 @@ namespace DocuSign.Admin.Api
         /// </remarks>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">The organization ID Guid</param>
-
-
         /// <returns></returns>
         OrganizationImportResponse CreateBulkImportExternalCloseUsersRequest(Guid? organizationId);
 
@@ -120,8 +110,6 @@ namespace DocuSign.Admin.Api
         /// </remarks>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">The organization ID Guid</param>
-
-
         /// <returns>ApiResponse of </returns>
         ApiResponse<OrganizationImportResponse> CreateBulkImportExternalCloseUsersRequestWithHttpInfo(Guid? organizationId);
         /// <summary>
@@ -131,11 +119,11 @@ namespace DocuSign.Admin.Api
         /// Required scopes: user_write
         /// </remarks>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">The organization ID Guid</param>/// <param name="accountId">The account ID Guid</param>
-        /// <param name="fileCsv"></param>
-
+        /// <param name="organizationId">The organization ID Guid</param>
+        /// <param name="accountId">The account ID Guid</param>
+        /// <param name="fileCsv">CSV file.</param>
         /// <returns></returns>
-        OrganizationImportResponse CreateBulkImportSingleAccountAddUsersRequest(Guid? organizationId, Guid? accountId, byte[] fileCsv);
+        OrganizationImportResponse CreateBulkImportSingleAccountAddUsersRequest(Guid? organizationId, Guid? accountId,  byte[] fileCsv);
 
         /// <summary>
         /// Import request for adding user to a single account within the organization. Allows upload of user information without requiring an AccountId column
@@ -144,11 +132,11 @@ namespace DocuSign.Admin.Api
         /// Required scopes: user_write
         /// </remarks>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">The organization ID Guid</param>/// <param name="accountId">The account ID Guid</param>
-        /// <param name="fileCsv"></param>
-
+        /// <param name="organizationId">The organization ID Guid</param>
+        /// <param name="accountId">The account ID Guid</param>
+        /// <param name="fileCsv">CSV file.</param>
         /// <returns>ApiResponse of </returns>
-        ApiResponse<OrganizationImportResponse> CreateBulkImportSingleAccountAddUsersRequestWithHttpInfo(Guid? organizationId, Guid? accountId, byte[] fileCsv);
+        ApiResponse<OrganizationImportResponse> CreateBulkImportSingleAccountAddUsersRequestWithHttpInfo(Guid? organizationId, Guid? accountId,  byte[] fileCsv);
         /// <summary>
         /// Import request for updating users for a single account within the organization. Allows upload of user information without requiring an AccountId column
         /// </summary>
@@ -156,11 +144,11 @@ namespace DocuSign.Admin.Api
         /// Required scopes: user_write
         /// </remarks>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">The organization ID Guid</param>/// <param name="accountId">The account ID Guid</param>
-        /// <param name="fileCsv"></param>
-
+        /// <param name="organizationId">The organization ID Guid</param>
+        /// <param name="accountId">The account ID Guid</param>
+        /// <param name="fileCsv">CSV file.</param>
         /// <returns></returns>
-        OrganizationImportResponse CreateBulkImportSingleAccountUpdateUsersRequest(Guid? organizationId, Guid? accountId, byte[] fileCsv);
+        OrganizationImportResponse CreateBulkImportSingleAccountUpdateUsersRequest(Guid? organizationId, Guid? accountId,  byte[] fileCsv);
 
         /// <summary>
         /// Import request for updating users for a single account within the organization. Allows upload of user information without requiring an AccountId column
@@ -169,11 +157,11 @@ namespace DocuSign.Admin.Api
         /// Required scopes: user_write
         /// </remarks>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">The organization ID Guid</param>/// <param name="accountId">The account ID Guid</param>
-        /// <param name="fileCsv"></param>
-
+        /// <param name="organizationId">The organization ID Guid</param>
+        /// <param name="accountId">The account ID Guid</param>
+        /// <param name="fileCsv">CSV file.</param>
         /// <returns>ApiResponse of </returns>
-        ApiResponse<OrganizationImportResponse> CreateBulkImportSingleAccountUpdateUsersRequestWithHttpInfo(Guid? organizationId, Guid? accountId, byte[] fileCsv);
+        ApiResponse<OrganizationImportResponse> CreateBulkImportSingleAccountUpdateUsersRequestWithHttpInfo(Guid? organizationId, Guid? accountId,  byte[] fileCsv);
         /// <summary>
         /// Import request for updating users to accounts within the organization.
         /// </summary>
@@ -182,10 +170,9 @@ namespace DocuSign.Admin.Api
         /// </remarks>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">The organization ID Guid</param>
-        /// <param name="fileCsv"></param>
-
+        /// <param name="fileCsv">CSV file.</param>
         /// <returns></returns>
-        OrganizationImportResponse CreateBulkImportUpdateUsersRequest(Guid? organizationId, byte[] fileCsv);
+        OrganizationImportResponse CreateBulkImportUpdateUsersRequest(Guid? organizationId,  byte[] fileCsv);
 
         /// <summary>
         /// Import request for updating users to accounts within the organization.
@@ -195,10 +182,9 @@ namespace DocuSign.Admin.Api
         /// </remarks>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">The organization ID Guid</param>
-        /// <param name="fileCsv"></param>
-
+        /// <param name="fileCsv">CSV file.</param>
         /// <returns>ApiResponse of </returns>
-        ApiResponse<OrganizationImportResponse> CreateBulkImportUpdateUsersRequestWithHttpInfo(Guid? organizationId, byte[] fileCsv);
+        ApiResponse<OrganizationImportResponse> CreateBulkImportUpdateUsersRequestWithHttpInfo(Guid? organizationId,  byte[] fileCsv);
         /// <summary>
         /// Deletes a Bulk Account Settings Import request
         /// </summary>
@@ -206,9 +192,8 @@ namespace DocuSign.Admin.Api
         /// Required scopes: account_write
         /// </remarks>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">The organization ID Guid</param>/// <param name="importId">The import ID Guid for the request</param>
-
-
+        /// <param name="organizationId">The organization ID Guid</param>
+        /// <param name="importId">The import ID Guid for the request</param>
         /// <returns></returns>
         Object DeleteBulkAccountSettingsImport(Guid? organizationId, Guid? importId);
 
@@ -219,9 +204,8 @@ namespace DocuSign.Admin.Api
         /// Required scopes: account_write
         /// </remarks>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">The organization ID Guid</param>/// <param name="importId">The import ID Guid for the request</param>
-
-
+        /// <param name="organizationId">The organization ID Guid</param>
+        /// <param name="importId">The import ID Guid for the request</param>
         /// <returns>ApiResponse of </returns>
         ApiResponse<Object> DeleteBulkAccountSettingsImportWithHttpInfo(Guid? organizationId, Guid? importId);
         /// <summary>
@@ -231,9 +215,8 @@ namespace DocuSign.Admin.Api
         /// Required scopes: user_write
         /// </remarks>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">The organization ID Guid</param>/// <param name="importId">The import ID Guid for the request</param>
-
-
+        /// <param name="organizationId">The organization ID Guid</param>
+        /// <param name="importId">The import ID Guid for the request</param>
         /// <returns></returns>
         Object DeleteBulkUserImport(Guid? organizationId, Guid? importId);
 
@@ -244,9 +227,8 @@ namespace DocuSign.Admin.Api
         /// Required scopes: user_write
         /// </remarks>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">The organization ID Guid</param>/// <param name="importId">The import ID Guid for the request</param>
-
-
+        /// <param name="organizationId">The organization ID Guid</param>
+        /// <param name="importId">The import ID Guid for the request</param>
         /// <returns>ApiResponse of </returns>
         ApiResponse<Object> DeleteBulkUserImportWithHttpInfo(Guid? organizationId, Guid? importId);
         /// <summary>
@@ -256,9 +238,8 @@ namespace DocuSign.Admin.Api
         /// Required scopes: account_read
         /// </remarks>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">The organization ID Guid</param>/// <param name="importId">The import ID Guid for the request</param>
-
-
+        /// <param name="organizationId">The organization ID Guid</param>
+        /// <param name="importId">The import ID Guid for the request</param>
         /// <returns></returns>
         OrganizationAccountSettingsImportResponse GetBulkAccountSettingsImport(Guid? organizationId, Guid? importId);
 
@@ -269,9 +250,8 @@ namespace DocuSign.Admin.Api
         /// Required scopes: account_read
         /// </remarks>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">The organization ID Guid</param>/// <param name="importId">The import ID Guid for the request</param>
-
-
+        /// <param name="organizationId">The organization ID Guid</param>
+        /// <param name="importId">The import ID Guid for the request</param>
         /// <returns>ApiResponse of </returns>
         ApiResponse<OrganizationAccountSettingsImportResponse> GetBulkAccountSettingsImportWithHttpInfo(Guid? organizationId, Guid? importId);
         /// <summary>
@@ -282,8 +262,6 @@ namespace DocuSign.Admin.Api
         /// </remarks>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">The organization ID Guid</param>
-
-
         /// <returns></returns>
         List<OrganizationAccountSettingsImportResponse> GetBulkAccountSettingsImports(Guid? organizationId);
 
@@ -295,8 +273,6 @@ namespace DocuSign.Admin.Api
         /// </remarks>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">The organization ID Guid</param>
-
-
         /// <returns>ApiResponse of </returns>
         ApiResponse<List<OrganizationAccountSettingsImportResponse>> GetBulkAccountSettingsImportsWithHttpInfo(Guid? organizationId);
         /// <summary>
@@ -306,9 +282,8 @@ namespace DocuSign.Admin.Api
         /// Required scopes: user_read
         /// </remarks>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">The organization ID Guid</param>/// <param name="importId">The import ID Guid for the request</param>
-
-
+        /// <param name="organizationId">The organization ID Guid</param>
+        /// <param name="importId">The import ID Guid for the request</param>
         /// <returns></returns>
         Object GetBulkUserImportCSV(Guid? organizationId, Guid? importId);
 
@@ -319,9 +294,8 @@ namespace DocuSign.Admin.Api
         /// Required scopes: user_read
         /// </remarks>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">The organization ID Guid</param>/// <param name="importId">The import ID Guid for the request</param>
-
-
+        /// <param name="organizationId">The organization ID Guid</param>
+        /// <param name="importId">The import ID Guid for the request</param>
         /// <returns>ApiResponse of </returns>
         ApiResponse<Object> GetBulkUserImportCSVWithHttpInfo(Guid? organizationId, Guid? importId);
         /// <summary>
@@ -331,9 +305,8 @@ namespace DocuSign.Admin.Api
         /// Required scopes: user_read
         /// </remarks>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">The organization ID Guid</param>/// <param name="importId">The import ID Guid for the request</param>
-
-
+        /// <param name="organizationId">The organization ID Guid</param>
+        /// <param name="importId">The import ID Guid for the request</param>
         /// <returns></returns>
         OrganizationImportResponse GetBulkUserImportRequest(Guid? organizationId, Guid? importId);
 
@@ -344,9 +317,8 @@ namespace DocuSign.Admin.Api
         /// Required scopes: user_read
         /// </remarks>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">The organization ID Guid</param>/// <param name="importId">The import ID Guid for the request</param>
-
-
+        /// <param name="organizationId">The organization ID Guid</param>
+        /// <param name="importId">The import ID Guid for the request</param>
         /// <returns>ApiResponse of </returns>
         ApiResponse<OrganizationImportResponse> GetBulkUserImportRequestWithHttpInfo(Guid? organizationId, Guid? importId);
         /// <summary>
@@ -357,8 +329,6 @@ namespace DocuSign.Admin.Api
         /// </remarks>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">The organization ID Guid</param>
-
-
         /// <returns></returns>
         OrganizationImportsResponse GetBulkUserImportRequests(Guid? organizationId);
 
@@ -370,8 +340,6 @@ namespace DocuSign.Admin.Api
         /// </remarks>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">The organization ID Guid</param>
-
-
         /// <returns>ApiResponse of </returns>
         ApiResponse<OrganizationImportsResponse> GetBulkUserImportRequestsWithHttpInfo(Guid? organizationId);
         #endregion Synchronous Operations
@@ -384,10 +352,9 @@ namespace DocuSign.Admin.Api
         /// </remarks>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">The organization ID Guid</param>
-        /// <param name="fileCsv"></param>
-
+        /// <param name="fileCsv">CSV file.</param>
         /// <returns>Task of OrganizationAccountSettingsImportResponse</returns>
-        System.Threading.Tasks.Task<OrganizationAccountSettingsImportResponse> AddBulkAccountSettingsImportAsync(Guid? organizationId, byte[] fileCsv);
+        System.Threading.Tasks.Task<OrganizationAccountSettingsImportResponse> AddBulkAccountSettingsImportAsync(Guid? organizationId,  byte[] fileCsv);
 
         /// <summary>
         /// Creates a new account settings import request.
@@ -397,10 +364,9 @@ namespace DocuSign.Admin.Api
         /// </remarks>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">The organization ID Guid</param>
-        /// <param name="fileCsv"></param>
-
+        /// <param name="fileCsv">CSV file.</param>
         /// <returns>Task of ApiResponse (OrganizationAccountSettingsImportResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<OrganizationAccountSettingsImportResponse>> AddBulkAccountSettingsImportAsyncWithHttpInfo(Guid? organizationId, byte[] fileCsv);
+        System.Threading.Tasks.Task<ApiResponse<OrganizationAccountSettingsImportResponse>> AddBulkAccountSettingsImportAsyncWithHttpInfo(Guid? organizationId,  byte[] fileCsv);
         /// <summary>
         /// Import request for adding users to accounts within the organization.
         /// </summary>
@@ -409,10 +375,9 @@ namespace DocuSign.Admin.Api
         /// </remarks>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">The organization ID Guid</param>
-        /// <param name="fileCsv"></param>
-
+        /// <param name="fileCsv">CSV file.</param>
         /// <returns>Task of OrganizationImportResponse</returns>
-        System.Threading.Tasks.Task<OrganizationImportResponse> CreateBulkImportAddUsersRequestAsync(Guid? organizationId, byte[] fileCsv);
+        System.Threading.Tasks.Task<OrganizationImportResponse> CreateBulkImportAddUsersRequestAsync(Guid? organizationId,  byte[] fileCsv);
 
         /// <summary>
         /// Import request for adding users to accounts within the organization.
@@ -422,10 +387,9 @@ namespace DocuSign.Admin.Api
         /// </remarks>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">The organization ID Guid</param>
-        /// <param name="fileCsv"></param>
-
+        /// <param name="fileCsv">CSV file.</param>
         /// <returns>Task of ApiResponse (OrganizationImportResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<OrganizationImportResponse>> CreateBulkImportAddUsersRequestAsyncWithHttpInfo(Guid? organizationId, byte[] fileCsv);
+        System.Threading.Tasks.Task<ApiResponse<OrganizationImportResponse>> CreateBulkImportAddUsersRequestAsyncWithHttpInfo(Guid? organizationId,  byte[] fileCsv);
         /// <summary>
         /// Closes the Bulk User Import request
         /// </summary>
@@ -434,8 +398,6 @@ namespace DocuSign.Admin.Api
         /// </remarks>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">The organization ID Guid</param>
-
-
         /// <returns>Task of OrganizationImportResponse</returns>
         System.Threading.Tasks.Task<OrganizationImportResponse> CreateBulkImportCloseUsersRequestAsync(Guid? organizationId);
 
@@ -447,8 +409,6 @@ namespace DocuSign.Admin.Api
         /// </remarks>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">The organization ID Guid</param>
-
-
         /// <returns>Task of ApiResponse (OrganizationImportResponse)</returns>
         System.Threading.Tasks.Task<ApiResponse<OrganizationImportResponse>> CreateBulkImportCloseUsersRequestAsyncWithHttpInfo(Guid? organizationId);
         /// <summary>
@@ -459,8 +419,6 @@ namespace DocuSign.Admin.Api
         /// </remarks>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">The organization ID Guid</param>
-
-
         /// <returns>Task of OrganizationImportResponse</returns>
         System.Threading.Tasks.Task<OrganizationImportResponse> CreateBulkImportExternalCloseUsersRequestAsync(Guid? organizationId);
 
@@ -472,8 +430,6 @@ namespace DocuSign.Admin.Api
         /// </remarks>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">The organization ID Guid</param>
-
-
         /// <returns>Task of ApiResponse (OrganizationImportResponse)</returns>
         System.Threading.Tasks.Task<ApiResponse<OrganizationImportResponse>> CreateBulkImportExternalCloseUsersRequestAsyncWithHttpInfo(Guid? organizationId);
         /// <summary>
@@ -483,11 +439,11 @@ namespace DocuSign.Admin.Api
         /// Required scopes: user_write
         /// </remarks>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">The organization ID Guid</param>/// <param name="accountId">The account ID Guid</param>
-        /// <param name="fileCsv"></param>
-
+        /// <param name="organizationId">The organization ID Guid</param>
+        /// <param name="accountId">The account ID Guid</param>
+        /// <param name="fileCsv">CSV file.</param>
         /// <returns>Task of OrganizationImportResponse</returns>
-        System.Threading.Tasks.Task<OrganizationImportResponse> CreateBulkImportSingleAccountAddUsersRequestAsync(Guid? organizationId, Guid? accountId, byte[] fileCsv);
+        System.Threading.Tasks.Task<OrganizationImportResponse> CreateBulkImportSingleAccountAddUsersRequestAsync(Guid? organizationId, Guid? accountId,  byte[] fileCsv);
 
         /// <summary>
         /// Import request for adding user to a single account within the organization. Allows upload of user information without requiring an AccountId column
@@ -496,11 +452,11 @@ namespace DocuSign.Admin.Api
         /// Required scopes: user_write
         /// </remarks>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">The organization ID Guid</param>/// <param name="accountId">The account ID Guid</param>
-        /// <param name="fileCsv"></param>
-
+        /// <param name="organizationId">The organization ID Guid</param>
+        /// <param name="accountId">The account ID Guid</param>
+        /// <param name="fileCsv">CSV file.</param>
         /// <returns>Task of ApiResponse (OrganizationImportResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<OrganizationImportResponse>> CreateBulkImportSingleAccountAddUsersRequestAsyncWithHttpInfo(Guid? organizationId, Guid? accountId, byte[] fileCsv);
+        System.Threading.Tasks.Task<ApiResponse<OrganizationImportResponse>> CreateBulkImportSingleAccountAddUsersRequestAsyncWithHttpInfo(Guid? organizationId, Guid? accountId,  byte[] fileCsv);
         /// <summary>
         /// Import request for updating users for a single account within the organization. Allows upload of user information without requiring an AccountId column
         /// </summary>
@@ -508,11 +464,11 @@ namespace DocuSign.Admin.Api
         /// Required scopes: user_write
         /// </remarks>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">The organization ID Guid</param>/// <param name="accountId">The account ID Guid</param>
-        /// <param name="fileCsv"></param>
-
+        /// <param name="organizationId">The organization ID Guid</param>
+        /// <param name="accountId">The account ID Guid</param>
+        /// <param name="fileCsv">CSV file.</param>
         /// <returns>Task of OrganizationImportResponse</returns>
-        System.Threading.Tasks.Task<OrganizationImportResponse> CreateBulkImportSingleAccountUpdateUsersRequestAsync(Guid? organizationId, Guid? accountId, byte[] fileCsv);
+        System.Threading.Tasks.Task<OrganizationImportResponse> CreateBulkImportSingleAccountUpdateUsersRequestAsync(Guid? organizationId, Guid? accountId,  byte[] fileCsv);
 
         /// <summary>
         /// Import request for updating users for a single account within the organization. Allows upload of user information without requiring an AccountId column
@@ -521,11 +477,11 @@ namespace DocuSign.Admin.Api
         /// Required scopes: user_write
         /// </remarks>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">The organization ID Guid</param>/// <param name="accountId">The account ID Guid</param>
-        /// <param name="fileCsv"></param>
-
+        /// <param name="organizationId">The organization ID Guid</param>
+        /// <param name="accountId">The account ID Guid</param>
+        /// <param name="fileCsv">CSV file.</param>
         /// <returns>Task of ApiResponse (OrganizationImportResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<OrganizationImportResponse>> CreateBulkImportSingleAccountUpdateUsersRequestAsyncWithHttpInfo(Guid? organizationId, Guid? accountId, byte[] fileCsv);
+        System.Threading.Tasks.Task<ApiResponse<OrganizationImportResponse>> CreateBulkImportSingleAccountUpdateUsersRequestAsyncWithHttpInfo(Guid? organizationId, Guid? accountId,  byte[] fileCsv);
         /// <summary>
         /// Import request for updating users to accounts within the organization.
         /// </summary>
@@ -534,10 +490,9 @@ namespace DocuSign.Admin.Api
         /// </remarks>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">The organization ID Guid</param>
-        /// <param name="fileCsv"></param>
-
+        /// <param name="fileCsv">CSV file.</param>
         /// <returns>Task of OrganizationImportResponse</returns>
-        System.Threading.Tasks.Task<OrganizationImportResponse> CreateBulkImportUpdateUsersRequestAsync(Guid? organizationId, byte[] fileCsv);
+        System.Threading.Tasks.Task<OrganizationImportResponse> CreateBulkImportUpdateUsersRequestAsync(Guid? organizationId,  byte[] fileCsv);
 
         /// <summary>
         /// Import request for updating users to accounts within the organization.
@@ -547,10 +502,9 @@ namespace DocuSign.Admin.Api
         /// </remarks>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">The organization ID Guid</param>
-        /// <param name="fileCsv"></param>
-
+        /// <param name="fileCsv">CSV file.</param>
         /// <returns>Task of ApiResponse (OrganizationImportResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<OrganizationImportResponse>> CreateBulkImportUpdateUsersRequestAsyncWithHttpInfo(Guid? organizationId, byte[] fileCsv);
+        System.Threading.Tasks.Task<ApiResponse<OrganizationImportResponse>> CreateBulkImportUpdateUsersRequestAsyncWithHttpInfo(Guid? organizationId,  byte[] fileCsv);
         /// <summary>
         /// Deletes a Bulk Account Settings Import request
         /// </summary>
@@ -558,9 +512,8 @@ namespace DocuSign.Admin.Api
         /// Required scopes: account_write
         /// </remarks>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">The organization ID Guid</param>/// <param name="importId">The import ID Guid for the request</param>
-
-
+        /// <param name="organizationId">The organization ID Guid</param>
+        /// <param name="importId">The import ID Guid for the request</param>
         /// <returns>Task of Object</returns>
         System.Threading.Tasks.Task<Object> DeleteBulkAccountSettingsImportAsync(Guid? organizationId, Guid? importId);
 
@@ -571,9 +524,8 @@ namespace DocuSign.Admin.Api
         /// Required scopes: account_write
         /// </remarks>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">The organization ID Guid</param>/// <param name="importId">The import ID Guid for the request</param>
-
-
+        /// <param name="organizationId">The organization ID Guid</param>
+        /// <param name="importId">The import ID Guid for the request</param>
         /// <returns>Task of ApiResponse (Object)</returns>
         System.Threading.Tasks.Task<ApiResponse<Object>> DeleteBulkAccountSettingsImportAsyncWithHttpInfo(Guid? organizationId, Guid? importId);
         /// <summary>
@@ -583,9 +535,8 @@ namespace DocuSign.Admin.Api
         /// Required scopes: user_write
         /// </remarks>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">The organization ID Guid</param>/// <param name="importId">The import ID Guid for the request</param>
-
-
+        /// <param name="organizationId">The organization ID Guid</param>
+        /// <param name="importId">The import ID Guid for the request</param>
         /// <returns>Task of Object</returns>
         System.Threading.Tasks.Task<Object> DeleteBulkUserImportAsync(Guid? organizationId, Guid? importId);
 
@@ -596,9 +547,8 @@ namespace DocuSign.Admin.Api
         /// Required scopes: user_write
         /// </remarks>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">The organization ID Guid</param>/// <param name="importId">The import ID Guid for the request</param>
-
-
+        /// <param name="organizationId">The organization ID Guid</param>
+        /// <param name="importId">The import ID Guid for the request</param>
         /// <returns>Task of ApiResponse (Object)</returns>
         System.Threading.Tasks.Task<ApiResponse<Object>> DeleteBulkUserImportAsyncWithHttpInfo(Guid? organizationId, Guid? importId);
         /// <summary>
@@ -608,9 +558,8 @@ namespace DocuSign.Admin.Api
         /// Required scopes: account_read
         /// </remarks>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">The organization ID Guid</param>/// <param name="importId">The import ID Guid for the request</param>
-
-
+        /// <param name="organizationId">The organization ID Guid</param>
+        /// <param name="importId">The import ID Guid for the request</param>
         /// <returns>Task of OrganizationAccountSettingsImportResponse</returns>
         System.Threading.Tasks.Task<OrganizationAccountSettingsImportResponse> GetBulkAccountSettingsImportAsync(Guid? organizationId, Guid? importId);
 
@@ -621,9 +570,8 @@ namespace DocuSign.Admin.Api
         /// Required scopes: account_read
         /// </remarks>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">The organization ID Guid</param>/// <param name="importId">The import ID Guid for the request</param>
-
-
+        /// <param name="organizationId">The organization ID Guid</param>
+        /// <param name="importId">The import ID Guid for the request</param>
         /// <returns>Task of ApiResponse (OrganizationAccountSettingsImportResponse)</returns>
         System.Threading.Tasks.Task<ApiResponse<OrganizationAccountSettingsImportResponse>> GetBulkAccountSettingsImportAsyncWithHttpInfo(Guid? organizationId, Guid? importId);
         /// <summary>
@@ -634,8 +582,6 @@ namespace DocuSign.Admin.Api
         /// </remarks>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">The organization ID Guid</param>
-
-
         /// <returns>Task of List&lt;OrganizationAccountSettingsImportResponse&gt;</returns>
         System.Threading.Tasks.Task<List<OrganizationAccountSettingsImportResponse>> GetBulkAccountSettingsImportsAsync(Guid? organizationId);
 
@@ -647,8 +593,6 @@ namespace DocuSign.Admin.Api
         /// </remarks>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">The organization ID Guid</param>
-
-
         /// <returns>Task of ApiResponse (List&lt;OrganizationAccountSettingsImportResponse&gt;)</returns>
         System.Threading.Tasks.Task<ApiResponse<List<OrganizationAccountSettingsImportResponse>>> GetBulkAccountSettingsImportsAsyncWithHttpInfo(Guid? organizationId);
         /// <summary>
@@ -658,9 +602,8 @@ namespace DocuSign.Admin.Api
         /// Required scopes: user_read
         /// </remarks>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">The organization ID Guid</param>/// <param name="importId">The import ID Guid for the request</param>
-
-
+        /// <param name="organizationId">The organization ID Guid</param>
+        /// <param name="importId">The import ID Guid for the request</param>
         /// <returns>Task of Object</returns>
         System.Threading.Tasks.Task<Object> GetBulkUserImportCSVAsync(Guid? organizationId, Guid? importId);
 
@@ -671,9 +614,8 @@ namespace DocuSign.Admin.Api
         /// Required scopes: user_read
         /// </remarks>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">The organization ID Guid</param>/// <param name="importId">The import ID Guid for the request</param>
-
-
+        /// <param name="organizationId">The organization ID Guid</param>
+        /// <param name="importId">The import ID Guid for the request</param>
         /// <returns>Task of ApiResponse (Object)</returns>
         System.Threading.Tasks.Task<ApiResponse<Object>> GetBulkUserImportCSVAsyncWithHttpInfo(Guid? organizationId, Guid? importId);
         /// <summary>
@@ -683,9 +625,8 @@ namespace DocuSign.Admin.Api
         /// Required scopes: user_read
         /// </remarks>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">The organization ID Guid</param>/// <param name="importId">The import ID Guid for the request</param>
-
-
+        /// <param name="organizationId">The organization ID Guid</param>
+        /// <param name="importId">The import ID Guid for the request</param>
         /// <returns>Task of OrganizationImportResponse</returns>
         System.Threading.Tasks.Task<OrganizationImportResponse> GetBulkUserImportRequestAsync(Guid? organizationId, Guid? importId);
 
@@ -696,9 +637,8 @@ namespace DocuSign.Admin.Api
         /// Required scopes: user_read
         /// </remarks>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">The organization ID Guid</param>/// <param name="importId">The import ID Guid for the request</param>
-
-
+        /// <param name="organizationId">The organization ID Guid</param>
+        /// <param name="importId">The import ID Guid for the request</param>
         /// <returns>Task of ApiResponse (OrganizationImportResponse)</returns>
         System.Threading.Tasks.Task<ApiResponse<OrganizationImportResponse>> GetBulkUserImportRequestAsyncWithHttpInfo(Guid? organizationId, Guid? importId);
         /// <summary>
@@ -709,8 +649,6 @@ namespace DocuSign.Admin.Api
         /// </remarks>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">The organization ID Guid</param>
-
-
         /// <returns>Task of OrganizationImportsResponse</returns>
         System.Threading.Tasks.Task<OrganizationImportsResponse> GetBulkUserImportRequestsAsync(Guid? organizationId);
 
@@ -722,8 +660,6 @@ namespace DocuSign.Admin.Api
         /// </remarks>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">The organization ID Guid</param>
-
-
         /// <returns>Task of ApiResponse (OrganizationImportsResponse)</returns>
         System.Threading.Tasks.Task<ApiResponse<OrganizationImportsResponse>> GetBulkUserImportRequestsAsyncWithHttpInfo(Guid? organizationId);
         #endregion Asynchronous Operations
@@ -787,14 +723,12 @@ namespace DocuSign.Admin.Api
         /// </summary>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">The organization ID Guid</param>
-        /// <param name="fileCsv"></param>
-
-
+        /// <param name="fileCsv">CSV file.</param>
         /// <returns>OrganizationAccountSettingsImportResponse</returns>
-        public OrganizationAccountSettingsImportResponse AddBulkAccountSettingsImport(Guid? organizationId, byte[] fileCsv)
+        public OrganizationAccountSettingsImportResponse AddBulkAccountSettingsImport(Guid? organizationId,  byte[] fileCsv)
         {
-            ApiResponse<OrganizationAccountSettingsImportResponse> localVarResponse = AddBulkAccountSettingsImportWithHttpInfo(organizationId, fileCsv);
-            return localVarResponse.Data;
+             ApiResponse<OrganizationAccountSettingsImportResponse> localVarResponse = AddBulkAccountSettingsImportWithHttpInfo(organizationId,  fileCsv);
+             return localVarResponse.Data;
         }
 
         /// <summary>
@@ -802,10 +736,9 @@ namespace DocuSign.Admin.Api
         /// </summary>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">The organization ID Guid</param>
-        /// <param name="fileCsv"></param>
-
+        /// <param name="fileCsv">CSV file.</param>
         /// <returns>ApiResponse of OrganizationAccountSettingsImportResponse</returns>
-        public ApiResponse<OrganizationAccountSettingsImportResponse> AddBulkAccountSettingsImportWithHttpInfo(Guid? organizationId, byte[] fileCsv)
+        public ApiResponse<OrganizationAccountSettingsImportResponse> AddBulkAccountSettingsImportWithHttpInfo(Guid? organizationId,  byte[] fileCsv)
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
@@ -842,13 +775,14 @@ namespace DocuSign.Admin.Api
             if (organizationId != null) localVarPathParams.Add("organizationId", this.ApiClient.ParameterToString(organizationId)); // path parameter
 
 
+
             if (fileCsv != null && fileCsv.GetType() != typeof(byte[]))
             {
-                localVarPostBody = this.ApiClient.Serialize(fileCsv); // http body (model) parameter	
+                localVarPostBody = this.ApiClient.Serialize(fileCsv); // http body (model) parameter
             }
             else
             {
-                localVarPostBody = fileCsv; // byte array	
+                localVarPostBody = fileCsv; // byte array
             }
 
 
@@ -865,7 +799,7 @@ namespace DocuSign.Admin.Api
                 if (exception != null) throw exception;
             }
 
-
+            
             // DocuSign: Handle for PDF return types
             if (localVarResponse.ContentType != null && !localVarResponse.ContentType.ToLower().Contains("json"))
             {
@@ -875,7 +809,7 @@ namespace DocuSign.Admin.Api
             {
                 return new ApiResponse<OrganizationAccountSettingsImportResponse>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (OrganizationAccountSettingsImportResponse)this.ApiClient.Deserialize(localVarResponse, typeof(OrganizationAccountSettingsImportResponse)));
             }
-
+            
         }
 
         /// <summary>
@@ -883,15 +817,12 @@ namespace DocuSign.Admin.Api
         /// </summary>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">The organization ID Guid</param>
-        /// <param name="fileCsv"></param>
-
-
+        /// <param name="fileCsv">CSV file.</param>
         /// <returns>Task of OrganizationAccountSettingsImportResponse</returns>
-        public async System.Threading.Tasks.Task<OrganizationAccountSettingsImportResponse> AddBulkAccountSettingsImportAsync(Guid? organizationId, byte[] fileCsv)
+        public async System.Threading.Tasks.Task<OrganizationAccountSettingsImportResponse> AddBulkAccountSettingsImportAsync(Guid? organizationId,  byte[] fileCsv)
         {
-            ApiResponse<OrganizationAccountSettingsImportResponse> localVarResponse = await AddBulkAccountSettingsImportAsyncWithHttpInfo(organizationId, fileCsv);
-            return localVarResponse.Data;
-
+             ApiResponse<OrganizationAccountSettingsImportResponse> localVarResponse = await AddBulkAccountSettingsImportAsyncWithHttpInfo(organizationId,  fileCsv);
+             return localVarResponse.Data;
         }
 
         /// <summary>
@@ -899,8 +830,7 @@ namespace DocuSign.Admin.Api
         /// </summary>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">The organization ID Guid</param>
-        /// <param name="fileCsv"></param>
-
+        /// <param name="fileCsv">CSV file.</param>
         /// <returns>Task of ApiResponse (OrganizationAccountSettingsImportResponse)</returns>
         public async System.Threading.Tasks.Task<ApiResponse<OrganizationAccountSettingsImportResponse>> AddBulkAccountSettingsImportAsyncWithHttpInfo(Guid? organizationId, byte[] fileCsv)
         {
@@ -937,16 +867,14 @@ namespace DocuSign.Admin.Api
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             localVarPathParams.Add("format", "json");
             if (organizationId != null) localVarPathParams.Add("organizationId", this.ApiClient.ParameterToString(organizationId)); // path parameter
-
-
             if (fileCsv != null && fileCsv.GetType() != typeof(byte[]))
-                {
-                    localVarPostBody = this.ApiClient.Serialize(fileCsv); // http body (model) parameter	
-                }
-                else
-                {
-                    localVarPostBody = fileCsv; // byte array	
-                }
+            {
+                localVarPostBody = this.ApiClient.Serialize(fileCsv); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = fileCsv; // byte array
+            }
 
 
             // make the HTTP request
@@ -965,7 +893,7 @@ namespace DocuSign.Admin.Api
             return new ApiResponse<OrganizationAccountSettingsImportResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
                 (OrganizationAccountSettingsImportResponse)this.ApiClient.Deserialize(localVarResponse, typeof(OrganizationAccountSettingsImportResponse)));
-
+            
         }
 
 
@@ -975,13 +903,12 @@ namespace DocuSign.Admin.Api
         /// </summary>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">The organization ID Guid</param>
-        /// <param name="fileCsv"></param>
-
+        /// <param name="fileCsv">CSV file.</param>
         /// <returns>OrganizationImportResponse</returns>
-        public OrganizationImportResponse CreateBulkImportAddUsersRequest(Guid? organizationId, byte[] fileCsv)
+        public OrganizationImportResponse CreateBulkImportAddUsersRequest(Guid? organizationId,  byte[] fileCsv)
         {
-            ApiResponse<OrganizationImportResponse> localVarResponse = CreateBulkImportAddUsersRequestWithHttpInfo(organizationId, fileCsv);
-            return localVarResponse.Data;
+             ApiResponse<OrganizationImportResponse> localVarResponse = CreateBulkImportAddUsersRequestWithHttpInfo(organizationId,  fileCsv);
+             return localVarResponse.Data;
         }
 
         /// <summary>
@@ -989,10 +916,9 @@ namespace DocuSign.Admin.Api
         /// </summary>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">The organization ID Guid</param>
-        /// <param name="fileCsv"></param>
-
+        /// <param name="fileCsv">CSV file.</param>
         /// <returns>ApiResponse of OrganizationImportResponse</returns>
-        public ApiResponse<OrganizationImportResponse> CreateBulkImportAddUsersRequestWithHttpInfo(Guid? organizationId, byte[] fileCsv)
+        public ApiResponse<OrganizationImportResponse> CreateBulkImportAddUsersRequestWithHttpInfo(Guid? organizationId,  byte[] fileCsv)
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
@@ -1029,14 +955,16 @@ namespace DocuSign.Admin.Api
             if (organizationId != null) localVarPathParams.Add("organizationId", this.ApiClient.ParameterToString(organizationId)); // path parameter
 
 
+
             if (fileCsv != null && fileCsv.GetType() != typeof(byte[]))
-                {
-                    localVarPostBody = this.ApiClient.Serialize(fileCsv); // http body (model) parameter	
-                }
-                else
-                {
-                    localVarPostBody = fileCsv; // byte array	
-                }
+            {
+                localVarPostBody = this.ApiClient.Serialize(fileCsv); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = fileCsv; // byte array
+            }
+
 
             // make the HTTP request
             IRestResponse localVarResponse = (IRestResponse)this.ApiClient.CallApi(localVarPath,
@@ -1051,7 +979,7 @@ namespace DocuSign.Admin.Api
                 if (exception != null) throw exception;
             }
 
-
+            
             // DocuSign: Handle for PDF return types
             if (localVarResponse.ContentType != null && !localVarResponse.ContentType.ToLower().Contains("json"))
             {
@@ -1061,7 +989,7 @@ namespace DocuSign.Admin.Api
             {
                 return new ApiResponse<OrganizationImportResponse>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (OrganizationImportResponse)this.ApiClient.Deserialize(localVarResponse, typeof(OrganizationImportResponse)));
             }
-
+            
         }
 
         /// <summary>
@@ -1069,14 +997,12 @@ namespace DocuSign.Admin.Api
         /// </summary>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">The organization ID Guid</param>
-        /// <param name="fileCsv"></param>
-
+        /// <param name="fileCsv">CSV file.</param>
         /// <returns>Task of OrganizationImportResponse</returns>
-        public async System.Threading.Tasks.Task<OrganizationImportResponse> CreateBulkImportAddUsersRequestAsync(Guid? organizationId, byte[] fileCsv)
+        public async System.Threading.Tasks.Task<OrganizationImportResponse> CreateBulkImportAddUsersRequestAsync(Guid? organizationId,  byte[] fileCsv)
         {
-            ApiResponse<OrganizationImportResponse> localVarResponse = await CreateBulkImportAddUsersRequestAsyncWithHttpInfo(organizationId, fileCsv);
-            return localVarResponse.Data;
-
+             ApiResponse<OrganizationImportResponse> localVarResponse = await CreateBulkImportAddUsersRequestAsyncWithHttpInfo(organizationId,  fileCsv);
+             return localVarResponse.Data;
         }
 
         /// <summary>
@@ -1084,8 +1010,7 @@ namespace DocuSign.Admin.Api
         /// </summary>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">The organization ID Guid</param>
-        /// <param name="fileCsv"></param>
-
+        /// <param name="fileCsv">CSV file.</param>
         /// <returns>Task of ApiResponse (OrganizationImportResponse)</returns>
         public async System.Threading.Tasks.Task<ApiResponse<OrganizationImportResponse>> CreateBulkImportAddUsersRequestAsyncWithHttpInfo(Guid? organizationId, byte[] fileCsv)
         {
@@ -1122,15 +1047,13 @@ namespace DocuSign.Admin.Api
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             localVarPathParams.Add("format", "json");
             if (organizationId != null) localVarPathParams.Add("organizationId", this.ApiClient.ParameterToString(organizationId)); // path parameter
-
-
             if (fileCsv != null && fileCsv.GetType() != typeof(byte[]))
             {
-                localVarPostBody = this.ApiClient.Serialize(fileCsv); // http body (model) parameter	
+                localVarPostBody = this.ApiClient.Serialize(fileCsv); // http body (model) parameter
             }
             else
             {
-                localVarPostBody = fileCsv; // byte array	
+                localVarPostBody = fileCsv; // byte array
             }
 
 
@@ -1150,7 +1073,7 @@ namespace DocuSign.Admin.Api
             return new ApiResponse<OrganizationImportResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
                 (OrganizationImportResponse)this.ApiClient.Deserialize(localVarResponse, typeof(OrganizationImportResponse)));
-
+            
         }
 
 
@@ -1160,13 +1083,11 @@ namespace DocuSign.Admin.Api
         /// </summary>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">The organization ID Guid</param>
-
-
         /// <returns>OrganizationImportResponse</returns>
         public OrganizationImportResponse CreateBulkImportCloseUsersRequest(Guid? organizationId)
         {
-            ApiResponse<OrganizationImportResponse> localVarResponse = CreateBulkImportCloseUsersRequestWithHttpInfo(organizationId);
-            return localVarResponse.Data;
+             ApiResponse<OrganizationImportResponse> localVarResponse = CreateBulkImportCloseUsersRequestWithHttpInfo(organizationId);
+             return localVarResponse.Data;
         }
 
         /// <summary>
@@ -1174,8 +1095,6 @@ namespace DocuSign.Admin.Api
         /// </summary>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">The organization ID Guid</param>
-
-
         /// <returns>ApiResponse of OrganizationImportResponse</returns>
         public ApiResponse<OrganizationImportResponse> CreateBulkImportCloseUsersRequestWithHttpInfo(Guid? organizationId)
         {
@@ -1226,7 +1145,7 @@ namespace DocuSign.Admin.Api
                 if (exception != null) throw exception;
             }
 
-
+            
             // DocuSign: Handle for PDF return types
             if (localVarResponse.ContentType != null && !localVarResponse.ContentType.ToLower().Contains("json"))
             {
@@ -1236,7 +1155,7 @@ namespace DocuSign.Admin.Api
             {
                 return new ApiResponse<OrganizationImportResponse>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (OrganizationImportResponse)this.ApiClient.Deserialize(localVarResponse, typeof(OrganizationImportResponse)));
             }
-
+            
         }
 
         /// <summary>
@@ -1244,14 +1163,11 @@ namespace DocuSign.Admin.Api
         /// </summary>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">The organization ID Guid</param>
-
-
         /// <returns>Task of OrganizationImportResponse</returns>
         public async System.Threading.Tasks.Task<OrganizationImportResponse> CreateBulkImportCloseUsersRequestAsync(Guid? organizationId)
         {
-            ApiResponse<OrganizationImportResponse> localVarResponse = await CreateBulkImportCloseUsersRequestAsyncWithHttpInfo(organizationId);
-            return localVarResponse.Data;
-
+             ApiResponse<OrganizationImportResponse> localVarResponse = await CreateBulkImportCloseUsersRequestAsyncWithHttpInfo(organizationId);
+             return localVarResponse.Data;
         }
 
         /// <summary>
@@ -1259,8 +1175,6 @@ namespace DocuSign.Admin.Api
         /// </summary>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">The organization ID Guid</param>
-
-
         /// <returns>Task of ApiResponse (OrganizationImportResponse)</returns>
         public async System.Threading.Tasks.Task<ApiResponse<OrganizationImportResponse>> CreateBulkImportCloseUsersRequestAsyncWithHttpInfo(Guid? organizationId)
         {
@@ -1296,8 +1210,6 @@ namespace DocuSign.Admin.Api
             if (organizationId != null) localVarPathParams.Add("organizationId", this.ApiClient.ParameterToString(organizationId)); // path parameter
 
 
-
-
             // make the HTTP request
             IRestResponse localVarResponse = (IRestResponse)await this.ApiClient.CallApiAsync(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
@@ -1314,7 +1226,7 @@ namespace DocuSign.Admin.Api
             return new ApiResponse<OrganizationImportResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
                 (OrganizationImportResponse)this.ApiClient.Deserialize(localVarResponse, typeof(OrganizationImportResponse)));
-
+            
         }
 
 
@@ -1324,13 +1236,11 @@ namespace DocuSign.Admin.Api
         /// </summary>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">The organization ID Guid</param>
-
-
         /// <returns>OrganizationImportResponse</returns>
         public OrganizationImportResponse CreateBulkImportExternalCloseUsersRequest(Guid? organizationId)
         {
-            ApiResponse<OrganizationImportResponse> localVarResponse = CreateBulkImportExternalCloseUsersRequestWithHttpInfo(organizationId);
-            return localVarResponse.Data;
+             ApiResponse<OrganizationImportResponse> localVarResponse = CreateBulkImportExternalCloseUsersRequestWithHttpInfo(organizationId);
+             return localVarResponse.Data;
         }
 
         /// <summary>
@@ -1338,8 +1248,6 @@ namespace DocuSign.Admin.Api
         /// </summary>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">The organization ID Guid</param>
-
-
         /// <returns>ApiResponse of OrganizationImportResponse</returns>
         public ApiResponse<OrganizationImportResponse> CreateBulkImportExternalCloseUsersRequestWithHttpInfo(Guid? organizationId)
         {
@@ -1390,7 +1298,7 @@ namespace DocuSign.Admin.Api
                 if (exception != null) throw exception;
             }
 
-
+            
             // DocuSign: Handle for PDF return types
             if (localVarResponse.ContentType != null && !localVarResponse.ContentType.ToLower().Contains("json"))
             {
@@ -1400,7 +1308,7 @@ namespace DocuSign.Admin.Api
             {
                 return new ApiResponse<OrganizationImportResponse>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (OrganizationImportResponse)this.ApiClient.Deserialize(localVarResponse, typeof(OrganizationImportResponse)));
             }
-
+            
         }
 
         /// <summary>
@@ -1408,14 +1316,11 @@ namespace DocuSign.Admin.Api
         /// </summary>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">The organization ID Guid</param>
-
-
         /// <returns>Task of OrganizationImportResponse</returns>
         public async System.Threading.Tasks.Task<OrganizationImportResponse> CreateBulkImportExternalCloseUsersRequestAsync(Guid? organizationId)
         {
-            ApiResponse<OrganizationImportResponse> localVarResponse = await CreateBulkImportExternalCloseUsersRequestAsyncWithHttpInfo(organizationId);
-            return localVarResponse.Data;
-
+             ApiResponse<OrganizationImportResponse> localVarResponse = await CreateBulkImportExternalCloseUsersRequestAsyncWithHttpInfo(organizationId);
+             return localVarResponse.Data;
         }
 
         /// <summary>
@@ -1423,8 +1328,6 @@ namespace DocuSign.Admin.Api
         /// </summary>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">The organization ID Guid</param>
-
-
         /// <returns>Task of ApiResponse (OrganizationImportResponse)</returns>
         public async System.Threading.Tasks.Task<ApiResponse<OrganizationImportResponse>> CreateBulkImportExternalCloseUsersRequestAsyncWithHttpInfo(Guid? organizationId)
         {
@@ -1460,8 +1363,6 @@ namespace DocuSign.Admin.Api
             if (organizationId != null) localVarPathParams.Add("organizationId", this.ApiClient.ParameterToString(organizationId)); // path parameter
 
 
-
-
             // make the HTTP request
             IRestResponse localVarResponse = (IRestResponse)await this.ApiClient.CallApiAsync(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
@@ -1478,7 +1379,7 @@ namespace DocuSign.Admin.Api
             return new ApiResponse<OrganizationImportResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
                 (OrganizationImportResponse)this.ApiClient.Deserialize(localVarResponse, typeof(OrganizationImportResponse)));
-
+            
         }
 
 
@@ -1487,25 +1388,25 @@ namespace DocuSign.Admin.Api
         /// Import request for adding user to a single account within the organization. Allows upload of user information without requiring an AccountId column Required scopes: user_write
         /// </summary>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">The organization ID Guid</param>/// <param name="accountId">The account ID Guid</param>
-        /// <param name="fileCsv"></param>
-
+        /// <param name="organizationId">The organization ID Guid</param>
+        /// <param name="accountId">The account ID Guid</param>
+        /// <param name="fileCsv">CSV file.</param>
         /// <returns>OrganizationImportResponse</returns>
-        public OrganizationImportResponse CreateBulkImportSingleAccountAddUsersRequest(Guid? organizationId, Guid? accountId, byte[] fileCsv)
+        public OrganizationImportResponse CreateBulkImportSingleAccountAddUsersRequest(Guid? organizationId, Guid? accountId,  byte[] fileCsv)
         {
-            ApiResponse<OrganizationImportResponse> localVarResponse = CreateBulkImportSingleAccountAddUsersRequestWithHttpInfo(organizationId, accountId, fileCsv);
-            return localVarResponse.Data;
+             ApiResponse<OrganizationImportResponse> localVarResponse = CreateBulkImportSingleAccountAddUsersRequestWithHttpInfo(organizationId, accountId,  fileCsv);
+             return localVarResponse.Data;
         }
 
         /// <summary>
         /// Import request for adding user to a single account within the organization. Allows upload of user information without requiring an AccountId column Required scopes: user_write
         /// </summary>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">The organization ID Guid</param>/// <param name="accountId">The account ID Guid</param>
-        /// <param name="fileCsv"></param>
-
+        /// <param name="organizationId">The organization ID Guid</param>
+        /// <param name="accountId">The account ID Guid</param>
+        /// <param name="fileCsv">CSV file.</param>
         /// <returns>ApiResponse of OrganizationImportResponse</returns>
-        public ApiResponse<OrganizationImportResponse> CreateBulkImportSingleAccountAddUsersRequestWithHttpInfo(Guid? organizationId, Guid? accountId, byte[] fileCsv)
+        public ApiResponse<OrganizationImportResponse> CreateBulkImportSingleAccountAddUsersRequestWithHttpInfo(Guid? organizationId, Guid? accountId,  byte[] fileCsv)
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
@@ -1546,13 +1447,14 @@ namespace DocuSign.Admin.Api
             if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
 
 
+
             if (fileCsv != null && fileCsv.GetType() != typeof(byte[]))
             {
-                localVarPostBody = this.ApiClient.Serialize(fileCsv); // http body (model) parameter	
+                localVarPostBody = this.ApiClient.Serialize(fileCsv); // http body (model) parameter
             }
             else
             {
-                localVarPostBody = fileCsv; // byte array	
+                localVarPostBody = fileCsv; // byte array
             }
 
 
@@ -1569,7 +1471,7 @@ namespace DocuSign.Admin.Api
                 if (exception != null) throw exception;
             }
 
-
+            
             // DocuSign: Handle for PDF return types
             if (localVarResponse.ContentType != null && !localVarResponse.ContentType.ToLower().Contains("json"))
             {
@@ -1579,31 +1481,30 @@ namespace DocuSign.Admin.Api
             {
                 return new ApiResponse<OrganizationImportResponse>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (OrganizationImportResponse)this.ApiClient.Deserialize(localVarResponse, typeof(OrganizationImportResponse)));
             }
-
+            
         }
 
         /// <summary>
         /// Import request for adding user to a single account within the organization. Allows upload of user information without requiring an AccountId column Required scopes: user_write
         /// </summary>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">The organization ID Guid</param>/// <param name="accountId">The account ID Guid</param>
-        /// <param name="fileCsv"></param>
-
+        /// <param name="organizationId">The organization ID Guid</param>
+        /// <param name="accountId">The account ID Guid</param>
+        /// <param name="fileCsv">CSV file.</param>
         /// <returns>Task of OrganizationImportResponse</returns>
-        public async System.Threading.Tasks.Task<OrganizationImportResponse> CreateBulkImportSingleAccountAddUsersRequestAsync(Guid? organizationId, Guid? accountId, byte[] fileCsv)
+        public async System.Threading.Tasks.Task<OrganizationImportResponse> CreateBulkImportSingleAccountAddUsersRequestAsync(Guid? organizationId, Guid? accountId,  byte[] fileCsv)
         {
-            ApiResponse<OrganizationImportResponse> localVarResponse = await CreateBulkImportSingleAccountAddUsersRequestAsyncWithHttpInfo(organizationId, accountId, fileCsv);
-            return localVarResponse.Data;
-
+             ApiResponse<OrganizationImportResponse> localVarResponse = await CreateBulkImportSingleAccountAddUsersRequestAsyncWithHttpInfo(organizationId, accountId,  fileCsv);
+             return localVarResponse.Data;
         }
 
         /// <summary>
         /// Import request for adding user to a single account within the organization. Allows upload of user information without requiring an AccountId column Required scopes: user_write
         /// </summary>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">The organization ID Guid</param>/// <param name="accountId">The account ID Guid</param>
-        /// <param name="fileCsv"></param>
-
+        /// <param name="organizationId">The organization ID Guid</param>
+        /// <param name="accountId">The account ID Guid</param>
+        /// <param name="fileCsv">CSV file.</param>
         /// <returns>Task of ApiResponse (OrganizationImportResponse)</returns>
         public async System.Threading.Tasks.Task<ApiResponse<OrganizationImportResponse>> CreateBulkImportSingleAccountAddUsersRequestAsyncWithHttpInfo(Guid? organizationId, Guid? accountId, byte[] fileCsv)
         {
@@ -1644,14 +1545,13 @@ namespace DocuSign.Admin.Api
             localVarPathParams.Add("format", "json");
             if (organizationId != null) localVarPathParams.Add("organizationId", this.ApiClient.ParameterToString(organizationId)); // path parameter
             if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
-
             if (fileCsv != null && fileCsv.GetType() != typeof(byte[]))
             {
-                localVarPostBody = this.ApiClient.Serialize(fileCsv); // http body (model) parameter	
+                localVarPostBody = this.ApiClient.Serialize(fileCsv); // http body (model) parameter
             }
             else
             {
-                localVarPostBody = fileCsv; // byte array	
+                localVarPostBody = fileCsv; // byte array
             }
 
 
@@ -1671,7 +1571,7 @@ namespace DocuSign.Admin.Api
             return new ApiResponse<OrganizationImportResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
                 (OrganizationImportResponse)this.ApiClient.Deserialize(localVarResponse, typeof(OrganizationImportResponse)));
-
+            
         }
 
 
@@ -1680,25 +1580,25 @@ namespace DocuSign.Admin.Api
         /// Import request for updating users for a single account within the organization. Allows upload of user information without requiring an AccountId column Required scopes: user_write
         /// </summary>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">The organization ID Guid</param>/// <param name="accountId">The account ID Guid</param>
-        /// <param name="fileCsv"></param>
-
+        /// <param name="organizationId">The organization ID Guid</param>
+        /// <param name="accountId">The account ID Guid</param>
+        /// <param name="fileCsv">CSV file.</param>
         /// <returns>OrganizationImportResponse</returns>
-        public OrganizationImportResponse CreateBulkImportSingleAccountUpdateUsersRequest(Guid? organizationId, Guid? accountId, byte[] fileCsv)
+        public OrganizationImportResponse CreateBulkImportSingleAccountUpdateUsersRequest(Guid? organizationId, Guid? accountId,  byte[] fileCsv)
         {
-            ApiResponse<OrganizationImportResponse> localVarResponse = CreateBulkImportSingleAccountUpdateUsersRequestWithHttpInfo(organizationId, accountId, fileCsv);
-            return localVarResponse.Data;
+             ApiResponse<OrganizationImportResponse> localVarResponse = CreateBulkImportSingleAccountUpdateUsersRequestWithHttpInfo(organizationId, accountId,  fileCsv);
+             return localVarResponse.Data;
         }
 
         /// <summary>
         /// Import request for updating users for a single account within the organization. Allows upload of user information without requiring an AccountId column Required scopes: user_write
         /// </summary>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">The organization ID Guid</param>/// <param name="accountId">The account ID Guid</param>
-        /// <param name="fileCsv"></param>
-
+        /// <param name="organizationId">The organization ID Guid</param>
+        /// <param name="accountId">The account ID Guid</param>
+        /// <param name="fileCsv">CSV file.</param>
         /// <returns>ApiResponse of OrganizationImportResponse</returns>
-        public ApiResponse<OrganizationImportResponse> CreateBulkImportSingleAccountUpdateUsersRequestWithHttpInfo(Guid? organizationId, Guid? accountId, byte[] fileCsv)
+        public ApiResponse<OrganizationImportResponse> CreateBulkImportSingleAccountUpdateUsersRequestWithHttpInfo(Guid? organizationId, Guid? accountId,  byte[] fileCsv)
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
@@ -1739,13 +1639,14 @@ namespace DocuSign.Admin.Api
             if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
 
 
+
             if (fileCsv != null && fileCsv.GetType() != typeof(byte[]))
             {
-                localVarPostBody = this.ApiClient.Serialize(fileCsv); // http body (model) parameter	
+                localVarPostBody = this.ApiClient.Serialize(fileCsv); // http body (model) parameter
             }
             else
             {
-                localVarPostBody = fileCsv; // byte array	
+                localVarPostBody = fileCsv; // byte array
             }
 
 
@@ -1762,7 +1663,7 @@ namespace DocuSign.Admin.Api
                 if (exception != null) throw exception;
             }
 
-
+            
             // DocuSign: Handle for PDF return types
             if (localVarResponse.ContentType != null && !localVarResponse.ContentType.ToLower().Contains("json"))
             {
@@ -1772,31 +1673,30 @@ namespace DocuSign.Admin.Api
             {
                 return new ApiResponse<OrganizationImportResponse>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (OrganizationImportResponse)this.ApiClient.Deserialize(localVarResponse, typeof(OrganizationImportResponse)));
             }
-
+            
         }
 
         /// <summary>
         /// Import request for updating users for a single account within the organization. Allows upload of user information without requiring an AccountId column Required scopes: user_write
         /// </summary>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">The organization ID Guid</param>/// <param name="accountId">The account ID Guid</param>
-        /// <param name="fileCsv"></param>
-
+        /// <param name="organizationId">The organization ID Guid</param>
+        /// <param name="accountId">The account ID Guid</param>
+        /// <param name="fileCsv">CSV file.</param>
         /// <returns>Task of OrganizationImportResponse</returns>
-        public async System.Threading.Tasks.Task<OrganizationImportResponse> CreateBulkImportSingleAccountUpdateUsersRequestAsync(Guid? organizationId, Guid? accountId, byte[] fileCsv)
+        public async System.Threading.Tasks.Task<OrganizationImportResponse> CreateBulkImportSingleAccountUpdateUsersRequestAsync(Guid? organizationId, Guid? accountId,  byte[] fileCsv)
         {
-            ApiResponse<OrganizationImportResponse> localVarResponse = await CreateBulkImportSingleAccountUpdateUsersRequestAsyncWithHttpInfo(organizationId, accountId, fileCsv);
-            return localVarResponse.Data;
-
+             ApiResponse<OrganizationImportResponse> localVarResponse = await CreateBulkImportSingleAccountUpdateUsersRequestAsyncWithHttpInfo(organizationId, accountId,  fileCsv);
+             return localVarResponse.Data;
         }
 
         /// <summary>
         /// Import request for updating users for a single account within the organization. Allows upload of user information without requiring an AccountId column Required scopes: user_write
         /// </summary>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">The organization ID Guid</param>/// <param name="accountId">The account ID Guid</param>
-        /// <param name="fileCsv"></param>
-
+        /// <param name="organizationId">The organization ID Guid</param>
+        /// <param name="accountId">The account ID Guid</param>
+        /// <param name="fileCsv">CSV file.</param>
         /// <returns>Task of ApiResponse (OrganizationImportResponse)</returns>
         public async System.Threading.Tasks.Task<ApiResponse<OrganizationImportResponse>> CreateBulkImportSingleAccountUpdateUsersRequestAsyncWithHttpInfo(Guid? organizationId, Guid? accountId, byte[] fileCsv)
         {
@@ -1837,15 +1737,13 @@ namespace DocuSign.Admin.Api
             localVarPathParams.Add("format", "json");
             if (organizationId != null) localVarPathParams.Add("organizationId", this.ApiClient.ParameterToString(organizationId)); // path parameter
             if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
-
-
             if (fileCsv != null && fileCsv.GetType() != typeof(byte[]))
             {
-                localVarPostBody = this.ApiClient.Serialize(fileCsv); // http body (model) parameter	
+                localVarPostBody = this.ApiClient.Serialize(fileCsv); // http body (model) parameter
             }
             else
             {
-                localVarPostBody = fileCsv; // byte array	
+                localVarPostBody = fileCsv; // byte array
             }
 
 
@@ -1865,7 +1763,7 @@ namespace DocuSign.Admin.Api
             return new ApiResponse<OrganizationImportResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
                 (OrganizationImportResponse)this.ApiClient.Deserialize(localVarResponse, typeof(OrganizationImportResponse)));
-
+            
         }
 
 
@@ -1875,13 +1773,12 @@ namespace DocuSign.Admin.Api
         /// </summary>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">The organization ID Guid</param>
-        /// <param name="fileCsv"></param>
-
+        /// <param name="fileCsv">CSV file.</param>
         /// <returns>OrganizationImportResponse</returns>
-        public OrganizationImportResponse CreateBulkImportUpdateUsersRequest(Guid? organizationId, byte[] fileCsv)
+        public OrganizationImportResponse CreateBulkImportUpdateUsersRequest(Guid? organizationId,  byte[] fileCsv)
         {
-            ApiResponse<OrganizationImportResponse> localVarResponse = CreateBulkImportUpdateUsersRequestWithHttpInfo(organizationId, fileCsv);
-            return localVarResponse.Data;
+             ApiResponse<OrganizationImportResponse> localVarResponse = CreateBulkImportUpdateUsersRequestWithHttpInfo(organizationId,  fileCsv);
+             return localVarResponse.Data;
         }
 
         /// <summary>
@@ -1889,10 +1786,9 @@ namespace DocuSign.Admin.Api
         /// </summary>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">The organization ID Guid</param>
-        /// <param name="fileCsv"></param>
-
+        /// <param name="fileCsv">CSV file.</param>
         /// <returns>ApiResponse of OrganizationImportResponse</returns>
-        public ApiResponse<OrganizationImportResponse> CreateBulkImportUpdateUsersRequestWithHttpInfo(Guid? organizationId, byte[] fileCsv)
+        public ApiResponse<OrganizationImportResponse> CreateBulkImportUpdateUsersRequestWithHttpInfo(Guid? organizationId,  byte[] fileCsv)
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
@@ -1929,13 +1825,14 @@ namespace DocuSign.Admin.Api
             if (organizationId != null) localVarPathParams.Add("organizationId", this.ApiClient.ParameterToString(organizationId)); // path parameter
 
 
+
             if (fileCsv != null && fileCsv.GetType() != typeof(byte[]))
             {
-                localVarPostBody = this.ApiClient.Serialize(fileCsv); // http body (model) parameter	
+                localVarPostBody = this.ApiClient.Serialize(fileCsv); // http body (model) parameter
             }
             else
             {
-                localVarPostBody = fileCsv; // byte array	
+                localVarPostBody = fileCsv; // byte array
             }
 
 
@@ -1952,7 +1849,7 @@ namespace DocuSign.Admin.Api
                 if (exception != null) throw exception;
             }
 
-
+            
             // DocuSign: Handle for PDF return types
             if (localVarResponse.ContentType != null && !localVarResponse.ContentType.ToLower().Contains("json"))
             {
@@ -1962,7 +1859,7 @@ namespace DocuSign.Admin.Api
             {
                 return new ApiResponse<OrganizationImportResponse>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (OrganizationImportResponse)this.ApiClient.Deserialize(localVarResponse, typeof(OrganizationImportResponse)));
             }
-
+            
         }
 
         /// <summary>
@@ -1970,14 +1867,12 @@ namespace DocuSign.Admin.Api
         /// </summary>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">The organization ID Guid</param>
-        /// <param name="fileCsv"></param>
-
+        /// <param name="fileCsv">CSV file.</param>
         /// <returns>Task of OrganizationImportResponse</returns>
-        public async System.Threading.Tasks.Task<OrganizationImportResponse> CreateBulkImportUpdateUsersRequestAsync(Guid? organizationId, byte[] fileCsv)
+        public async System.Threading.Tasks.Task<OrganizationImportResponse> CreateBulkImportUpdateUsersRequestAsync(Guid? organizationId,  byte[] fileCsv)
         {
-            ApiResponse<OrganizationImportResponse> localVarResponse = await CreateBulkImportUpdateUsersRequestAsyncWithHttpInfo(organizationId, fileCsv);
-            return localVarResponse.Data;
-
+             ApiResponse<OrganizationImportResponse> localVarResponse = await CreateBulkImportUpdateUsersRequestAsyncWithHttpInfo(organizationId,  fileCsv);
+             return localVarResponse.Data;
         }
 
         /// <summary>
@@ -1985,8 +1880,7 @@ namespace DocuSign.Admin.Api
         /// </summary>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">The organization ID Guid</param>
-        /// <param name="fileCsv"></param>
-
+        /// <param name="fileCsv">CSV file.</param>
         /// <returns>Task of ApiResponse (OrganizationImportResponse)</returns>
         public async System.Threading.Tasks.Task<ApiResponse<OrganizationImportResponse>> CreateBulkImportUpdateUsersRequestAsyncWithHttpInfo(Guid? organizationId, byte[] fileCsv)
         {
@@ -2023,15 +1917,13 @@ namespace DocuSign.Admin.Api
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             localVarPathParams.Add("format", "json");
             if (organizationId != null) localVarPathParams.Add("organizationId", this.ApiClient.ParameterToString(organizationId)); // path parameter
-
-
             if (fileCsv != null && fileCsv.GetType() != typeof(byte[]))
             {
-                localVarPostBody = this.ApiClient.Serialize(fileCsv); // http body (model) parameter	
+                localVarPostBody = this.ApiClient.Serialize(fileCsv); // http body (model) parameter
             }
             else
             {
-                localVarPostBody = fileCsv; // byte array	
+                localVarPostBody = fileCsv; // byte array
             }
 
 
@@ -2051,7 +1943,7 @@ namespace DocuSign.Admin.Api
             return new ApiResponse<OrganizationImportResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
                 (OrganizationImportResponse)this.ApiClient.Deserialize(localVarResponse, typeof(OrganizationImportResponse)));
-
+            
         }
 
 
@@ -2060,23 +1952,21 @@ namespace DocuSign.Admin.Api
         /// Deletes a Bulk Account Settings Import request Required scopes: account_write
         /// </summary>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">The organization ID Guid</param>/// <param name="importId">The import ID Guid for the request</param>
-
-
+        /// <param name="organizationId">The organization ID Guid</param>
+        /// <param name="importId">The import ID Guid for the request</param>
         /// <returns>Object</returns>
         public Object DeleteBulkAccountSettingsImport(Guid? organizationId, Guid? importId)
         {
-            ApiResponse<Object> localVarResponse = DeleteBulkAccountSettingsImportWithHttpInfo(organizationId, importId);
-            return localVarResponse.Data;
+             ApiResponse<Object> localVarResponse = DeleteBulkAccountSettingsImportWithHttpInfo(organizationId, importId);
+             return localVarResponse.Data;
         }
 
         /// <summary>
         /// Deletes a Bulk Account Settings Import request Required scopes: account_write
         /// </summary>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">The organization ID Guid</param>/// <param name="importId">The import ID Guid for the request</param>
-
-
+        /// <param name="organizationId">The organization ID Guid</param>
+        /// <param name="importId">The import ID Guid for the request</param>
         /// <returns>ApiResponse of Object</returns>
         public ApiResponse<Object> DeleteBulkAccountSettingsImportWithHttpInfo(Guid? organizationId, Guid? importId)
         {
@@ -2131,7 +2021,7 @@ namespace DocuSign.Admin.Api
                 if (exception != null) throw exception;
             }
 
-
+            
             // DocuSign: Handle for PDF return types
             if (localVarResponse.ContentType != null && !localVarResponse.ContentType.ToLower().Contains("json"))
             {
@@ -2141,31 +2031,28 @@ namespace DocuSign.Admin.Api
             {
                 return new ApiResponse<Object>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (Object)this.ApiClient.Deserialize(localVarResponse, typeof(Object)));
             }
-
+            
         }
 
         /// <summary>
         /// Deletes a Bulk Account Settings Import request Required scopes: account_write
         /// </summary>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">The organization ID Guid</param>/// <param name="importId">The import ID Guid for the request</param>
-
-
+        /// <param name="organizationId">The organization ID Guid</param>
+        /// <param name="importId">The import ID Guid for the request</param>
         /// <returns>Task of Object</returns>
         public async System.Threading.Tasks.Task<Object> DeleteBulkAccountSettingsImportAsync(Guid? organizationId, Guid? importId)
         {
-            ApiResponse<Object> localVarResponse = await DeleteBulkAccountSettingsImportAsyncWithHttpInfo(organizationId, importId);
-            return localVarResponse.Data;
-
+             ApiResponse<Object> localVarResponse = await DeleteBulkAccountSettingsImportAsyncWithHttpInfo(organizationId, importId);
+             return localVarResponse.Data;
         }
 
         /// <summary>
         /// Deletes a Bulk Account Settings Import request Required scopes: account_write
         /// </summary>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">The organization ID Guid</param>/// <param name="importId">The import ID Guid for the request</param>
-
-
+        /// <param name="organizationId">The organization ID Guid</param>
+        /// <param name="importId">The import ID Guid for the request</param>
         /// <returns>Task of ApiResponse (Object)</returns>
         public async System.Threading.Tasks.Task<ApiResponse<Object>> DeleteBulkAccountSettingsImportAsyncWithHttpInfo(Guid? organizationId, Guid? importId)
         {
@@ -2205,8 +2092,6 @@ namespace DocuSign.Admin.Api
             if (importId != null) localVarPathParams.Add("importId", this.ApiClient.ParameterToString(importId)); // path parameter
 
 
-
-
             // make the HTTP request
             IRestResponse localVarResponse = (IRestResponse)await this.ApiClient.CallApiAsync(localVarPath,
                 Method.DELETE, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
@@ -2223,7 +2108,7 @@ namespace DocuSign.Admin.Api
             return new ApiResponse<Object>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
                 (Object)this.ApiClient.Deserialize(localVarResponse, typeof(Object)));
-
+            
         }
 
 
@@ -2232,23 +2117,21 @@ namespace DocuSign.Admin.Api
         /// Deletes a User Import request Required scopes: user_write
         /// </summary>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">The organization ID Guid</param>/// <param name="importId">The import ID Guid for the request</param>
-
-
+        /// <param name="organizationId">The organization ID Guid</param>
+        /// <param name="importId">The import ID Guid for the request</param>
         /// <returns>Object</returns>
         public Object DeleteBulkUserImport(Guid? organizationId, Guid? importId)
         {
-            ApiResponse<Object> localVarResponse = DeleteBulkUserImportWithHttpInfo(organizationId, importId);
-            return localVarResponse.Data;
+             ApiResponse<Object> localVarResponse = DeleteBulkUserImportWithHttpInfo(organizationId, importId);
+             return localVarResponse.Data;
         }
 
         /// <summary>
         /// Deletes a User Import request Required scopes: user_write
         /// </summary>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">The organization ID Guid</param>/// <param name="importId">The import ID Guid for the request</param>
-
-
+        /// <param name="organizationId">The organization ID Guid</param>
+        /// <param name="importId">The import ID Guid for the request</param>
         /// <returns>ApiResponse of Object</returns>
         public ApiResponse<Object> DeleteBulkUserImportWithHttpInfo(Guid? organizationId, Guid? importId)
         {
@@ -2303,7 +2186,7 @@ namespace DocuSign.Admin.Api
                 if (exception != null) throw exception;
             }
 
-
+            
             // DocuSign: Handle for PDF return types
             if (localVarResponse.ContentType != null && !localVarResponse.ContentType.ToLower().Contains("json"))
             {
@@ -2313,31 +2196,28 @@ namespace DocuSign.Admin.Api
             {
                 return new ApiResponse<Object>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (Object)this.ApiClient.Deserialize(localVarResponse, typeof(Object)));
             }
-
+            
         }
 
         /// <summary>
         /// Deletes a User Import request Required scopes: user_write
         /// </summary>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">The organization ID Guid</param>/// <param name="importId">The import ID Guid for the request</param>
-
-
+        /// <param name="organizationId">The organization ID Guid</param>
+        /// <param name="importId">The import ID Guid for the request</param>
         /// <returns>Task of Object</returns>
         public async System.Threading.Tasks.Task<Object> DeleteBulkUserImportAsync(Guid? organizationId, Guid? importId)
         {
-            ApiResponse<Object> localVarResponse = await DeleteBulkUserImportAsyncWithHttpInfo(organizationId, importId);
-            return localVarResponse.Data;
-
+             ApiResponse<Object> localVarResponse = await DeleteBulkUserImportAsyncWithHttpInfo(organizationId, importId);
+             return localVarResponse.Data;
         }
 
         /// <summary>
         /// Deletes a User Import request Required scopes: user_write
         /// </summary>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">The organization ID Guid</param>/// <param name="importId">The import ID Guid for the request</param>
-
-
+        /// <param name="organizationId">The organization ID Guid</param>
+        /// <param name="importId">The import ID Guid for the request</param>
         /// <returns>Task of ApiResponse (Object)</returns>
         public async System.Threading.Tasks.Task<ApiResponse<Object>> DeleteBulkUserImportAsyncWithHttpInfo(Guid? organizationId, Guid? importId)
         {
@@ -2377,8 +2257,6 @@ namespace DocuSign.Admin.Api
             if (importId != null) localVarPathParams.Add("importId", this.ApiClient.ParameterToString(importId)); // path parameter
 
 
-
-
             // make the HTTP request
             IRestResponse localVarResponse = (IRestResponse)await this.ApiClient.CallApiAsync(localVarPath,
                 Method.DELETE, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
@@ -2395,7 +2273,7 @@ namespace DocuSign.Admin.Api
             return new ApiResponse<Object>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
                 (Object)this.ApiClient.Deserialize(localVarResponse, typeof(Object)));
-
+            
         }
 
 
@@ -2404,23 +2282,21 @@ namespace DocuSign.Admin.Api
         /// Returns the details/metadata for a Bulk Account Settings Import request Required scopes: account_read
         /// </summary>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">The organization ID Guid</param>/// <param name="importId">The import ID Guid for the request</param>
-
-
+        /// <param name="organizationId">The organization ID Guid</param>
+        /// <param name="importId">The import ID Guid for the request</param>
         /// <returns>OrganizationAccountSettingsImportResponse</returns>
         public OrganizationAccountSettingsImportResponse GetBulkAccountSettingsImport(Guid? organizationId, Guid? importId)
         {
-            ApiResponse<OrganizationAccountSettingsImportResponse> localVarResponse = GetBulkAccountSettingsImportWithHttpInfo(organizationId, importId);
-            return localVarResponse.Data;
+             ApiResponse<OrganizationAccountSettingsImportResponse> localVarResponse = GetBulkAccountSettingsImportWithHttpInfo(organizationId, importId);
+             return localVarResponse.Data;
         }
 
         /// <summary>
         /// Returns the details/metadata for a Bulk Account Settings Import request Required scopes: account_read
         /// </summary>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">The organization ID Guid</param>/// <param name="importId">The import ID Guid for the request</param>
-
-
+        /// <param name="organizationId">The organization ID Guid</param>
+        /// <param name="importId">The import ID Guid for the request</param>
         /// <returns>ApiResponse of OrganizationAccountSettingsImportResponse</returns>
         public ApiResponse<OrganizationAccountSettingsImportResponse> GetBulkAccountSettingsImportWithHttpInfo(Guid? organizationId, Guid? importId)
         {
@@ -2475,7 +2351,7 @@ namespace DocuSign.Admin.Api
                 if (exception != null) throw exception;
             }
 
-
+            
             // DocuSign: Handle for PDF return types
             if (localVarResponse.ContentType != null && !localVarResponse.ContentType.ToLower().Contains("json"))
             {
@@ -2485,31 +2361,28 @@ namespace DocuSign.Admin.Api
             {
                 return new ApiResponse<OrganizationAccountSettingsImportResponse>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (OrganizationAccountSettingsImportResponse)this.ApiClient.Deserialize(localVarResponse, typeof(OrganizationAccountSettingsImportResponse)));
             }
-
+            
         }
 
         /// <summary>
         /// Returns the details/metadata for a Bulk Account Settings Import request Required scopes: account_read
         /// </summary>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">The organization ID Guid</param>/// <param name="importId">The import ID Guid for the request</param>
-
-
+        /// <param name="organizationId">The organization ID Guid</param>
+        /// <param name="importId">The import ID Guid for the request</param>
         /// <returns>Task of OrganizationAccountSettingsImportResponse</returns>
         public async System.Threading.Tasks.Task<OrganizationAccountSettingsImportResponse> GetBulkAccountSettingsImportAsync(Guid? organizationId, Guid? importId)
         {
-            ApiResponse<OrganizationAccountSettingsImportResponse> localVarResponse = await GetBulkAccountSettingsImportAsyncWithHttpInfo(organizationId, importId);
-            return localVarResponse.Data;
-
+             ApiResponse<OrganizationAccountSettingsImportResponse> localVarResponse = await GetBulkAccountSettingsImportAsyncWithHttpInfo(organizationId, importId);
+             return localVarResponse.Data;
         }
 
         /// <summary>
         /// Returns the details/metadata for a Bulk Account Settings Import request Required scopes: account_read
         /// </summary>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">The organization ID Guid</param>/// <param name="importId">The import ID Guid for the request</param>
-
-
+        /// <param name="organizationId">The organization ID Guid</param>
+        /// <param name="importId">The import ID Guid for the request</param>
         /// <returns>Task of ApiResponse (OrganizationAccountSettingsImportResponse)</returns>
         public async System.Threading.Tasks.Task<ApiResponse<OrganizationAccountSettingsImportResponse>> GetBulkAccountSettingsImportAsyncWithHttpInfo(Guid? organizationId, Guid? importId)
         {
@@ -2549,8 +2422,6 @@ namespace DocuSign.Admin.Api
             if (importId != null) localVarPathParams.Add("importId", this.ApiClient.ParameterToString(importId)); // path parameter
 
 
-
-
             // make the HTTP request
             IRestResponse localVarResponse = (IRestResponse)await this.ApiClient.CallApiAsync(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
@@ -2567,7 +2438,7 @@ namespace DocuSign.Admin.Api
             return new ApiResponse<OrganizationAccountSettingsImportResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
                 (OrganizationAccountSettingsImportResponse)this.ApiClient.Deserialize(localVarResponse, typeof(OrganizationAccountSettingsImportResponse)));
-
+            
         }
 
 
@@ -2577,13 +2448,11 @@ namespace DocuSign.Admin.Api
         /// </summary>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">The organization ID Guid</param>
-
-
         /// <returns>List&lt;OrganizationAccountSettingsImportResponse&gt;</returns>
         public List<OrganizationAccountSettingsImportResponse> GetBulkAccountSettingsImports(Guid? organizationId)
         {
-            ApiResponse<List<OrganizationAccountSettingsImportResponse>> localVarResponse = GetBulkAccountSettingsImportsWithHttpInfo(organizationId);
-            return localVarResponse.Data;
+             ApiResponse<List<OrganizationAccountSettingsImportResponse>> localVarResponse = GetBulkAccountSettingsImportsWithHttpInfo(organizationId);
+             return localVarResponse.Data;
         }
 
         /// <summary>
@@ -2591,8 +2460,6 @@ namespace DocuSign.Admin.Api
         /// </summary>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">The organization ID Guid</param>
-
-
         /// <returns>ApiResponse of List&lt;OrganizationAccountSettingsImportResponse&gt;</returns>
         public ApiResponse<List<OrganizationAccountSettingsImportResponse>> GetBulkAccountSettingsImportsWithHttpInfo(Guid? organizationId)
         {
@@ -2643,7 +2510,7 @@ namespace DocuSign.Admin.Api
                 if (exception != null) throw exception;
             }
 
-
+            
             // DocuSign: Handle for PDF return types
             if (localVarResponse.ContentType != null && !localVarResponse.ContentType.ToLower().Contains("json"))
             {
@@ -2653,7 +2520,7 @@ namespace DocuSign.Admin.Api
             {
                 return new ApiResponse<List<OrganizationAccountSettingsImportResponse>>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (List<OrganizationAccountSettingsImportResponse>)this.ApiClient.Deserialize(localVarResponse, typeof(List<OrganizationAccountSettingsImportResponse>)));
             }
-
+            
         }
 
         /// <summary>
@@ -2661,14 +2528,11 @@ namespace DocuSign.Admin.Api
         /// </summary>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">The organization ID Guid</param>
-
-
         /// <returns>Task of List&lt;OrganizationAccountSettingsImportResponse&gt;</returns>
         public async System.Threading.Tasks.Task<List<OrganizationAccountSettingsImportResponse>> GetBulkAccountSettingsImportsAsync(Guid? organizationId)
         {
-            ApiResponse<List<OrganizationAccountSettingsImportResponse>> localVarResponse = await GetBulkAccountSettingsImportsAsyncWithHttpInfo(organizationId);
-            return localVarResponse.Data;
-
+             ApiResponse<List<OrganizationAccountSettingsImportResponse>> localVarResponse = await GetBulkAccountSettingsImportsAsyncWithHttpInfo(organizationId);
+             return localVarResponse.Data;
         }
 
         /// <summary>
@@ -2676,8 +2540,6 @@ namespace DocuSign.Admin.Api
         /// </summary>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">The organization ID Guid</param>
-
-
         /// <returns>Task of ApiResponse (List&lt;OrganizationAccountSettingsImportResponse&gt;)</returns>
         public async System.Threading.Tasks.Task<ApiResponse<List<OrganizationAccountSettingsImportResponse>>> GetBulkAccountSettingsImportsAsyncWithHttpInfo(Guid? organizationId)
         {
@@ -2713,8 +2575,6 @@ namespace DocuSign.Admin.Api
             if (organizationId != null) localVarPathParams.Add("organizationId", this.ApiClient.ParameterToString(organizationId)); // path parameter
 
 
-
-
             // make the HTTP request
             IRestResponse localVarResponse = (IRestResponse)await this.ApiClient.CallApiAsync(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
@@ -2731,7 +2591,7 @@ namespace DocuSign.Admin.Api
             return new ApiResponse<List<OrganizationAccountSettingsImportResponse>>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
                 (List<OrganizationAccountSettingsImportResponse>)this.ApiClient.Deserialize(localVarResponse, typeof(List<OrganizationAccountSettingsImportResponse>)));
-
+            
         }
 
 
@@ -2740,23 +2600,21 @@ namespace DocuSign.Admin.Api
         /// Returns a text/csv file with user details for a User Import request Required scopes: user_read
         /// </summary>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">The organization ID Guid</param>/// <param name="importId">The import ID Guid for the request</param>
-
-
+        /// <param name="organizationId">The organization ID Guid</param>
+        /// <param name="importId">The import ID Guid for the request</param>
         /// <returns>Object</returns>
         public Object GetBulkUserImportCSV(Guid? organizationId, Guid? importId)
         {
-            ApiResponse<Object> localVarResponse = GetBulkUserImportCSVWithHttpInfo(organizationId, importId);
-            return localVarResponse.Data;
+             ApiResponse<Object> localVarResponse = GetBulkUserImportCSVWithHttpInfo(organizationId, importId);
+             return localVarResponse.Data;
         }
 
         /// <summary>
         /// Returns a text/csv file with user details for a User Import request Required scopes: user_read
         /// </summary>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">The organization ID Guid</param>/// <param name="importId">The import ID Guid for the request</param>
-
-
+        /// <param name="organizationId">The organization ID Guid</param>
+        /// <param name="importId">The import ID Guid for the request</param>
         /// <returns>ApiResponse of Object</returns>
         public ApiResponse<Object> GetBulkUserImportCSVWithHttpInfo(Guid? organizationId, Guid? importId)
         {
@@ -2811,7 +2669,7 @@ namespace DocuSign.Admin.Api
                 if (exception != null) throw exception;
             }
 
-
+            
             // DocuSign: Handle for PDF return types
             if (localVarResponse.ContentType != null && !localVarResponse.ContentType.ToLower().Contains("json"))
             {
@@ -2821,31 +2679,28 @@ namespace DocuSign.Admin.Api
             {
                 return new ApiResponse<Object>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (Object)this.ApiClient.Deserialize(localVarResponse, typeof(Object)));
             }
-
+            
         }
 
         /// <summary>
         /// Returns a text/csv file with user details for a User Import request Required scopes: user_read
         /// </summary>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">The organization ID Guid</param>/// <param name="importId">The import ID Guid for the request</param>
-
-
+        /// <param name="organizationId">The organization ID Guid</param>
+        /// <param name="importId">The import ID Guid for the request</param>
         /// <returns>Task of Object</returns>
         public async System.Threading.Tasks.Task<Object> GetBulkUserImportCSVAsync(Guid? organizationId, Guid? importId)
         {
-            ApiResponse<Object> localVarResponse = await GetBulkUserImportCSVAsyncWithHttpInfo(organizationId, importId);
-            return localVarResponse.Data;
-
+             ApiResponse<Object> localVarResponse = await GetBulkUserImportCSVAsyncWithHttpInfo(organizationId, importId);
+             return localVarResponse.Data;
         }
 
         /// <summary>
         /// Returns a text/csv file with user details for a User Import request Required scopes: user_read
         /// </summary>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">The organization ID Guid</param>/// <param name="importId">The import ID Guid for the request</param>
-
-
+        /// <param name="organizationId">The organization ID Guid</param>
+        /// <param name="importId">The import ID Guid for the request</param>
         /// <returns>Task of ApiResponse (Object)</returns>
         public async System.Threading.Tasks.Task<ApiResponse<Object>> GetBulkUserImportCSVAsyncWithHttpInfo(Guid? organizationId, Guid? importId)
         {
@@ -2885,8 +2740,6 @@ namespace DocuSign.Admin.Api
             if (importId != null) localVarPathParams.Add("importId", this.ApiClient.ParameterToString(importId)); // path parameter
 
 
-
-
             // make the HTTP request
             IRestResponse localVarResponse = (IRestResponse)await this.ApiClient.CallApiAsync(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
@@ -2903,7 +2756,7 @@ namespace DocuSign.Admin.Api
             return new ApiResponse<Object>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
                 (Object)this.ApiClient.Deserialize(localVarResponse, typeof(Object)));
-
+            
         }
 
 
@@ -2912,23 +2765,21 @@ namespace DocuSign.Admin.Api
         /// Returns the details/metadata for a User Import request Required scopes: user_read
         /// </summary>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">The organization ID Guid</param>/// <param name="importId">The import ID Guid for the request</param>
-
-
+        /// <param name="organizationId">The organization ID Guid</param>
+        /// <param name="importId">The import ID Guid for the request</param>
         /// <returns>OrganizationImportResponse</returns>
         public OrganizationImportResponse GetBulkUserImportRequest(Guid? organizationId, Guid? importId)
         {
-            ApiResponse<OrganizationImportResponse> localVarResponse = GetBulkUserImportRequestWithHttpInfo(organizationId, importId);
-            return localVarResponse.Data;
+             ApiResponse<OrganizationImportResponse> localVarResponse = GetBulkUserImportRequestWithHttpInfo(organizationId, importId);
+             return localVarResponse.Data;
         }
 
         /// <summary>
         /// Returns the details/metadata for a User Import request Required scopes: user_read
         /// </summary>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">The organization ID Guid</param>/// <param name="importId">The import ID Guid for the request</param>
-
-
+        /// <param name="organizationId">The organization ID Guid</param>
+        /// <param name="importId">The import ID Guid for the request</param>
         /// <returns>ApiResponse of OrganizationImportResponse</returns>
         public ApiResponse<OrganizationImportResponse> GetBulkUserImportRequestWithHttpInfo(Guid? organizationId, Guid? importId)
         {
@@ -2983,7 +2834,7 @@ namespace DocuSign.Admin.Api
                 if (exception != null) throw exception;
             }
 
-
+            
             // DocuSign: Handle for PDF return types
             if (localVarResponse.ContentType != null && !localVarResponse.ContentType.ToLower().Contains("json"))
             {
@@ -2993,31 +2844,28 @@ namespace DocuSign.Admin.Api
             {
                 return new ApiResponse<OrganizationImportResponse>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (OrganizationImportResponse)this.ApiClient.Deserialize(localVarResponse, typeof(OrganizationImportResponse)));
             }
-
+            
         }
 
         /// <summary>
         /// Returns the details/metadata for a User Import request Required scopes: user_read
         /// </summary>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">The organization ID Guid</param>/// <param name="importId">The import ID Guid for the request</param>
-
-
+        /// <param name="organizationId">The organization ID Guid</param>
+        /// <param name="importId">The import ID Guid for the request</param>
         /// <returns>Task of OrganizationImportResponse</returns>
         public async System.Threading.Tasks.Task<OrganizationImportResponse> GetBulkUserImportRequestAsync(Guid? organizationId, Guid? importId)
         {
-            ApiResponse<OrganizationImportResponse> localVarResponse = await GetBulkUserImportRequestAsyncWithHttpInfo(organizationId, importId);
-            return localVarResponse.Data;
-
+             ApiResponse<OrganizationImportResponse> localVarResponse = await GetBulkUserImportRequestAsyncWithHttpInfo(organizationId, importId);
+             return localVarResponse.Data;
         }
 
         /// <summary>
         /// Returns the details/metadata for a User Import request Required scopes: user_read
         /// </summary>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">The organization ID Guid</param>/// <param name="importId">The import ID Guid for the request</param>
-
-
+        /// <param name="organizationId">The organization ID Guid</param>
+        /// <param name="importId">The import ID Guid for the request</param>
         /// <returns>Task of ApiResponse (OrganizationImportResponse)</returns>
         public async System.Threading.Tasks.Task<ApiResponse<OrganizationImportResponse>> GetBulkUserImportRequestAsyncWithHttpInfo(Guid? organizationId, Guid? importId)
         {
@@ -3057,8 +2905,6 @@ namespace DocuSign.Admin.Api
             if (importId != null) localVarPathParams.Add("importId", this.ApiClient.ParameterToString(importId)); // path parameter
 
 
-
-
             // make the HTTP request
             IRestResponse localVarResponse = (IRestResponse)await this.ApiClient.CallApiAsync(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
@@ -3075,7 +2921,7 @@ namespace DocuSign.Admin.Api
             return new ApiResponse<OrganizationImportResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
                 (OrganizationImportResponse)this.ApiClient.Deserialize(localVarResponse, typeof(OrganizationImportResponse)));
-
+            
         }
 
 
@@ -3085,13 +2931,11 @@ namespace DocuSign.Admin.Api
         /// </summary>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">The organization ID Guid</param>
-
-
         /// <returns>OrganizationImportsResponse</returns>
         public OrganizationImportsResponse GetBulkUserImportRequests(Guid? organizationId)
         {
-            ApiResponse<OrganizationImportsResponse> localVarResponse = GetBulkUserImportRequestsWithHttpInfo(organizationId);
-            return localVarResponse.Data;
+             ApiResponse<OrganizationImportsResponse> localVarResponse = GetBulkUserImportRequestsWithHttpInfo(organizationId);
+             return localVarResponse.Data;
         }
 
         /// <summary>
@@ -3099,8 +2943,6 @@ namespace DocuSign.Admin.Api
         /// </summary>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">The organization ID Guid</param>
-
-
         /// <returns>ApiResponse of OrganizationImportsResponse</returns>
         public ApiResponse<OrganizationImportsResponse> GetBulkUserImportRequestsWithHttpInfo(Guid? organizationId)
         {
@@ -3151,7 +2993,7 @@ namespace DocuSign.Admin.Api
                 if (exception != null) throw exception;
             }
 
-
+            
             // DocuSign: Handle for PDF return types
             if (localVarResponse.ContentType != null && !localVarResponse.ContentType.ToLower().Contains("json"))
             {
@@ -3161,7 +3003,7 @@ namespace DocuSign.Admin.Api
             {
                 return new ApiResponse<OrganizationImportsResponse>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (OrganizationImportsResponse)this.ApiClient.Deserialize(localVarResponse, typeof(OrganizationImportsResponse)));
             }
-
+            
         }
 
         /// <summary>
@@ -3169,14 +3011,11 @@ namespace DocuSign.Admin.Api
         /// </summary>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">The organization ID Guid</param>
-
-
         /// <returns>Task of OrganizationImportsResponse</returns>
         public async System.Threading.Tasks.Task<OrganizationImportsResponse> GetBulkUserImportRequestsAsync(Guid? organizationId)
         {
-            ApiResponse<OrganizationImportsResponse> localVarResponse = await GetBulkUserImportRequestsAsyncWithHttpInfo(organizationId);
-            return localVarResponse.Data;
-
+             ApiResponse<OrganizationImportsResponse> localVarResponse = await GetBulkUserImportRequestsAsyncWithHttpInfo(organizationId);
+             return localVarResponse.Data;
         }
 
         /// <summary>
@@ -3184,8 +3023,6 @@ namespace DocuSign.Admin.Api
         /// </summary>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">The organization ID Guid</param>
-
-
         /// <returns>Task of ApiResponse (OrganizationImportsResponse)</returns>
         public async System.Threading.Tasks.Task<ApiResponse<OrganizationImportsResponse>> GetBulkUserImportRequestsAsyncWithHttpInfo(Guid? organizationId)
         {
@@ -3221,8 +3058,6 @@ namespace DocuSign.Admin.Api
             if (organizationId != null) localVarPathParams.Add("organizationId", this.ApiClient.ParameterToString(organizationId)); // path parameter
 
 
-
-
             // make the HTTP request
             IRestResponse localVarResponse = (IRestResponse)await this.ApiClient.CallApiAsync(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
@@ -3239,7 +3074,7 @@ namespace DocuSign.Admin.Api
             return new ApiResponse<OrganizationImportsResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
                 (OrganizationImportsResponse)this.ApiClient.Deserialize(localVarResponse, typeof(OrganizationImportsResponse)));
-
+            
         }
 
     }

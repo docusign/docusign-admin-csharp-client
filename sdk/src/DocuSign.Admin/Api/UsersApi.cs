@@ -31,11 +31,12 @@ namespace DocuSign.Admin.Api
         /// Required scopes: user_write
         /// </remarks>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">The organization ID Guid</param>/// <param name="userId">The user ID Guid</param>/// <param name="membershipId">The membership ID Guid</param>
+        /// <param name="organizationId">The organization ID Guid</param>
+        /// <param name="userId">The user ID Guid</param>
+        /// <param name="membershipId">The membership ID Guid</param>
         /// <param name="request">Additional details about the user&#39;s membership</param>
-        
         /// <returns></returns>
-        UpdateResponse ActivateMembership (Guid? organizationId, Guid? userId, Guid? membershipId, ForceActivateMembershipRequest request);
+        UpdateResponse ActivateMembership(Guid? organizationId, Guid? userId, Guid? membershipId, ForceActivateMembershipRequest request);
 
         /// <summary>
         /// Activates user memberships
@@ -44,9 +45,10 @@ namespace DocuSign.Admin.Api
         /// Required scopes: user_write
         /// </remarks>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">The organization ID Guid</param>/// <param name="userId">The user ID Guid</param>/// <param name="membershipId">The membership ID Guid</param>
+        /// <param name="organizationId">The organization ID Guid</param>
+        /// <param name="userId">The user ID Guid</param>
+        /// <param name="membershipId">The membership ID Guid</param>
         /// <param name="request">Additional details about the user&#39;s membership</param>
-        
         /// <returns>ApiResponse of </returns>
         ApiResponse<UpdateResponse> ActivateMembershipWithHttpInfo(Guid? organizationId, Guid? userId, Guid? membershipId, ForceActivateMembershipRequest request);
         /// <summary>
@@ -56,11 +58,11 @@ namespace DocuSign.Admin.Api
         /// Required scopes: user_write
         /// </remarks>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">The organization ID GUID</param>/// <param name="accountId">The account ID GUID</param>
+        /// <param name="organizationId">The organization ID GUID</param>
+        /// <param name="accountId">The account ID GUID</param>
         /// <param name="request">The request object</param>
-        
         /// <returns></returns>
-        AddUserResponse AddOrUpdateUser (Guid? organizationId, Guid? accountId, NewMultiProductUserAddRequest request);
+        AddUserResponse AddOrUpdateUser(Guid? organizationId, Guid? accountId, NewMultiProductUserAddRequest request);
 
         /// <summary>
         /// Creates and updates a multi-product user
@@ -69,9 +71,9 @@ namespace DocuSign.Admin.Api
         /// Required scopes: user_write
         /// </remarks>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">The organization ID GUID</param>/// <param name="accountId">The account ID GUID</param>
+        /// <param name="organizationId">The organization ID GUID</param>
+        /// <param name="accountId">The account ID GUID</param>
         /// <param name="request">The request object</param>
-        
         /// <returns>ApiResponse of </returns>
         ApiResponse<AddUserResponse> AddOrUpdateUserWithHttpInfo(Guid? organizationId, Guid? accountId, NewMultiProductUserAddRequest request);
         /// <summary>
@@ -81,11 +83,11 @@ namespace DocuSign.Admin.Api
         /// Required scopes: user_write
         /// </remarks>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">The organization ID Guid</param>/// <param name="accountId">The account ID Guid</param>
+        /// <param name="organizationId">The organization ID Guid</param>
+        /// <param name="accountId">The account ID Guid</param>
         /// <param name="request">The details for the users to add to the account</param>
-        
         /// <returns></returns>
-        NewUserResponse AddUsers (Guid? organizationId, Guid? accountId, NewAccountUserRequest request);
+        NewUserResponse AddUsers(Guid? organizationId, Guid? accountId, NewAccountUserRequest request);
 
         /// <summary>
         /// Adds users to an account.
@@ -94,9 +96,9 @@ namespace DocuSign.Admin.Api
         /// Required scopes: user_write
         /// </remarks>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">The organization ID Guid</param>/// <param name="accountId">The account ID Guid</param>
+        /// <param name="organizationId">The organization ID Guid</param>
+        /// <param name="accountId">The account ID Guid</param>
         /// <param name="request">The details for the users to add to the account</param>
-        
         /// <returns>ApiResponse of </returns>
         ApiResponse<NewUserResponse> AddUsersWithHttpInfo(Guid? organizationId, Guid? accountId, NewAccountUserRequest request);
         /// <summary>
@@ -106,11 +108,11 @@ namespace DocuSign.Admin.Api
         /// Required scopes: user_write
         /// </remarks>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">The organization ID Guid</param>/// <param name="userId">The user ID Guid</param>
+        /// <param name="organizationId">The organization ID Guid</param>
+        /// <param name="userId">The user ID Guid</param>
         /// <param name="request">The details about which membership to close</param>
-        
         /// <returns></returns>
-        DeleteMembershipsResponse CloseMemberships (Guid? organizationId, Guid? userId, DeleteMembershipsRequest request);
+        DeleteMembershipsResponse CloseMemberships(Guid? organizationId, Guid? userId, DeleteMembershipsRequest request);
 
         /// <summary>
         /// Closes a user&#39;s memberships.
@@ -119,9 +121,9 @@ namespace DocuSign.Admin.Api
         /// Required scopes: user_write
         /// </remarks>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">The organization ID Guid</param>/// <param name="userId">The user ID Guid</param>
+        /// <param name="organizationId">The organization ID Guid</param>
+        /// <param name="userId">The user ID Guid</param>
         /// <param name="request">The details about which membership to close</param>
-        
         /// <returns>ApiResponse of </returns>
         ApiResponse<DeleteMembershipsResponse> CloseMembershipsWithHttpInfo(Guid? organizationId, Guid? userId, DeleteMembershipsRequest request);
         /// <summary>
@@ -133,9 +135,8 @@ namespace DocuSign.Admin.Api
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">The organization ID Guid</param>
         /// <param name="request">Details about the user to be added</param>
-        
         /// <returns></returns>
-        NewUserResponse CreateUser (Guid? organizationId, NewUserRequest request);
+        NewUserResponse CreateUser(Guid? organizationId, NewUserRequest request);
 
         /// <summary>
         /// Creates a new user
@@ -146,7 +147,6 @@ namespace DocuSign.Admin.Api
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">The organization ID Guid</param>
         /// <param name="request">Details about the user to be added</param>
-        
         /// <returns>ApiResponse of </returns>
         ApiResponse<NewUserResponse> CreateUserWithHttpInfo(Guid? organizationId, NewUserRequest request);
         /// <summary>
@@ -156,11 +156,11 @@ namespace DocuSign.Admin.Api
         /// Required scopes: user_write
         /// </remarks>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">The organization ID Guid</param>/// <param name="userId">The user ID Guid</param>
+        /// <param name="organizationId">The organization ID Guid</param>
+        /// <param name="userId">The user ID Guid</param>
         /// <param name="requestModel">The details for the user identities to be deleted</param>
-        
         /// <returns></returns>
-        DeleteResponse DeleteIdentities (Guid? organizationId, Guid? userId, DeleteUserIdentityRequest requestModel);
+        DeleteResponse DeleteIdentities(Guid? organizationId, Guid? userId, DeleteUserIdentityRequest requestModel);
 
         /// <summary>
         /// Deletes user identities.
@@ -169,11 +169,59 @@ namespace DocuSign.Admin.Api
         /// Required scopes: user_write
         /// </remarks>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">The organization ID Guid</param>/// <param name="userId">The user ID Guid</param>
+        /// <param name="organizationId">The organization ID Guid</param>
+        /// <param name="userId">The user ID Guid</param>
         /// <param name="requestModel">The details for the user identities to be deleted</param>
-        
         /// <returns>ApiResponse of </returns>
         ApiResponse<DeleteResponse> DeleteIdentitiesWithHttpInfo(Guid? organizationId, Guid? userId, DeleteUserIdentityRequest requestModel);
+        /// <summary>
+        /// Returns user information using the userId for lookup.
+        /// </summary>
+        /// <remarks>
+        /// Required scopes: user_read
+        /// </remarks>
+        /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">The organization ID Guid</param>
+        /// <param name="userId">The user ID Guid</param>
+        /// <param name="options">Options for modifying the behavior of the function.</param>
+        /// <returns></returns>
+        UsersDrilldownResponse GetUserDSProfile(Guid? organizationId, Guid? userId, UsersApi.GetUserDSProfileOptions options = null);
+
+        /// <summary>
+        /// Returns user information using the userId for lookup.
+        /// </summary>
+        /// <remarks>
+        /// Required scopes: user_read
+        /// </remarks>
+        /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">The organization ID Guid</param>
+        /// <param name="userId">The user ID Guid</param>
+        /// <param name="options">Options for modifying the behavior of the function.</param>
+        /// <returns>ApiResponse of </returns>
+        ApiResponse<UsersDrilldownResponse> GetUserDSProfileWithHttpInfo(Guid? organizationId, Guid? userId, UsersApi.GetUserDSProfileOptions options = null);
+        /// <summary>
+        /// Returns DS user profile information.
+        /// </summary>
+        /// <remarks>
+        /// Required scopes: user_read
+        /// </remarks>
+        /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">The organization ID Guid</param>
+        /// <param name="options">Options for modifying the behavior of the function.</param>
+        /// <returns></returns>
+        UsersDrilldownResponse GetUserDSProfilesByEmail(Guid? organizationId, UsersApi.GetUserDSProfilesByEmailOptions options = null);
+
+        /// <summary>
+        /// Returns DS user profile information.
+        /// </summary>
+        /// <remarks>
+        /// Required scopes: user_read
+        /// </remarks>
+        /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">The organization ID Guid</param>
+        /// <param name="options">Options for modifying the behavior of the function.</param>
+        /// <returns>ApiResponse of </returns>
+        ApiResponse<UsersDrilldownResponse> GetUserDSProfilesByEmailWithHttpInfo(Guid? organizationId, UsersApi.GetUserDSProfilesByEmailOptions options = null);
         /// <summary>
         /// Returns user information.
         /// </summary>
@@ -182,10 +230,9 @@ namespace DocuSign.Admin.Api
         /// </remarks>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">The organization ID Guid</param>
-        
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns></returns>
-        UsersDrilldownResponse GetUserProfiles (Guid? organizationId, UsersApi.GetUserProfilesOptions options = null);
+        UsersDrilldownResponse GetUserProfiles(Guid? organizationId, UsersApi.GetUserProfilesOptions options = null);
 
         /// <summary>
         /// Returns user information.
@@ -195,7 +242,6 @@ namespace DocuSign.Admin.Api
         /// </remarks>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">The organization ID Guid</param>
-        
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>ApiResponse of </returns>
         ApiResponse<UsersDrilldownResponse> GetUserProfilesWithHttpInfo(Guid? organizationId, UsersApi.GetUserProfilesOptions options = null);
@@ -207,10 +253,9 @@ namespace DocuSign.Admin.Api
         /// </remarks>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">The organization ID Guid</param>
-        
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns></returns>
-        OrganizationUsersResponse GetUsers (Guid? organizationId, UsersApi.GetUsersOptions options = null);
+        OrganizationUsersResponse GetUsers(Guid? organizationId, UsersApi.GetUsersOptions options = null);
 
         /// <summary>
         /// Returns information about the users in the organization
@@ -220,7 +265,6 @@ namespace DocuSign.Admin.Api
         /// </remarks>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">The organization ID Guid</param>
-        
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>ApiResponse of </returns>
         ApiResponse<OrganizationUsersResponse> GetUsersWithHttpInfo(Guid? organizationId, UsersApi.GetUsersOptions options = null);
@@ -233,9 +277,8 @@ namespace DocuSign.Admin.Api
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">The organization ID Guid</param>
         /// <param name="request">The details about which email addresses to update</param>
-        
         /// <returns></returns>
-        UsersUpdateResponse UpdateEmailAddress (Guid? organizationId, UpdateUsersEmailRequest request);
+        UsersUpdateResponse UpdateEmailAddress(Guid? organizationId, UpdateUsersEmailRequest request);
 
         /// <summary>
         /// Updates a user&#39;s email address.
@@ -246,7 +289,6 @@ namespace DocuSign.Admin.Api
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">The organization ID Guid</param>
         /// <param name="request">The details about which email addresses to update</param>
-        
         /// <returns>ApiResponse of </returns>
         ApiResponse<UsersUpdateResponse> UpdateEmailAddressWithHttpInfo(Guid? organizationId, UpdateUsersEmailRequest request);
         /// <summary>
@@ -258,9 +300,8 @@ namespace DocuSign.Admin.Api
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">The organization ID Guid</param>
         /// <param name="request">The user details to update</param>
-        
         /// <returns></returns>
-        UsersUpdateResponse UpdateUser (Guid? organizationId, UpdateUsersRequest request);
+        UsersUpdateResponse UpdateUser(Guid? organizationId, UpdateUsersRequest request);
 
         /// <summary>
         /// Updates a user.
@@ -271,7 +312,6 @@ namespace DocuSign.Admin.Api
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">The organization ID Guid</param>
         /// <param name="request">The user details to update</param>
-        
         /// <returns>ApiResponse of </returns>
         ApiResponse<UsersUpdateResponse> UpdateUserWithHttpInfo(Guid? organizationId, UpdateUsersRequest request);
         #endregion Synchronous Operations
@@ -283,11 +323,12 @@ namespace DocuSign.Admin.Api
         /// Required scopes: user_write
         /// </remarks>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">The organization ID Guid</param>/// <param name="userId">The user ID Guid</param>/// <param name="membershipId">The membership ID Guid</param>
+        /// <param name="organizationId">The organization ID Guid</param>
+        /// <param name="userId">The user ID Guid</param>
+        /// <param name="membershipId">The membership ID Guid</param>
         /// <param name="request">Additional details about the user&#39;s membership</param>
-        
         /// <returns>Task of UpdateResponse</returns>
-        System.Threading.Tasks.Task<UpdateResponse> ActivateMembershipAsync (Guid? organizationId, Guid? userId, Guid? membershipId, ForceActivateMembershipRequest request);
+        System.Threading.Tasks.Task<UpdateResponse> ActivateMembershipAsync(Guid? organizationId, Guid? userId, Guid? membershipId, ForceActivateMembershipRequest request);
 
         /// <summary>
         /// Activates user memberships
@@ -296,11 +337,12 @@ namespace DocuSign.Admin.Api
         /// Required scopes: user_write
         /// </remarks>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">The organization ID Guid</param>/// <param name="userId">The user ID Guid</param>/// <param name="membershipId">The membership ID Guid</param>
+        /// <param name="organizationId">The organization ID Guid</param>
+        /// <param name="userId">The user ID Guid</param>
+        /// <param name="membershipId">The membership ID Guid</param>
         /// <param name="request">Additional details about the user&#39;s membership</param>
-        
         /// <returns>Task of ApiResponse (UpdateResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<UpdateResponse>> ActivateMembershipAsyncWithHttpInfo (Guid? organizationId, Guid? userId, Guid? membershipId, ForceActivateMembershipRequest request);
+        System.Threading.Tasks.Task<ApiResponse<UpdateResponse>> ActivateMembershipAsyncWithHttpInfo(Guid? organizationId, Guid? userId, Guid? membershipId, ForceActivateMembershipRequest request);
         /// <summary>
         /// Creates and updates a multi-product user
         /// </summary>
@@ -308,11 +350,11 @@ namespace DocuSign.Admin.Api
         /// Required scopes: user_write
         /// </remarks>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">The organization ID GUID</param>/// <param name="accountId">The account ID GUID</param>
+        /// <param name="organizationId">The organization ID GUID</param>
+        /// <param name="accountId">The account ID GUID</param>
         /// <param name="request">The request object</param>
-        
         /// <returns>Task of AddUserResponse</returns>
-        System.Threading.Tasks.Task<AddUserResponse> AddOrUpdateUserAsync (Guid? organizationId, Guid? accountId, NewMultiProductUserAddRequest request);
+        System.Threading.Tasks.Task<AddUserResponse> AddOrUpdateUserAsync(Guid? organizationId, Guid? accountId, NewMultiProductUserAddRequest request);
 
         /// <summary>
         /// Creates and updates a multi-product user
@@ -321,11 +363,11 @@ namespace DocuSign.Admin.Api
         /// Required scopes: user_write
         /// </remarks>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">The organization ID GUID</param>/// <param name="accountId">The account ID GUID</param>
+        /// <param name="organizationId">The organization ID GUID</param>
+        /// <param name="accountId">The account ID GUID</param>
         /// <param name="request">The request object</param>
-        
         /// <returns>Task of ApiResponse (AddUserResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<AddUserResponse>> AddOrUpdateUserAsyncWithHttpInfo (Guid? organizationId, Guid? accountId, NewMultiProductUserAddRequest request);
+        System.Threading.Tasks.Task<ApiResponse<AddUserResponse>> AddOrUpdateUserAsyncWithHttpInfo(Guid? organizationId, Guid? accountId, NewMultiProductUserAddRequest request);
         /// <summary>
         /// Adds users to an account.
         /// </summary>
@@ -333,11 +375,11 @@ namespace DocuSign.Admin.Api
         /// Required scopes: user_write
         /// </remarks>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">The organization ID Guid</param>/// <param name="accountId">The account ID Guid</param>
+        /// <param name="organizationId">The organization ID Guid</param>
+        /// <param name="accountId">The account ID Guid</param>
         /// <param name="request">The details for the users to add to the account</param>
-        
         /// <returns>Task of NewUserResponse</returns>
-        System.Threading.Tasks.Task<NewUserResponse> AddUsersAsync (Guid? organizationId, Guid? accountId, NewAccountUserRequest request);
+        System.Threading.Tasks.Task<NewUserResponse> AddUsersAsync(Guid? organizationId, Guid? accountId, NewAccountUserRequest request);
 
         /// <summary>
         /// Adds users to an account.
@@ -346,11 +388,11 @@ namespace DocuSign.Admin.Api
         /// Required scopes: user_write
         /// </remarks>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">The organization ID Guid</param>/// <param name="accountId">The account ID Guid</param>
+        /// <param name="organizationId">The organization ID Guid</param>
+        /// <param name="accountId">The account ID Guid</param>
         /// <param name="request">The details for the users to add to the account</param>
-        
         /// <returns>Task of ApiResponse (NewUserResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<NewUserResponse>> AddUsersAsyncWithHttpInfo (Guid? organizationId, Guid? accountId, NewAccountUserRequest request);
+        System.Threading.Tasks.Task<ApiResponse<NewUserResponse>> AddUsersAsyncWithHttpInfo(Guid? organizationId, Guid? accountId, NewAccountUserRequest request);
         /// <summary>
         /// Closes a user&#39;s memberships.
         /// </summary>
@@ -358,11 +400,11 @@ namespace DocuSign.Admin.Api
         /// Required scopes: user_write
         /// </remarks>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">The organization ID Guid</param>/// <param name="userId">The user ID Guid</param>
+        /// <param name="organizationId">The organization ID Guid</param>
+        /// <param name="userId">The user ID Guid</param>
         /// <param name="request">The details about which membership to close</param>
-        
         /// <returns>Task of DeleteMembershipsResponse</returns>
-        System.Threading.Tasks.Task<DeleteMembershipsResponse> CloseMembershipsAsync (Guid? organizationId, Guid? userId, DeleteMembershipsRequest request);
+        System.Threading.Tasks.Task<DeleteMembershipsResponse> CloseMembershipsAsync(Guid? organizationId, Guid? userId, DeleteMembershipsRequest request);
 
         /// <summary>
         /// Closes a user&#39;s memberships.
@@ -371,11 +413,11 @@ namespace DocuSign.Admin.Api
         /// Required scopes: user_write
         /// </remarks>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">The organization ID Guid</param>/// <param name="userId">The user ID Guid</param>
+        /// <param name="organizationId">The organization ID Guid</param>
+        /// <param name="userId">The user ID Guid</param>
         /// <param name="request">The details about which membership to close</param>
-        
         /// <returns>Task of ApiResponse (DeleteMembershipsResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<DeleteMembershipsResponse>> CloseMembershipsAsyncWithHttpInfo (Guid? organizationId, Guid? userId, DeleteMembershipsRequest request);
+        System.Threading.Tasks.Task<ApiResponse<DeleteMembershipsResponse>> CloseMembershipsAsyncWithHttpInfo(Guid? organizationId, Guid? userId, DeleteMembershipsRequest request);
         /// <summary>
         /// Creates a new user
         /// </summary>
@@ -385,9 +427,8 @@ namespace DocuSign.Admin.Api
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">The organization ID Guid</param>
         /// <param name="request">Details about the user to be added</param>
-        
         /// <returns>Task of NewUserResponse</returns>
-        System.Threading.Tasks.Task<NewUserResponse> CreateUserAsync (Guid? organizationId, NewUserRequest request);
+        System.Threading.Tasks.Task<NewUserResponse> CreateUserAsync(Guid? organizationId, NewUserRequest request);
 
         /// <summary>
         /// Creates a new user
@@ -398,9 +439,8 @@ namespace DocuSign.Admin.Api
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">The organization ID Guid</param>
         /// <param name="request">Details about the user to be added</param>
-        
         /// <returns>Task of ApiResponse (NewUserResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<NewUserResponse>> CreateUserAsyncWithHttpInfo (Guid? organizationId, NewUserRequest request);
+        System.Threading.Tasks.Task<ApiResponse<NewUserResponse>> CreateUserAsyncWithHttpInfo(Guid? organizationId, NewUserRequest request);
         /// <summary>
         /// Deletes user identities.
         /// </summary>
@@ -408,11 +448,11 @@ namespace DocuSign.Admin.Api
         /// Required scopes: user_write
         /// </remarks>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">The organization ID Guid</param>/// <param name="userId">The user ID Guid</param>
+        /// <param name="organizationId">The organization ID Guid</param>
+        /// <param name="userId">The user ID Guid</param>
         /// <param name="requestModel">The details for the user identities to be deleted</param>
-        
         /// <returns>Task of DeleteResponse</returns>
-        System.Threading.Tasks.Task<DeleteResponse> DeleteIdentitiesAsync (Guid? organizationId, Guid? userId, DeleteUserIdentityRequest requestModel);
+        System.Threading.Tasks.Task<DeleteResponse> DeleteIdentitiesAsync(Guid? organizationId, Guid? userId, DeleteUserIdentityRequest requestModel);
 
         /// <summary>
         /// Deletes user identities.
@@ -421,23 +461,70 @@ namespace DocuSign.Admin.Api
         /// Required scopes: user_write
         /// </remarks>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">The organization ID Guid</param>/// <param name="userId">The user ID Guid</param>
+        /// <param name="organizationId">The organization ID Guid</param>
+        /// <param name="userId">The user ID Guid</param>
         /// <param name="requestModel">The details for the user identities to be deleted</param>
-        
         /// <returns>Task of ApiResponse (DeleteResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<DeleteResponse>> DeleteIdentitiesAsyncWithHttpInfo (Guid? organizationId, Guid? userId, DeleteUserIdentityRequest requestModel);
+        System.Threading.Tasks.Task<ApiResponse<DeleteResponse>> DeleteIdentitiesAsyncWithHttpInfo(Guid? organizationId, Guid? userId, DeleteUserIdentityRequest requestModel);
         /// <summary>
-        /// Returns user information.
+        /// Returns user information using the userId for lookup.
         /// </summary>
         /// <remarks>
         /// Required scopes: user_read
         /// </remarks>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">The organization ID Guid</param>
-        
+        /// <param name="userId">The user ID Guid</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of UsersDrilldownResponse</returns>
-        System.Threading.Tasks.Task<UsersDrilldownResponse> GetUserProfilesAsync (Guid? organizationId, UsersApi.GetUserProfilesOptions options = null);
+        System.Threading.Tasks.Task<UsersDrilldownResponse> GetUserDSProfileAsync(Guid? organizationId, Guid? userId, UsersApi.GetUserDSProfileOptions options = null);
+
+        /// <summary>
+        /// Returns user information using the userId for lookup.
+        /// </summary>
+        /// <remarks>
+        /// Required scopes: user_read
+        /// </remarks>
+        /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">The organization ID Guid</param>
+        /// <param name="userId">The user ID Guid</param>
+        /// <param name="options">Options for modifying the behavior of the function.</param>
+        /// <returns>Task of ApiResponse (UsersDrilldownResponse)</returns>
+        System.Threading.Tasks.Task<ApiResponse<UsersDrilldownResponse>> GetUserDSProfileAsyncWithHttpInfo(Guid? organizationId, Guid? userId, UsersApi.GetUserDSProfileOptions options = null);
+        /// <summary>
+        /// Returns DS user profile information.
+        /// </summary>
+        /// <remarks>
+        /// Required scopes: user_read
+        /// </remarks>
+        /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">The organization ID Guid</param>
+        /// <param name="options">Options for modifying the behavior of the function.</param>
+        /// <returns>Task of UsersDrilldownResponse</returns>
+        System.Threading.Tasks.Task<UsersDrilldownResponse> GetUserDSProfilesByEmailAsync(Guid? organizationId, UsersApi.GetUserDSProfilesByEmailOptions options = null);
+
+        /// <summary>
+        /// Returns DS user profile information.
+        /// </summary>
+        /// <remarks>
+        /// Required scopes: user_read
+        /// </remarks>
+        /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">The organization ID Guid</param>
+        /// <param name="options">Options for modifying the behavior of the function.</param>
+        /// <returns>Task of ApiResponse (UsersDrilldownResponse)</returns>
+        System.Threading.Tasks.Task<ApiResponse<UsersDrilldownResponse>> GetUserDSProfilesByEmailAsyncWithHttpInfo(Guid? organizationId, UsersApi.GetUserDSProfilesByEmailOptions options = null);
+        /// <summary>
+        /// Returns user information.
+        /// </summary>
+        /// <remarks>
+        /// Required scopes: user_read
+        /// </remarks>
+        /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">The organization ID Guid</param>
+        /// <param name="options">Options for modifying the behavior of the function.</param>
+        /// <returns>Task of UsersDrilldownResponse</returns>
+        System.Threading.Tasks.Task<UsersDrilldownResponse> GetUserProfilesAsync(Guid? organizationId, UsersApi.GetUserProfilesOptions options = null);
 
         /// <summary>
         /// Returns user information.
@@ -447,10 +534,9 @@ namespace DocuSign.Admin.Api
         /// </remarks>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">The organization ID Guid</param>
-        
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of ApiResponse (UsersDrilldownResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<UsersDrilldownResponse>> GetUserProfilesAsyncWithHttpInfo (Guid? organizationId, UsersApi.GetUserProfilesOptions options = null);
+        System.Threading.Tasks.Task<ApiResponse<UsersDrilldownResponse>> GetUserProfilesAsyncWithHttpInfo(Guid? organizationId, UsersApi.GetUserProfilesOptions options = null);
         /// <summary>
         /// Returns information about the users in the organization
         /// </summary>
@@ -459,10 +545,9 @@ namespace DocuSign.Admin.Api
         /// </remarks>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">The organization ID Guid</param>
-        
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of OrganizationUsersResponse</returns>
-        System.Threading.Tasks.Task<OrganizationUsersResponse> GetUsersAsync (Guid? organizationId, UsersApi.GetUsersOptions options = null);
+        System.Threading.Tasks.Task<OrganizationUsersResponse> GetUsersAsync(Guid? organizationId, UsersApi.GetUsersOptions options = null);
 
         /// <summary>
         /// Returns information about the users in the organization
@@ -472,10 +557,9 @@ namespace DocuSign.Admin.Api
         /// </remarks>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">The organization ID Guid</param>
-        
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of ApiResponse (OrganizationUsersResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<OrganizationUsersResponse>> GetUsersAsyncWithHttpInfo (Guid? organizationId, UsersApi.GetUsersOptions options = null);
+        System.Threading.Tasks.Task<ApiResponse<OrganizationUsersResponse>> GetUsersAsyncWithHttpInfo(Guid? organizationId, UsersApi.GetUsersOptions options = null);
         /// <summary>
         /// Updates a user&#39;s email address.
         /// </summary>
@@ -485,9 +569,8 @@ namespace DocuSign.Admin.Api
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">The organization ID Guid</param>
         /// <param name="request">The details about which email addresses to update</param>
-        
         /// <returns>Task of UsersUpdateResponse</returns>
-        System.Threading.Tasks.Task<UsersUpdateResponse> UpdateEmailAddressAsync (Guid? organizationId, UpdateUsersEmailRequest request);
+        System.Threading.Tasks.Task<UsersUpdateResponse> UpdateEmailAddressAsync(Guid? organizationId, UpdateUsersEmailRequest request);
 
         /// <summary>
         /// Updates a user&#39;s email address.
@@ -498,9 +581,8 @@ namespace DocuSign.Admin.Api
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">The organization ID Guid</param>
         /// <param name="request">The details about which email addresses to update</param>
-        
         /// <returns>Task of ApiResponse (UsersUpdateResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<UsersUpdateResponse>> UpdateEmailAddressAsyncWithHttpInfo (Guid? organizationId, UpdateUsersEmailRequest request);
+        System.Threading.Tasks.Task<ApiResponse<UsersUpdateResponse>> UpdateEmailAddressAsyncWithHttpInfo(Guid? organizationId, UpdateUsersEmailRequest request);
         /// <summary>
         /// Updates a user.
         /// </summary>
@@ -510,9 +592,8 @@ namespace DocuSign.Admin.Api
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">The organization ID Guid</param>
         /// <param name="request">The user details to update</param>
-        
         /// <returns>Task of UsersUpdateResponse</returns>
-        System.Threading.Tasks.Task<UsersUpdateResponse> UpdateUserAsync (Guid? organizationId, UpdateUsersRequest request);
+        System.Threading.Tasks.Task<UsersUpdateResponse> UpdateUserAsync(Guid? organizationId, UpdateUsersRequest request);
 
         /// <summary>
         /// Updates a user.
@@ -523,9 +604,8 @@ namespace DocuSign.Admin.Api
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">The organization ID Guid</param>
         /// <param name="request">The user details to update</param>
-        
         /// <returns>Task of ApiResponse (UsersUpdateResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<UsersUpdateResponse>> UpdateUserAsyncWithHttpInfo (Guid? organizationId, UpdateUsersRequest request);
+        System.Threading.Tasks.Task<ApiResponse<UsersUpdateResponse>> UpdateUserAsyncWithHttpInfo(Guid? organizationId, UpdateUsersRequest request);
         #endregion Asynchronous Operations
     }
 
@@ -586,24 +666,27 @@ namespace DocuSign.Admin.Api
         /// Activates user memberships Required scopes: user_write
         /// </summary>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">The organization ID Guid</param>/// <param name="userId">The user ID Guid</param>/// <param name="membershipId">The membership ID Guid</param>
+        /// <param name="organizationId">The organization ID Guid</param>
+        /// <param name="userId">The user ID Guid</param>
+        /// <param name="membershipId">The membership ID Guid</param>
         /// <param name="request">Additional details about the user&#39;s membership</param>
-        
         /// <returns>UpdateResponse</returns>
-        public UpdateResponse ActivateMembership (Guid? organizationId, Guid? userId, Guid? membershipId, ForceActivateMembershipRequest request){
-            ApiResponse<UpdateResponse> localVarResponse = ActivateMembershipWithHttpInfo(organizationId, userId, membershipId, request);
-            return localVarResponse.Data;
+        public UpdateResponse ActivateMembership(Guid? organizationId, Guid? userId, Guid? membershipId, ForceActivateMembershipRequest request)
+        {
+             ApiResponse<UpdateResponse> localVarResponse = ActivateMembershipWithHttpInfo(organizationId, userId, membershipId, request);
+             return localVarResponse.Data;
         }
 
         /// <summary>
         /// Activates user memberships Required scopes: user_write
         /// </summary>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">The organization ID Guid</param>/// <param name="userId">The user ID Guid</param>/// <param name="membershipId">The membership ID Guid</param>
+        /// <param name="organizationId">The organization ID Guid</param>
+        /// <param name="userId">The user ID Guid</param>
+        /// <param name="membershipId">The membership ID Guid</param>
         /// <param name="request">Additional details about the user&#39;s membership</param>
-        
         /// <returns>ApiResponse of UpdateResponse</returns>
-        public ApiResponse< UpdateResponse > ActivateMembershipWithHttpInfo (Guid? organizationId, Guid? userId, Guid? membershipId, ForceActivateMembershipRequest request)
+        public ApiResponse<UpdateResponse> ActivateMembershipWithHttpInfo(Guid? organizationId, Guid? userId, Guid? membershipId, ForceActivateMembershipRequest request)
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
@@ -659,11 +742,11 @@ namespace DocuSign.Admin.Api
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.ApiClient.CallApi(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -675,11 +758,11 @@ namespace DocuSign.Admin.Api
             // DocuSign: Handle for PDF return types
             if (localVarResponse.ContentType != null && !localVarResponse.ContentType.ToLower().Contains("json"))
             {
-                return new ApiResponse<UpdateResponse>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (UpdateResponse) this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(UpdateResponse)));
+                return new ApiResponse<UpdateResponse>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (UpdateResponse)this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(UpdateResponse)));
             }
             else
             {
-                return new ApiResponse<UpdateResponse>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (UpdateResponse) this.ApiClient.Deserialize(localVarResponse, typeof(UpdateResponse)));
+                return new ApiResponse<UpdateResponse>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (UpdateResponse)this.ApiClient.Deserialize(localVarResponse, typeof(UpdateResponse)));
             }
             
         }
@@ -688,26 +771,27 @@ namespace DocuSign.Admin.Api
         /// Activates user memberships Required scopes: user_write
         /// </summary>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">The organization ID Guid</param>/// <param name="userId">The user ID Guid</param>/// <param name="membershipId">The membership ID Guid</param>
+        /// <param name="organizationId">The organization ID Guid</param>
+        /// <param name="userId">The user ID Guid</param>
+        /// <param name="membershipId">The membership ID Guid</param>
         /// <param name="request">Additional details about the user&#39;s membership</param>
-        
         /// <returns>Task of UpdateResponse</returns>
-        public async System.Threading.Tasks.Task<UpdateResponse> ActivateMembershipAsync (Guid? organizationId, Guid? userId, Guid? membershipId, ForceActivateMembershipRequest request)
+        public async System.Threading.Tasks.Task<UpdateResponse> ActivateMembershipAsync(Guid? organizationId, Guid? userId, Guid? membershipId, ForceActivateMembershipRequest request)
         {
              ApiResponse<UpdateResponse> localVarResponse = await ActivateMembershipAsyncWithHttpInfo(organizationId, userId, membershipId, request);
              return localVarResponse.Data;
-
         }
 
         /// <summary>
         /// Activates user memberships Required scopes: user_write
         /// </summary>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">The organization ID Guid</param>/// <param name="userId">The user ID Guid</param>/// <param name="membershipId">The membership ID Guid</param>
+        /// <param name="organizationId">The organization ID Guid</param>
+        /// <param name="userId">The user ID Guid</param>
+        /// <param name="membershipId">The membership ID Guid</param>
         /// <param name="request">Additional details about the user&#39;s membership</param>
-        
         /// <returns>Task of ApiResponse (UpdateResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<UpdateResponse>> ActivateMembershipAsyncWithHttpInfo (Guid? organizationId, Guid? userId, Guid? membershipId, ForceActivateMembershipRequest request)
+        public async System.Threading.Tasks.Task<ApiResponse<UpdateResponse>> ActivateMembershipAsyncWithHttpInfo(Guid? organizationId, Guid? userId, Guid? membershipId, ForceActivateMembershipRequest request)
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
@@ -750,8 +834,6 @@ namespace DocuSign.Admin.Api
             if (organizationId != null) localVarPathParams.Add("organizationId", this.ApiClient.ParameterToString(organizationId)); // path parameter
             if (userId != null) localVarPathParams.Add("userId", this.ApiClient.ParameterToString(userId)); // path parameter
             if (membershipId != null) localVarPathParams.Add("membershipId", this.ApiClient.ParameterToString(membershipId)); // path parameter
-
-
             if (request != null && request.GetType() != typeof(byte[]))
             {
                 localVarPostBody = this.ApiClient.Serialize(request); // http body (model) parameter
@@ -763,11 +845,11 @@ namespace DocuSign.Admin.Api
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.ApiClient.CallApiAsync(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -777,7 +859,7 @@ namespace DocuSign.Admin.Api
 
             return new ApiResponse<UpdateResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (UpdateResponse) this.ApiClient.Deserialize(localVarResponse, typeof(UpdateResponse)));
+                (UpdateResponse)this.ApiClient.Deserialize(localVarResponse, typeof(UpdateResponse)));
             
         }
 
@@ -787,24 +869,25 @@ namespace DocuSign.Admin.Api
         /// Creates and updates a multi-product user Required scopes: user_write
         /// </summary>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">The organization ID GUID</param>/// <param name="accountId">The account ID GUID</param>
+        /// <param name="organizationId">The organization ID GUID</param>
+        /// <param name="accountId">The account ID GUID</param>
         /// <param name="request">The request object</param>
-        
         /// <returns>AddUserResponse</returns>
-        public AddUserResponse AddOrUpdateUser (Guid? organizationId, Guid? accountId, NewMultiProductUserAddRequest request){
-            ApiResponse<AddUserResponse> localVarResponse = AddOrUpdateUserWithHttpInfo(organizationId, accountId, request);
-            return localVarResponse.Data;
+        public AddUserResponse AddOrUpdateUser(Guid? organizationId, Guid? accountId, NewMultiProductUserAddRequest request)
+        {
+             ApiResponse<AddUserResponse> localVarResponse = AddOrUpdateUserWithHttpInfo(organizationId, accountId, request);
+             return localVarResponse.Data;
         }
 
         /// <summary>
         /// Creates and updates a multi-product user Required scopes: user_write
         /// </summary>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">The organization ID GUID</param>/// <param name="accountId">The account ID GUID</param>
+        /// <param name="organizationId">The organization ID GUID</param>
+        /// <param name="accountId">The account ID GUID</param>
         /// <param name="request">The request object</param>
-        
         /// <returns>ApiResponse of AddUserResponse</returns>
-        public ApiResponse< AddUserResponse > AddOrUpdateUserWithHttpInfo (Guid? organizationId, Guid? accountId, NewMultiProductUserAddRequest request)
+        public ApiResponse<AddUserResponse> AddOrUpdateUserWithHttpInfo(Guid? organizationId, Guid? accountId, NewMultiProductUserAddRequest request)
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
@@ -856,11 +939,11 @@ namespace DocuSign.Admin.Api
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.ApiClient.CallApi(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -872,11 +955,11 @@ namespace DocuSign.Admin.Api
             // DocuSign: Handle for PDF return types
             if (localVarResponse.ContentType != null && !localVarResponse.ContentType.ToLower().Contains("json"))
             {
-                return new ApiResponse<AddUserResponse>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (AddUserResponse) this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(AddUserResponse)));
+                return new ApiResponse<AddUserResponse>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (AddUserResponse)this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(AddUserResponse)));
             }
             else
             {
-                return new ApiResponse<AddUserResponse>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (AddUserResponse) this.ApiClient.Deserialize(localVarResponse, typeof(AddUserResponse)));
+                return new ApiResponse<AddUserResponse>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (AddUserResponse)this.ApiClient.Deserialize(localVarResponse, typeof(AddUserResponse)));
             }
             
         }
@@ -885,26 +968,25 @@ namespace DocuSign.Admin.Api
         /// Creates and updates a multi-product user Required scopes: user_write
         /// </summary>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">The organization ID GUID</param>/// <param name="accountId">The account ID GUID</param>
+        /// <param name="organizationId">The organization ID GUID</param>
+        /// <param name="accountId">The account ID GUID</param>
         /// <param name="request">The request object</param>
-        
         /// <returns>Task of AddUserResponse</returns>
-        public async System.Threading.Tasks.Task<AddUserResponse> AddOrUpdateUserAsync (Guid? organizationId, Guid? accountId, NewMultiProductUserAddRequest request)
+        public async System.Threading.Tasks.Task<AddUserResponse> AddOrUpdateUserAsync(Guid? organizationId, Guid? accountId, NewMultiProductUserAddRequest request)
         {
              ApiResponse<AddUserResponse> localVarResponse = await AddOrUpdateUserAsyncWithHttpInfo(organizationId, accountId, request);
              return localVarResponse.Data;
-
         }
 
         /// <summary>
         /// Creates and updates a multi-product user Required scopes: user_write
         /// </summary>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">The organization ID GUID</param>/// <param name="accountId">The account ID GUID</param>
+        /// <param name="organizationId">The organization ID GUID</param>
+        /// <param name="accountId">The account ID GUID</param>
         /// <param name="request">The request object</param>
-        
         /// <returns>Task of ApiResponse (AddUserResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<AddUserResponse>> AddOrUpdateUserAsyncWithHttpInfo (Guid? organizationId, Guid? accountId, NewMultiProductUserAddRequest request)
+        public async System.Threading.Tasks.Task<ApiResponse<AddUserResponse>> AddOrUpdateUserAsyncWithHttpInfo(Guid? organizationId, Guid? accountId, NewMultiProductUserAddRequest request)
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
@@ -943,8 +1025,6 @@ namespace DocuSign.Admin.Api
             localVarPathParams.Add("format", "json");
             if (organizationId != null) localVarPathParams.Add("organizationId", this.ApiClient.ParameterToString(organizationId)); // path parameter
             if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
-
-
             if (request != null && request.GetType() != typeof(byte[]))
             {
                 localVarPostBody = this.ApiClient.Serialize(request); // http body (model) parameter
@@ -956,11 +1036,11 @@ namespace DocuSign.Admin.Api
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.ApiClient.CallApiAsync(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -970,7 +1050,7 @@ namespace DocuSign.Admin.Api
 
             return new ApiResponse<AddUserResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (AddUserResponse) this.ApiClient.Deserialize(localVarResponse, typeof(AddUserResponse)));
+                (AddUserResponse)this.ApiClient.Deserialize(localVarResponse, typeof(AddUserResponse)));
             
         }
 
@@ -980,24 +1060,25 @@ namespace DocuSign.Admin.Api
         /// Adds users to an account. Required scopes: user_write
         /// </summary>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">The organization ID Guid</param>/// <param name="accountId">The account ID Guid</param>
+        /// <param name="organizationId">The organization ID Guid</param>
+        /// <param name="accountId">The account ID Guid</param>
         /// <param name="request">The details for the users to add to the account</param>
-        
         /// <returns>NewUserResponse</returns>
-        public NewUserResponse AddUsers (Guid? organizationId, Guid? accountId, NewAccountUserRequest request){
-            ApiResponse<NewUserResponse> localVarResponse = AddUsersWithHttpInfo(organizationId, accountId, request);
-            return localVarResponse.Data;
+        public NewUserResponse AddUsers(Guid? organizationId, Guid? accountId, NewAccountUserRequest request)
+        {
+             ApiResponse<NewUserResponse> localVarResponse = AddUsersWithHttpInfo(organizationId, accountId, request);
+             return localVarResponse.Data;
         }
 
         /// <summary>
         /// Adds users to an account. Required scopes: user_write
         /// </summary>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">The organization ID Guid</param>/// <param name="accountId">The account ID Guid</param>
+        /// <param name="organizationId">The organization ID Guid</param>
+        /// <param name="accountId">The account ID Guid</param>
         /// <param name="request">The details for the users to add to the account</param>
-        
         /// <returns>ApiResponse of NewUserResponse</returns>
-        public ApiResponse< NewUserResponse > AddUsersWithHttpInfo (Guid? organizationId, Guid? accountId, NewAccountUserRequest request)
+        public ApiResponse<NewUserResponse> AddUsersWithHttpInfo(Guid? organizationId, Guid? accountId, NewAccountUserRequest request)
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
@@ -1049,11 +1130,11 @@ namespace DocuSign.Admin.Api
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.ApiClient.CallApi(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -1065,11 +1146,11 @@ namespace DocuSign.Admin.Api
             // DocuSign: Handle for PDF return types
             if (localVarResponse.ContentType != null && !localVarResponse.ContentType.ToLower().Contains("json"))
             {
-                return new ApiResponse<NewUserResponse>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (NewUserResponse) this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(NewUserResponse)));
+                return new ApiResponse<NewUserResponse>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (NewUserResponse)this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(NewUserResponse)));
             }
             else
             {
-                return new ApiResponse<NewUserResponse>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (NewUserResponse) this.ApiClient.Deserialize(localVarResponse, typeof(NewUserResponse)));
+                return new ApiResponse<NewUserResponse>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (NewUserResponse)this.ApiClient.Deserialize(localVarResponse, typeof(NewUserResponse)));
             }
             
         }
@@ -1078,26 +1159,25 @@ namespace DocuSign.Admin.Api
         /// Adds users to an account. Required scopes: user_write
         /// </summary>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">The organization ID Guid</param>/// <param name="accountId">The account ID Guid</param>
+        /// <param name="organizationId">The organization ID Guid</param>
+        /// <param name="accountId">The account ID Guid</param>
         /// <param name="request">The details for the users to add to the account</param>
-        
         /// <returns>Task of NewUserResponse</returns>
-        public async System.Threading.Tasks.Task<NewUserResponse> AddUsersAsync (Guid? organizationId, Guid? accountId, NewAccountUserRequest request)
+        public async System.Threading.Tasks.Task<NewUserResponse> AddUsersAsync(Guid? organizationId, Guid? accountId, NewAccountUserRequest request)
         {
              ApiResponse<NewUserResponse> localVarResponse = await AddUsersAsyncWithHttpInfo(organizationId, accountId, request);
              return localVarResponse.Data;
-
         }
 
         /// <summary>
         /// Adds users to an account. Required scopes: user_write
         /// </summary>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">The organization ID Guid</param>/// <param name="accountId">The account ID Guid</param>
+        /// <param name="organizationId">The organization ID Guid</param>
+        /// <param name="accountId">The account ID Guid</param>
         /// <param name="request">The details for the users to add to the account</param>
-        
         /// <returns>Task of ApiResponse (NewUserResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<NewUserResponse>> AddUsersAsyncWithHttpInfo (Guid? organizationId, Guid? accountId, NewAccountUserRequest request)
+        public async System.Threading.Tasks.Task<ApiResponse<NewUserResponse>> AddUsersAsyncWithHttpInfo(Guid? organizationId, Guid? accountId, NewAccountUserRequest request)
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
@@ -1136,8 +1216,6 @@ namespace DocuSign.Admin.Api
             localVarPathParams.Add("format", "json");
             if (organizationId != null) localVarPathParams.Add("organizationId", this.ApiClient.ParameterToString(organizationId)); // path parameter
             if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
-
-
             if (request != null && request.GetType() != typeof(byte[]))
             {
                 localVarPostBody = this.ApiClient.Serialize(request); // http body (model) parameter
@@ -1149,11 +1227,11 @@ namespace DocuSign.Admin.Api
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.ApiClient.CallApiAsync(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -1163,7 +1241,7 @@ namespace DocuSign.Admin.Api
 
             return new ApiResponse<NewUserResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (NewUserResponse) this.ApiClient.Deserialize(localVarResponse, typeof(NewUserResponse)));
+                (NewUserResponse)this.ApiClient.Deserialize(localVarResponse, typeof(NewUserResponse)));
             
         }
 
@@ -1173,24 +1251,25 @@ namespace DocuSign.Admin.Api
         /// Closes a user&#39;s memberships. Required scopes: user_write
         /// </summary>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">The organization ID Guid</param>/// <param name="userId">The user ID Guid</param>
+        /// <param name="organizationId">The organization ID Guid</param>
+        /// <param name="userId">The user ID Guid</param>
         /// <param name="request">The details about which membership to close</param>
-        
         /// <returns>DeleteMembershipsResponse</returns>
-        public DeleteMembershipsResponse CloseMemberships (Guid? organizationId, Guid? userId, DeleteMembershipsRequest request){
-            ApiResponse<DeleteMembershipsResponse> localVarResponse = CloseMembershipsWithHttpInfo(organizationId, userId, request);
-            return localVarResponse.Data;
+        public DeleteMembershipsResponse CloseMemberships(Guid? organizationId, Guid? userId, DeleteMembershipsRequest request)
+        {
+             ApiResponse<DeleteMembershipsResponse> localVarResponse = CloseMembershipsWithHttpInfo(organizationId, userId, request);
+             return localVarResponse.Data;
         }
 
         /// <summary>
         /// Closes a user&#39;s memberships. Required scopes: user_write
         /// </summary>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">The organization ID Guid</param>/// <param name="userId">The user ID Guid</param>
+        /// <param name="organizationId">The organization ID Guid</param>
+        /// <param name="userId">The user ID Guid</param>
         /// <param name="request">The details about which membership to close</param>
-        
         /// <returns>ApiResponse of DeleteMembershipsResponse</returns>
-        public ApiResponse< DeleteMembershipsResponse > CloseMembershipsWithHttpInfo (Guid? organizationId, Guid? userId, DeleteMembershipsRequest request)
+        public ApiResponse<DeleteMembershipsResponse> CloseMembershipsWithHttpInfo(Guid? organizationId, Guid? userId, DeleteMembershipsRequest request)
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
@@ -1242,11 +1321,11 @@ namespace DocuSign.Admin.Api
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.ApiClient.CallApi(localVarPath,
                 Method.DELETE, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -1258,11 +1337,11 @@ namespace DocuSign.Admin.Api
             // DocuSign: Handle for PDF return types
             if (localVarResponse.ContentType != null && !localVarResponse.ContentType.ToLower().Contains("json"))
             {
-                return new ApiResponse<DeleteMembershipsResponse>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (DeleteMembershipsResponse) this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(DeleteMembershipsResponse)));
+                return new ApiResponse<DeleteMembershipsResponse>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (DeleteMembershipsResponse)this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(DeleteMembershipsResponse)));
             }
             else
             {
-                return new ApiResponse<DeleteMembershipsResponse>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (DeleteMembershipsResponse) this.ApiClient.Deserialize(localVarResponse, typeof(DeleteMembershipsResponse)));
+                return new ApiResponse<DeleteMembershipsResponse>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (DeleteMembershipsResponse)this.ApiClient.Deserialize(localVarResponse, typeof(DeleteMembershipsResponse)));
             }
             
         }
@@ -1271,26 +1350,25 @@ namespace DocuSign.Admin.Api
         /// Closes a user&#39;s memberships. Required scopes: user_write
         /// </summary>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">The organization ID Guid</param>/// <param name="userId">The user ID Guid</param>
+        /// <param name="organizationId">The organization ID Guid</param>
+        /// <param name="userId">The user ID Guid</param>
         /// <param name="request">The details about which membership to close</param>
-        
         /// <returns>Task of DeleteMembershipsResponse</returns>
-        public async System.Threading.Tasks.Task<DeleteMembershipsResponse> CloseMembershipsAsync (Guid? organizationId, Guid? userId, DeleteMembershipsRequest request)
+        public async System.Threading.Tasks.Task<DeleteMembershipsResponse> CloseMembershipsAsync(Guid? organizationId, Guid? userId, DeleteMembershipsRequest request)
         {
              ApiResponse<DeleteMembershipsResponse> localVarResponse = await CloseMembershipsAsyncWithHttpInfo(organizationId, userId, request);
              return localVarResponse.Data;
-
         }
 
         /// <summary>
         /// Closes a user&#39;s memberships. Required scopes: user_write
         /// </summary>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">The organization ID Guid</param>/// <param name="userId">The user ID Guid</param>
+        /// <param name="organizationId">The organization ID Guid</param>
+        /// <param name="userId">The user ID Guid</param>
         /// <param name="request">The details about which membership to close</param>
-        
         /// <returns>Task of ApiResponse (DeleteMembershipsResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<DeleteMembershipsResponse>> CloseMembershipsAsyncWithHttpInfo (Guid? organizationId, Guid? userId, DeleteMembershipsRequest request)
+        public async System.Threading.Tasks.Task<ApiResponse<DeleteMembershipsResponse>> CloseMembershipsAsyncWithHttpInfo(Guid? organizationId, Guid? userId, DeleteMembershipsRequest request)
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
@@ -1329,8 +1407,6 @@ namespace DocuSign.Admin.Api
             localVarPathParams.Add("format", "json");
             if (organizationId != null) localVarPathParams.Add("organizationId", this.ApiClient.ParameterToString(organizationId)); // path parameter
             if (userId != null) localVarPathParams.Add("userId", this.ApiClient.ParameterToString(userId)); // path parameter
-
-
             if (request != null && request.GetType() != typeof(byte[]))
             {
                 localVarPostBody = this.ApiClient.Serialize(request); // http body (model) parameter
@@ -1342,11 +1418,11 @@ namespace DocuSign.Admin.Api
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.ApiClient.CallApiAsync(localVarPath,
                 Method.DELETE, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -1356,7 +1432,7 @@ namespace DocuSign.Admin.Api
 
             return new ApiResponse<DeleteMembershipsResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (DeleteMembershipsResponse) this.ApiClient.Deserialize(localVarResponse, typeof(DeleteMembershipsResponse)));
+                (DeleteMembershipsResponse)this.ApiClient.Deserialize(localVarResponse, typeof(DeleteMembershipsResponse)));
             
         }
 
@@ -1368,11 +1444,11 @@ namespace DocuSign.Admin.Api
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">The organization ID Guid</param>
         /// <param name="request">Details about the user to be added</param>
-        
         /// <returns>NewUserResponse</returns>
-        public NewUserResponse CreateUser (Guid? organizationId, NewUserRequest request){
-            ApiResponse<NewUserResponse> localVarResponse = CreateUserWithHttpInfo(organizationId, request);
-            return localVarResponse.Data;
+        public NewUserResponse CreateUser(Guid? organizationId, NewUserRequest request)
+        {
+             ApiResponse<NewUserResponse> localVarResponse = CreateUserWithHttpInfo(organizationId, request);
+             return localVarResponse.Data;
         }
 
         /// <summary>
@@ -1381,9 +1457,8 @@ namespace DocuSign.Admin.Api
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">The organization ID Guid</param>
         /// <param name="request">Details about the user to be added</param>
-        
         /// <returns>ApiResponse of NewUserResponse</returns>
-        public ApiResponse< NewUserResponse > CreateUserWithHttpInfo (Guid? organizationId, NewUserRequest request)
+        public ApiResponse<NewUserResponse> CreateUserWithHttpInfo(Guid? organizationId, NewUserRequest request)
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
@@ -1431,11 +1506,11 @@ namespace DocuSign.Admin.Api
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.ApiClient.CallApi(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -1447,11 +1522,11 @@ namespace DocuSign.Admin.Api
             // DocuSign: Handle for PDF return types
             if (localVarResponse.ContentType != null && !localVarResponse.ContentType.ToLower().Contains("json"))
             {
-                return new ApiResponse<NewUserResponse>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (NewUserResponse) this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(NewUserResponse)));
+                return new ApiResponse<NewUserResponse>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (NewUserResponse)this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(NewUserResponse)));
             }
             else
             {
-                return new ApiResponse<NewUserResponse>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (NewUserResponse) this.ApiClient.Deserialize(localVarResponse, typeof(NewUserResponse)));
+                return new ApiResponse<NewUserResponse>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (NewUserResponse)this.ApiClient.Deserialize(localVarResponse, typeof(NewUserResponse)));
             }
             
         }
@@ -1462,13 +1537,11 @@ namespace DocuSign.Admin.Api
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">The organization ID Guid</param>
         /// <param name="request">Details about the user to be added</param>
-        
         /// <returns>Task of NewUserResponse</returns>
-        public async System.Threading.Tasks.Task<NewUserResponse> CreateUserAsync (Guid? organizationId, NewUserRequest request)
+        public async System.Threading.Tasks.Task<NewUserResponse> CreateUserAsync(Guid? organizationId, NewUserRequest request)
         {
              ApiResponse<NewUserResponse> localVarResponse = await CreateUserAsyncWithHttpInfo(organizationId, request);
              return localVarResponse.Data;
-
         }
 
         /// <summary>
@@ -1477,9 +1550,8 @@ namespace DocuSign.Admin.Api
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">The organization ID Guid</param>
         /// <param name="request">Details about the user to be added</param>
-        
         /// <returns>Task of ApiResponse (NewUserResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<NewUserResponse>> CreateUserAsyncWithHttpInfo (Guid? organizationId, NewUserRequest request)
+        public async System.Threading.Tasks.Task<ApiResponse<NewUserResponse>> CreateUserAsyncWithHttpInfo(Guid? organizationId, NewUserRequest request)
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
@@ -1514,8 +1586,6 @@ namespace DocuSign.Admin.Api
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             localVarPathParams.Add("format", "json");
             if (organizationId != null) localVarPathParams.Add("organizationId", this.ApiClient.ParameterToString(organizationId)); // path parameter
-
-
             if (request != null && request.GetType() != typeof(byte[]))
             {
                 localVarPostBody = this.ApiClient.Serialize(request); // http body (model) parameter
@@ -1527,11 +1597,11 @@ namespace DocuSign.Admin.Api
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.ApiClient.CallApiAsync(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -1541,7 +1611,7 @@ namespace DocuSign.Admin.Api
 
             return new ApiResponse<NewUserResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (NewUserResponse) this.ApiClient.Deserialize(localVarResponse, typeof(NewUserResponse)));
+                (NewUserResponse)this.ApiClient.Deserialize(localVarResponse, typeof(NewUserResponse)));
             
         }
 
@@ -1551,24 +1621,25 @@ namespace DocuSign.Admin.Api
         /// Deletes user identities. Required scopes: user_write
         /// </summary>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">The organization ID Guid</param>/// <param name="userId">The user ID Guid</param>
+        /// <param name="organizationId">The organization ID Guid</param>
+        /// <param name="userId">The user ID Guid</param>
         /// <param name="requestModel">The details for the user identities to be deleted</param>
-        
         /// <returns>DeleteResponse</returns>
-        public DeleteResponse DeleteIdentities (Guid? organizationId, Guid? userId, DeleteUserIdentityRequest requestModel){
-            ApiResponse<DeleteResponse> localVarResponse = DeleteIdentitiesWithHttpInfo(organizationId, userId, requestModel);
-            return localVarResponse.Data;
+        public DeleteResponse DeleteIdentities(Guid? organizationId, Guid? userId, DeleteUserIdentityRequest requestModel)
+        {
+             ApiResponse<DeleteResponse> localVarResponse = DeleteIdentitiesWithHttpInfo(organizationId, userId, requestModel);
+             return localVarResponse.Data;
         }
 
         /// <summary>
         /// Deletes user identities. Required scopes: user_write
         /// </summary>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">The organization ID Guid</param>/// <param name="userId">The user ID Guid</param>
+        /// <param name="organizationId">The organization ID Guid</param>
+        /// <param name="userId">The user ID Guid</param>
         /// <param name="requestModel">The details for the user identities to be deleted</param>
-        
         /// <returns>ApiResponse of DeleteResponse</returns>
-        public ApiResponse< DeleteResponse > DeleteIdentitiesWithHttpInfo (Guid? organizationId, Guid? userId, DeleteUserIdentityRequest requestModel)
+        public ApiResponse<DeleteResponse> DeleteIdentitiesWithHttpInfo(Guid? organizationId, Guid? userId, DeleteUserIdentityRequest requestModel)
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
@@ -1620,11 +1691,11 @@ namespace DocuSign.Admin.Api
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.ApiClient.CallApi(localVarPath,
                 Method.DELETE, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -1636,11 +1707,11 @@ namespace DocuSign.Admin.Api
             // DocuSign: Handle for PDF return types
             if (localVarResponse.ContentType != null && !localVarResponse.ContentType.ToLower().Contains("json"))
             {
-                return new ApiResponse<DeleteResponse>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (DeleteResponse) this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(DeleteResponse)));
+                return new ApiResponse<DeleteResponse>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (DeleteResponse)this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(DeleteResponse)));
             }
             else
             {
-                return new ApiResponse<DeleteResponse>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (DeleteResponse) this.ApiClient.Deserialize(localVarResponse, typeof(DeleteResponse)));
+                return new ApiResponse<DeleteResponse>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (DeleteResponse)this.ApiClient.Deserialize(localVarResponse, typeof(DeleteResponse)));
             }
             
         }
@@ -1649,26 +1720,25 @@ namespace DocuSign.Admin.Api
         /// Deletes user identities. Required scopes: user_write
         /// </summary>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">The organization ID Guid</param>/// <param name="userId">The user ID Guid</param>
+        /// <param name="organizationId">The organization ID Guid</param>
+        /// <param name="userId">The user ID Guid</param>
         /// <param name="requestModel">The details for the user identities to be deleted</param>
-        
         /// <returns>Task of DeleteResponse</returns>
-        public async System.Threading.Tasks.Task<DeleteResponse> DeleteIdentitiesAsync (Guid? organizationId, Guid? userId, DeleteUserIdentityRequest requestModel)
+        public async System.Threading.Tasks.Task<DeleteResponse> DeleteIdentitiesAsync(Guid? organizationId, Guid? userId, DeleteUserIdentityRequest requestModel)
         {
              ApiResponse<DeleteResponse> localVarResponse = await DeleteIdentitiesAsyncWithHttpInfo(organizationId, userId, requestModel);
              return localVarResponse.Data;
-
         }
 
         /// <summary>
         /// Deletes user identities. Required scopes: user_write
         /// </summary>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">The organization ID Guid</param>/// <param name="userId">The user ID Guid</param>
+        /// <param name="organizationId">The organization ID Guid</param>
+        /// <param name="userId">The user ID Guid</param>
         /// <param name="requestModel">The details for the user identities to be deleted</param>
-        
         /// <returns>Task of ApiResponse (DeleteResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<DeleteResponse>> DeleteIdentitiesAsyncWithHttpInfo (Guid? organizationId, Guid? userId, DeleteUserIdentityRequest requestModel)
+        public async System.Threading.Tasks.Task<ApiResponse<DeleteResponse>> DeleteIdentitiesAsyncWithHttpInfo(Guid? organizationId, Guid? userId, DeleteUserIdentityRequest requestModel)
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
@@ -1707,8 +1777,6 @@ namespace DocuSign.Admin.Api
             localVarPathParams.Add("format", "json");
             if (organizationId != null) localVarPathParams.Add("organizationId", this.ApiClient.ParameterToString(organizationId)); // path parameter
             if (userId != null) localVarPathParams.Add("userId", this.ApiClient.ParameterToString(userId)); // path parameter
-
-
             if (requestModel != null && requestModel.GetType() != typeof(byte[]))
             {
                 localVarPostBody = this.ApiClient.Serialize(requestModel); // http body (model) parameter
@@ -1720,11 +1788,11 @@ namespace DocuSign.Admin.Api
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.ApiClient.CallApiAsync(localVarPath,
                 Method.DELETE, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -1734,7 +1802,369 @@ namespace DocuSign.Admin.Api
 
             return new ApiResponse<DeleteResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (DeleteResponse) this.ApiClient.Deserialize(localVarResponse, typeof(DeleteResponse)));
+                (DeleteResponse)this.ApiClient.Deserialize(localVarResponse, typeof(DeleteResponse)));
+            
+        }
+
+
+        /// <summary>
+        /// Returns user information using the userId for lookup. Required scopes: user_read
+        /// </summary>
+        public class GetUserDSProfileOptions
+        {
+            /// Sorts user information by account name ascending 
+            public bool? sort {get; set;}
+        }
+
+        /// <summary>
+        /// Returns user information using the userId for lookup. Required scopes: user_read
+        /// </summary>
+        /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">The organization ID Guid</param>
+        /// <param name="userId">The user ID Guid</param>
+        /// <param name="options">Options for modifying the behavior of the function.</param>
+        /// <returns>UsersDrilldownResponse</returns>
+        public UsersDrilldownResponse GetUserDSProfile(Guid? organizationId, Guid? userId, UsersApi.GetUserDSProfileOptions options = null)
+        {
+             ApiResponse<UsersDrilldownResponse> localVarResponse = GetUserDSProfileWithHttpInfo(organizationId, userId, options);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Returns user information using the userId for lookup. Required scopes: user_read
+        /// </summary>
+        /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">The organization ID Guid</param>
+        /// <param name="userId">The user ID Guid</param>
+        /// <param name="options">Options for modifying the behavior of the function.</param>
+        /// <returns>ApiResponse of UsersDrilldownResponse</returns>
+        public ApiResponse<UsersDrilldownResponse> GetUserDSProfileWithHttpInfo(Guid? organizationId, Guid? userId, UsersApi.GetUserDSProfileOptions options = null)
+        {
+            // verify the required parameter 'organizationId' is set
+            if (organizationId == null)
+                throw new ApiException(400, "Missing required parameter 'organizationId' when calling UsersApi->GetUserDSProfile");
+            // verify the required parameter 'userId' is set
+            if (userId == null)
+                throw new ApiException(400, "Missing required parameter 'userId' when calling UsersApi->GetUserDSProfile");
+
+            var localVarPath = "/v2.1/organizations/{organizationId}/users/{userId}/dsprofile";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new Dictionary<String, String>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+            if (organizationId != null) localVarPathParams.Add("organizationId", this.ApiClient.ParameterToString(organizationId)); // path parameter
+            if (userId != null) localVarPathParams.Add("userId", this.ApiClient.ParameterToString(userId)); // path parameter
+
+            if (options != null)
+            {
+                if (options.sort != null) localVarQueryParams.Add("sort", this.ApiClient.ParameterToString(options.sort)); // query parameter
+            }
+
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse)this.ApiClient.CallApi(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("GetUserDSProfile", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            
+            // DocuSign: Handle for PDF return types
+            if (localVarResponse.ContentType != null && !localVarResponse.ContentType.ToLower().Contains("json"))
+            {
+                return new ApiResponse<UsersDrilldownResponse>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (UsersDrilldownResponse)this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(UsersDrilldownResponse)));
+            }
+            else
+            {
+                return new ApiResponse<UsersDrilldownResponse>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (UsersDrilldownResponse)this.ApiClient.Deserialize(localVarResponse, typeof(UsersDrilldownResponse)));
+            }
+            
+        }
+
+        /// <summary>
+        /// Returns user information using the userId for lookup. Required scopes: user_read
+        /// </summary>
+        /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">The organization ID Guid</param>
+        /// <param name="userId">The user ID Guid</param>
+        /// <param name="options">Options for modifying the behavior of the function.</param>
+        /// <returns>Task of UsersDrilldownResponse</returns>
+        public async System.Threading.Tasks.Task<UsersDrilldownResponse> GetUserDSProfileAsync(Guid? organizationId, Guid? userId, UsersApi.GetUserDSProfileOptions options = null)
+        {
+             ApiResponse<UsersDrilldownResponse> localVarResponse = await GetUserDSProfileAsyncWithHttpInfo(organizationId, userId, options);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Returns user information using the userId for lookup. Required scopes: user_read
+        /// </summary>
+        /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">The organization ID Guid</param>
+        /// <param name="userId">The user ID Guid</param>
+        /// <param name="options">Options for modifying the behavior of the function.</param>
+        /// <returns>Task of ApiResponse (UsersDrilldownResponse)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<UsersDrilldownResponse>> GetUserDSProfileAsyncWithHttpInfo(Guid? organizationId, Guid? userId, UsersApi.GetUserDSProfileOptions options = null)
+        {
+            // verify the required parameter 'organizationId' is set
+            if (organizationId == null)
+                throw new ApiException(400, "Missing required parameter 'organizationId' when calling UsersApi->GetUserDSProfile");
+            // verify the required parameter 'userId' is set
+            if (userId == null)
+                throw new ApiException(400, "Missing required parameter 'userId' when calling UsersApi->GetUserDSProfile");
+
+            var localVarPath = "/v2.1/organizations/{organizationId}/users/{userId}/dsprofile";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new Dictionary<String, String>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+            if (organizationId != null) localVarPathParams.Add("organizationId", this.ApiClient.ParameterToString(organizationId)); // path parameter
+            if (userId != null) localVarPathParams.Add("userId", this.ApiClient.ParameterToString(userId)); // path parameter
+            if (options != null)
+            {
+                if (options.sort != null) localVarQueryParams.Add("sort", this.ApiClient.ParameterToString(options.sort)); // query parameter
+            }
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse)await this.ApiClient.CallApiAsync(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("GetUserDSProfile", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<UsersDrilldownResponse>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (UsersDrilldownResponse)this.ApiClient.Deserialize(localVarResponse, typeof(UsersDrilldownResponse)));
+            
+        }
+
+
+        /// <summary>
+        /// Returns DS user profile information. Required scopes: user_read
+        /// </summary>
+        public class GetUserDSProfilesByEmailOptions
+        {
+            /// The email address of the user 
+            public string email {get; set;}
+            /// Sorts user information by account name ascending 
+            public bool? sort {get; set;}
+        }
+
+        /// <summary>
+        /// Returns DS user profile information. Required scopes: user_read
+        /// </summary>
+        /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">The organization ID Guid</param>
+        /// <param name="options">Options for modifying the behavior of the function.</param>
+        /// <returns>UsersDrilldownResponse</returns>
+        public UsersDrilldownResponse GetUserDSProfilesByEmail(Guid? organizationId, UsersApi.GetUserDSProfilesByEmailOptions options = null)
+        {
+             ApiResponse<UsersDrilldownResponse> localVarResponse = GetUserDSProfilesByEmailWithHttpInfo(organizationId, options);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Returns DS user profile information. Required scopes: user_read
+        /// </summary>
+        /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">The organization ID Guid</param>
+        /// <param name="options">Options for modifying the behavior of the function.</param>
+        /// <returns>ApiResponse of UsersDrilldownResponse</returns>
+        public ApiResponse<UsersDrilldownResponse> GetUserDSProfilesByEmailWithHttpInfo(Guid? organizationId, UsersApi.GetUserDSProfilesByEmailOptions options = null)
+        {
+            // verify the required parameter 'organizationId' is set
+            if (organizationId == null)
+                throw new ApiException(400, "Missing required parameter 'organizationId' when calling UsersApi->GetUserDSProfilesByEmail");
+
+            var localVarPath = "/v2.1/organizations/{organizationId}/users/dsprofile";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new Dictionary<String, String>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+            if (organizationId != null) localVarPathParams.Add("organizationId", this.ApiClient.ParameterToString(organizationId)); // path parameter
+
+            if (options != null)
+            {
+                if (options.email != null) localVarQueryParams.Add("email", this.ApiClient.ParameterToString(options.email)); // query parameter
+                if (options.sort != null) localVarQueryParams.Add("sort", this.ApiClient.ParameterToString(options.sort)); // query parameter
+            }
+
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse)this.ApiClient.CallApi(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("GetUserDSProfilesByEmail", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            
+            // DocuSign: Handle for PDF return types
+            if (localVarResponse.ContentType != null && !localVarResponse.ContentType.ToLower().Contains("json"))
+            {
+                return new ApiResponse<UsersDrilldownResponse>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (UsersDrilldownResponse)this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(UsersDrilldownResponse)));
+            }
+            else
+            {
+                return new ApiResponse<UsersDrilldownResponse>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (UsersDrilldownResponse)this.ApiClient.Deserialize(localVarResponse, typeof(UsersDrilldownResponse)));
+            }
+            
+        }
+
+        /// <summary>
+        /// Returns DS user profile information. Required scopes: user_read
+        /// </summary>
+        /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">The organization ID Guid</param>
+        /// <param name="options">Options for modifying the behavior of the function.</param>
+        /// <returns>Task of UsersDrilldownResponse</returns>
+        public async System.Threading.Tasks.Task<UsersDrilldownResponse> GetUserDSProfilesByEmailAsync(Guid? organizationId, UsersApi.GetUserDSProfilesByEmailOptions options = null)
+        {
+             ApiResponse<UsersDrilldownResponse> localVarResponse = await GetUserDSProfilesByEmailAsyncWithHttpInfo(organizationId, options);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Returns DS user profile information. Required scopes: user_read
+        /// </summary>
+        /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">The organization ID Guid</param>
+        /// <param name="options">Options for modifying the behavior of the function.</param>
+        /// <returns>Task of ApiResponse (UsersDrilldownResponse)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<UsersDrilldownResponse>> GetUserDSProfilesByEmailAsyncWithHttpInfo(Guid? organizationId, UsersApi.GetUserDSProfilesByEmailOptions options = null)
+        {
+            // verify the required parameter 'organizationId' is set
+            if (organizationId == null)
+                throw new ApiException(400, "Missing required parameter 'organizationId' when calling UsersApi->GetUserDSProfilesByEmail");
+
+            var localVarPath = "/v2.1/organizations/{organizationId}/users/dsprofile";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new Dictionary<String, String>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+            if (organizationId != null) localVarPathParams.Add("organizationId", this.ApiClient.ParameterToString(organizationId)); // path parameter
+            if (options != null)
+            {
+                if (options.email != null) localVarQueryParams.Add("email", this.ApiClient.ParameterToString(options.email)); // query parameter
+                if (options.sort != null) localVarQueryParams.Add("sort", this.ApiClient.ParameterToString(options.sort)); // query parameter
+            }
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse)await this.ApiClient.CallApiAsync(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("GetUserDSProfilesByEmail", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<UsersDrilldownResponse>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (UsersDrilldownResponse)this.ApiClient.Deserialize(localVarResponse, typeof(UsersDrilldownResponse)));
             
         }
 
@@ -1753,12 +2183,12 @@ namespace DocuSign.Admin.Api
         /// </summary>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">The organization ID Guid</param>
-        
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>UsersDrilldownResponse</returns>
-        public UsersDrilldownResponse GetUserProfiles (Guid? organizationId, UsersApi.GetUserProfilesOptions options = null){
-            ApiResponse<UsersDrilldownResponse> localVarResponse = GetUserProfilesWithHttpInfo(organizationId, options);
-            return localVarResponse.Data;
+        public UsersDrilldownResponse GetUserProfiles(Guid? organizationId, UsersApi.GetUserProfilesOptions options = null)
+        {
+             ApiResponse<UsersDrilldownResponse> localVarResponse = GetUserProfilesWithHttpInfo(organizationId, options);
+             return localVarResponse.Data;
         }
 
         /// <summary>
@@ -1766,10 +2196,9 @@ namespace DocuSign.Admin.Api
         /// </summary>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">The organization ID Guid</param>
-        
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>ApiResponse of UsersDrilldownResponse</returns>
-        public ApiResponse< UsersDrilldownResponse > GetUserProfilesWithHttpInfo (Guid? organizationId, UsersApi.GetUserProfilesOptions options = null)
+        public ApiResponse<UsersDrilldownResponse> GetUserProfilesWithHttpInfo(Guid? organizationId, UsersApi.GetUserProfilesOptions options = null)
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
@@ -1810,11 +2239,11 @@ namespace DocuSign.Admin.Api
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.ApiClient.CallApi(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -1826,11 +2255,11 @@ namespace DocuSign.Admin.Api
             // DocuSign: Handle for PDF return types
             if (localVarResponse.ContentType != null && !localVarResponse.ContentType.ToLower().Contains("json"))
             {
-                return new ApiResponse<UsersDrilldownResponse>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (UsersDrilldownResponse) this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(UsersDrilldownResponse)));
+                return new ApiResponse<UsersDrilldownResponse>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (UsersDrilldownResponse)this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(UsersDrilldownResponse)));
             }
             else
             {
-                return new ApiResponse<UsersDrilldownResponse>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (UsersDrilldownResponse) this.ApiClient.Deserialize(localVarResponse, typeof(UsersDrilldownResponse)));
+                return new ApiResponse<UsersDrilldownResponse>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (UsersDrilldownResponse)this.ApiClient.Deserialize(localVarResponse, typeof(UsersDrilldownResponse)));
             }
             
         }
@@ -1840,14 +2269,12 @@ namespace DocuSign.Admin.Api
         /// </summary>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">The organization ID Guid</param>
-        
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of UsersDrilldownResponse</returns>
-        public async System.Threading.Tasks.Task<UsersDrilldownResponse> GetUserProfilesAsync (Guid? organizationId, UsersApi.GetUserProfilesOptions options = null)
+        public async System.Threading.Tasks.Task<UsersDrilldownResponse> GetUserProfilesAsync(Guid? organizationId, UsersApi.GetUserProfilesOptions options = null)
         {
              ApiResponse<UsersDrilldownResponse> localVarResponse = await GetUserProfilesAsyncWithHttpInfo(organizationId, options);
              return localVarResponse.Data;
-
         }
 
         /// <summary>
@@ -1855,10 +2282,9 @@ namespace DocuSign.Admin.Api
         /// </summary>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">The organization ID Guid</param>
-        
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of ApiResponse (UsersDrilldownResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<UsersDrilldownResponse>> GetUserProfilesAsyncWithHttpInfo (Guid? organizationId, UsersApi.GetUserProfilesOptions options = null)
+        public async System.Threading.Tasks.Task<ApiResponse<UsersDrilldownResponse>> GetUserProfilesAsyncWithHttpInfo(Guid? organizationId, UsersApi.GetUserProfilesOptions options = null)
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
@@ -1890,20 +2316,18 @@ namespace DocuSign.Admin.Api
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             localVarPathParams.Add("format", "json");
             if (organizationId != null) localVarPathParams.Add("organizationId", this.ApiClient.ParameterToString(organizationId)); // path parameter
-
             if (options != null)
             {
                 if (options.email != null) localVarQueryParams.Add("email", this.ApiClient.ParameterToString(options.email)); // query parameter
             }
 
 
-
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.ApiClient.CallApiAsync(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -1913,7 +2337,7 @@ namespace DocuSign.Admin.Api
 
             return new ApiResponse<UsersDrilldownResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (UsersDrilldownResponse) this.ApiClient.Deserialize(localVarResponse, typeof(UsersDrilldownResponse)));
+                (UsersDrilldownResponse)this.ApiClient.Deserialize(localVarResponse, typeof(UsersDrilldownResponse)));
             
         }
 
@@ -1950,12 +2374,12 @@ namespace DocuSign.Admin.Api
         /// </summary>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">The organization ID Guid</param>
-        
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>OrganizationUsersResponse</returns>
-        public OrganizationUsersResponse GetUsers (Guid? organizationId, UsersApi.GetUsersOptions options = null){
-            ApiResponse<OrganizationUsersResponse> localVarResponse = GetUsersWithHttpInfo(organizationId, options);
-            return localVarResponse.Data;
+        public OrganizationUsersResponse GetUsers(Guid? organizationId, UsersApi.GetUsersOptions options = null)
+        {
+             ApiResponse<OrganizationUsersResponse> localVarResponse = GetUsersWithHttpInfo(organizationId, options);
+             return localVarResponse.Data;
         }
 
         /// <summary>
@@ -1963,10 +2387,9 @@ namespace DocuSign.Admin.Api
         /// </summary>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">The organization ID Guid</param>
-        
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>ApiResponse of OrganizationUsersResponse</returns>
-        public ApiResponse< OrganizationUsersResponse > GetUsersWithHttpInfo (Guid? organizationId, UsersApi.GetUsersOptions options = null)
+        public ApiResponse<OrganizationUsersResponse> GetUsersWithHttpInfo(Guid? organizationId, UsersApi.GetUsersOptions options = null)
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
@@ -2016,11 +2439,11 @@ namespace DocuSign.Admin.Api
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.ApiClient.CallApi(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -2032,11 +2455,11 @@ namespace DocuSign.Admin.Api
             // DocuSign: Handle for PDF return types
             if (localVarResponse.ContentType != null && !localVarResponse.ContentType.ToLower().Contains("json"))
             {
-                return new ApiResponse<OrganizationUsersResponse>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (OrganizationUsersResponse) this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(OrganizationUsersResponse)));
+                return new ApiResponse<OrganizationUsersResponse>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (OrganizationUsersResponse)this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(OrganizationUsersResponse)));
             }
             else
             {
-                return new ApiResponse<OrganizationUsersResponse>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (OrganizationUsersResponse) this.ApiClient.Deserialize(localVarResponse, typeof(OrganizationUsersResponse)));
+                return new ApiResponse<OrganizationUsersResponse>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (OrganizationUsersResponse)this.ApiClient.Deserialize(localVarResponse, typeof(OrganizationUsersResponse)));
             }
             
         }
@@ -2046,14 +2469,12 @@ namespace DocuSign.Admin.Api
         /// </summary>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">The organization ID Guid</param>
-        
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of OrganizationUsersResponse</returns>
-        public async System.Threading.Tasks.Task<OrganizationUsersResponse> GetUsersAsync (Guid? organizationId, UsersApi.GetUsersOptions options = null)
+        public async System.Threading.Tasks.Task<OrganizationUsersResponse> GetUsersAsync(Guid? organizationId, UsersApi.GetUsersOptions options = null)
         {
              ApiResponse<OrganizationUsersResponse> localVarResponse = await GetUsersAsyncWithHttpInfo(organizationId, options);
              return localVarResponse.Data;
-
         }
 
         /// <summary>
@@ -2061,10 +2482,9 @@ namespace DocuSign.Admin.Api
         /// </summary>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">The organization ID Guid</param>
-        
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of ApiResponse (OrganizationUsersResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<OrganizationUsersResponse>> GetUsersAsyncWithHttpInfo (Guid? organizationId, UsersApi.GetUsersOptions options = null)
+        public async System.Threading.Tasks.Task<ApiResponse<OrganizationUsersResponse>> GetUsersAsyncWithHttpInfo(Guid? organizationId, UsersApi.GetUsersOptions options = null)
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
@@ -2096,7 +2516,6 @@ namespace DocuSign.Admin.Api
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             localVarPathParams.Add("format", "json");
             if (organizationId != null) localVarPathParams.Add("organizationId", this.ApiClient.ParameterToString(organizationId)); // path parameter
-
             if (options != null)
             {
                 if (options.start != null) localVarQueryParams.Add("start", this.ApiClient.ParameterToString(options.start)); // query parameter
@@ -2112,13 +2531,12 @@ namespace DocuSign.Admin.Api
             }
 
 
-
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.ApiClient.CallApiAsync(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -2128,7 +2546,7 @@ namespace DocuSign.Admin.Api
 
             return new ApiResponse<OrganizationUsersResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (OrganizationUsersResponse) this.ApiClient.Deserialize(localVarResponse, typeof(OrganizationUsersResponse)));
+                (OrganizationUsersResponse)this.ApiClient.Deserialize(localVarResponse, typeof(OrganizationUsersResponse)));
             
         }
 
@@ -2140,11 +2558,11 @@ namespace DocuSign.Admin.Api
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">The organization ID Guid</param>
         /// <param name="request">The details about which email addresses to update</param>
-        
         /// <returns>UsersUpdateResponse</returns>
-        public UsersUpdateResponse UpdateEmailAddress (Guid? organizationId, UpdateUsersEmailRequest request){
-            ApiResponse<UsersUpdateResponse> localVarResponse = UpdateEmailAddressWithHttpInfo(organizationId, request);
-            return localVarResponse.Data;
+        public UsersUpdateResponse UpdateEmailAddress(Guid? organizationId, UpdateUsersEmailRequest request)
+        {
+             ApiResponse<UsersUpdateResponse> localVarResponse = UpdateEmailAddressWithHttpInfo(organizationId, request);
+             return localVarResponse.Data;
         }
 
         /// <summary>
@@ -2153,9 +2571,8 @@ namespace DocuSign.Admin.Api
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">The organization ID Guid</param>
         /// <param name="request">The details about which email addresses to update</param>
-        
         /// <returns>ApiResponse of UsersUpdateResponse</returns>
-        public ApiResponse< UsersUpdateResponse > UpdateEmailAddressWithHttpInfo (Guid? organizationId, UpdateUsersEmailRequest request)
+        public ApiResponse<UsersUpdateResponse> UpdateEmailAddressWithHttpInfo(Guid? organizationId, UpdateUsersEmailRequest request)
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
@@ -2203,11 +2620,11 @@ namespace DocuSign.Admin.Api
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.ApiClient.CallApi(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -2219,11 +2636,11 @@ namespace DocuSign.Admin.Api
             // DocuSign: Handle for PDF return types
             if (localVarResponse.ContentType != null && !localVarResponse.ContentType.ToLower().Contains("json"))
             {
-                return new ApiResponse<UsersUpdateResponse>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (UsersUpdateResponse) this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(UsersUpdateResponse)));
+                return new ApiResponse<UsersUpdateResponse>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (UsersUpdateResponse)this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(UsersUpdateResponse)));
             }
             else
             {
-                return new ApiResponse<UsersUpdateResponse>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (UsersUpdateResponse) this.ApiClient.Deserialize(localVarResponse, typeof(UsersUpdateResponse)));
+                return new ApiResponse<UsersUpdateResponse>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (UsersUpdateResponse)this.ApiClient.Deserialize(localVarResponse, typeof(UsersUpdateResponse)));
             }
             
         }
@@ -2234,13 +2651,11 @@ namespace DocuSign.Admin.Api
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">The organization ID Guid</param>
         /// <param name="request">The details about which email addresses to update</param>
-        
         /// <returns>Task of UsersUpdateResponse</returns>
-        public async System.Threading.Tasks.Task<UsersUpdateResponse> UpdateEmailAddressAsync (Guid? organizationId, UpdateUsersEmailRequest request)
+        public async System.Threading.Tasks.Task<UsersUpdateResponse> UpdateEmailAddressAsync(Guid? organizationId, UpdateUsersEmailRequest request)
         {
              ApiResponse<UsersUpdateResponse> localVarResponse = await UpdateEmailAddressAsyncWithHttpInfo(organizationId, request);
              return localVarResponse.Data;
-
         }
 
         /// <summary>
@@ -2249,9 +2664,8 @@ namespace DocuSign.Admin.Api
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">The organization ID Guid</param>
         /// <param name="request">The details about which email addresses to update</param>
-        
         /// <returns>Task of ApiResponse (UsersUpdateResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<UsersUpdateResponse>> UpdateEmailAddressAsyncWithHttpInfo (Guid? organizationId, UpdateUsersEmailRequest request)
+        public async System.Threading.Tasks.Task<ApiResponse<UsersUpdateResponse>> UpdateEmailAddressAsyncWithHttpInfo(Guid? organizationId, UpdateUsersEmailRequest request)
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
@@ -2286,8 +2700,6 @@ namespace DocuSign.Admin.Api
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             localVarPathParams.Add("format", "json");
             if (organizationId != null) localVarPathParams.Add("organizationId", this.ApiClient.ParameterToString(organizationId)); // path parameter
-
-
             if (request != null && request.GetType() != typeof(byte[]))
             {
                 localVarPostBody = this.ApiClient.Serialize(request); // http body (model) parameter
@@ -2299,11 +2711,11 @@ namespace DocuSign.Admin.Api
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.ApiClient.CallApiAsync(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -2313,7 +2725,7 @@ namespace DocuSign.Admin.Api
 
             return new ApiResponse<UsersUpdateResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (UsersUpdateResponse) this.ApiClient.Deserialize(localVarResponse, typeof(UsersUpdateResponse)));
+                (UsersUpdateResponse)this.ApiClient.Deserialize(localVarResponse, typeof(UsersUpdateResponse)));
             
         }
 
@@ -2325,11 +2737,11 @@ namespace DocuSign.Admin.Api
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">The organization ID Guid</param>
         /// <param name="request">The user details to update</param>
-        
         /// <returns>UsersUpdateResponse</returns>
-        public UsersUpdateResponse UpdateUser (Guid? organizationId, UpdateUsersRequest request){
-            ApiResponse<UsersUpdateResponse> localVarResponse = UpdateUserWithHttpInfo(organizationId, request);
-            return localVarResponse.Data;
+        public UsersUpdateResponse UpdateUser(Guid? organizationId, UpdateUsersRequest request)
+        {
+             ApiResponse<UsersUpdateResponse> localVarResponse = UpdateUserWithHttpInfo(organizationId, request);
+             return localVarResponse.Data;
         }
 
         /// <summary>
@@ -2338,9 +2750,8 @@ namespace DocuSign.Admin.Api
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">The organization ID Guid</param>
         /// <param name="request">The user details to update</param>
-        
         /// <returns>ApiResponse of UsersUpdateResponse</returns>
-        public ApiResponse< UsersUpdateResponse > UpdateUserWithHttpInfo (Guid? organizationId, UpdateUsersRequest request)
+        public ApiResponse<UsersUpdateResponse> UpdateUserWithHttpInfo(Guid? organizationId, UpdateUsersRequest request)
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
@@ -2388,11 +2799,11 @@ namespace DocuSign.Admin.Api
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.ApiClient.CallApi(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -2404,11 +2815,11 @@ namespace DocuSign.Admin.Api
             // DocuSign: Handle for PDF return types
             if (localVarResponse.ContentType != null && !localVarResponse.ContentType.ToLower().Contains("json"))
             {
-                return new ApiResponse<UsersUpdateResponse>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (UsersUpdateResponse) this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(UsersUpdateResponse)));
+                return new ApiResponse<UsersUpdateResponse>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (UsersUpdateResponse)this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(UsersUpdateResponse)));
             }
             else
             {
-                return new ApiResponse<UsersUpdateResponse>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (UsersUpdateResponse) this.ApiClient.Deserialize(localVarResponse, typeof(UsersUpdateResponse)));
+                return new ApiResponse<UsersUpdateResponse>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (UsersUpdateResponse)this.ApiClient.Deserialize(localVarResponse, typeof(UsersUpdateResponse)));
             }
             
         }
@@ -2419,13 +2830,11 @@ namespace DocuSign.Admin.Api
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">The organization ID Guid</param>
         /// <param name="request">The user details to update</param>
-        
         /// <returns>Task of UsersUpdateResponse</returns>
-        public async System.Threading.Tasks.Task<UsersUpdateResponse> UpdateUserAsync (Guid? organizationId, UpdateUsersRequest request)
+        public async System.Threading.Tasks.Task<UsersUpdateResponse> UpdateUserAsync(Guid? organizationId, UpdateUsersRequest request)
         {
              ApiResponse<UsersUpdateResponse> localVarResponse = await UpdateUserAsyncWithHttpInfo(organizationId, request);
              return localVarResponse.Data;
-
         }
 
         /// <summary>
@@ -2434,9 +2843,8 @@ namespace DocuSign.Admin.Api
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">The organization ID Guid</param>
         /// <param name="request">The user details to update</param>
-        
         /// <returns>Task of ApiResponse (UsersUpdateResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<UsersUpdateResponse>> UpdateUserAsyncWithHttpInfo (Guid? organizationId, UpdateUsersRequest request)
+        public async System.Threading.Tasks.Task<ApiResponse<UsersUpdateResponse>> UpdateUserAsyncWithHttpInfo(Guid? organizationId, UpdateUsersRequest request)
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
@@ -2471,8 +2879,6 @@ namespace DocuSign.Admin.Api
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             localVarPathParams.Add("format", "json");
             if (organizationId != null) localVarPathParams.Add("organizationId", this.ApiClient.ParameterToString(organizationId)); // path parameter
-
-
             if (request != null && request.GetType() != typeof(byte[]))
             {
                 localVarPostBody = this.ApiClient.Serialize(request); // http body (model) parameter
@@ -2484,11 +2890,11 @@ namespace DocuSign.Admin.Api
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.ApiClient.CallApiAsync(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -2498,7 +2904,7 @@ namespace DocuSign.Admin.Api
 
             return new ApiResponse<UsersUpdateResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (UsersUpdateResponse) this.ApiClient.Deserialize(localVarResponse, typeof(UsersUpdateResponse)));
+                (UsersUpdateResponse)this.ApiClient.Deserialize(localVarResponse, typeof(UsersUpdateResponse)));
             
         }
 
