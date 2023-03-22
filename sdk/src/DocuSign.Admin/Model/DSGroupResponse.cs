@@ -49,7 +49,7 @@ namespace DocuSign.Admin.Model
         /// <param name="UserCount">UserCount.</param>
         /// <param name="ExternalAccountId">ExternalAccountId.</param>
         /// <param name="AccountName">AccountName.</param>
-        public DSGroupResponse(Guid? DsGroupId = default(Guid?), Guid? AccountId = default(Guid?), string SourceProductName = default(string), string GroupId = default(string), string GroupName = default(string), string Description = default(string), bool? IsAdmin = default(bool?), DateTime LastModifiedOn = default(DateTime), int? UserCount = default(int?), long? ExternalAccountId = default(long?), string AccountName = default(string))
+        public DSGroupResponse(Guid? DsGroupId = default(Guid?), Guid? AccountId = default(Guid?), string SourceProductName = default(string), string GroupId = default(string), string GroupName = default(string), string Description = default(string), bool? IsAdmin = default(bool?), DateTime? LastModifiedOn = default(DateTime?), int? UserCount = default(int?), long? ExternalAccountId = default(long?), string AccountName = default(string))
         {
             this.DsGroupId = DsGroupId;
             this.AccountId = AccountId;
@@ -103,7 +103,7 @@ namespace DocuSign.Admin.Model
         /// Gets or Sets LastModifiedOn
         /// </summary>
         [DataMember(Name="last_modified_on", EmitDefaultValue=false)]
-        public DateTime LastModifiedOn { get; set; }
+        public DateTime? LastModifiedOn { get; set; }
         /// <summary>
         /// Gets or Sets UserCount
         /// </summary>

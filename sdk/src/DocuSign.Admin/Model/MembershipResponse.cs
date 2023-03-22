@@ -48,7 +48,7 @@ namespace DocuSign.Admin.Model
         /// <param name="CreatedOn">CreatedOn.</param>
         /// <param name="Groups">Groups.</param>
         /// <param name="IsAdmin">IsAdmin.</param>
-        public MembershipResponse(string Email = default(string), Guid? AccountId = default(Guid?), string ExternalAccountId = default(string), string AccountName = default(string), bool? IsExternalAccount = default(bool?), string Status = default(string), PermissionProfileResponse PermissionProfile = default(PermissionProfileResponse), DateTime CreatedOn = default(DateTime), List<MemberGroupResponse> Groups = default(List<MemberGroupResponse>), bool? IsAdmin = default(bool?))
+        public MembershipResponse(string Email = default(string), Guid? AccountId = default(Guid?), string ExternalAccountId = default(string), string AccountName = default(string), bool? IsExternalAccount = default(bool?), string Status = default(string), PermissionProfileResponse PermissionProfile = default(PermissionProfileResponse), DateTime? CreatedOn = default(DateTime?), List<MemberGroupResponse> Groups = default(List<MemberGroupResponse>), bool? IsAdmin = default(bool?))
         {
             this.Email = Email;
             this.AccountId = AccountId;
@@ -101,7 +101,7 @@ namespace DocuSign.Admin.Model
         /// Gets or Sets CreatedOn
         /// </summary>
         [DataMember(Name="created_on", EmitDefaultValue=false)]
-        public DateTime CreatedOn { get; set; }
+        public DateTime? CreatedOn { get; set; }
         /// <summary>
         /// Gets or Sets Groups
         /// </summary>

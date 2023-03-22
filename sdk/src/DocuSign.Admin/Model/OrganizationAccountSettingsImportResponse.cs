@@ -53,7 +53,7 @@ namespace DocuSign.Admin.Model
         /// <param name="Status">Status.</param>
         /// <param name="Type">Type.</param>
         /// <param name="Requestor">Requestor.</param>
-        public OrganizationAccountSettingsImportResponse(DateTime Created = default(DateTime), DateTime LastModified = default(DateTime), DateTime Completed = default(DateTime), DateTime Expires = default(DateTime), int? PercentCompleted = default(int?), long? NumberProcessedAccounts = default(long?), long? NumberUnprocessedAccounts = default(long?), List<OrganizationAccountSettingsImportResultResponse> Results = default(List<OrganizationAccountSettingsImportResultResponse>), bool? Success = default(bool?), Dictionary<string, List<string>> SkippedSettingsByAccount = default(Dictionary<string, List<string>>), string Id = default(string), string OrganizationId = default(string), string Status = default(string), string Type = default(string), OrganizationAccountSettingsImportRequestorResponse Requestor = default(OrganizationAccountSettingsImportRequestorResponse))
+        public OrganizationAccountSettingsImportResponse(DateTime? Created = default(DateTime?), DateTime? LastModified = default(DateTime?), DateTime? Completed = default(DateTime?), DateTime? Expires = default(DateTime?), int? PercentCompleted = default(int?), long? NumberProcessedAccounts = default(long?), long? NumberUnprocessedAccounts = default(long?), List<OrganizationAccountSettingsImportResultResponse> Results = default(List<OrganizationAccountSettingsImportResultResponse>), bool? Success = default(bool?), Dictionary<string, List<string>> SkippedSettingsByAccount = default(Dictionary<string, List<string>>), string Id = default(string), string OrganizationId = default(string), string Status = default(string), string Type = default(string), OrganizationAccountSettingsImportRequestorResponse Requestor = default(OrganizationAccountSettingsImportRequestorResponse))
         {
             this.Created = Created;
             this.LastModified = LastModified;
@@ -76,22 +76,22 @@ namespace DocuSign.Admin.Model
         /// Gets or Sets Created
         /// </summary>
         [DataMember(Name="created", EmitDefaultValue=false)]
-        public DateTime Created { get; set; }
+        public DateTime? Created { get; set; }
         /// <summary>
         /// Gets or Sets LastModified
         /// </summary>
         [DataMember(Name="last_modified", EmitDefaultValue=false)]
-        public DateTime LastModified { get; set; }
+        public DateTime? LastModified { get; set; }
         /// <summary>
         /// Gets or Sets Completed
         /// </summary>
         [DataMember(Name="completed", EmitDefaultValue=false)]
-        public DateTime Completed { get; set; }
+        public DateTime? Completed { get; set; }
         /// <summary>
         /// Gets or Sets Expires
         /// </summary>
         [DataMember(Name="expires", EmitDefaultValue=false)]
-        public DateTime Expires { get; set; }
+        public DateTime? Expires { get; set; }
         /// <summary>
         /// Gets or Sets PercentCompleted
         /// </summary>

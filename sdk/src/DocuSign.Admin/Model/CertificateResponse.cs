@@ -43,7 +43,7 @@ namespace DocuSign.Admin.Model
         /// <param name="Thumbprint">Thumbprint.</param>
         /// <param name="ExpirationDate">ExpirationDate.</param>
         /// <param name="Links">Links.</param>
-        public CertificateResponse(Guid? Id = default(Guid?), string Issuer = default(string), string Thumbprint = default(string), DateTime ExpirationDate = default(DateTime), List<LinkResponse> Links = default(List<LinkResponse>))
+        public CertificateResponse(Guid? Id = default(Guid?), string Issuer = default(string), string Thumbprint = default(string), DateTime? ExpirationDate = default(DateTime?), List<LinkResponse> Links = default(List<LinkResponse>))
         {
             this.Id = Id;
             this.Issuer = Issuer;
@@ -71,7 +71,7 @@ namespace DocuSign.Admin.Model
         /// Gets or Sets ExpirationDate
         /// </summary>
         [DataMember(Name="expiration_date", EmitDefaultValue=false)]
-        public DateTime ExpirationDate { get; set; }
+        public DateTime? ExpirationDate { get; set; }
         /// <summary>
         /// Gets or Sets IsValid
         /// </summary>

@@ -50,7 +50,7 @@ namespace DocuSign.Admin.Model
         /// <param name="ReportDateRange">ReportDateRange.</param>
         /// <param name="CustomStartDate">CustomStartDate.</param>
         /// <param name="CustomEndDate">CustomEndDate.</param>
-        public OrgReportListResponseOrgReport(bool? Complete = default(bool?), Guid? ReportCorrelationId = default(Guid?), int? SiteId = default(int?), Guid? ReportId = default(Guid?), OrgReportListResponseRequestor Requestor = default(OrgReportListResponseRequestor), DateTime CreatedOn = default(DateTime), int? AccountExportCount = default(int?), string Url = default(string), string ReportTypeId = default(string), string ReportDateRange = default(string), DateTime CustomStartDate = default(DateTime), DateTime CustomEndDate = default(DateTime))
+        public OrgReportListResponseOrgReport(bool? Complete = default(bool?), Guid? ReportCorrelationId = default(Guid?), int? SiteId = default(int?), Guid? ReportId = default(Guid?), OrgReportListResponseRequestor Requestor = default(OrgReportListResponseRequestor), DateTime? CreatedOn = default(DateTime?), int? AccountExportCount = default(int?), string Url = default(string), string ReportTypeId = default(string), string ReportDateRange = default(string), DateTime? CustomStartDate = default(DateTime?), DateTime? CustomEndDate = default(DateTime?))
         {
             this.Complete = Complete;
             this.ReportCorrelationId = ReportCorrelationId;
@@ -95,7 +95,7 @@ namespace DocuSign.Admin.Model
         /// Gets or Sets CreatedOn
         /// </summary>
         [DataMember(Name="created_on", EmitDefaultValue=false)]
-        public DateTime CreatedOn { get; set; }
+        public DateTime? CreatedOn { get; set; }
         /// <summary>
         /// Gets or Sets AccountExportCount
         /// </summary>
@@ -120,12 +120,12 @@ namespace DocuSign.Admin.Model
         /// Gets or Sets CustomStartDate
         /// </summary>
         [DataMember(Name="custom_start_date", EmitDefaultValue=false)]
-        public DateTime CustomStartDate { get; set; }
+        public DateTime? CustomStartDate { get; set; }
         /// <summary>
         /// Gets or Sets CustomEndDate
         /// </summary>
         [DataMember(Name="custom_end_date", EmitDefaultValue=false)]
-        public DateTime CustomEndDate { get; set; }
+        public DateTime? CustomEndDate { get; set; }
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>

@@ -10,9 +10,8 @@
 
 using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Linq;
-using RestSharp;
+using System.Net.Http;
 using DocuSign.Admin.Client;
 using DocuSign.Admin.Model;
 
@@ -84,7 +83,7 @@ namespace DocuSign.Admin.Api
         /// </summary>
         /// <param name="aplClient">An instance of AplClient</param>
         /// <returns></returns>
-        public ReservedDomainsApi(ApiClient aplClient)
+        public ReservedDomainsApi(DocuSignClient aplClient)
         {
             this.ApiClient = aplClient;
 
@@ -97,14 +96,14 @@ namespace DocuSign.Admin.Api
         /// <value>The base path</value>
         public String GetBasePath()
         {
-            return this.ApiClient.RestClient.BaseUrl.ToString();
+            return this.ApiClient.GetBasePath();
         }
 
         /// <summary>
         /// Gets or sets the ApiClient object
         /// </summary>
         /// <value>An instance of the ApiClient</value>
-        public ApiClient ApiClient { get; set; }
+        public DocuSignClient ApiClient { get; set; }
 
         /// <summary>
         /// Provides a factory method hook for the creation of exceptions.
@@ -144,64 +143,10 @@ namespace DocuSign.Admin.Api
         /// <returns>ApiResponse of DomainsResponse</returns>
         public ApiResponse<DomainsResponse> GetReservedDomainsWithHttpInfo(Guid? organizationId)
         {
-            // verify the required parameter 'organizationId' is set
-            if (organizationId == null)
-                throw new ApiException(400, "Missing required parameter 'organizationId' when calling ReservedDomainsApi->GetReservedDomains");
-
-            var localVarPath = "/v2/organizations/{organizationId}/reserved_domains";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new Dictionary<String, String>();
-            var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-                "application/json"
-            };
-            String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-                "application/json"
-            };
-            String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            // set "format" to json by default
-            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
-            localVarPathParams.Add("format", "json");
-            if (organizationId != null) localVarPathParams.Add("organizationId", this.ApiClient.ParameterToString(organizationId)); // path parameter
-
-
-
-
-            // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse)this.ApiClient.CallApi(localVarPath,
-                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
-
-            int localVarStatusCode = (int)localVarResponse.StatusCode;
-
-            if (ExceptionFactory != null)
-            {
-                Exception exception = ExceptionFactory("GetReservedDomains", localVarResponse);
-                if (exception != null) throw exception;
-            }
-
-            
-            // DocuSign: Handle for PDF return types
-            if (localVarResponse.ContentType != null && !localVarResponse.ContentType.ToLower().Contains("json"))
-            {
-                return new ApiResponse<DomainsResponse>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (DomainsResponse)this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(DomainsResponse)));
-            }
-            else
-            {
-                return new ApiResponse<DomainsResponse>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (DomainsResponse)this.ApiClient.Deserialize(localVarResponse, typeof(DomainsResponse)));
-            }
-            
+            return GetReservedDomainsAsyncWithHttpInfo(organizationId)
+                .ConfigureAwait(false)
+                .GetAwaiter()
+                .GetResult();
         }
 
         /// <summary>
@@ -233,8 +178,9 @@ namespace DocuSign.Admin.Api
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
             var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
+            var localVarFileParams = new List<FileParameter>();
             Object localVarPostBody = null;
+            String localVarHttpContentDisposition = string.Empty;
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
@@ -257,9 +203,8 @@ namespace DocuSign.Admin.Api
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse)await this.ApiClient.CallApiAsync(localVarPath,
-                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
+            DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, HttpMethod.Get, localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
+            DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest);
 
             int localVarStatusCode = (int)localVarResponse.StatusCode;
 
@@ -269,10 +214,9 @@ namespace DocuSign.Admin.Api
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<DomainsResponse>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+            return new ApiResponse<DomainsResponse>(localVarStatusCode, 
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()), 
                 (DomainsResponse)this.ApiClient.Deserialize(localVarResponse, typeof(DomainsResponse)));
-            
         }
 
     }

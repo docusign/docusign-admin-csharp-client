@@ -52,7 +52,7 @@ namespace DocuSign.Admin.Model
         /// <param name="ReservedDomains">ReservedDomains.</param>
         /// <param name="IdentityProviders">IdentityProviders.</param>
         /// <param name="Links">Links.</param>
-        public OrganizationResponse(Guid? Id = default(Guid?), string Name = default(string), string Description = default(string), Guid? DefaultAccountId = default(Guid?), long? DefaultPermissionProfileId = default(long?), DateTime CreatedOn = default(DateTime), Guid? CreatedBy = default(Guid?), DateTime LastModifiedOn = default(DateTime), Guid? LastModifiedBy = default(Guid?), List<OrganizationAccountResponse> Accounts = default(List<OrganizationAccountResponse>), List<OrganizationSimpleIdObject> Users = default(List<OrganizationSimpleIdObject>), List<DomainResponse> ReservedDomains = default(List<DomainResponse>), List<IdentityProvidersResponse> IdentityProviders = default(List<IdentityProvidersResponse>), List<LinkResponse> Links = default(List<LinkResponse>))
+        public OrganizationResponse(Guid? Id = default(Guid?), string Name = default(string), string Description = default(string), Guid? DefaultAccountId = default(Guid?), long? DefaultPermissionProfileId = default(long?), DateTime? CreatedOn = default(DateTime?), Guid? CreatedBy = default(Guid?), DateTime? LastModifiedOn = default(DateTime?), Guid? LastModifiedBy = default(Guid?), List<OrganizationAccountResponse> Accounts = default(List<OrganizationAccountResponse>), List<OrganizationSimpleIdObject> Users = default(List<OrganizationSimpleIdObject>), List<DomainResponse> ReservedDomains = default(List<DomainResponse>), List<IdentityProvidersResponse> IdentityProviders = default(List<IdentityProvidersResponse>), List<LinkResponse> Links = default(List<LinkResponse>))
         {
             this.Id = Id;
             this.Name = Name;
@@ -99,7 +99,7 @@ namespace DocuSign.Admin.Model
         /// Gets or Sets CreatedOn
         /// </summary>
         [DataMember(Name="created_on", EmitDefaultValue=false)]
-        public DateTime CreatedOn { get; set; }
+        public DateTime? CreatedOn { get; set; }
         /// <summary>
         /// Gets or Sets CreatedBy
         /// </summary>
@@ -109,7 +109,7 @@ namespace DocuSign.Admin.Model
         /// Gets or Sets LastModifiedOn
         /// </summary>
         [DataMember(Name="last_modified_on", EmitDefaultValue=false)]
-        public DateTime LastModifiedOn { get; set; }
+        public DateTime? LastModifiedOn { get; set; }
         /// <summary>
         /// Gets or Sets LastModifiedBy
         /// </summary>

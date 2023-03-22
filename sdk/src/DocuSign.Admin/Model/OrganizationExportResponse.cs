@@ -54,7 +54,7 @@ namespace DocuSign.Admin.Model
         /// <param name="SizeBytes">SizeBytes.</param>
         /// <param name="Results">Results.</param>
         /// <param name="Success">Success.</param>
-        public OrganizationExportResponse(Guid? Id = default(Guid?), string Type = default(string), OrganizationExportRequestorResponse Requestor = default(OrganizationExportRequestorResponse), DateTime Created = default(DateTime), DateTime LastModified = default(DateTime), DateTime Completed = default(DateTime), DateTime Expires = default(DateTime), string Status = default(string), List<OrgExportSelectedAccount> SelectedAccounts = default(List<OrgExportSelectedAccount>), List<OrgExportSelectedDomain> SelectedDomains = default(List<OrgExportSelectedDomain>), string MetadataUrl = default(string), int? PercentCompleted = default(int?), long? NumberRows = default(long?), long? SizeBytes = default(long?), List<OrganizationExportTaskResponse> Results = default(List<OrganizationExportTaskResponse>), bool? Success = default(bool?))
+        public OrganizationExportResponse(Guid? Id = default(Guid?), string Type = default(string), OrganizationExportRequestorResponse Requestor = default(OrganizationExportRequestorResponse), DateTime? Created = default(DateTime?), DateTime? LastModified = default(DateTime?), DateTime? Completed = default(DateTime?), DateTime? Expires = default(DateTime?), string Status = default(string), List<OrgExportSelectedAccount> SelectedAccounts = default(List<OrgExportSelectedAccount>), List<OrgExportSelectedDomain> SelectedDomains = default(List<OrgExportSelectedDomain>), string MetadataUrl = default(string), int? PercentCompleted = default(int?), long? NumberRows = default(long?), long? SizeBytes = default(long?), List<OrganizationExportTaskResponse> Results = default(List<OrganizationExportTaskResponse>), bool? Success = default(bool?))
         {
             this.Id = Id;
             this.Type = Type;
@@ -93,22 +93,22 @@ namespace DocuSign.Admin.Model
         /// Gets or Sets Created
         /// </summary>
         [DataMember(Name="created", EmitDefaultValue=false)]
-        public DateTime Created { get; set; }
+        public DateTime? Created { get; set; }
         /// <summary>
         /// Gets or Sets LastModified
         /// </summary>
         [DataMember(Name="last_modified", EmitDefaultValue=false)]
-        public DateTime LastModified { get; set; }
+        public DateTime? LastModified { get; set; }
         /// <summary>
         /// Gets or Sets Completed
         /// </summary>
         [DataMember(Name="completed", EmitDefaultValue=false)]
-        public DateTime Completed { get; set; }
+        public DateTime? Completed { get; set; }
         /// <summary>
         /// Gets or Sets Expires
         /// </summary>
         [DataMember(Name="expires", EmitDefaultValue=false)]
-        public DateTime Expires { get; set; }
+        public DateTime? Expires { get; set; }
         /// <summary>
         /// Gets or Sets Status
         /// </summary>
