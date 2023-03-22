@@ -64,7 +64,7 @@ namespace DocuSign.Admin.Model
         /// <param name="UserLevelWarningRollups">UserLevelWarningRollups.</param>
         /// <param name="HasCsvResults">HasCsvResults.</param>
         /// <param name="ResultsUri">ResultsUri.</param>
-        public OrganizationImportResponse(Guid? Id = default(Guid?), string Type = default(string), OrganizationImportResponseRequestor Requestor = default(OrganizationImportResponseRequestor), DateTime Created = default(DateTime), DateTime LastModified = default(DateTime), string Status = default(string), int? UserCount = default(int?), int? ProcessedUserCount = default(int?), int? AddedUserCount = default(int?), int? UpdatedUserCount = default(int?), int? ClosedUserCount = default(int?), int? NoActionRequiredUserCount = default(int?), int? ErrorCount = default(int?), int? WarningCount = default(int?), string InvalidColumnHeaders = default(string), string ImportsNotFoundOrNotAvailableForAccounts = default(string), string ImportsFailedForAccounts = default(string), string ImportsTimedOutForAccounts = default(string), string ImportsNotFoundOrNotAvailableForSites = default(string), string ImportsFailedForSites = default(string), string ImportsTimedOutForSites = default(string), List<OrganizationImportResponseErrorRollup> FileLevelErrorRollups = default(List<OrganizationImportResponseErrorRollup>), List<OrganizationImportResponseErrorRollup> UserLevelErrorRollups = default(List<OrganizationImportResponseErrorRollup>), List<OrganizationImportResponseWarningRollup> UserLevelWarningRollups = default(List<OrganizationImportResponseWarningRollup>), bool? HasCsvResults = default(bool?), string ResultsUri = default(string))
+        public OrganizationImportResponse(Guid? Id = default(Guid?), string Type = default(string), OrganizationImportResponseRequestor Requestor = default(OrganizationImportResponseRequestor), DateTime? Created = default(DateTime?), DateTime? LastModified = default(DateTime?), string Status = default(string), int? UserCount = default(int?), int? ProcessedUserCount = default(int?), int? AddedUserCount = default(int?), int? UpdatedUserCount = default(int?), int? ClosedUserCount = default(int?), int? NoActionRequiredUserCount = default(int?), int? ErrorCount = default(int?), int? WarningCount = default(int?), string InvalidColumnHeaders = default(string), string ImportsNotFoundOrNotAvailableForAccounts = default(string), string ImportsFailedForAccounts = default(string), string ImportsTimedOutForAccounts = default(string), string ImportsNotFoundOrNotAvailableForSites = default(string), string ImportsFailedForSites = default(string), string ImportsTimedOutForSites = default(string), List<OrganizationImportResponseErrorRollup> FileLevelErrorRollups = default(List<OrganizationImportResponseErrorRollup>), List<OrganizationImportResponseErrorRollup> UserLevelErrorRollups = default(List<OrganizationImportResponseErrorRollup>), List<OrganizationImportResponseWarningRollup> UserLevelWarningRollups = default(List<OrganizationImportResponseWarningRollup>), bool? HasCsvResults = default(bool?), string ResultsUri = default(string))
         {
             this.Id = Id;
             this.Type = Type;
@@ -113,12 +113,12 @@ namespace DocuSign.Admin.Model
         /// Gets or Sets Created
         /// </summary>
         [DataMember(Name="created", EmitDefaultValue=false)]
-        public DateTime Created { get; set; }
+        public DateTime? Created { get; set; }
         /// <summary>
         /// Gets or Sets LastModified
         /// </summary>
         [DataMember(Name="last_modified", EmitDefaultValue=false)]
-        public DateTime LastModified { get; set; }
+        public DateTime? LastModified { get; set; }
         /// <summary>
         /// Gets or Sets Status
         /// </summary>

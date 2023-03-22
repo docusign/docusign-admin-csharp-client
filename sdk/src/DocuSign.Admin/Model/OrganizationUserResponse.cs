@@ -49,7 +49,7 @@ namespace DocuSign.Admin.Model
         /// <param name="MembershipCreatedOn">MembershipCreatedOn.</param>
         /// <param name="DsGroups">DsGroups.</param>
         /// <param name="MembershipId">MembershipId.</param>
-        public OrganizationUserResponse(Guid? Id = default(Guid?), string UserName = default(string), string FirstName = default(string), string LastName = default(string), string UserStatus = default(string), string MembershipStatus = default(string), string Email = default(string), DateTime CreatedOn = default(DateTime), DateTime MembershipCreatedOn = default(DateTime), List<DSGroupResponse> DsGroups = default(List<DSGroupResponse>), Guid? MembershipId = default(Guid?))
+        public OrganizationUserResponse(Guid? Id = default(Guid?), string UserName = default(string), string FirstName = default(string), string LastName = default(string), string UserStatus = default(string), string MembershipStatus = default(string), string Email = default(string), DateTime? CreatedOn = default(DateTime?), DateTime? MembershipCreatedOn = default(DateTime?), List<DSGroupResponse> DsGroups = default(List<DSGroupResponse>), Guid? MembershipId = default(Guid?))
         {
             this.Id = Id;
             this.UserName = UserName;
@@ -103,12 +103,12 @@ namespace DocuSign.Admin.Model
         /// Gets or Sets CreatedOn
         /// </summary>
         [DataMember(Name="created_on", EmitDefaultValue=false)]
-        public DateTime CreatedOn { get; set; }
+        public DateTime? CreatedOn { get; set; }
         /// <summary>
         /// Gets or Sets MembershipCreatedOn
         /// </summary>
         [DataMember(Name="membership_created_on", EmitDefaultValue=false)]
-        public DateTime MembershipCreatedOn { get; set; }
+        public DateTime? MembershipCreatedOn { get; set; }
         /// <summary>
         /// Gets or Sets DsGroups
         /// </summary>

@@ -43,7 +43,7 @@ namespace DocuSign.Admin.Model
         /// <param name="AccountIds">AccountIds.</param>
         /// <param name="CustomStartDate">CustomStartDate.</param>
         /// <param name="CustomEndDate">CustomEndDate.</param>
-        public OrgReportRequest(string ReportType = default(string), string ReportDateRange = default(string), List<Guid?> AccountIds = default(List<Guid?>), DateTime CustomStartDate = default(DateTime), DateTime CustomEndDate = default(DateTime))
+        public OrgReportRequest(string ReportType = default(string), string ReportDateRange = default(string), List<Guid?> AccountIds = default(List<Guid?>), DateTime? CustomStartDate = default(DateTime?), DateTime? CustomEndDate = default(DateTime?))
         {
             this.ReportType = ReportType;
             this.ReportDateRange = ReportDateRange;
@@ -71,12 +71,12 @@ namespace DocuSign.Admin.Model
         /// Gets or Sets CustomStartDate
         /// </summary>
         [DataMember(Name="custom_start_date", EmitDefaultValue=false)]
-        public DateTime CustomStartDate { get; set; }
+        public DateTime? CustomStartDate { get; set; }
         /// <summary>
         /// Gets or Sets CustomEndDate
         /// </summary>
         [DataMember(Name="custom_end_date", EmitDefaultValue=false)]
-        public DateTime CustomEndDate { get; set; }
+        public DateTime? CustomEndDate { get; set; }
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>

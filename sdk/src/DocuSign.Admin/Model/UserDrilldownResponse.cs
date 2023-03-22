@@ -56,7 +56,7 @@ namespace DocuSign.Admin.Model
         /// <param name="Memberships">Memberships.</param>
         /// <param name="Identities">Identities.</param>
         /// <param name="DeviceVerificationEnabled">DeviceVerificationEnabled.</param>
-        public UserDrilldownResponse(Guid? Id = default(Guid?), int? SiteId = default(int?), string SiteName = default(string), string UserName = default(string), string FirstName = default(string), string LastName = default(string), string UserStatus = default(string), Guid? DefaultAccountId = default(Guid?), string DefaultAccountName = default(string), string LanguageCulture = default(string), string SelectedLanguages = default(string), string FederatedStatus = default(string), bool? IsOrganizationAdmin = default(bool?), DateTime CreatedOn = default(DateTime), DateTime LastLogin = default(DateTime), List<MembershipResponse> Memberships = default(List<MembershipResponse>), List<UserIdentityResponse> Identities = default(List<UserIdentityResponse>), bool? DeviceVerificationEnabled = default(bool?))
+        public UserDrilldownResponse(Guid? Id = default(Guid?), int? SiteId = default(int?), string SiteName = default(string), string UserName = default(string), string FirstName = default(string), string LastName = default(string), string UserStatus = default(string), Guid? DefaultAccountId = default(Guid?), string DefaultAccountName = default(string), string LanguageCulture = default(string), string SelectedLanguages = default(string), string FederatedStatus = default(string), bool? IsOrganizationAdmin = default(bool?), DateTime? CreatedOn = default(DateTime?), DateTime? LastLogin = default(DateTime?), List<MembershipResponse> Memberships = default(List<MembershipResponse>), List<UserIdentityResponse> Identities = default(List<UserIdentityResponse>), bool? DeviceVerificationEnabled = default(bool?))
         {
             this.Id = Id;
             this.SiteId = SiteId;
@@ -147,12 +147,12 @@ namespace DocuSign.Admin.Model
         /// Gets or Sets CreatedOn
         /// </summary>
         [DataMember(Name="created_on", EmitDefaultValue=false)]
-        public DateTime CreatedOn { get; set; }
+        public DateTime? CreatedOn { get; set; }
         /// <summary>
         /// Gets or Sets LastLogin
         /// </summary>
         [DataMember(Name="last_login", EmitDefaultValue=false)]
-        public DateTime LastLogin { get; set; }
+        public DateTime? LastLogin { get; set; }
         /// <summary>
         /// Gets or Sets Memberships
         /// </summary>

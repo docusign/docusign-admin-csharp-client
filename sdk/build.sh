@@ -15,12 +15,10 @@ mono nuget.exe install src/DocuSign.Admin/packages.config -o packages;
 
 echo "[INFO] Copy DLLs to the 'bin' folder"
 mkdir -p bin;
-cp packages/Newtonsoft.Json.8.0.3/lib/net45/Newtonsoft.Json.dll bin/Newtonsoft.Json.dll;
-cp packages/RestSharpSigned.105.1.0/lib/net45/RestSharp.dll bin/RestSharp.dll;
+cp packages/Newtonsoft.Json.13.0.1/lib/net45/Newtonsoft.Json.dll bin/Newtonsoft.Json.dll;
 
 echo "[INFO] Run 'mcs' to build bin/DocuSign.Admin.dll"
 mcs -sdk:${netfx} -r:bin/Newtonsoft.Json.dll,\
-bin/RestSharp.dll,\
 System.ComponentModel.DataAnnotations.dll,\
 System.Runtime.Serialization.dll \
 -target:library \
