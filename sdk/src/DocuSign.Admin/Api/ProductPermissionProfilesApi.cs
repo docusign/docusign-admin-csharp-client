@@ -380,7 +380,6 @@ namespace DocuSign.Admin.Api
         }
 
 
-
         /// <summary>
         /// Assign user to permission profiles for one or more products Required scopes: user_write
         /// </summary>
@@ -407,10 +406,74 @@ namespace DocuSign.Admin.Api
         /// <returns>ApiResponse of UserProductPermissionProfilesResponse</returns>
         public ApiResponse<UserProductPermissionProfilesResponse> AddUserProductPermissionProfilesWithHttpInfo(Guid? organizationId, Guid? accountId, Guid? userId, ProductPermissionProfilesRequest productPermissionProfilesRequest)
         {
-            return AddUserProductPermissionProfilesAsyncWithHttpInfo(organizationId, accountId, userId, productPermissionProfilesRequest)
-                .ConfigureAwait(false)
-                .GetAwaiter()
-                .GetResult();
+            // verify the required parameter 'organizationId' is set
+            if (organizationId == null)
+                throw new ApiException(400, "Missing required parameter 'organizationId' when calling ProductPermissionProfilesApi->AddUserProductPermissionProfiles");
+            // verify the required parameter 'accountId' is set
+            if (accountId == null)
+                throw new ApiException(400, "Missing required parameter 'accountId' when calling ProductPermissionProfilesApi->AddUserProductPermissionProfiles");
+            // verify the required parameter 'userId' is set
+            if (userId == null)
+                throw new ApiException(400, "Missing required parameter 'userId' when calling ProductPermissionProfilesApi->AddUserProductPermissionProfiles");
+            // verify the required parameter 'productPermissionProfilesRequest' is set
+            if (productPermissionProfilesRequest == null)
+                throw new ApiException(400, "Missing required parameter 'productPermissionProfilesRequest' when calling ProductPermissionProfilesApi->AddUserProductPermissionProfiles");
+
+            var localVarPath = "/v2.1/organizations/{organizationId}/accounts/{accountId}/products/users/{userId}/permission_profiles";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new Dictionary<String, String>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new List<FileParameter>();
+            Object localVarPostBody = null;
+            String localVarHttpContentDisposition = string.Empty;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+            if (organizationId != null) localVarPathParams.Add("organizationId", this.ApiClient.ParameterToString(organizationId)); // path parameter
+            if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
+            if (userId != null) localVarPathParams.Add("userId", this.ApiClient.ParameterToString(userId)); // path parameter
+            if (productPermissionProfilesRequest != null && productPermissionProfilesRequest.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = this.ApiClient.Serialize(productPermissionProfilesRequest); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = productPermissionProfilesRequest; // byte array
+            }
+
+
+
+            // make the HTTP request
+            DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, HttpMethod.Post, localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
+            DocuSignResponse localVarResponse = this.ApiClient.CallApi(localVarRequest);
+
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("AddUserProductPermissionProfiles", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<UserProductPermissionProfilesResponse>(localVarStatusCode, 
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()), 
+                (UserProductPermissionProfilesResponse)this.ApiClient.Deserialize(localVarResponse, typeof(UserProductPermissionProfilesResponse)));
         }
 
         /// <summary>
@@ -491,6 +554,7 @@ namespace DocuSign.Admin.Api
             }
 
 
+
             // make the HTTP request
             DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, HttpMethod.Post, localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
             DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest);
@@ -507,7 +571,6 @@ namespace DocuSign.Admin.Api
                 localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()), 
                 (UserProductPermissionProfilesResponse)this.ApiClient.Deserialize(localVarResponse, typeof(UserProductPermissionProfilesResponse)));
         }
-
 
 
         /// <summary>
@@ -534,10 +597,70 @@ namespace DocuSign.Admin.Api
         /// <returns>ApiResponse of UserProductPermissionProfilesResponse</returns>
         public ApiResponse<UserProductPermissionProfilesResponse> AddUserProductPermissionProfilesByEmailWithHttpInfo(Guid? organizationId, Guid? accountId, UserProductPermissionProfilesRequest userProductPermissionProfilesRequest)
         {
-            return AddUserProductPermissionProfilesByEmailAsyncWithHttpInfo(organizationId, accountId, userProductPermissionProfilesRequest)
-                .ConfigureAwait(false)
-                .GetAwaiter()
-                .GetResult();
+            // verify the required parameter 'organizationId' is set
+            if (organizationId == null)
+                throw new ApiException(400, "Missing required parameter 'organizationId' when calling ProductPermissionProfilesApi->AddUserProductPermissionProfilesByEmail");
+            // verify the required parameter 'accountId' is set
+            if (accountId == null)
+                throw new ApiException(400, "Missing required parameter 'accountId' when calling ProductPermissionProfilesApi->AddUserProductPermissionProfilesByEmail");
+            // verify the required parameter 'userProductPermissionProfilesRequest' is set
+            if (userProductPermissionProfilesRequest == null)
+                throw new ApiException(400, "Missing required parameter 'userProductPermissionProfilesRequest' when calling ProductPermissionProfilesApi->AddUserProductPermissionProfilesByEmail");
+
+            var localVarPath = "/v2.1/organizations/{organizationId}/accounts/{accountId}/products/permission_profiles/users";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new Dictionary<String, String>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new List<FileParameter>();
+            Object localVarPostBody = null;
+            String localVarHttpContentDisposition = string.Empty;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+            if (organizationId != null) localVarPathParams.Add("organizationId", this.ApiClient.ParameterToString(organizationId)); // path parameter
+            if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
+            if (userProductPermissionProfilesRequest != null && userProductPermissionProfilesRequest.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = this.ApiClient.Serialize(userProductPermissionProfilesRequest); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = userProductPermissionProfilesRequest; // byte array
+            }
+
+
+
+            // make the HTTP request
+            DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, HttpMethod.Post, localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
+            DocuSignResponse localVarResponse = this.ApiClient.CallApi(localVarRequest);
+
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("AddUserProductPermissionProfilesByEmail", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<UserProductPermissionProfilesResponse>(localVarStatusCode, 
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()), 
+                (UserProductPermissionProfilesResponse)this.ApiClient.Deserialize(localVarResponse, typeof(UserProductPermissionProfilesResponse)));
         }
 
         /// <summary>
@@ -612,6 +735,7 @@ namespace DocuSign.Admin.Api
             }
 
 
+
             // make the HTTP request
             DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, HttpMethod.Post, localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
             DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest);
@@ -628,7 +752,6 @@ namespace DocuSign.Admin.Api
                 localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()), 
                 (UserProductPermissionProfilesResponse)this.ApiClient.Deserialize(localVarResponse, typeof(UserProductPermissionProfilesResponse)));
         }
-
 
 
         /// <summary>
@@ -653,10 +776,59 @@ namespace DocuSign.Admin.Api
         /// <returns>ApiResponse of ProductPermissionProfilesResponse</returns>
         public ApiResponse<ProductPermissionProfilesResponse> GetProductPermissionProfilesWithHttpInfo(Guid? organizationId, Guid? accountId)
         {
-            return GetProductPermissionProfilesAsyncWithHttpInfo(organizationId, accountId)
-                .ConfigureAwait(false)
-                .GetAwaiter()
-                .GetResult();
+            // verify the required parameter 'organizationId' is set
+            if (organizationId == null)
+                throw new ApiException(400, "Missing required parameter 'organizationId' when calling ProductPermissionProfilesApi->GetProductPermissionProfiles");
+            // verify the required parameter 'accountId' is set
+            if (accountId == null)
+                throw new ApiException(400, "Missing required parameter 'accountId' when calling ProductPermissionProfilesApi->GetProductPermissionProfiles");
+
+            var localVarPath = "/v2.1/organizations/{organizationId}/accounts/{accountId}/products/permission_profiles";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new Dictionary<String, String>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new List<FileParameter>();
+            Object localVarPostBody = null;
+            String localVarHttpContentDisposition = string.Empty;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+            if (organizationId != null) localVarPathParams.Add("organizationId", this.ApiClient.ParameterToString(organizationId)); // path parameter
+            if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
+
+
+
+            // make the HTTP request
+            DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, HttpMethod.Get, localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
+            DocuSignResponse localVarResponse = this.ApiClient.CallApi(localVarRequest);
+
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("GetProductPermissionProfiles", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<ProductPermissionProfilesResponse>(localVarStatusCode, 
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()), 
+                (ProductPermissionProfilesResponse)this.ApiClient.Deserialize(localVarResponse, typeof(ProductPermissionProfilesResponse)));
         }
 
         /// <summary>
@@ -718,6 +890,7 @@ namespace DocuSign.Admin.Api
             if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
 
 
+
             // make the HTTP request
             DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, HttpMethod.Get, localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
             DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest);
@@ -734,7 +907,6 @@ namespace DocuSign.Admin.Api
                 localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()), 
                 (ProductPermissionProfilesResponse)this.ApiClient.Deserialize(localVarResponse, typeof(ProductPermissionProfilesResponse)));
         }
-
 
 
         /// <summary>
@@ -761,10 +933,63 @@ namespace DocuSign.Admin.Api
         /// <returns>ApiResponse of ProductPermissionProfilesResponse</returns>
         public ApiResponse<ProductPermissionProfilesResponse> GetUserProductPermissionProfilesWithHttpInfo(Guid? organizationId, Guid? accountId, Guid? userId)
         {
-            return GetUserProductPermissionProfilesAsyncWithHttpInfo(organizationId, accountId, userId)
-                .ConfigureAwait(false)
-                .GetAwaiter()
-                .GetResult();
+            // verify the required parameter 'organizationId' is set
+            if (organizationId == null)
+                throw new ApiException(400, "Missing required parameter 'organizationId' when calling ProductPermissionProfilesApi->GetUserProductPermissionProfiles");
+            // verify the required parameter 'accountId' is set
+            if (accountId == null)
+                throw new ApiException(400, "Missing required parameter 'accountId' when calling ProductPermissionProfilesApi->GetUserProductPermissionProfiles");
+            // verify the required parameter 'userId' is set
+            if (userId == null)
+                throw new ApiException(400, "Missing required parameter 'userId' when calling ProductPermissionProfilesApi->GetUserProductPermissionProfiles");
+
+            var localVarPath = "/v2.1/organizations/{organizationId}/accounts/{accountId}/products/users/{userId}/permission_profiles";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new Dictionary<String, String>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new List<FileParameter>();
+            Object localVarPostBody = null;
+            String localVarHttpContentDisposition = string.Empty;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+            if (organizationId != null) localVarPathParams.Add("organizationId", this.ApiClient.ParameterToString(organizationId)); // path parameter
+            if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
+            if (userId != null) localVarPathParams.Add("userId", this.ApiClient.ParameterToString(userId)); // path parameter
+
+
+
+            // make the HTTP request
+            DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, HttpMethod.Get, localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
+            DocuSignResponse localVarResponse = this.ApiClient.CallApi(localVarRequest);
+
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("GetUserProductPermissionProfiles", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<ProductPermissionProfilesResponse>(localVarStatusCode, 
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()), 
+                (ProductPermissionProfilesResponse)this.ApiClient.Deserialize(localVarResponse, typeof(ProductPermissionProfilesResponse)));
         }
 
         /// <summary>
@@ -832,6 +1057,7 @@ namespace DocuSign.Admin.Api
             if (userId != null) localVarPathParams.Add("userId", this.ApiClient.ParameterToString(userId)); // path parameter
 
 
+
             // make the HTTP request
             DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, HttpMethod.Get, localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
             DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest);
@@ -848,7 +1074,6 @@ namespace DocuSign.Admin.Api
                 localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()), 
                 (ProductPermissionProfilesResponse)this.ApiClient.Deserialize(localVarResponse, typeof(ProductPermissionProfilesResponse)));
         }
-
 
         /// <summary>
         /// Remove user from permission profiles for one or more products Required scopes: user_write
@@ -883,10 +1108,63 @@ namespace DocuSign.Admin.Api
         /// <returns>ApiResponse of UserProductPermissionProfilesResponse</returns>
         public ApiResponse<UserProductPermissionProfilesResponse> GetUserProductPermissionProfilesByEmailWithHttpInfo(Guid? organizationId, Guid? accountId, ProductPermissionProfilesApi.GetUserProductPermissionProfilesByEmailOptions options = null)
         {
-            return GetUserProductPermissionProfilesByEmailAsyncWithHttpInfo(organizationId, accountId, options)
-                .ConfigureAwait(false)
-                .GetAwaiter()
-                .GetResult();
+            // verify the required parameter 'organizationId' is set
+            if (organizationId == null)
+                throw new ApiException(400, "Missing required parameter 'organizationId' when calling ProductPermissionProfilesApi->GetUserProductPermissionProfilesByEmail");
+            // verify the required parameter 'accountId' is set
+            if (accountId == null)
+                throw new ApiException(400, "Missing required parameter 'accountId' when calling ProductPermissionProfilesApi->GetUserProductPermissionProfilesByEmail");
+
+            var localVarPath = "/v2.1/organizations/{organizationId}/accounts/{accountId}/products/permission_profiles/users";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new Dictionary<String, String>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new List<FileParameter>();
+            Object localVarPostBody = null;
+            String localVarHttpContentDisposition = string.Empty;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+            if (organizationId != null) localVarPathParams.Add("organizationId", this.ApiClient.ParameterToString(organizationId)); // path parameter
+            if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
+            if (options != null)
+            {
+                if (options.email != null) localVarQueryParams.Add("email", this.ApiClient.ParameterToString(options.email)); // query parameter
+            }
+
+
+
+            // make the HTTP request
+            DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, HttpMethod.Get, localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
+            DocuSignResponse localVarResponse = this.ApiClient.CallApi(localVarRequest);
+
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("GetUserProductPermissionProfilesByEmail", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<UserProductPermissionProfilesResponse>(localVarStatusCode, 
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()), 
+                (UserProductPermissionProfilesResponse)this.ApiClient.Deserialize(localVarResponse, typeof(UserProductPermissionProfilesResponse)));
         }
 
         /// <summary>
@@ -954,6 +1232,7 @@ namespace DocuSign.Admin.Api
             }
 
 
+
             // make the HTTP request
             DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, HttpMethod.Get, localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
             DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest);
@@ -970,7 +1249,6 @@ namespace DocuSign.Admin.Api
                 localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()), 
                 (UserProductPermissionProfilesResponse)this.ApiClient.Deserialize(localVarResponse, typeof(UserProductPermissionProfilesResponse)));
         }
-
 
 
         /// <summary>
@@ -997,10 +1275,70 @@ namespace DocuSign.Admin.Api
         /// <returns>ApiResponse of RemoveUserProductsResponse</returns>
         public ApiResponse<RemoveUserProductsResponse> RemoveUserProductPermissionWithHttpInfo(Guid? organizationId, Guid? accountId, UserProductProfileDeleteRequest userProductPermissionProfilesRequest)
         {
-            return RemoveUserProductPermissionAsyncWithHttpInfo(organizationId, accountId, userProductPermissionProfilesRequest)
-                .ConfigureAwait(false)
-                .GetAwaiter()
-                .GetResult();
+            // verify the required parameter 'organizationId' is set
+            if (organizationId == null)
+                throw new ApiException(400, "Missing required parameter 'organizationId' when calling ProductPermissionProfilesApi->RemoveUserProductPermission");
+            // verify the required parameter 'accountId' is set
+            if (accountId == null)
+                throw new ApiException(400, "Missing required parameter 'accountId' when calling ProductPermissionProfilesApi->RemoveUserProductPermission");
+            // verify the required parameter 'userProductPermissionProfilesRequest' is set
+            if (userProductPermissionProfilesRequest == null)
+                throw new ApiException(400, "Missing required parameter 'userProductPermissionProfilesRequest' when calling ProductPermissionProfilesApi->RemoveUserProductPermission");
+
+            var localVarPath = "/v2.1/organizations/{organizationId}/accounts/{accountId}/products/users";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new Dictionary<String, String>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new List<FileParameter>();
+            Object localVarPostBody = null;
+            String localVarHttpContentDisposition = string.Empty;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+            if (organizationId != null) localVarPathParams.Add("organizationId", this.ApiClient.ParameterToString(organizationId)); // path parameter
+            if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
+            if (userProductPermissionProfilesRequest != null && userProductPermissionProfilesRequest.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = this.ApiClient.Serialize(userProductPermissionProfilesRequest); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = userProductPermissionProfilesRequest; // byte array
+            }
+
+
+
+            // make the HTTP request
+            DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, HttpMethod.Delete, localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
+            DocuSignResponse localVarResponse = this.ApiClient.CallApi(localVarRequest);
+
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("RemoveUserProductPermission", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<RemoveUserProductsResponse>(localVarStatusCode, 
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()), 
+                (RemoveUserProductsResponse)this.ApiClient.Deserialize(localVarResponse, typeof(RemoveUserProductsResponse)));
         }
 
         /// <summary>
@@ -1073,6 +1411,7 @@ namespace DocuSign.Admin.Api
             {
                 localVarPostBody = userProductPermissionProfilesRequest; // byte array
             }
+
 
 
             // make the HTTP request

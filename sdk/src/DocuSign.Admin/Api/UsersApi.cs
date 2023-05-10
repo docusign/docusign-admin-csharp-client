@@ -660,7 +660,6 @@ namespace DocuSign.Admin.Api
         }
 
 
-
         /// <summary>
         /// Activates user memberships Required scopes: user_write
         /// </summary>
@@ -687,10 +686,74 @@ namespace DocuSign.Admin.Api
         /// <returns>ApiResponse of UpdateResponse</returns>
         public ApiResponse<UpdateResponse> ActivateMembershipWithHttpInfo(Guid? organizationId, Guid? userId, Guid? membershipId, ForceActivateMembershipRequest request)
         {
-            return ActivateMembershipAsyncWithHttpInfo(organizationId, userId, membershipId, request)
-                .ConfigureAwait(false)
-                .GetAwaiter()
-                .GetResult();
+            // verify the required parameter 'organizationId' is set
+            if (organizationId == null)
+                throw new ApiException(400, "Missing required parameter 'organizationId' when calling UsersApi->ActivateMembership");
+            // verify the required parameter 'userId' is set
+            if (userId == null)
+                throw new ApiException(400, "Missing required parameter 'userId' when calling UsersApi->ActivateMembership");
+            // verify the required parameter 'membershipId' is set
+            if (membershipId == null)
+                throw new ApiException(400, "Missing required parameter 'membershipId' when calling UsersApi->ActivateMembership");
+            // verify the required parameter 'request' is set
+            if (request == null)
+                throw new ApiException(400, "Missing required parameter 'request' when calling UsersApi->ActivateMembership");
+
+            var localVarPath = "/v2/organizations/{organizationId}/users/{userId}/memberships/{membershipId}";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new Dictionary<String, String>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new List<FileParameter>();
+            Object localVarPostBody = null;
+            String localVarHttpContentDisposition = string.Empty;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+            if (organizationId != null) localVarPathParams.Add("organizationId", this.ApiClient.ParameterToString(organizationId)); // path parameter
+            if (userId != null) localVarPathParams.Add("userId", this.ApiClient.ParameterToString(userId)); // path parameter
+            if (membershipId != null) localVarPathParams.Add("membershipId", this.ApiClient.ParameterToString(membershipId)); // path parameter
+            if (request != null && request.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = this.ApiClient.Serialize(request); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = request; // byte array
+            }
+
+
+
+            // make the HTTP request
+            DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, HttpMethod.Post, localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
+            DocuSignResponse localVarResponse = this.ApiClient.CallApi(localVarRequest);
+
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("ActivateMembership", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<UpdateResponse>(localVarStatusCode, 
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()), 
+                (UpdateResponse)this.ApiClient.Deserialize(localVarResponse, typeof(UpdateResponse)));
         }
 
         /// <summary>
@@ -771,6 +834,7 @@ namespace DocuSign.Admin.Api
             }
 
 
+
             // make the HTTP request
             DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, HttpMethod.Post, localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
             DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest);
@@ -787,7 +851,6 @@ namespace DocuSign.Admin.Api
                 localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()), 
                 (UpdateResponse)this.ApiClient.Deserialize(localVarResponse, typeof(UpdateResponse)));
         }
-
 
 
         /// <summary>
@@ -814,10 +877,70 @@ namespace DocuSign.Admin.Api
         /// <returns>ApiResponse of AddUserResponse</returns>
         public ApiResponse<AddUserResponse> AddOrUpdateUserWithHttpInfo(Guid? organizationId, Guid? accountId, NewMultiProductUserAddRequest request)
         {
-            return AddOrUpdateUserAsyncWithHttpInfo(organizationId, accountId, request)
-                .ConfigureAwait(false)
-                .GetAwaiter()
-                .GetResult();
+            // verify the required parameter 'organizationId' is set
+            if (organizationId == null)
+                throw new ApiException(400, "Missing required parameter 'organizationId' when calling UsersApi->AddOrUpdateUser");
+            // verify the required parameter 'accountId' is set
+            if (accountId == null)
+                throw new ApiException(400, "Missing required parameter 'accountId' when calling UsersApi->AddOrUpdateUser");
+            // verify the required parameter 'request' is set
+            if (request == null)
+                throw new ApiException(400, "Missing required parameter 'request' when calling UsersApi->AddOrUpdateUser");
+
+            var localVarPath = "/v2.1/organizations/{organizationId}/accounts/{accountId}/users";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new Dictionary<String, String>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new List<FileParameter>();
+            Object localVarPostBody = null;
+            String localVarHttpContentDisposition = string.Empty;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+            if (organizationId != null) localVarPathParams.Add("organizationId", this.ApiClient.ParameterToString(organizationId)); // path parameter
+            if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
+            if (request != null && request.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = this.ApiClient.Serialize(request); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = request; // byte array
+            }
+
+
+
+            // make the HTTP request
+            DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, HttpMethod.Post, localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
+            DocuSignResponse localVarResponse = this.ApiClient.CallApi(localVarRequest);
+
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("AddOrUpdateUser", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<AddUserResponse>(localVarStatusCode, 
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()), 
+                (AddUserResponse)this.ApiClient.Deserialize(localVarResponse, typeof(AddUserResponse)));
         }
 
         /// <summary>
@@ -892,6 +1015,7 @@ namespace DocuSign.Admin.Api
             }
 
 
+
             // make the HTTP request
             DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, HttpMethod.Post, localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
             DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest);
@@ -908,7 +1032,6 @@ namespace DocuSign.Admin.Api
                 localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()), 
                 (AddUserResponse)this.ApiClient.Deserialize(localVarResponse, typeof(AddUserResponse)));
         }
-
 
 
         /// <summary>
@@ -935,10 +1058,70 @@ namespace DocuSign.Admin.Api
         /// <returns>ApiResponse of NewUserResponse</returns>
         public ApiResponse<NewUserResponse> AddUsersWithHttpInfo(Guid? organizationId, Guid? accountId, NewAccountUserRequest request)
         {
-            return AddUsersAsyncWithHttpInfo(organizationId, accountId, request)
-                .ConfigureAwait(false)
-                .GetAwaiter()
-                .GetResult();
+            // verify the required parameter 'organizationId' is set
+            if (organizationId == null)
+                throw new ApiException(400, "Missing required parameter 'organizationId' when calling UsersApi->AddUsers");
+            // verify the required parameter 'accountId' is set
+            if (accountId == null)
+                throw new ApiException(400, "Missing required parameter 'accountId' when calling UsersApi->AddUsers");
+            // verify the required parameter 'request' is set
+            if (request == null)
+                throw new ApiException(400, "Missing required parameter 'request' when calling UsersApi->AddUsers");
+
+            var localVarPath = "/v2/organizations/{organizationId}/accounts/{accountId}/users";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new Dictionary<String, String>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new List<FileParameter>();
+            Object localVarPostBody = null;
+            String localVarHttpContentDisposition = string.Empty;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+            if (organizationId != null) localVarPathParams.Add("organizationId", this.ApiClient.ParameterToString(organizationId)); // path parameter
+            if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
+            if (request != null && request.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = this.ApiClient.Serialize(request); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = request; // byte array
+            }
+
+
+
+            // make the HTTP request
+            DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, HttpMethod.Post, localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
+            DocuSignResponse localVarResponse = this.ApiClient.CallApi(localVarRequest);
+
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("AddUsers", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<NewUserResponse>(localVarStatusCode, 
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()), 
+                (NewUserResponse)this.ApiClient.Deserialize(localVarResponse, typeof(NewUserResponse)));
         }
 
         /// <summary>
@@ -1013,6 +1196,7 @@ namespace DocuSign.Admin.Api
             }
 
 
+
             // make the HTTP request
             DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, HttpMethod.Post, localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
             DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest);
@@ -1029,7 +1213,6 @@ namespace DocuSign.Admin.Api
                 localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()), 
                 (NewUserResponse)this.ApiClient.Deserialize(localVarResponse, typeof(NewUserResponse)));
         }
-
 
 
         /// <summary>
@@ -1056,10 +1239,70 @@ namespace DocuSign.Admin.Api
         /// <returns>ApiResponse of DeleteMembershipsResponse</returns>
         public ApiResponse<DeleteMembershipsResponse> CloseMembershipsWithHttpInfo(Guid? organizationId, Guid? userId, DeleteMembershipsRequest request)
         {
-            return CloseMembershipsAsyncWithHttpInfo(organizationId, userId, request)
-                .ConfigureAwait(false)
-                .GetAwaiter()
-                .GetResult();
+            // verify the required parameter 'organizationId' is set
+            if (organizationId == null)
+                throw new ApiException(400, "Missing required parameter 'organizationId' when calling UsersApi->CloseMemberships");
+            // verify the required parameter 'userId' is set
+            if (userId == null)
+                throw new ApiException(400, "Missing required parameter 'userId' when calling UsersApi->CloseMemberships");
+            // verify the required parameter 'request' is set
+            if (request == null)
+                throw new ApiException(400, "Missing required parameter 'request' when calling UsersApi->CloseMemberships");
+
+            var localVarPath = "/v2/organizations/{organizationId}/users/{userId}/accounts";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new Dictionary<String, String>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new List<FileParameter>();
+            Object localVarPostBody = null;
+            String localVarHttpContentDisposition = string.Empty;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+            if (organizationId != null) localVarPathParams.Add("organizationId", this.ApiClient.ParameterToString(organizationId)); // path parameter
+            if (userId != null) localVarPathParams.Add("userId", this.ApiClient.ParameterToString(userId)); // path parameter
+            if (request != null && request.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = this.ApiClient.Serialize(request); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = request; // byte array
+            }
+
+
+
+            // make the HTTP request
+            DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, HttpMethod.Delete, localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
+            DocuSignResponse localVarResponse = this.ApiClient.CallApi(localVarRequest);
+
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("CloseMemberships", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<DeleteMembershipsResponse>(localVarStatusCode, 
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()), 
+                (DeleteMembershipsResponse)this.ApiClient.Deserialize(localVarResponse, typeof(DeleteMembershipsResponse)));
         }
 
         /// <summary>
@@ -1134,6 +1377,7 @@ namespace DocuSign.Admin.Api
             }
 
 
+
             // make the HTTP request
             DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, HttpMethod.Delete, localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
             DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest);
@@ -1150,7 +1394,6 @@ namespace DocuSign.Admin.Api
                 localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()), 
                 (DeleteMembershipsResponse)this.ApiClient.Deserialize(localVarResponse, typeof(DeleteMembershipsResponse)));
         }
-
 
 
         /// <summary>
@@ -1175,10 +1418,66 @@ namespace DocuSign.Admin.Api
         /// <returns>ApiResponse of NewUserResponse</returns>
         public ApiResponse<NewUserResponse> CreateUserWithHttpInfo(Guid? organizationId, NewUserRequest request)
         {
-            return CreateUserAsyncWithHttpInfo(organizationId, request)
-                .ConfigureAwait(false)
-                .GetAwaiter()
-                .GetResult();
+            // verify the required parameter 'organizationId' is set
+            if (organizationId == null)
+                throw new ApiException(400, "Missing required parameter 'organizationId' when calling UsersApi->CreateUser");
+            // verify the required parameter 'request' is set
+            if (request == null)
+                throw new ApiException(400, "Missing required parameter 'request' when calling UsersApi->CreateUser");
+
+            var localVarPath = "/v2/organizations/{organizationId}/users";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new Dictionary<String, String>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new List<FileParameter>();
+            Object localVarPostBody = null;
+            String localVarHttpContentDisposition = string.Empty;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+            if (organizationId != null) localVarPathParams.Add("organizationId", this.ApiClient.ParameterToString(organizationId)); // path parameter
+            if (request != null && request.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = this.ApiClient.Serialize(request); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = request; // byte array
+            }
+
+
+
+            // make the HTTP request
+            DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, HttpMethod.Post, localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
+            DocuSignResponse localVarResponse = this.ApiClient.CallApi(localVarRequest);
+
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("CreateUser", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<NewUserResponse>(localVarStatusCode, 
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()), 
+                (NewUserResponse)this.ApiClient.Deserialize(localVarResponse, typeof(NewUserResponse)));
         }
 
         /// <summary>
@@ -1247,6 +1546,7 @@ namespace DocuSign.Admin.Api
             }
 
 
+
             // make the HTTP request
             DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, HttpMethod.Post, localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
             DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest);
@@ -1263,7 +1563,6 @@ namespace DocuSign.Admin.Api
                 localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()), 
                 (NewUserResponse)this.ApiClient.Deserialize(localVarResponse, typeof(NewUserResponse)));
         }
-
 
 
         /// <summary>
@@ -1290,10 +1589,70 @@ namespace DocuSign.Admin.Api
         /// <returns>ApiResponse of DeleteResponse</returns>
         public ApiResponse<DeleteResponse> DeleteIdentitiesWithHttpInfo(Guid? organizationId, Guid? userId, DeleteUserIdentityRequest requestModel)
         {
-            return DeleteIdentitiesAsyncWithHttpInfo(organizationId, userId, requestModel)
-                .ConfigureAwait(false)
-                .GetAwaiter()
-                .GetResult();
+            // verify the required parameter 'organizationId' is set
+            if (organizationId == null)
+                throw new ApiException(400, "Missing required parameter 'organizationId' when calling UsersApi->DeleteIdentities");
+            // verify the required parameter 'userId' is set
+            if (userId == null)
+                throw new ApiException(400, "Missing required parameter 'userId' when calling UsersApi->DeleteIdentities");
+            // verify the required parameter 'requestModel' is set
+            if (requestModel == null)
+                throw new ApiException(400, "Missing required parameter 'requestModel' when calling UsersApi->DeleteIdentities");
+
+            var localVarPath = "/v2/organizations/{organizationId}/users/{userId}/identities";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new Dictionary<String, String>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new List<FileParameter>();
+            Object localVarPostBody = null;
+            String localVarHttpContentDisposition = string.Empty;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+            if (organizationId != null) localVarPathParams.Add("organizationId", this.ApiClient.ParameterToString(organizationId)); // path parameter
+            if (userId != null) localVarPathParams.Add("userId", this.ApiClient.ParameterToString(userId)); // path parameter
+            if (requestModel != null && requestModel.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = this.ApiClient.Serialize(requestModel); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = requestModel; // byte array
+            }
+
+
+
+            // make the HTTP request
+            DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, HttpMethod.Delete, localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
+            DocuSignResponse localVarResponse = this.ApiClient.CallApi(localVarRequest);
+
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("DeleteIdentities", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<DeleteResponse>(localVarStatusCode, 
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()), 
+                (DeleteResponse)this.ApiClient.Deserialize(localVarResponse, typeof(DeleteResponse)));
         }
 
         /// <summary>
@@ -1368,6 +1727,7 @@ namespace DocuSign.Admin.Api
             }
 
 
+
             // make the HTTP request
             DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, HttpMethod.Delete, localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
             DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest);
@@ -1384,7 +1744,6 @@ namespace DocuSign.Admin.Api
                 localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()), 
                 (DeleteResponse)this.ApiClient.Deserialize(localVarResponse, typeof(DeleteResponse)));
         }
-
 
         /// <summary>
         /// Returns user information using the userId for lookup. Required scopes: user_read
@@ -1419,10 +1778,63 @@ namespace DocuSign.Admin.Api
         /// <returns>ApiResponse of UsersDrilldownResponse</returns>
         public ApiResponse<UsersDrilldownResponse> GetUserDSProfileWithHttpInfo(Guid? organizationId, Guid? userId, UsersApi.GetUserDSProfileOptions options = null)
         {
-            return GetUserDSProfileAsyncWithHttpInfo(organizationId, userId, options)
-                .ConfigureAwait(false)
-                .GetAwaiter()
-                .GetResult();
+            // verify the required parameter 'organizationId' is set
+            if (organizationId == null)
+                throw new ApiException(400, "Missing required parameter 'organizationId' when calling UsersApi->GetUserDSProfile");
+            // verify the required parameter 'userId' is set
+            if (userId == null)
+                throw new ApiException(400, "Missing required parameter 'userId' when calling UsersApi->GetUserDSProfile");
+
+            var localVarPath = "/v2.1/organizations/{organizationId}/users/{userId}/dsprofile";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new Dictionary<String, String>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new List<FileParameter>();
+            Object localVarPostBody = null;
+            String localVarHttpContentDisposition = string.Empty;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+            if (organizationId != null) localVarPathParams.Add("organizationId", this.ApiClient.ParameterToString(organizationId)); // path parameter
+            if (userId != null) localVarPathParams.Add("userId", this.ApiClient.ParameterToString(userId)); // path parameter
+            if (options != null)
+            {
+                if (options.sort != null) localVarQueryParams.Add("sort", this.ApiClient.ParameterToString(options.sort)); // query parameter
+            }
+
+
+
+            // make the HTTP request
+            DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, HttpMethod.Get, localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
+            DocuSignResponse localVarResponse = this.ApiClient.CallApi(localVarRequest);
+
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("GetUserDSProfile", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<UsersDrilldownResponse>(localVarStatusCode, 
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()), 
+                (UsersDrilldownResponse)this.ApiClient.Deserialize(localVarResponse, typeof(UsersDrilldownResponse)));
         }
 
         /// <summary>
@@ -1490,6 +1902,7 @@ namespace DocuSign.Admin.Api
             }
 
 
+
             // make the HTTP request
             DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, HttpMethod.Get, localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
             DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest);
@@ -1506,7 +1919,6 @@ namespace DocuSign.Admin.Api
                 localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()), 
                 (UsersDrilldownResponse)this.ApiClient.Deserialize(localVarResponse, typeof(UsersDrilldownResponse)));
         }
-
 
         /// <summary>
         /// Returns DS user profile information. Required scopes: user_read
@@ -1541,10 +1953,60 @@ namespace DocuSign.Admin.Api
         /// <returns>ApiResponse of UsersDrilldownResponse</returns>
         public ApiResponse<UsersDrilldownResponse> GetUserDSProfilesByEmailWithHttpInfo(Guid? organizationId, UsersApi.GetUserDSProfilesByEmailOptions options = null)
         {
-            return GetUserDSProfilesByEmailAsyncWithHttpInfo(organizationId, options)
-                .ConfigureAwait(false)
-                .GetAwaiter()
-                .GetResult();
+            // verify the required parameter 'organizationId' is set
+            if (organizationId == null)
+                throw new ApiException(400, "Missing required parameter 'organizationId' when calling UsersApi->GetUserDSProfilesByEmail");
+
+            var localVarPath = "/v2.1/organizations/{organizationId}/users/dsprofile";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new Dictionary<String, String>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new List<FileParameter>();
+            Object localVarPostBody = null;
+            String localVarHttpContentDisposition = string.Empty;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+            if (organizationId != null) localVarPathParams.Add("organizationId", this.ApiClient.ParameterToString(organizationId)); // path parameter
+            if (options != null)
+            {
+                if (options.email != null) localVarQueryParams.Add("email", this.ApiClient.ParameterToString(options.email)); // query parameter
+                if (options.sort != null) localVarQueryParams.Add("sort", this.ApiClient.ParameterToString(options.sort)); // query parameter
+            }
+
+
+
+            // make the HTTP request
+            DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, HttpMethod.Get, localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
+            DocuSignResponse localVarResponse = this.ApiClient.CallApi(localVarRequest);
+
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("GetUserDSProfilesByEmail", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<UsersDrilldownResponse>(localVarStatusCode, 
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()), 
+                (UsersDrilldownResponse)this.ApiClient.Deserialize(localVarResponse, typeof(UsersDrilldownResponse)));
         }
 
         /// <summary>
@@ -1607,6 +2069,7 @@ namespace DocuSign.Admin.Api
             }
 
 
+
             // make the HTTP request
             DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, HttpMethod.Get, localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
             DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest);
@@ -1623,7 +2086,6 @@ namespace DocuSign.Admin.Api
                 localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()), 
                 (UsersDrilldownResponse)this.ApiClient.Deserialize(localVarResponse, typeof(UsersDrilldownResponse)));
         }
-
 
         /// <summary>
         /// Returns user information. Required scopes: user_read
@@ -1656,10 +2118,59 @@ namespace DocuSign.Admin.Api
         /// <returns>ApiResponse of UsersDrilldownResponse</returns>
         public ApiResponse<UsersDrilldownResponse> GetUserProfilesWithHttpInfo(Guid? organizationId, UsersApi.GetUserProfilesOptions options = null)
         {
-            return GetUserProfilesAsyncWithHttpInfo(organizationId, options)
-                .ConfigureAwait(false)
-                .GetAwaiter()
-                .GetResult();
+            // verify the required parameter 'organizationId' is set
+            if (organizationId == null)
+                throw new ApiException(400, "Missing required parameter 'organizationId' when calling UsersApi->GetUserProfiles");
+
+            var localVarPath = "/v2/organizations/{organizationId}/users/profile";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new Dictionary<String, String>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new List<FileParameter>();
+            Object localVarPostBody = null;
+            String localVarHttpContentDisposition = string.Empty;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+            if (organizationId != null) localVarPathParams.Add("organizationId", this.ApiClient.ParameterToString(organizationId)); // path parameter
+            if (options != null)
+            {
+                if (options.email != null) localVarQueryParams.Add("email", this.ApiClient.ParameterToString(options.email)); // query parameter
+            }
+
+
+
+            // make the HTTP request
+            DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, HttpMethod.Get, localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
+            DocuSignResponse localVarResponse = this.ApiClient.CallApi(localVarRequest);
+
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("GetUserProfiles", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<UsersDrilldownResponse>(localVarStatusCode, 
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()), 
+                (UsersDrilldownResponse)this.ApiClient.Deserialize(localVarResponse, typeof(UsersDrilldownResponse)));
         }
 
         /// <summary>
@@ -1721,6 +2232,7 @@ namespace DocuSign.Admin.Api
             }
 
 
+
             // make the HTTP request
             DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, HttpMethod.Get, localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
             DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest);
@@ -1737,7 +2249,6 @@ namespace DocuSign.Admin.Api
                 localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()), 
                 (UsersDrilldownResponse)this.ApiClient.Deserialize(localVarResponse, typeof(UsersDrilldownResponse)));
         }
-
 
         /// <summary>
         /// Returns information about the users in the organization Required scopes: user_read
@@ -1788,10 +2299,68 @@ namespace DocuSign.Admin.Api
         /// <returns>ApiResponse of OrganizationUsersResponse</returns>
         public ApiResponse<OrganizationUsersResponse> GetUsersWithHttpInfo(Guid? organizationId, UsersApi.GetUsersOptions options = null)
         {
-            return GetUsersAsyncWithHttpInfo(organizationId, options)
-                .ConfigureAwait(false)
-                .GetAwaiter()
-                .GetResult();
+            // verify the required parameter 'organizationId' is set
+            if (organizationId == null)
+                throw new ApiException(400, "Missing required parameter 'organizationId' when calling UsersApi->GetUsers");
+
+            var localVarPath = "/v2/organizations/{organizationId}/users";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new Dictionary<String, String>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new List<FileParameter>();
+            Object localVarPostBody = null;
+            String localVarHttpContentDisposition = string.Empty;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+            if (organizationId != null) localVarPathParams.Add("organizationId", this.ApiClient.ParameterToString(organizationId)); // path parameter
+            if (options != null)
+            {
+                if (options.start != null) localVarQueryParams.Add("start", this.ApiClient.ParameterToString(options.start)); // query parameter
+                if (options.take != null) localVarQueryParams.Add("take", this.ApiClient.ParameterToString(options.take)); // query parameter
+                if (options.end != null) localVarQueryParams.Add("end", this.ApiClient.ParameterToString(options.end)); // query parameter
+                if (options.email != null) localVarQueryParams.Add("email", this.ApiClient.ParameterToString(options.email)); // query parameter
+                if (options.emailUserNameLike != null) localVarQueryParams.Add("email_user_name_like", this.ApiClient.ParameterToString(options.emailUserNameLike)); // query parameter
+                if (options.status != null) localVarQueryParams.Add("status", this.ApiClient.ParameterToString(options.status)); // query parameter
+                if (options.membershipStatus != null) localVarQueryParams.Add("membership_status", this.ApiClient.ParameterToString(options.membershipStatus)); // query parameter
+                if (options.accountId != null) localVarQueryParams.Add("account_id", this.ApiClient.ParameterToString(options.accountId)); // query parameter
+                if (options.organizationReservedDomainId != null) localVarQueryParams.Add("organization_reserved_domain_id", this.ApiClient.ParameterToString(options.organizationReservedDomainId)); // query parameter
+                if (options.lastModifiedSince != null) localVarQueryParams.Add("last_modified_since", this.ApiClient.ParameterToString(options.lastModifiedSince)); // query parameter
+            }
+
+
+
+            // make the HTTP request
+            DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, HttpMethod.Get, localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
+            DocuSignResponse localVarResponse = this.ApiClient.CallApi(localVarRequest);
+
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("GetUsers", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<OrganizationUsersResponse>(localVarStatusCode, 
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()), 
+                (OrganizationUsersResponse)this.ApiClient.Deserialize(localVarResponse, typeof(OrganizationUsersResponse)));
         }
 
         /// <summary>
@@ -1862,6 +2431,7 @@ namespace DocuSign.Admin.Api
             }
 
 
+
             // make the HTTP request
             DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, HttpMethod.Get, localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
             DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest);
@@ -1878,7 +2448,6 @@ namespace DocuSign.Admin.Api
                 localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()), 
                 (OrganizationUsersResponse)this.ApiClient.Deserialize(localVarResponse, typeof(OrganizationUsersResponse)));
         }
-
 
 
         /// <summary>
@@ -1903,10 +2472,66 @@ namespace DocuSign.Admin.Api
         /// <returns>ApiResponse of UsersUpdateResponse</returns>
         public ApiResponse<UsersUpdateResponse> UpdateEmailAddressWithHttpInfo(Guid? organizationId, UpdateUsersEmailRequest request)
         {
-            return UpdateEmailAddressAsyncWithHttpInfo(organizationId, request)
-                .ConfigureAwait(false)
-                .GetAwaiter()
-                .GetResult();
+            // verify the required parameter 'organizationId' is set
+            if (organizationId == null)
+                throw new ApiException(400, "Missing required parameter 'organizationId' when calling UsersApi->UpdateEmailAddress");
+            // verify the required parameter 'request' is set
+            if (request == null)
+                throw new ApiException(400, "Missing required parameter 'request' when calling UsersApi->UpdateEmailAddress");
+
+            var localVarPath = "/v2/organizations/{organizationId}/users/email_addresses";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new Dictionary<String, String>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new List<FileParameter>();
+            Object localVarPostBody = null;
+            String localVarHttpContentDisposition = string.Empty;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+            if (organizationId != null) localVarPathParams.Add("organizationId", this.ApiClient.ParameterToString(organizationId)); // path parameter
+            if (request != null && request.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = this.ApiClient.Serialize(request); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = request; // byte array
+            }
+
+
+
+            // make the HTTP request
+            DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, HttpMethod.Post, localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
+            DocuSignResponse localVarResponse = this.ApiClient.CallApi(localVarRequest);
+
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("UpdateEmailAddress", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<UsersUpdateResponse>(localVarStatusCode, 
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()), 
+                (UsersUpdateResponse)this.ApiClient.Deserialize(localVarResponse, typeof(UsersUpdateResponse)));
         }
 
         /// <summary>
@@ -1975,6 +2600,7 @@ namespace DocuSign.Admin.Api
             }
 
 
+
             // make the HTTP request
             DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, HttpMethod.Post, localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
             DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest);
@@ -1991,7 +2617,6 @@ namespace DocuSign.Admin.Api
                 localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()), 
                 (UsersUpdateResponse)this.ApiClient.Deserialize(localVarResponse, typeof(UsersUpdateResponse)));
         }
-
 
 
         /// <summary>
@@ -2016,10 +2641,66 @@ namespace DocuSign.Admin.Api
         /// <returns>ApiResponse of UsersUpdateResponse</returns>
         public ApiResponse<UsersUpdateResponse> UpdateUserWithHttpInfo(Guid? organizationId, UpdateUsersRequest request)
         {
-            return UpdateUserAsyncWithHttpInfo(organizationId, request)
-                .ConfigureAwait(false)
-                .GetAwaiter()
-                .GetResult();
+            // verify the required parameter 'organizationId' is set
+            if (organizationId == null)
+                throw new ApiException(400, "Missing required parameter 'organizationId' when calling UsersApi->UpdateUser");
+            // verify the required parameter 'request' is set
+            if (request == null)
+                throw new ApiException(400, "Missing required parameter 'request' when calling UsersApi->UpdateUser");
+
+            var localVarPath = "/v2/organizations/{organizationId}/users/profiles";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new Dictionary<String, String>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new List<FileParameter>();
+            Object localVarPostBody = null;
+            String localVarHttpContentDisposition = string.Empty;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+            if (organizationId != null) localVarPathParams.Add("organizationId", this.ApiClient.ParameterToString(organizationId)); // path parameter
+            if (request != null && request.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = this.ApiClient.Serialize(request); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = request; // byte array
+            }
+
+
+
+            // make the HTTP request
+            DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, HttpMethod.Post, localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
+            DocuSignResponse localVarResponse = this.ApiClient.CallApi(localVarRequest);
+
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("UpdateUser", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<UsersUpdateResponse>(localVarStatusCode, 
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()), 
+                (UsersUpdateResponse)this.ApiClient.Deserialize(localVarResponse, typeof(UsersUpdateResponse)));
         }
 
         /// <summary>
@@ -2086,6 +2767,7 @@ namespace DocuSign.Admin.Api
             {
                 localVarPostBody = request; // byte array
             }
+
 
 
             // make the HTTP request
