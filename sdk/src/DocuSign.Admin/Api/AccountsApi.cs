@@ -92,6 +92,29 @@ namespace DocuSign.Admin.Api
         /// <param name="accountId">The account ID Guid</param>
         /// <returns>ApiResponse of </returns>
         ApiResponse<PermissionsResponse> GetPermissionsWithHttpInfo(Guid? organizationId, Guid? accountId);
+        /// <summary>
+        /// Redacts membership data for users with memberships in an account.
+        /// </summary>
+        /// <remarks>
+        /// Required scopes: user_data_redact
+        /// </remarks>
+        /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The account ID Guid</param>
+        /// <param name="requestModel">The request body describing the membership to be redacted</param>
+        /// <returns></returns>
+        IndividualUserDataRedactionResponse RedactIndividualMembershipData(Guid? accountId, IndividualMembershipDataRedactionRequest requestModel);
+
+        /// <summary>
+        /// Redacts membership data for users with memberships in an account.
+        /// </summary>
+        /// <remarks>
+        /// Required scopes: user_data_redact
+        /// </remarks>
+        /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The account ID Guid</param>
+        /// <param name="requestModel">The request body describing the membership to be redacted</param>
+        /// <returns>ApiResponse of </returns>
+        ApiResponse<IndividualUserDataRedactionResponse> RedactIndividualMembershipDataWithHttpInfo(Guid? accountId, IndividualMembershipDataRedactionRequest requestModel);
         #endregion Synchronous Operations
         #region Asynchronous Operations
         /// <summary>
@@ -163,6 +186,29 @@ namespace DocuSign.Admin.Api
         /// <param name="accountId">The account ID Guid</param>
         /// <returns>Task of ApiResponse (PermissionsResponse)</returns>
         System.Threading.Tasks.Task<ApiResponse<PermissionsResponse>> GetPermissionsAsyncWithHttpInfo(Guid? organizationId, Guid? accountId);
+        /// <summary>
+        /// Redacts membership data for users with memberships in an account.
+        /// </summary>
+        /// <remarks>
+        /// Required scopes: user_data_redact
+        /// </remarks>
+        /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The account ID Guid</param>
+        /// <param name="requestModel">The request body describing the membership to be redacted</param>
+        /// <returns>Task of IndividualUserDataRedactionResponse</returns>
+        System.Threading.Tasks.Task<IndividualUserDataRedactionResponse> RedactIndividualMembershipDataAsync(Guid? accountId, IndividualMembershipDataRedactionRequest requestModel);
+
+        /// <summary>
+        /// Redacts membership data for users with memberships in an account.
+        /// </summary>
+        /// <remarks>
+        /// Required scopes: user_data_redact
+        /// </remarks>
+        /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The account ID Guid</param>
+        /// <param name="requestModel">The request body describing the membership to be redacted</param>
+        /// <returns>Task of ApiResponse (IndividualUserDataRedactionResponse)</returns>
+        System.Threading.Tasks.Task<ApiResponse<IndividualUserDataRedactionResponse>> RedactIndividualMembershipDataAsyncWithHttpInfo(Guid? accountId, IndividualMembershipDataRedactionRequest requestModel);
         #endregion Asynchronous Operations
     }
 
@@ -217,7 +263,6 @@ namespace DocuSign.Admin.Api
             set { _exceptionFactory = value; }
         }
 
-
         /// <summary>
         /// Returns the list of groups in an account. Required scopes: group_read
         /// </summary>
@@ -255,10 +300,65 @@ namespace DocuSign.Admin.Api
         /// <returns>ApiResponse of MemberGroupsResponse</returns>
         public ApiResponse<MemberGroupsResponse> GetGroupsWithHttpInfo(Guid? organizationId, Guid? accountId, AccountsApi.GetGroupsOptions options = null)
         {
-            return GetGroupsAsyncWithHttpInfo(organizationId, accountId, options)
-                .ConfigureAwait(false)
-                .GetAwaiter()
-                .GetResult();
+            // verify the required parameter 'organizationId' is set
+            if (organizationId == null)
+                throw new ApiException(400, "Missing required parameter 'organizationId' when calling AccountsApi->GetGroups");
+            // verify the required parameter 'accountId' is set
+            if (accountId == null)
+                throw new ApiException(400, "Missing required parameter 'accountId' when calling AccountsApi->GetGroups");
+
+            var localVarPath = "/v2/organizations/{organizationId}/accounts/{accountId}/groups";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new Dictionary<String, String>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new List<FileParameter>();
+            Object localVarPostBody = null;
+            String localVarHttpContentDisposition = string.Empty;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+            if (organizationId != null) localVarPathParams.Add("organizationId", this.ApiClient.ParameterToString(organizationId)); // path parameter
+            if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
+            if (options != null)
+            {
+                if (options.start != null) localVarQueryParams.Add("start", this.ApiClient.ParameterToString(options.start)); // query parameter
+                if (options.take != null) localVarQueryParams.Add("take", this.ApiClient.ParameterToString(options.take)); // query parameter
+                if (options.end != null) localVarQueryParams.Add("end", this.ApiClient.ParameterToString(options.end)); // query parameter
+            }
+
+
+
+            // make the HTTP request
+            DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, HttpMethod.Get, localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
+            DocuSignResponse localVarResponse = this.ApiClient.CallApi(localVarRequest);
+
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("GetGroups", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<MemberGroupsResponse>(localVarStatusCode, 
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()), 
+                (MemberGroupsResponse)this.ApiClient.Deserialize(localVarResponse, typeof(MemberGroupsResponse)));
         }
 
         /// <summary>
@@ -328,6 +428,7 @@ namespace DocuSign.Admin.Api
             }
 
 
+
             // make the HTTP request
             DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, HttpMethod.Get, localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
             DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest);
@@ -344,7 +445,6 @@ namespace DocuSign.Admin.Api
                 localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()), 
                 (MemberGroupsResponse)this.ApiClient.Deserialize(localVarResponse, typeof(MemberGroupsResponse)));
         }
-
 
         /// <summary>
         /// Returns the list of organizations of which the authenticated user is a member. Required scopes: organization_read
@@ -375,10 +475,55 @@ namespace DocuSign.Admin.Api
         /// <returns>ApiResponse of OrganizationsResponse</returns>
         public ApiResponse<OrganizationsResponse> GetOrganizationsWithHttpInfo(AccountsApi.GetOrganizationsOptions options = null)
         {
-            return GetOrganizationsAsyncWithHttpInfo(options)
-                .ConfigureAwait(false)
-                .GetAwaiter()
-                .GetResult();
+
+            var localVarPath = "/v2/organizations";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new Dictionary<String, String>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new List<FileParameter>();
+            Object localVarPostBody = null;
+            String localVarHttpContentDisposition = string.Empty;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+            if (options != null)
+            {
+                if (options.mode != null) localVarQueryParams.Add("mode", this.ApiClient.ParameterToString(options.mode)); // query parameter
+            }
+
+
+
+            // make the HTTP request
+            DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, HttpMethod.Get, localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
+            DocuSignResponse localVarResponse = this.ApiClient.CallApi(localVarRequest);
+
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("GetOrganizations", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<OrganizationsResponse>(localVarStatusCode, 
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()), 
+                (OrganizationsResponse)this.ApiClient.Deserialize(localVarResponse, typeof(OrganizationsResponse)));
         }
 
         /// <summary>
@@ -434,6 +579,7 @@ namespace DocuSign.Admin.Api
             }
 
 
+
             // make the HTTP request
             DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, HttpMethod.Get, localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
             DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest);
@@ -450,7 +596,6 @@ namespace DocuSign.Admin.Api
                 localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()), 
                 (OrganizationsResponse)this.ApiClient.Deserialize(localVarResponse, typeof(OrganizationsResponse)));
         }
-
 
 
         /// <summary>
@@ -475,10 +620,59 @@ namespace DocuSign.Admin.Api
         /// <returns>ApiResponse of PermissionsResponse</returns>
         public ApiResponse<PermissionsResponse> GetPermissionsWithHttpInfo(Guid? organizationId, Guid? accountId)
         {
-            return GetPermissionsAsyncWithHttpInfo(organizationId, accountId)
-                .ConfigureAwait(false)
-                .GetAwaiter()
-                .GetResult();
+            // verify the required parameter 'organizationId' is set
+            if (organizationId == null)
+                throw new ApiException(400, "Missing required parameter 'organizationId' when calling AccountsApi->GetPermissions");
+            // verify the required parameter 'accountId' is set
+            if (accountId == null)
+                throw new ApiException(400, "Missing required parameter 'accountId' when calling AccountsApi->GetPermissions");
+
+            var localVarPath = "/v2/organizations/{organizationId}/accounts/{accountId}/permissions";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new Dictionary<String, String>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new List<FileParameter>();
+            Object localVarPostBody = null;
+            String localVarHttpContentDisposition = string.Empty;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+            if (organizationId != null) localVarPathParams.Add("organizationId", this.ApiClient.ParameterToString(organizationId)); // path parameter
+            if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
+
+
+
+            // make the HTTP request
+            DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, HttpMethod.Get, localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
+            DocuSignResponse localVarResponse = this.ApiClient.CallApi(localVarRequest);
+
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("GetPermissions", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<PermissionsResponse>(localVarStatusCode, 
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()), 
+                (PermissionsResponse)this.ApiClient.Deserialize(localVarResponse, typeof(PermissionsResponse)));
         }
 
         /// <summary>
@@ -540,6 +734,7 @@ namespace DocuSign.Admin.Api
             if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
 
 
+
             // make the HTTP request
             DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, HttpMethod.Get, localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
             DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest);
@@ -555,6 +750,175 @@ namespace DocuSign.Admin.Api
             return new ApiResponse<PermissionsResponse>(localVarStatusCode, 
                 localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()), 
                 (PermissionsResponse)this.ApiClient.Deserialize(localVarResponse, typeof(PermissionsResponse)));
+        }
+
+
+        /// <summary>
+        /// Redacts membership data for users with memberships in an account. Required scopes: user_data_redact
+        /// </summary>
+        /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The account ID Guid</param>
+        /// <param name="requestModel">The request body describing the membership to be redacted</param>
+        /// <returns>IndividualUserDataRedactionResponse</returns>
+        public IndividualUserDataRedactionResponse RedactIndividualMembershipData(Guid? accountId, IndividualMembershipDataRedactionRequest requestModel)
+        {
+             ApiResponse<IndividualUserDataRedactionResponse> localVarResponse = RedactIndividualMembershipDataWithHttpInfo(accountId, requestModel);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Redacts membership data for users with memberships in an account. Required scopes: user_data_redact
+        /// </summary>
+        /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The account ID Guid</param>
+        /// <param name="requestModel">The request body describing the membership to be redacted</param>
+        /// <returns>ApiResponse of IndividualUserDataRedactionResponse</returns>
+        public ApiResponse<IndividualUserDataRedactionResponse> RedactIndividualMembershipDataWithHttpInfo(Guid? accountId, IndividualMembershipDataRedactionRequest requestModel)
+        {
+            // verify the required parameter 'accountId' is set
+            if (accountId == null)
+                throw new ApiException(400, "Missing required parameter 'accountId' when calling AccountsApi->RedactIndividualMembershipData");
+            // verify the required parameter 'requestModel' is set
+            if (requestModel == null)
+                throw new ApiException(400, "Missing required parameter 'requestModel' when calling AccountsApi->RedactIndividualMembershipData");
+
+            var localVarPath = "/v2/data_redaction/accounts/{accountId}/user";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new Dictionary<String, String>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new List<FileParameter>();
+            Object localVarPostBody = null;
+            String localVarHttpContentDisposition = string.Empty;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+            if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
+            if (requestModel != null && requestModel.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = this.ApiClient.Serialize(requestModel); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = requestModel; // byte array
+            }
+
+
+
+            // make the HTTP request
+            DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, HttpMethod.Post, localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
+            DocuSignResponse localVarResponse = this.ApiClient.CallApi(localVarRequest);
+
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("RedactIndividualMembershipData", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<IndividualUserDataRedactionResponse>(localVarStatusCode, 
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()), 
+                (IndividualUserDataRedactionResponse)this.ApiClient.Deserialize(localVarResponse, typeof(IndividualUserDataRedactionResponse)));
+        }
+
+        /// <summary>
+        /// Redacts membership data for users with memberships in an account. Required scopes: user_data_redact
+        /// </summary>
+        /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The account ID Guid</param>
+        /// <param name="requestModel">The request body describing the membership to be redacted</param>
+        /// <returns>Task of IndividualUserDataRedactionResponse</returns>
+        public async System.Threading.Tasks.Task<IndividualUserDataRedactionResponse> RedactIndividualMembershipDataAsync(Guid? accountId, IndividualMembershipDataRedactionRequest requestModel)
+        {
+             ApiResponse<IndividualUserDataRedactionResponse> localVarResponse = await RedactIndividualMembershipDataAsyncWithHttpInfo(accountId, requestModel);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Redacts membership data for users with memberships in an account. Required scopes: user_data_redact
+        /// </summary>
+        /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The account ID Guid</param>
+        /// <param name="requestModel">The request body describing the membership to be redacted</param>
+        /// <returns>Task of ApiResponse (IndividualUserDataRedactionResponse)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<IndividualUserDataRedactionResponse>> RedactIndividualMembershipDataAsyncWithHttpInfo(Guid? accountId, IndividualMembershipDataRedactionRequest requestModel)
+        {
+            // verify the required parameter 'accountId' is set
+            if (accountId == null)
+                throw new ApiException(400, "Missing required parameter 'accountId' when calling AccountsApi->RedactIndividualMembershipData");
+            // verify the required parameter 'requestModel' is set
+            if (requestModel == null)
+                throw new ApiException(400, "Missing required parameter 'requestModel' when calling AccountsApi->RedactIndividualMembershipData");
+
+            var localVarPath = "/v2/data_redaction/accounts/{accountId}/user";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new Dictionary<String, String>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new List<FileParameter>();
+            Object localVarPostBody = null;
+            String localVarHttpContentDisposition = string.Empty;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+            if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
+            if (requestModel != null && requestModel.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = this.ApiClient.Serialize(requestModel); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = requestModel; // byte array
+            }
+
+
+
+            // make the HTTP request
+            DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, HttpMethod.Post, localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
+            DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest);
+
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("RedactIndividualMembershipData", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<IndividualUserDataRedactionResponse>(localVarStatusCode, 
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()), 
+                (IndividualUserDataRedactionResponse)this.ApiClient.Deserialize(localVarResponse, typeof(IndividualUserDataRedactionResponse)));
         }
 
     }

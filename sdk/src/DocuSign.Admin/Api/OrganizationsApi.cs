@@ -20,70 +20,74 @@ namespace DocuSign.Admin.Api
     /// <summary>
     /// Represents a collection of functions to interact with the API endpoints
     /// </summary>
-    public interface IReservedDomainsApi : IApiAccessor
+    public interface IOrganizationsApi : IApiAccessor
     {
         #region Synchronous Operations
         /// <summary>
-        /// Returns the list of reserved domains for the organization.
+        /// Redacts membership and user data for users in an organization.
         /// </summary>
         /// <remarks>
-        /// Required scopes: domain_read
+        /// Required scopes: user_data_redact
         /// </remarks>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">The organization ID Guid</param>
+        /// <param name="requestModel">The request body describing the users and memberships to be redacted</param>
         /// <returns></returns>
-        DomainsResponse GetReservedDomains(Guid? organizationId);
+        IndividualUserDataRedactionResponse RedactIndividualUserData(Guid? organizationId, IndividualUserDataRedactionRequest requestModel);
 
         /// <summary>
-        /// Returns the list of reserved domains for the organization.
+        /// Redacts membership and user data for users in an organization.
         /// </summary>
         /// <remarks>
-        /// Required scopes: domain_read
+        /// Required scopes: user_data_redact
         /// </remarks>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">The organization ID Guid</param>
+        /// <param name="requestModel">The request body describing the users and memberships to be redacted</param>
         /// <returns>ApiResponse of </returns>
-        ApiResponse<DomainsResponse> GetReservedDomainsWithHttpInfo(Guid? organizationId);
+        ApiResponse<IndividualUserDataRedactionResponse> RedactIndividualUserDataWithHttpInfo(Guid? organizationId, IndividualUserDataRedactionRequest requestModel);
         #endregion Synchronous Operations
         #region Asynchronous Operations
         /// <summary>
-        /// Returns the list of reserved domains for the organization.
+        /// Redacts membership and user data for users in an organization.
         /// </summary>
         /// <remarks>
-        /// Required scopes: domain_read
+        /// Required scopes: user_data_redact
         /// </remarks>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">The organization ID Guid</param>
-        /// <returns>Task of DomainsResponse</returns>
-        System.Threading.Tasks.Task<DomainsResponse> GetReservedDomainsAsync(Guid? organizationId);
+        /// <param name="requestModel">The request body describing the users and memberships to be redacted</param>
+        /// <returns>Task of IndividualUserDataRedactionResponse</returns>
+        System.Threading.Tasks.Task<IndividualUserDataRedactionResponse> RedactIndividualUserDataAsync(Guid? organizationId, IndividualUserDataRedactionRequest requestModel);
 
         /// <summary>
-        /// Returns the list of reserved domains for the organization.
+        /// Redacts membership and user data for users in an organization.
         /// </summary>
         /// <remarks>
-        /// Required scopes: domain_read
+        /// Required scopes: user_data_redact
         /// </remarks>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">The organization ID Guid</param>
-        /// <returns>Task of ApiResponse (DomainsResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<DomainsResponse>> GetReservedDomainsAsyncWithHttpInfo(Guid? organizationId);
+        /// <param name="requestModel">The request body describing the users and memberships to be redacted</param>
+        /// <returns>Task of ApiResponse (IndividualUserDataRedactionResponse)</returns>
+        System.Threading.Tasks.Task<ApiResponse<IndividualUserDataRedactionResponse>> RedactIndividualUserDataAsyncWithHttpInfo(Guid? organizationId, IndividualUserDataRedactionRequest requestModel);
         #endregion Asynchronous Operations
     }
 
     /// <summary>
     /// Represents a collection of functions to interact with the API endpoints
     /// </summary>
-    public partial class ReservedDomainsApi : IReservedDomainsApi
+    public partial class OrganizationsApi : IOrganizationsApi
     {
         private DocuSign.Admin.Client.ExceptionFactory _exceptionFactory = (name, response) => null;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="ReservedDomainsApi"/> class
+        /// Initializes a new instance of the <see cref="OrganizationsApi"/> class
         /// using AplClient object
         /// </summary>
         /// <param name="aplClient">An instance of AplClient</param>
         /// <returns></returns>
-        public ReservedDomainsApi(DocuSignClient aplClient)
+        public OrganizationsApi(DocuSignClient aplClient)
         {
             this.ApiClient = aplClient;
 
@@ -123,30 +127,35 @@ namespace DocuSign.Admin.Api
 
 
         /// <summary>
-        /// Returns the list of reserved domains for the organization. Required scopes: domain_read
+        /// Redacts membership and user data for users in an organization. Required scopes: user_data_redact
         /// </summary>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">The organization ID Guid</param>
-        /// <returns>DomainsResponse</returns>
-        public DomainsResponse GetReservedDomains(Guid? organizationId)
+        /// <param name="requestModel">The request body describing the users and memberships to be redacted</param>
+        /// <returns>IndividualUserDataRedactionResponse</returns>
+        public IndividualUserDataRedactionResponse RedactIndividualUserData(Guid? organizationId, IndividualUserDataRedactionRequest requestModel)
         {
-             ApiResponse<DomainsResponse> localVarResponse = GetReservedDomainsWithHttpInfo(organizationId);
+             ApiResponse<IndividualUserDataRedactionResponse> localVarResponse = RedactIndividualUserDataWithHttpInfo(organizationId, requestModel);
              return localVarResponse.Data;
         }
 
         /// <summary>
-        /// Returns the list of reserved domains for the organization. Required scopes: domain_read
+        /// Redacts membership and user data for users in an organization. Required scopes: user_data_redact
         /// </summary>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">The organization ID Guid</param>
-        /// <returns>ApiResponse of DomainsResponse</returns>
-        public ApiResponse<DomainsResponse> GetReservedDomainsWithHttpInfo(Guid? organizationId)
+        /// <param name="requestModel">The request body describing the users and memberships to be redacted</param>
+        /// <returns>ApiResponse of IndividualUserDataRedactionResponse</returns>
+        public ApiResponse<IndividualUserDataRedactionResponse> RedactIndividualUserDataWithHttpInfo(Guid? organizationId, IndividualUserDataRedactionRequest requestModel)
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
-                throw new ApiException(400, "Missing required parameter 'organizationId' when calling ReservedDomainsApi->GetReservedDomains");
+                throw new ApiException(400, "Missing required parameter 'organizationId' when calling OrganizationsApi->RedactIndividualUserData");
+            // verify the required parameter 'requestModel' is set
+            if (requestModel == null)
+                throw new ApiException(400, "Missing required parameter 'requestModel' when calling OrganizationsApi->RedactIndividualUserData");
 
-            var localVarPath = "/v2/organizations/{organizationId}/reserved_domains";
+            var localVarPath = "/v2/data_redaction/organizations/{organizationId}/user";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
@@ -173,51 +182,64 @@ namespace DocuSign.Admin.Api
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             localVarPathParams.Add("format", "json");
             if (organizationId != null) localVarPathParams.Add("organizationId", this.ApiClient.ParameterToString(organizationId)); // path parameter
+            if (requestModel != null && requestModel.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = this.ApiClient.Serialize(requestModel); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = requestModel; // byte array
+            }
 
 
 
             // make the HTTP request
-            DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, HttpMethod.Get, localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
+            DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, HttpMethod.Post, localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
             DocuSignResponse localVarResponse = this.ApiClient.CallApi(localVarRequest);
 
             int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("GetReservedDomains", localVarResponse);
+                Exception exception = ExceptionFactory("RedactIndividualUserData", localVarResponse);
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<DomainsResponse>(localVarStatusCode, 
+            return new ApiResponse<IndividualUserDataRedactionResponse>(localVarStatusCode, 
                 localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()), 
-                (DomainsResponse)this.ApiClient.Deserialize(localVarResponse, typeof(DomainsResponse)));
+                (IndividualUserDataRedactionResponse)this.ApiClient.Deserialize(localVarResponse, typeof(IndividualUserDataRedactionResponse)));
         }
 
         /// <summary>
-        /// Returns the list of reserved domains for the organization. Required scopes: domain_read
+        /// Redacts membership and user data for users in an organization. Required scopes: user_data_redact
         /// </summary>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">The organization ID Guid</param>
-        /// <returns>Task of DomainsResponse</returns>
-        public async System.Threading.Tasks.Task<DomainsResponse> GetReservedDomainsAsync(Guid? organizationId)
+        /// <param name="requestModel">The request body describing the users and memberships to be redacted</param>
+        /// <returns>Task of IndividualUserDataRedactionResponse</returns>
+        public async System.Threading.Tasks.Task<IndividualUserDataRedactionResponse> RedactIndividualUserDataAsync(Guid? organizationId, IndividualUserDataRedactionRequest requestModel)
         {
-             ApiResponse<DomainsResponse> localVarResponse = await GetReservedDomainsAsyncWithHttpInfo(organizationId);
+             ApiResponse<IndividualUserDataRedactionResponse> localVarResponse = await RedactIndividualUserDataAsyncWithHttpInfo(organizationId, requestModel);
              return localVarResponse.Data;
         }
 
         /// <summary>
-        /// Returns the list of reserved domains for the organization. Required scopes: domain_read
+        /// Redacts membership and user data for users in an organization. Required scopes: user_data_redact
         /// </summary>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">The organization ID Guid</param>
-        /// <returns>Task of ApiResponse (DomainsResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<DomainsResponse>> GetReservedDomainsAsyncWithHttpInfo(Guid? organizationId)
+        /// <param name="requestModel">The request body describing the users and memberships to be redacted</param>
+        /// <returns>Task of ApiResponse (IndividualUserDataRedactionResponse)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<IndividualUserDataRedactionResponse>> RedactIndividualUserDataAsyncWithHttpInfo(Guid? organizationId, IndividualUserDataRedactionRequest requestModel)
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
-                throw new ApiException(400, "Missing required parameter 'organizationId' when calling ReservedDomainsApi->GetReservedDomains");
+                throw new ApiException(400, "Missing required parameter 'organizationId' when calling OrganizationsApi->RedactIndividualUserData");
+            // verify the required parameter 'requestModel' is set
+            if (requestModel == null)
+                throw new ApiException(400, "Missing required parameter 'requestModel' when calling OrganizationsApi->RedactIndividualUserData");
 
-            var localVarPath = "/v2/organizations/{organizationId}/reserved_domains";
+            var localVarPath = "/v2/data_redaction/organizations/{organizationId}/user";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
@@ -244,24 +266,32 @@ namespace DocuSign.Admin.Api
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             localVarPathParams.Add("format", "json");
             if (organizationId != null) localVarPathParams.Add("organizationId", this.ApiClient.ParameterToString(organizationId)); // path parameter
+            if (requestModel != null && requestModel.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = this.ApiClient.Serialize(requestModel); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = requestModel; // byte array
+            }
 
 
 
             // make the HTTP request
-            DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, HttpMethod.Get, localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
+            DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, HttpMethod.Post, localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
             DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest);
 
             int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("GetReservedDomains", localVarResponse);
+                Exception exception = ExceptionFactory("RedactIndividualUserData", localVarResponse);
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<DomainsResponse>(localVarStatusCode, 
+            return new ApiResponse<IndividualUserDataRedactionResponse>(localVarStatusCode, 
                 localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()), 
-                (DomainsResponse)this.ApiClient.Deserialize(localVarResponse, typeof(DomainsResponse)));
+                (IndividualUserDataRedactionResponse)this.ApiClient.Deserialize(localVarResponse, typeof(IndividualUserDataRedactionResponse)));
         }
 
     }
