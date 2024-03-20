@@ -1,6 +1,11 @@
 # DocuSign Admin C# Client Changelog
 See [DocuSign Support Center](https://support.docusign.com/en/releasenotes/) for Product Release Notes.
 
+## [v1.4.1] - Admin API v2.1-1.3.0 - 2023-12-15
+### Changed
+- Updated the SDK release version.
+- Removed tracked files which are now present in .gitignore.
+
 ## [v1.4.0] - Admin API v2.1-1.3.0 - 2023-08-02
 ### Changed
 - Added support for version v2.1-1.3.0 of the DocuSign Admin API.

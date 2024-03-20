@@ -1,14 +1,14 @@
-﻿using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using DocuSign.Admin.Model;
-using DocuSign.Admin.Client;
+﻿using Admin.SdkTests.Common;
 using DocuSign.Admin.Api;
-using System.IO;
-using System.Collections.Generic;
-using Newtonsoft.Json;
+using DocuSign.Admin.Client;
 using DocuSign.Admin.Client.Auth;
-using System.Text;
+using DocuSign.Admin.Model;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
+using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Threading;
 
 namespace SdkNetCoreTests
 {
@@ -61,9 +61,79 @@ namespace SdkNetCoreTests
             str = str.Replace("<accountId>", testConfig.AccountId);
             File.WriteAllText(csvFile, str);
 
-            var res = bulkImportApi.CreateBulkImportAddUsersRequest(testConfig.OrgId, File.ReadAllBytes(csvFile));
+            bool isRequestQueued(string status) => status.Equals(OrganizationImportResponseStatus.queued.ToString(), StringComparison.OrdinalIgnoreCase);
 
-            Assert.IsNotNull(res);
+            bool isRequestProcessed(string status) =>
+                !status.Equals(OrganizationImportResponseStatus.queued.ToString(), StringComparison.OrdinalIgnoreCase) &&
+                !status.Equals(OrganizationImportResponseStatus.in_process.ToString(), StringComparison.OrdinalIgnoreCase);
+
+            var existingImportRequests = bulkImportApi.GetBulkUserImportRequests(testConfig.OrgId);
+
+            DateTime now;
+
+            if (existingImportRequests.Imports != null)
+            {
+                var totalRequests = existingImportRequests.Imports.Count;
+                // Filter processed import requests (all except queued and in_process)
+                var processedRequests = existingImportRequests.Imports.Count(_ => isRequestProcessed(_.Status));
+
+                //Total request should not cross 90 and we are putting 50 as a safe limit for completed imports for this specific test case.
+                if (totalRequests >= 90 || totalRequests > 50)
+                {
+                    foreach (var import in existingImportRequests.Imports)
+                    {
+                        var isProcessedImport = isRequestProcessed(import.Status);
+                        var isOldImport = import.Created < DateTime.UtcNow.AddDays(-3);
+
+                        if (isProcessedImport || isOldImport)
+                        {
+                            bulkImportApi.DeleteBulkUserImport(testConfig.OrgId, import.Id);
+                        }
+                    }
+                }
+
+                now = DateTime.UtcNow;
+
+                //Logic to check if any existing import request is already queued
+                while (now.AddMinutes(2) >= DateTime.UtcNow)
+                {
+                    existingImportRequests = bulkImportApi.GetBulkUserImportRequests(testConfig.OrgId);
+
+                    if (existingImportRequests.Imports == null || !existingImportRequests.Imports.Any(_ => isRequestQueued(_.Status)))
+                        break;
+
+                    Thread.Sleep(TimeSpan.FromSeconds(20));
+                }
+            }
+
+            //Initial Create Request
+            var importRequestResponse = bulkImportApi.CreateBulkImportAddUsersRequest(testConfig.OrgId, File.ReadAllBytes(csvFile));
+
+            Assert.IsNotNull(importRequestResponse);
+
+            try
+            {
+                Assert.IsTrue(isRequestQueued(importRequestResponse.Status));
+            }
+            finally
+            {
+                now = DateTime.UtcNow;
+
+                //Wait till import Completion
+                while (now.AddMinutes(2) >= DateTime.UtcNow)
+                {
+                    importRequestResponse = bulkImportApi.GetBulkUserImportRequest(testConfig.OrgId, importRequestResponse.Id) ?? importRequestResponse;
+
+                    if (!isRequestQueued(importRequestResponse.Status))
+                        break;
+
+                    Thread.Sleep(TimeSpan.FromSeconds(20));
+                }
+
+                //Cleanup
+                if (!isRequestQueued(importRequestResponse.Status))
+                    bulkImportApi.DeleteBulkUserImport(testConfig.OrgId, importRequestResponse.Id);
+            }
         }
 
         [TestMethod]

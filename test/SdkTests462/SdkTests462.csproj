@@ -96,6 +96,12 @@
   <ItemGroup>
     <None Include="docs\brand.xml" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Admin.SdkTests.Common\Admin.SdkTests.Common.csproj">
+      <Project>{5a9ee67b-1062-4ea9-aa83-a71432f3ebc1}</Project>
+      <Name>Admin.SdkTests.Common</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
