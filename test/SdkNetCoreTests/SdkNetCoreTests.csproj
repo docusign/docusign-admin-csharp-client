@@ -22,6 +22,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Admin.SdkTests.Common\Admin.SdkTests.Common.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Reference Include="DocuSign.Admin">
       <HintPath>..\..\sdk\src\DocuSign.Admin\bin\Debug\netstandard2.0\DocuSign.Admin.dll</HintPath>
     </Reference>
