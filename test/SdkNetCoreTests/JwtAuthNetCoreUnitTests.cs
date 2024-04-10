@@ -21,7 +21,8 @@ namespace SdkNetCoreTests
         [TestMethod]
         public void JwtLoginTest()
         {
-            testConfig.ApiClient = new ApiClient(testConfig.Host);
+            testConfig.ApiClient = new DocuSignClient(testConfig.Host);
+            testConfig.ApiClient.SetOAuthBasePath(testConfig.OAuthBasePath);
 
             Assert.IsNotNull(testConfig.PrivateKey);
 

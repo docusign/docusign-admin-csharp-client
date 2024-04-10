@@ -32,7 +32,7 @@ namespace DocuSign.Admin.Model
             // Empty Constructor
         }
 
-        /// <summary>
+                /// <summary>
         /// The type of asset group work.
         /// </summary>
         /// <value>The type of asset group work.</value>
@@ -71,7 +71,7 @@ namespace DocuSign.Admin.Model
             AccountAssetCreate = 5
         }
 
-        /// <summary>
+                /// <summary>
         /// The clone status.
         /// </summary>
         /// <value>The clone status.</value>
