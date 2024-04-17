@@ -22,14 +22,14 @@ namespace DocuSign.Admin.Client
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="ApiClient" /> class
-        /// with default configuration and base path (https://api.docusign.net/Management).
+        /// with default configuration and base path (https://api-d.docusign.net/Management).
         /// </summary>
         [Obsolete("ApiClient is now obsolete and will be removed in a future release. Use DocuSignClient() instead.", false)]
         public ApiClient() : base() { }
 
         /// <summary>
         /// Initializes a new instance of the <see cref="ApiClient" /> class
-        /// with default base path (https://api.docusign.net/Management).
+        /// with default base path (https://api-d.docusign.net/Management).
         /// </summary>
         /// <param name="configuration">An instance of Configuration.</param>
         [Obsolete("ApiClient is now obsolete and will be removed in a future release. Use DocuSignClient(Configuration) instead.", false)]

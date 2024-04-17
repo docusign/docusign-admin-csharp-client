@@ -32,7 +32,7 @@ namespace DocuSign.Admin.Model
             // Empty Constructor
         }
 
-        /// <summary>
+                /// <summary>
         /// The locale of the target account&#39;s admin user.
         /// </summary>
         /// <value>The locale of the target account&#39;s admin user.</value>

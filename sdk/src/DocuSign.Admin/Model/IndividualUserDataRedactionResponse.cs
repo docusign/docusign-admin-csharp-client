@@ -28,7 +28,7 @@ namespace DocuSign.Admin.Model
     public partial class IndividualUserDataRedactionResponse :  IEquatable<IndividualUserDataRedactionResponse>, IValidatableObject
     {
 
-        /// <summary>
+                /// <summary>
         /// Defines Status
         /// </summary>
         [JsonConverter(typeof(StringEnumConverter))]

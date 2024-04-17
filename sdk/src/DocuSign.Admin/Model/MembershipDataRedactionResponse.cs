@@ -28,7 +28,7 @@ namespace DocuSign.Admin.Model
     public partial class MembershipDataRedactionResponse :  IEquatable<MembershipDataRedactionResponse>, IValidatableObject
     {
 
-        /// <summary>
+                /// <summary>
         /// Defines Status
         /// </summary>
         [JsonConverter(typeof(StringEnumConverter))]

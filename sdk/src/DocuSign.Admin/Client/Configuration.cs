@@ -26,7 +26,7 @@ namespace DocuSign.Admin.Client
         /// Version of the package.
         /// </summary>
         /// <value>Version of the package.</value>
-        public const string Version = "1.4.1";
+        public const string Version = "2.0.0-rc1";
 
         /// <summary>
         /// Identifier for ISO 8601 DateTime Format
@@ -102,10 +102,10 @@ namespace DocuSign.Admin.Client
         /// <summary>
         /// Initializes a new instance of the <see cref="Configuration" /> class
         /// </summary>
-        public Configuration(string basePath = "https://api.docusign.net/Management")
+        public Configuration(string basePath = "https://api-d.docusign.net/Management")
         {
-            UserAgent = $"C#/{Version}/{_getFrameworkVersion()}";
-            BasePath = basePath ?? "https://api.docusign.net/Management";
+            UserAgent = $"Swagger-Codegen/v2.1/{Version}/C#/{_getFrameworkVersion()}";
+            BasePath = basePath ?? "https://api-d.docusign.net/Management";
             DefaultHeader = new ConcurrentDictionary<string, string>();
             ApiKey = new ConcurrentDictionary<string, string>();
             ApiKeyPrefix = new ConcurrentDictionary<string, string>();
