@@ -1,5 +1,5 @@
 /* 
- * DocuSign Admin API
+ * Docusign Admin API
  *
  * An API for an organization administrator to manage organizations, accounts and users
  *
@@ -24,7 +24,7 @@ namespace DocuSign.Admin.Api
     {
         #region Synchronous Operations
         /// <summary>
-        /// Clones an existing DocuSign account to a new DocuSign account.
+        /// Clones an existing Docusign account to a new Docusign account.
         /// </summary>
         /// <remarks>
         /// Currently this only clones eSign settings and asset group information.  Required scopes: asset_group_account_clone_write
@@ -36,7 +36,7 @@ namespace DocuSign.Admin.Api
         AssetGroupAccountClone CloneAssetGroupAccount(Guid? organizationId, AssetGroupAccountClone request);
 
         /// <summary>
-        /// Clones an existing DocuSign account to a new DocuSign account.
+        /// Clones an existing Docusign account to a new Docusign account.
         /// </summary>
         /// <remarks>
         /// Currently this only clones eSign settings and asset group information.  Required scopes: asset_group_account_clone_write
@@ -46,6 +46,29 @@ namespace DocuSign.Admin.Api
         /// <param name="request">The request defails for the new asset group account clone.</param>
         /// <returns>ApiResponse of </returns>
         ApiResponse<AssetGroupAccountClone> CloneAssetGroupAccountWithHttpInfo(Guid? organizationId, AssetGroupAccountClone request);
+        /// <summary>
+        /// Creates a new Docusign account using the plan and modules specified in request body.
+        /// </summary>
+        /// <remarks>
+        /// Currently this only supports eSign plans and modules.  Required scopes: organization_sub_account_write
+        /// </remarks>
+        /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">The Guid representing the organization id.</param>
+        /// <param name="request">The request details for the new account.</param>
+        /// <returns></returns>
+        SubscriptionProvisionModelAssetGroupWorkResult CreateAssetGroupAccount(Guid? organizationId, SubAccountCreateRequest request);
+
+        /// <summary>
+        /// Creates a new Docusign account using the plan and modules specified in request body.
+        /// </summary>
+        /// <remarks>
+        /// Currently this only supports eSign plans and modules.  Required scopes: organization_sub_account_write
+        /// </remarks>
+        /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">The Guid representing the organization id.</param>
+        /// <param name="request">The request details for the new account.</param>
+        /// <returns>ApiResponse of </returns>
+        ApiResponse<SubscriptionProvisionModelAssetGroupWorkResult> CreateAssetGroupAccountWithHttpInfo(Guid? organizationId, SubAccountCreateRequest request);
         /// <summary>
         /// Gets an asset group account clone by the asset group work id.
         /// </summary>
@@ -119,10 +142,81 @@ namespace DocuSign.Admin.Api
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>ApiResponse of </returns>
         ApiResponse<AssetGroupAccountsResponse> GetAssetGroupAccountsWithHttpInfo(Guid? organizationId, ProvisionAssetGroupApi.GetAssetGroupAccountsOptions options = null);
+        /// <summary>
+        /// Gets the subscription details for an organization id.
+        /// </summary>
+        /// <remarks>
+        /// Currently charges and non e-sign assets are excluded in the response.  Required scopes: organization_sub_account_read
+        /// </remarks>
+        /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">The Guid representing the organization id.</param>
+        /// <returns></returns>
+        List<OrganizationSubscriptionResponse> GetOrganizationPlanItems(Guid? organizationId);
+
+        /// <summary>
+        /// Gets the subscription details for an organization id.
+        /// </summary>
+        /// <remarks>
+        /// Currently charges and non e-sign assets are excluded in the response.  Required scopes: organization_sub_account_read
+        /// </remarks>
+        /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">The Guid representing the organization id.</param>
+        /// <returns>ApiResponse of </returns>
+        ApiResponse<List<OrganizationSubscriptionResponse>> GetOrganizationPlanItemsWithHttpInfo(Guid? organizationId);
+        /// <summary>
+        /// Gets an asset group account create process info by the asset group work id.
+        /// </summary>
+        /// <remarks>
+        /// Required scopes: organization_sub_account_read
+        /// </remarks>
+        /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">The Guid representing the organization id.</param>
+        /// <param name="assetGroupId">The Guid representing the asset group id.</param>
+        /// <param name="assetGroupWorkId">The Guid representing the asset group account create id</param>
+        /// <param name="options">Options for modifying the behavior of the function.</param>
+        /// <returns></returns>
+        SubAccountCreateWorker GetSubAccountCreateProcessByAssetGroupWorkId(Guid? organizationId, Guid? assetGroupId, Guid? assetGroupWorkId, ProvisionAssetGroupApi.GetSubAccountCreateProcessByAssetGroupWorkIdOptions options = null);
+
+        /// <summary>
+        /// Gets an asset group account create process info by the asset group work id.
+        /// </summary>
+        /// <remarks>
+        /// Required scopes: organization_sub_account_read
+        /// </remarks>
+        /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">The Guid representing the organization id.</param>
+        /// <param name="assetGroupId">The Guid representing the asset group id.</param>
+        /// <param name="assetGroupWorkId">The Guid representing the asset group account create id</param>
+        /// <param name="options">Options for modifying the behavior of the function.</param>
+        /// <returns>ApiResponse of </returns>
+        ApiResponse<SubAccountCreateWorker> GetSubAccountCreateProcessByAssetGroupWorkIdWithHttpInfo(Guid? organizationId, Guid? assetGroupId, Guid? assetGroupWorkId, ProvisionAssetGroupApi.GetSubAccountCreateProcessByAssetGroupWorkIdOptions options = null);
+        /// <summary>
+        /// Gets all asset group account creation processes for an organization id.
+        /// </summary>
+        /// <remarks>
+        /// Required scopes: organization_sub_account_read
+        /// </remarks>
+        /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">The Guid representing the organization id.</param>
+        /// <param name="options">Options for modifying the behavior of the function.</param>
+        /// <returns></returns>
+        SubAccountCreateWorkerResponse GetSubAccountCreateProcessesByOrgId(Guid? organizationId, ProvisionAssetGroupApi.GetSubAccountCreateProcessesByOrgIdOptions options = null);
+
+        /// <summary>
+        /// Gets all asset group account creation processes for an organization id.
+        /// </summary>
+        /// <remarks>
+        /// Required scopes: organization_sub_account_read
+        /// </remarks>
+        /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">The Guid representing the organization id.</param>
+        /// <param name="options">Options for modifying the behavior of the function.</param>
+        /// <returns>ApiResponse of </returns>
+        ApiResponse<SubAccountCreateWorkerResponse> GetSubAccountCreateProcessesByOrgIdWithHttpInfo(Guid? organizationId, ProvisionAssetGroupApi.GetSubAccountCreateProcessesByOrgIdOptions options = null);
         #endregion Synchronous Operations
         #region Asynchronous Operations
         /// <summary>
-        /// Clones an existing DocuSign account to a new DocuSign account.
+        /// Clones an existing Docusign account to a new Docusign account.
         /// </summary>
         /// <remarks>
         /// Currently this only clones eSign settings and asset group information.  Required scopes: asset_group_account_clone_write
@@ -134,7 +228,7 @@ namespace DocuSign.Admin.Api
         System.Threading.Tasks.Task<AssetGroupAccountClone> CloneAssetGroupAccountAsync(Guid? organizationId, AssetGroupAccountClone request);
 
         /// <summary>
-        /// Clones an existing DocuSign account to a new DocuSign account.
+        /// Clones an existing Docusign account to a new Docusign account.
         /// </summary>
         /// <remarks>
         /// Currently this only clones eSign settings and asset group information.  Required scopes: asset_group_account_clone_write
@@ -144,6 +238,29 @@ namespace DocuSign.Admin.Api
         /// <param name="request">The request defails for the new asset group account clone.</param>
         /// <returns>Task of ApiResponse (AssetGroupAccountClone)</returns>
         System.Threading.Tasks.Task<ApiResponse<AssetGroupAccountClone>> CloneAssetGroupAccountAsyncWithHttpInfo(Guid? organizationId, AssetGroupAccountClone request);
+        /// <summary>
+        /// Creates a new Docusign account using the plan and modules specified in request body.
+        /// </summary>
+        /// <remarks>
+        /// Currently this only supports eSign plans and modules.  Required scopes: organization_sub_account_write
+        /// </remarks>
+        /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">The Guid representing the organization id.</param>
+        /// <param name="request">The request details for the new account.</param>
+        /// <returns>Task of SubscriptionProvisionModelAssetGroupWorkResult</returns>
+        System.Threading.Tasks.Task<SubscriptionProvisionModelAssetGroupWorkResult> CreateAssetGroupAccountAsync(Guid? organizationId, SubAccountCreateRequest request);
+
+        /// <summary>
+        /// Creates a new Docusign account using the plan and modules specified in request body.
+        /// </summary>
+        /// <remarks>
+        /// Currently this only supports eSign plans and modules.  Required scopes: organization_sub_account_write
+        /// </remarks>
+        /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">The Guid representing the organization id.</param>
+        /// <param name="request">The request details for the new account.</param>
+        /// <returns>Task of ApiResponse (SubscriptionProvisionModelAssetGroupWorkResult)</returns>
+        System.Threading.Tasks.Task<ApiResponse<SubscriptionProvisionModelAssetGroupWorkResult>> CreateAssetGroupAccountAsyncWithHttpInfo(Guid? organizationId, SubAccountCreateRequest request);
         /// <summary>
         /// Gets an asset group account clone by the asset group work id.
         /// </summary>
@@ -217,6 +334,77 @@ namespace DocuSign.Admin.Api
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of ApiResponse (AssetGroupAccountsResponse)</returns>
         System.Threading.Tasks.Task<ApiResponse<AssetGroupAccountsResponse>> GetAssetGroupAccountsAsyncWithHttpInfo(Guid? organizationId, ProvisionAssetGroupApi.GetAssetGroupAccountsOptions options = null);
+        /// <summary>
+        /// Gets the subscription details for an organization id.
+        /// </summary>
+        /// <remarks>
+        /// Currently charges and non e-sign assets are excluded in the response.  Required scopes: organization_sub_account_read
+        /// </remarks>
+        /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">The Guid representing the organization id.</param>
+        /// <returns>Task of List<OrganizationSubscriptionResponse></returns>
+        System.Threading.Tasks.Task<List<OrganizationSubscriptionResponse>> GetOrganizationPlanItemsAsync(Guid? organizationId);
+
+        /// <summary>
+        /// Gets the subscription details for an organization id.
+        /// </summary>
+        /// <remarks>
+        /// Currently charges and non e-sign assets are excluded in the response.  Required scopes: organization_sub_account_read
+        /// </remarks>
+        /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">The Guid representing the organization id.</param>
+        /// <returns>Task of ApiResponse (List<OrganizationSubscriptionResponse>)</returns>
+        System.Threading.Tasks.Task<ApiResponse<List<OrganizationSubscriptionResponse>>> GetOrganizationPlanItemsAsyncWithHttpInfo(Guid? organizationId);
+        /// <summary>
+        /// Gets an asset group account create process info by the asset group work id.
+        /// </summary>
+        /// <remarks>
+        /// Required scopes: organization_sub_account_read
+        /// </remarks>
+        /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">The Guid representing the organization id.</param>
+        /// <param name="assetGroupId">The Guid representing the asset group id.</param>
+        /// <param name="assetGroupWorkId">The Guid representing the asset group account create id</param>
+        /// <param name="options">Options for modifying the behavior of the function.</param>
+        /// <returns>Task of SubAccountCreateWorker</returns>
+        System.Threading.Tasks.Task<SubAccountCreateWorker> GetSubAccountCreateProcessByAssetGroupWorkIdAsync(Guid? organizationId, Guid? assetGroupId, Guid? assetGroupWorkId, ProvisionAssetGroupApi.GetSubAccountCreateProcessByAssetGroupWorkIdOptions options = null);
+
+        /// <summary>
+        /// Gets an asset group account create process info by the asset group work id.
+        /// </summary>
+        /// <remarks>
+        /// Required scopes: organization_sub_account_read
+        /// </remarks>
+        /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">The Guid representing the organization id.</param>
+        /// <param name="assetGroupId">The Guid representing the asset group id.</param>
+        /// <param name="assetGroupWorkId">The Guid representing the asset group account create id</param>
+        /// <param name="options">Options for modifying the behavior of the function.</param>
+        /// <returns>Task of ApiResponse (SubAccountCreateWorker)</returns>
+        System.Threading.Tasks.Task<ApiResponse<SubAccountCreateWorker>> GetSubAccountCreateProcessByAssetGroupWorkIdAsyncWithHttpInfo(Guid? organizationId, Guid? assetGroupId, Guid? assetGroupWorkId, ProvisionAssetGroupApi.GetSubAccountCreateProcessByAssetGroupWorkIdOptions options = null);
+        /// <summary>
+        /// Gets all asset group account creation processes for an organization id.
+        /// </summary>
+        /// <remarks>
+        /// Required scopes: organization_sub_account_read
+        /// </remarks>
+        /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">The Guid representing the organization id.</param>
+        /// <param name="options">Options for modifying the behavior of the function.</param>
+        /// <returns>Task of SubAccountCreateWorkerResponse</returns>
+        System.Threading.Tasks.Task<SubAccountCreateWorkerResponse> GetSubAccountCreateProcessesByOrgIdAsync(Guid? organizationId, ProvisionAssetGroupApi.GetSubAccountCreateProcessesByOrgIdOptions options = null);
+
+        /// <summary>
+        /// Gets all asset group account creation processes for an organization id.
+        /// </summary>
+        /// <remarks>
+        /// Required scopes: organization_sub_account_read
+        /// </remarks>
+        /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">The Guid representing the organization id.</param>
+        /// <param name="options">Options for modifying the behavior of the function.</param>
+        /// <returns>Task of ApiResponse (SubAccountCreateWorkerResponse)</returns>
+        System.Threading.Tasks.Task<ApiResponse<SubAccountCreateWorkerResponse>> GetSubAccountCreateProcessesByOrgIdAsyncWithHttpInfo(Guid? organizationId, ProvisionAssetGroupApi.GetSubAccountCreateProcessesByOrgIdOptions options = null);
         #endregion Asynchronous Operations
     }
 
@@ -273,7 +461,7 @@ namespace DocuSign.Admin.Api
 
 
         /// <summary>
-        /// Clones an existing DocuSign account to a new DocuSign account. Currently this only clones eSign settings and asset group information.  Required scopes: asset_group_account_clone_write
+        /// Clones an existing Docusign account to a new Docusign account. Currently this only clones eSign settings and asset group information.  Required scopes: asset_group_account_clone_write
         /// </summary>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">The Guid representing the organization id.</param>
@@ -286,7 +474,7 @@ namespace DocuSign.Admin.Api
         }
 
         /// <summary>
-        /// Clones an existing DocuSign account to a new DocuSign account. Currently this only clones eSign settings and asset group information.  Required scopes: asset_group_account_clone_write
+        /// Clones an existing Docusign account to a new Docusign account. Currently this only clones eSign settings and asset group information.  Required scopes: asset_group_account_clone_write
         /// </summary>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">The Guid representing the organization id.</param>
@@ -301,7 +489,7 @@ namespace DocuSign.Admin.Api
             if (request == null)
                 throw new ApiException(400, "Missing required parameter 'request' when calling ProvisionAssetGroupApi->CloneAssetGroupAccount");
 
-            var localVarPath = "/v1/organizations/{organizationId}/assetGroups/accountClone";
+            var localVarPath = "/v2/organizations/{organizationId}/assetGroups/accountClone";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
@@ -363,7 +551,7 @@ namespace DocuSign.Admin.Api
         }
 
         /// <summary>
-        /// Clones an existing DocuSign account to a new DocuSign account. Currently this only clones eSign settings and asset group information.  Required scopes: asset_group_account_clone_write
+        /// Clones an existing Docusign account to a new Docusign account. Currently this only clones eSign settings and asset group information.  Required scopes: asset_group_account_clone_write
         /// </summary>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">The Guid representing the organization id.</param>
@@ -376,7 +564,7 @@ namespace DocuSign.Admin.Api
         }
 
         /// <summary>
-        /// Clones an existing DocuSign account to a new DocuSign account. Currently this only clones eSign settings and asset group information.  Required scopes: asset_group_account_clone_write
+        /// Clones an existing Docusign account to a new Docusign account. Currently this only clones eSign settings and asset group information.  Required scopes: asset_group_account_clone_write
         /// </summary>
         /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">The Guid representing the organization id.</param>
@@ -391,7 +579,7 @@ namespace DocuSign.Admin.Api
             if (request == null)
                 throw new ApiException(400, "Missing required parameter 'request' when calling ProvisionAssetGroupApi->CloneAssetGroupAccount");
 
-            var localVarPath = "/v1/organizations/{organizationId}/assetGroups/accountClone";
+            var localVarPath = "/v2/organizations/{organizationId}/assetGroups/accountClone";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
@@ -452,6 +640,187 @@ namespace DocuSign.Admin.Api
                 (AssetGroupAccountClone)this.ApiClient.Deserialize(localVarResponse, typeof(AssetGroupAccountClone)));
         }
 
+
+        /// <summary>
+        /// Creates a new Docusign account using the plan and modules specified in request body. Currently this only supports eSign plans and modules.  Required scopes: organization_sub_account_write
+        /// </summary>
+        /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">The Guid representing the organization id.</param>
+        /// <param name="request">The request details for the new account.</param>
+        /// <returns>SubscriptionProvisionModelAssetGroupWorkResult</returns>
+        public SubscriptionProvisionModelAssetGroupWorkResult CreateAssetGroupAccount(Guid? organizationId, SubAccountCreateRequest request)
+        {
+             ApiResponse<SubscriptionProvisionModelAssetGroupWorkResult> localVarResponse = CreateAssetGroupAccountWithHttpInfo(organizationId, request);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Creates a new Docusign account using the plan and modules specified in request body. Currently this only supports eSign plans and modules.  Required scopes: organization_sub_account_write
+        /// </summary>
+        /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">The Guid representing the organization id.</param>
+        /// <param name="request">The request details for the new account.</param>
+        /// <returns>ApiResponse of SubscriptionProvisionModelAssetGroupWorkResult</returns>
+        public ApiResponse<SubscriptionProvisionModelAssetGroupWorkResult> CreateAssetGroupAccountWithHttpInfo(Guid? organizationId, SubAccountCreateRequest request)
+        {
+            // verify the required parameter 'organizationId' is set
+            if (organizationId == null)
+                throw new ApiException(400, "Missing required parameter 'organizationId' when calling ProvisionAssetGroupApi->CreateAssetGroupAccount");
+            // verify the required parameter 'request' is set
+            if (request == null)
+                throw new ApiException(400, "Missing required parameter 'request' when calling ProvisionAssetGroupApi->CreateAssetGroupAccount");
+
+            var localVarPath = "/v2/organizations/{organizationId}/assetGroups/accountCreate";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new Dictionary<String, String>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new List<FileParameter>();
+            Object localVarPostBody = null;
+            String localVarHttpContentDisposition = string.Empty;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+            if (organizationId != null) localVarPathParams.Add("organizationId", this.ApiClient.ParameterToString(organizationId)); // path parameter
+            if (request != null && request.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = this.ApiClient.Serialize(request); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = request; // byte array
+            }
+
+            // authentication (docusignAccessCode) required
+            // oauth required
+            if (!String.IsNullOrEmpty(this.ApiClient.Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.ApiClient.Configuration.AccessToken;
+            }
+
+
+            // make the HTTP request
+            DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, new HttpMethod("POST"), localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
+            DocuSignResponse localVarResponse = this.ApiClient.CallApi(localVarRequest);
+
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("CreateAssetGroupAccount", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<SubscriptionProvisionModelAssetGroupWorkResult>(localVarStatusCode, 
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()), 
+                (SubscriptionProvisionModelAssetGroupWorkResult)this.ApiClient.Deserialize(localVarResponse, typeof(SubscriptionProvisionModelAssetGroupWorkResult)));
+        }
+
+        /// <summary>
+        /// Creates a new Docusign account using the plan and modules specified in request body. Currently this only supports eSign plans and modules.  Required scopes: organization_sub_account_write
+        /// </summary>
+        /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">The Guid representing the organization id.</param>
+        /// <param name="request">The request details for the new account.</param>
+        /// <returns>Task of SubscriptionProvisionModelAssetGroupWorkResult</returns>
+        public async System.Threading.Tasks.Task<SubscriptionProvisionModelAssetGroupWorkResult> CreateAssetGroupAccountAsync(Guid? organizationId, SubAccountCreateRequest request)
+        {
+             ApiResponse<SubscriptionProvisionModelAssetGroupWorkResult> localVarResponse = await CreateAssetGroupAccountAsyncWithHttpInfo(organizationId, request);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Creates a new Docusign account using the plan and modules specified in request body. Currently this only supports eSign plans and modules.  Required scopes: organization_sub_account_write
+        /// </summary>
+        /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">The Guid representing the organization id.</param>
+        /// <param name="request">The request details for the new account.</param>
+        /// <returns>Task of ApiResponse (SubscriptionProvisionModelAssetGroupWorkResult)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<SubscriptionProvisionModelAssetGroupWorkResult>> CreateAssetGroupAccountAsyncWithHttpInfo(Guid? organizationId, SubAccountCreateRequest request)
+        {
+            // verify the required parameter 'organizationId' is set
+            if (organizationId == null)
+                throw new ApiException(400, "Missing required parameter 'organizationId' when calling ProvisionAssetGroupApi->CreateAssetGroupAccount");
+            // verify the required parameter 'request' is set
+            if (request == null)
+                throw new ApiException(400, "Missing required parameter 'request' when calling ProvisionAssetGroupApi->CreateAssetGroupAccount");
+
+            var localVarPath = "/v2/organizations/{organizationId}/assetGroups/accountCreate";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new Dictionary<String, String>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new List<FileParameter>();
+            Object localVarPostBody = null;
+            String localVarHttpContentDisposition = string.Empty;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+            if (organizationId != null) localVarPathParams.Add("organizationId", this.ApiClient.ParameterToString(organizationId)); // path parameter
+            if (request != null && request.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = this.ApiClient.Serialize(request); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = request; // byte array
+            }
+
+            // authentication (docusignAccessCode) required
+            // oauth required
+            if (!String.IsNullOrEmpty(this.ApiClient.Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.ApiClient.Configuration.AccessToken;
+            }
+
+
+            // make the HTTP request
+            DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, new HttpMethod("POST"), localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
+            DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest);
+
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("CreateAssetGroupAccount", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<SubscriptionProvisionModelAssetGroupWorkResult>(localVarStatusCode, 
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()), 
+                (SubscriptionProvisionModelAssetGroupWorkResult)this.ApiClient.Deserialize(localVarResponse, typeof(SubscriptionProvisionModelAssetGroupWorkResult)));
+        }
+
         /// <summary>
         /// Gets an asset group account clone by the asset group work id. Required scopes: asset_group_account_clone_read
         /// </summary>
@@ -497,7 +866,7 @@ namespace DocuSign.Admin.Api
             if (assetGroupWorkId == null)
                 throw new ApiException(400, "Missing required parameter 'assetGroupWorkId' when calling ProvisionAssetGroupApi->GetAssetGroupAccountClone");
 
-            var localVarPath = "/v1/organizations/{organizationId}/assetGroups/{assetGroupId}/accountClones/{assetGroupWorkId}";
+            var localVarPath = "/v2/organizations/{organizationId}/assetGroups/{assetGroupId}/accountClones/{assetGroupWorkId}";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
@@ -592,7 +961,7 @@ namespace DocuSign.Admin.Api
             if (assetGroupWorkId == null)
                 throw new ApiException(400, "Missing required parameter 'assetGroupWorkId' when calling ProvisionAssetGroupApi->GetAssetGroupAccountClone");
 
-            var localVarPath = "/v1/organizations/{organizationId}/assetGroups/{assetGroupId}/accountClones/{assetGroupWorkId}";
+            var localVarPath = "/v2/organizations/{organizationId}/assetGroups/{assetGroupId}/accountClones/{assetGroupWorkId}";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
@@ -688,7 +1057,7 @@ namespace DocuSign.Admin.Api
             if (organizationId == null)
                 throw new ApiException(400, "Missing required parameter 'organizationId' when calling ProvisionAssetGroupApi->GetAssetGroupAccountClonesByOrgId");
 
-            var localVarPath = "/v1/organizations/{organizationId}/assetGroups/accountClones";
+            var localVarPath = "/v2/organizations/{organizationId}/assetGroups/accountClones";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
@@ -772,7 +1141,7 @@ namespace DocuSign.Admin.Api
             if (organizationId == null)
                 throw new ApiException(400, "Missing required parameter 'organizationId' when calling ProvisionAssetGroupApi->GetAssetGroupAccountClonesByOrgId");
 
-            var localVarPath = "/v1/organizations/{organizationId}/assetGroups/accountClones";
+            var localVarPath = "/v2/organizations/{organizationId}/assetGroups/accountClones";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
@@ -865,7 +1234,7 @@ namespace DocuSign.Admin.Api
             if (organizationId == null)
                 throw new ApiException(400, "Missing required parameter 'organizationId' when calling ProvisionAssetGroupApi->GetAssetGroupAccounts");
 
-            var localVarPath = "/v1/organizations/{organizationId}/assetGroups/accounts";
+            var localVarPath = "/v2/organizations/{organizationId}/assetGroups/accounts";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
@@ -948,7 +1317,7 @@ namespace DocuSign.Admin.Api
             if (organizationId == null)
                 throw new ApiException(400, "Missing required parameter 'organizationId' when calling ProvisionAssetGroupApi->GetAssetGroupAccounts");
 
-            var localVarPath = "/v1/organizations/{organizationId}/assetGroups/accounts";
+            var localVarPath = "/v2/organizations/{organizationId}/assetGroups/accounts";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
@@ -1003,6 +1372,539 @@ namespace DocuSign.Admin.Api
             return new ApiResponse<AssetGroupAccountsResponse>(localVarStatusCode, 
                 localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()), 
                 (AssetGroupAccountsResponse)this.ApiClient.Deserialize(localVarResponse, typeof(AssetGroupAccountsResponse)));
+        }
+
+
+        /// <summary>
+        /// Gets the subscription details for an organization id. Currently charges and non e-sign assets are excluded in the response.  Required scopes: organization_sub_account_read
+        /// </summary>
+        /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">The Guid representing the organization id.</param>
+        /// <returns>List<OrganizationSubscriptionResponse></returns>
+        public List<OrganizationSubscriptionResponse> GetOrganizationPlanItems(Guid? organizationId)
+        {
+             ApiResponse<List<OrganizationSubscriptionResponse>> localVarResponse = GetOrganizationPlanItemsWithHttpInfo(organizationId);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Gets the subscription details for an organization id. Currently charges and non e-sign assets are excluded in the response.  Required scopes: organization_sub_account_read
+        /// </summary>
+        /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">The Guid representing the organization id.</param>
+        /// <returns>ApiResponse of List<OrganizationSubscriptionResponse></returns>
+        public ApiResponse<List<OrganizationSubscriptionResponse>> GetOrganizationPlanItemsWithHttpInfo(Guid? organizationId)
+        {
+            // verify the required parameter 'organizationId' is set
+            if (organizationId == null)
+                throw new ApiException(400, "Missing required parameter 'organizationId' when calling ProvisionAssetGroupApi->GetOrganizationPlanItems");
+
+            var localVarPath = "/v2/organizations/{organizationId}/planItems";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new Dictionary<String, String>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new List<FileParameter>();
+            Object localVarPostBody = null;
+            String localVarHttpContentDisposition = string.Empty;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+            if (organizationId != null) localVarPathParams.Add("organizationId", this.ApiClient.ParameterToString(organizationId)); // path parameter
+
+            // authentication (docusignAccessCode) required
+            // oauth required
+            if (!String.IsNullOrEmpty(this.ApiClient.Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.ApiClient.Configuration.AccessToken;
+            }
+
+
+            // make the HTTP request
+            DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, new HttpMethod("GET"), localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
+            DocuSignResponse localVarResponse = this.ApiClient.CallApi(localVarRequest);
+
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("GetOrganizationPlanItems", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<List<OrganizationSubscriptionResponse>>(localVarStatusCode, 
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()), 
+                (List<OrganizationSubscriptionResponse>)this.ApiClient.Deserialize(localVarResponse, typeof(List<OrganizationSubscriptionResponse>)));
+        }
+
+        /// <summary>
+        /// Gets the subscription details for an organization id. Currently charges and non e-sign assets are excluded in the response.  Required scopes: organization_sub_account_read
+        /// </summary>
+        /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">The Guid representing the organization id.</param>
+        /// <returns>Task of List<OrganizationSubscriptionResponse></returns>
+        public async System.Threading.Tasks.Task<List<OrganizationSubscriptionResponse>> GetOrganizationPlanItemsAsync(Guid? organizationId)
+        {
+             ApiResponse<List<OrganizationSubscriptionResponse>> localVarResponse = await GetOrganizationPlanItemsAsyncWithHttpInfo(organizationId);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Gets the subscription details for an organization id. Currently charges and non e-sign assets are excluded in the response.  Required scopes: organization_sub_account_read
+        /// </summary>
+        /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">The Guid representing the organization id.</param>
+        /// <returns>Task of ApiResponse (List<OrganizationSubscriptionResponse>)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<List<OrganizationSubscriptionResponse>>> GetOrganizationPlanItemsAsyncWithHttpInfo(Guid? organizationId)
+        {
+            // verify the required parameter 'organizationId' is set
+            if (organizationId == null)
+                throw new ApiException(400, "Missing required parameter 'organizationId' when calling ProvisionAssetGroupApi->GetOrganizationPlanItems");
+
+            var localVarPath = "/v2/organizations/{organizationId}/planItems";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new Dictionary<String, String>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new List<FileParameter>();
+            Object localVarPostBody = null;
+            String localVarHttpContentDisposition = string.Empty;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+            if (organizationId != null) localVarPathParams.Add("organizationId", this.ApiClient.ParameterToString(organizationId)); // path parameter
+
+            // authentication (docusignAccessCode) required
+            // oauth required
+            if (!String.IsNullOrEmpty(this.ApiClient.Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.ApiClient.Configuration.AccessToken;
+            }
+
+
+            // make the HTTP request
+            DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, new HttpMethod("GET"), localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
+            DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest);
+
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("GetOrganizationPlanItems", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<List<OrganizationSubscriptionResponse>>(localVarStatusCode, 
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()), 
+                (List<OrganizationSubscriptionResponse>)this.ApiClient.Deserialize(localVarResponse, typeof(List<OrganizationSubscriptionResponse>)));
+        }
+
+        /// <summary>
+        /// Gets an asset group account create process info by the asset group work id. Required scopes: organization_sub_account_read
+        /// </summary>
+        public class GetSubAccountCreateProcessByAssetGroupWorkIdOptions
+        {
+            /// When true, include details for the asset group account create. 
+            public bool? includeDetails {get; set;}
+        }
+
+        /// <summary>
+        /// Gets an asset group account create process info by the asset group work id. Required scopes: organization_sub_account_read
+        /// </summary>
+        /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">The Guid representing the organization id.</param>
+        /// <param name="assetGroupId">The Guid representing the asset group id.</param>
+        /// <param name="assetGroupWorkId">The Guid representing the asset group account create id</param>
+        /// <param name="options">Options for modifying the behavior of the function.</param>
+        /// <returns>SubAccountCreateWorker</returns>
+        public SubAccountCreateWorker GetSubAccountCreateProcessByAssetGroupWorkId(Guid? organizationId, Guid? assetGroupId, Guid? assetGroupWorkId, ProvisionAssetGroupApi.GetSubAccountCreateProcessByAssetGroupWorkIdOptions options = null)
+        {
+             ApiResponse<SubAccountCreateWorker> localVarResponse = GetSubAccountCreateProcessByAssetGroupWorkIdWithHttpInfo(organizationId, assetGroupId, assetGroupWorkId, options);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Gets an asset group account create process info by the asset group work id. Required scopes: organization_sub_account_read
+        /// </summary>
+        /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">The Guid representing the organization id.</param>
+        /// <param name="assetGroupId">The Guid representing the asset group id.</param>
+        /// <param name="assetGroupWorkId">The Guid representing the asset group account create id</param>
+        /// <param name="options">Options for modifying the behavior of the function.</param>
+        /// <returns>ApiResponse of SubAccountCreateWorker</returns>
+        public ApiResponse<SubAccountCreateWorker> GetSubAccountCreateProcessByAssetGroupWorkIdWithHttpInfo(Guid? organizationId, Guid? assetGroupId, Guid? assetGroupWorkId, ProvisionAssetGroupApi.GetSubAccountCreateProcessByAssetGroupWorkIdOptions options = null)
+        {
+            // verify the required parameter 'organizationId' is set
+            if (organizationId == null)
+                throw new ApiException(400, "Missing required parameter 'organizationId' when calling ProvisionAssetGroupApi->GetSubAccountCreateProcessByAssetGroupWorkId");
+            // verify the required parameter 'assetGroupId' is set
+            if (assetGroupId == null)
+                throw new ApiException(400, "Missing required parameter 'assetGroupId' when calling ProvisionAssetGroupApi->GetSubAccountCreateProcessByAssetGroupWorkId");
+            // verify the required parameter 'assetGroupWorkId' is set
+            if (assetGroupWorkId == null)
+                throw new ApiException(400, "Missing required parameter 'assetGroupWorkId' when calling ProvisionAssetGroupApi->GetSubAccountCreateProcessByAssetGroupWorkId");
+
+            var localVarPath = "/v2/organizations/{organizationId}/assetGroup/{assetGroupId}/subAccountCreated/{assetGroupWorkId}";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new Dictionary<String, String>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new List<FileParameter>();
+            Object localVarPostBody = null;
+            String localVarHttpContentDisposition = string.Empty;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+            if (organizationId != null) localVarPathParams.Add("organizationId", this.ApiClient.ParameterToString(organizationId)); // path parameter
+            if (assetGroupId != null) localVarPathParams.Add("assetGroupId", this.ApiClient.ParameterToString(assetGroupId)); // path parameter
+            if (assetGroupWorkId != null) localVarPathParams.Add("assetGroupWorkId", this.ApiClient.ParameterToString(assetGroupWorkId)); // path parameter
+            if (options != null)
+            {
+                if (options.includeDetails != null) localVarQueryParams.Add("include_details", this.ApiClient.ParameterToString(options.includeDetails)); // query parameter
+            }
+
+            // authentication (docusignAccessCode) required
+            // oauth required
+            if (!String.IsNullOrEmpty(this.ApiClient.Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.ApiClient.Configuration.AccessToken;
+            }
+
+
+            // make the HTTP request
+            DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, new HttpMethod("GET"), localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
+            DocuSignResponse localVarResponse = this.ApiClient.CallApi(localVarRequest);
+
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("GetSubAccountCreateProcessByAssetGroupWorkId", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<SubAccountCreateWorker>(localVarStatusCode, 
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()), 
+                (SubAccountCreateWorker)this.ApiClient.Deserialize(localVarResponse, typeof(SubAccountCreateWorker)));
+        }
+
+        /// <summary>
+        /// Gets an asset group account create process info by the asset group work id. Required scopes: organization_sub_account_read
+        /// </summary>
+        /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">The Guid representing the organization id.</param>
+        /// <param name="assetGroupId">The Guid representing the asset group id.</param>
+        /// <param name="assetGroupWorkId">The Guid representing the asset group account create id</param>
+        /// <param name="options">Options for modifying the behavior of the function.</param>
+        /// <returns>Task of SubAccountCreateWorker</returns>
+        public async System.Threading.Tasks.Task<SubAccountCreateWorker> GetSubAccountCreateProcessByAssetGroupWorkIdAsync(Guid? organizationId, Guid? assetGroupId, Guid? assetGroupWorkId, ProvisionAssetGroupApi.GetSubAccountCreateProcessByAssetGroupWorkIdOptions options = null)
+        {
+             ApiResponse<SubAccountCreateWorker> localVarResponse = await GetSubAccountCreateProcessByAssetGroupWorkIdAsyncWithHttpInfo(organizationId, assetGroupId, assetGroupWorkId, options);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Gets an asset group account create process info by the asset group work id. Required scopes: organization_sub_account_read
+        /// </summary>
+        /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">The Guid representing the organization id.</param>
+        /// <param name="assetGroupId">The Guid representing the asset group id.</param>
+        /// <param name="assetGroupWorkId">The Guid representing the asset group account create id</param>
+        /// <param name="options">Options for modifying the behavior of the function.</param>
+        /// <returns>Task of ApiResponse (SubAccountCreateWorker)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<SubAccountCreateWorker>> GetSubAccountCreateProcessByAssetGroupWorkIdAsyncWithHttpInfo(Guid? organizationId, Guid? assetGroupId, Guid? assetGroupWorkId, ProvisionAssetGroupApi.GetSubAccountCreateProcessByAssetGroupWorkIdOptions options = null)
+        {
+            // verify the required parameter 'organizationId' is set
+            if (organizationId == null)
+                throw new ApiException(400, "Missing required parameter 'organizationId' when calling ProvisionAssetGroupApi->GetSubAccountCreateProcessByAssetGroupWorkId");
+            // verify the required parameter 'assetGroupId' is set
+            if (assetGroupId == null)
+                throw new ApiException(400, "Missing required parameter 'assetGroupId' when calling ProvisionAssetGroupApi->GetSubAccountCreateProcessByAssetGroupWorkId");
+            // verify the required parameter 'assetGroupWorkId' is set
+            if (assetGroupWorkId == null)
+                throw new ApiException(400, "Missing required parameter 'assetGroupWorkId' when calling ProvisionAssetGroupApi->GetSubAccountCreateProcessByAssetGroupWorkId");
+
+            var localVarPath = "/v2/organizations/{organizationId}/assetGroup/{assetGroupId}/subAccountCreated/{assetGroupWorkId}";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new Dictionary<String, String>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new List<FileParameter>();
+            Object localVarPostBody = null;
+            String localVarHttpContentDisposition = string.Empty;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+            if (organizationId != null) localVarPathParams.Add("organizationId", this.ApiClient.ParameterToString(organizationId)); // path parameter
+            if (assetGroupId != null) localVarPathParams.Add("assetGroupId", this.ApiClient.ParameterToString(assetGroupId)); // path parameter
+            if (assetGroupWorkId != null) localVarPathParams.Add("assetGroupWorkId", this.ApiClient.ParameterToString(assetGroupWorkId)); // path parameter
+            if (options != null)
+            {
+                if (options.includeDetails != null) localVarQueryParams.Add("include_details", this.ApiClient.ParameterToString(options.includeDetails)); // query parameter
+            }
+
+            // authentication (docusignAccessCode) required
+            // oauth required
+            if (!String.IsNullOrEmpty(this.ApiClient.Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.ApiClient.Configuration.AccessToken;
+            }
+
+
+            // make the HTTP request
+            DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, new HttpMethod("GET"), localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
+            DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest);
+
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("GetSubAccountCreateProcessByAssetGroupWorkId", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<SubAccountCreateWorker>(localVarStatusCode, 
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()), 
+                (SubAccountCreateWorker)this.ApiClient.Deserialize(localVarResponse, typeof(SubAccountCreateWorker)));
+        }
+
+        /// <summary>
+        /// Gets all asset group account creation processes for an organization id. Required scopes: organization_sub_account_read
+        /// </summary>
+        public class GetSubAccountCreateProcessesByOrgIdOptions
+        {
+            /// When provided and is in the past, only return asset group account create processes that are updated after the date. 
+            public DateTime? sinceUpdatedDate {get; set;}
+            /// When true, include details for the asset group account create processes. 
+            public bool? includeDetails {get; set;}
+        }
+
+        /// <summary>
+        /// Gets all asset group account creation processes for an organization id. Required scopes: organization_sub_account_read
+        /// </summary>
+        /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">The Guid representing the organization id.</param>
+        /// <param name="options">Options for modifying the behavior of the function.</param>
+        /// <returns>SubAccountCreateWorkerResponse</returns>
+        public SubAccountCreateWorkerResponse GetSubAccountCreateProcessesByOrgId(Guid? organizationId, ProvisionAssetGroupApi.GetSubAccountCreateProcessesByOrgIdOptions options = null)
+        {
+             ApiResponse<SubAccountCreateWorkerResponse> localVarResponse = GetSubAccountCreateProcessesByOrgIdWithHttpInfo(organizationId, options);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Gets all asset group account creation processes for an organization id. Required scopes: organization_sub_account_read
+        /// </summary>
+        /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">The Guid representing the organization id.</param>
+        /// <param name="options">Options for modifying the behavior of the function.</param>
+        /// <returns>ApiResponse of SubAccountCreateWorkerResponse</returns>
+        public ApiResponse<SubAccountCreateWorkerResponse> GetSubAccountCreateProcessesByOrgIdWithHttpInfo(Guid? organizationId, ProvisionAssetGroupApi.GetSubAccountCreateProcessesByOrgIdOptions options = null)
+        {
+            // verify the required parameter 'organizationId' is set
+            if (organizationId == null)
+                throw new ApiException(400, "Missing required parameter 'organizationId' when calling ProvisionAssetGroupApi->GetSubAccountCreateProcessesByOrgId");
+
+            var localVarPath = "/v2/organizations/{organizationId}/subAccountsCreated";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new Dictionary<String, String>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new List<FileParameter>();
+            Object localVarPostBody = null;
+            String localVarHttpContentDisposition = string.Empty;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+            if (organizationId != null) localVarPathParams.Add("organizationId", this.ApiClient.ParameterToString(organizationId)); // path parameter
+            if (options != null)
+            {
+                if (options.sinceUpdatedDate != null) localVarQueryParams.Add("since_updated_date", this.ApiClient.ParameterToString(options.sinceUpdatedDate)); // query parameter
+                if (options.includeDetails != null) localVarQueryParams.Add("include_details", this.ApiClient.ParameterToString(options.includeDetails)); // query parameter
+            }
+
+            // authentication (docusignAccessCode) required
+            // oauth required
+            if (!String.IsNullOrEmpty(this.ApiClient.Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.ApiClient.Configuration.AccessToken;
+            }
+
+
+            // make the HTTP request
+            DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, new HttpMethod("GET"), localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
+            DocuSignResponse localVarResponse = this.ApiClient.CallApi(localVarRequest);
+
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("GetSubAccountCreateProcessesByOrgId", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<SubAccountCreateWorkerResponse>(localVarStatusCode, 
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()), 
+                (SubAccountCreateWorkerResponse)this.ApiClient.Deserialize(localVarResponse, typeof(SubAccountCreateWorkerResponse)));
+        }
+
+        /// <summary>
+        /// Gets all asset group account creation processes for an organization id. Required scopes: organization_sub_account_read
+        /// </summary>
+        /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">The Guid representing the organization id.</param>
+        /// <param name="options">Options for modifying the behavior of the function.</param>
+        /// <returns>Task of SubAccountCreateWorkerResponse</returns>
+        public async System.Threading.Tasks.Task<SubAccountCreateWorkerResponse> GetSubAccountCreateProcessesByOrgIdAsync(Guid? organizationId, ProvisionAssetGroupApi.GetSubAccountCreateProcessesByOrgIdOptions options = null)
+        {
+             ApiResponse<SubAccountCreateWorkerResponse> localVarResponse = await GetSubAccountCreateProcessesByOrgIdAsyncWithHttpInfo(organizationId, options);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Gets all asset group account creation processes for an organization id. Required scopes: organization_sub_account_read
+        /// </summary>
+        /// <exception cref="DocuSign.Admin.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">The Guid representing the organization id.</param>
+        /// <param name="options">Options for modifying the behavior of the function.</param>
+        /// <returns>Task of ApiResponse (SubAccountCreateWorkerResponse)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<SubAccountCreateWorkerResponse>> GetSubAccountCreateProcessesByOrgIdAsyncWithHttpInfo(Guid? organizationId, ProvisionAssetGroupApi.GetSubAccountCreateProcessesByOrgIdOptions options = null)
+        {
+            // verify the required parameter 'organizationId' is set
+            if (organizationId == null)
+                throw new ApiException(400, "Missing required parameter 'organizationId' when calling ProvisionAssetGroupApi->GetSubAccountCreateProcessesByOrgId");
+
+            var localVarPath = "/v2/organizations/{organizationId}/subAccountsCreated";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new Dictionary<String, String>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new List<FileParameter>();
+            Object localVarPostBody = null;
+            String localVarHttpContentDisposition = string.Empty;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+            if (organizationId != null) localVarPathParams.Add("organizationId", this.ApiClient.ParameterToString(organizationId)); // path parameter
+            if (options != null)
+            {
+                if (options.sinceUpdatedDate != null) localVarQueryParams.Add("since_updated_date", this.ApiClient.ParameterToString(options.sinceUpdatedDate)); // query parameter
+                if (options.includeDetails != null) localVarQueryParams.Add("include_details", this.ApiClient.ParameterToString(options.includeDetails)); // query parameter
+            }
+
+            // authentication (docusignAccessCode) required
+            // oauth required
+            if (!String.IsNullOrEmpty(this.ApiClient.Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.ApiClient.Configuration.AccessToken;
+            }
+
+
+            // make the HTTP request
+            DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, new HttpMethod("GET"), localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
+            DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest);
+
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("GetSubAccountCreateProcessesByOrgId", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<SubAccountCreateWorkerResponse>(localVarStatusCode, 
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()), 
+                (SubAccountCreateWorkerResponse)this.ApiClient.Deserialize(localVarResponse, typeof(SubAccountCreateWorkerResponse)));
         }
 
     }

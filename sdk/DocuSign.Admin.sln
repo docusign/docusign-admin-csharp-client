@@ -2,7 +2,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
 VisualStudioVersion = 12.0.0.0
 MinimumVisualStudioVersion = 10.0.0.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DocuSign.Admin", "src\DocuSign.Admin\DocuSign.Admin.csproj", "{81C66E84-A987-4264-9976-584F02EDCC04}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DocuSign.Admin", "src\DocuSign.Admin\DocuSign.Admin.csproj", "{DB420652-6181-47E4-BC00-2725B55B73F6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -10,10 +10,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{81C66E84-A987-4264-9976-584F02EDCC04}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{81C66E84-A987-4264-9976-584F02EDCC04}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{81C66E84-A987-4264-9976-584F02EDCC04}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{81C66E84-A987-4264-9976-584F02EDCC04}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DB420652-6181-47E4-BC00-2725B55B73F6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DB420652-6181-47E4-BC00-2725B55B73F6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DB420652-6181-47E4-BC00-2725B55B73F6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DB420652-6181-47E4-BC00-2725B55B73F6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

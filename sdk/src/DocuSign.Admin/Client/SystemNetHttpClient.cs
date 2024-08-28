@@ -1,5 +1,5 @@
 /* 
- * DocuSign Admin API
+ * Docusign Admin API
  *
  * An API for an organization administrator to manage organizations, accounts and users
  *
@@ -69,9 +69,9 @@ namespace DocuSign.Admin.Client
                     await response.Content.ReadAsByteArrayAsync().ConfigureAwait(false),
                     response.Content.Headers?.ContentType?.MediaType);
             }
-            catch
+            catch (Exception e)
             {
-                return new DocuSignResponse(System.Net.HttpStatusCode.InternalServerError, null, null, string.Empty);
+                return new DocuSignResponse(e);
             }
         }
 
