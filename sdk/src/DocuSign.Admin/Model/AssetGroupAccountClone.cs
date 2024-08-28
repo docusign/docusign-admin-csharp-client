@@ -1,5 +1,5 @@
 /* 
- * DocuSign Admin API
+ * Docusign Admin API
  *
  * An API for an organization administrator to manage organizations, accounts and users
  *
@@ -68,7 +68,13 @@ namespace DocuSign.Admin.Model
             /// Enum AccountAssetCreate for value: AccountAssetCreate
             /// </summary>
             [EnumMember(Value = "AccountAssetCreate")]
-            AccountAssetCreate = 5
+            AccountAssetCreate = 5,
+            
+            /// <summary>
+            /// Enum SubscriptionSync for value: SubscriptionSync
+            /// </summary>
+            [EnumMember(Value = "SubscriptionSync")]
+            SubscriptionSync = 6
         }
 
                 /// <summary>
@@ -98,34 +104,40 @@ namespace DocuSign.Admin.Model
             Processing = 3,
             
             /// <summary>
+            /// Enum ProcessingOnHold for value: ProcessingOnHold
+            /// </summary>
+            [EnumMember(Value = "ProcessingOnHold")]
+            ProcessingOnHold = 4,
+            
+            /// <summary>
             /// Enum PendingError for value: PendingError
             /// </summary>
             [EnumMember(Value = "PendingError")]
-            PendingError = 4,
+            PendingError = 5,
             
             /// <summary>
             /// Enum ProcessingError for value: ProcessingError
             /// </summary>
             [EnumMember(Value = "ProcessingError")]
-            ProcessingError = 5,
+            ProcessingError = 6,
             
             /// <summary>
             /// Enum Completed for value: Completed
             /// </summary>
             [EnumMember(Value = "Completed")]
-            Completed = 6,
+            Completed = 7,
             
             /// <summary>
             /// Enum Canceled for value: Canceled
             /// </summary>
             [EnumMember(Value = "Canceled")]
-            Canceled = 7,
+            Canceled = 8,
             
             /// <summary>
             /// Enum PermanentFailure for value: PermanentFailure
             /// </summary>
             [EnumMember(Value = "PermanentFailure")]
-            PermanentFailure = 8
+            PermanentFailure = 9
         }
 
         /// <summary>
@@ -238,7 +250,7 @@ namespace DocuSign.Admin.Model
         /// </summary>
         /// <value>The processing failures if the work is in PendingError/ProcessingError status.</value>
         [DataMember(Name="cloneProcessingFailureDetails", EmitDefaultValue=false)]
-        public CloneErrorDetails CloneProcessingFailureDetails { get; private set; }
+        public SubAccountErrorDetails CloneProcessingFailureDetails { get; private set; }
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>

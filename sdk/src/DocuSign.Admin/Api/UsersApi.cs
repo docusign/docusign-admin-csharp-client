@@ -1,5 +1,5 @@
 /* 
- * DocuSign Admin API
+ * Docusign Admin API
  *
  * An API for an organization administrator to manage organizations, accounts and users
  *
@@ -2383,6 +2383,8 @@ namespace DocuSign.Admin.Api
             public Guid? organizationReservedDomainId {get; set;}
             /// Select users whose data have been modified since the date specified;  account_id or organization_reserved_domain_id must be specified. 
             public string lastModifiedSince {get; set;}
+            /// Select users with groups the users belong to; The organization must have entitlement AllowMultiApplication enabled. 
+            public bool? includeDsGroups {get; set;}
         }
 
         /// <summary>
@@ -2450,6 +2452,7 @@ namespace DocuSign.Admin.Api
                 if (options.accountId != null) localVarQueryParams.Add("account_id", this.ApiClient.ParameterToString(options.accountId)); // query parameter
                 if (options.organizationReservedDomainId != null) localVarQueryParams.Add("organization_reserved_domain_id", this.ApiClient.ParameterToString(options.organizationReservedDomainId)); // query parameter
                 if (options.lastModifiedSince != null) localVarQueryParams.Add("last_modified_since", this.ApiClient.ParameterToString(options.lastModifiedSince)); // query parameter
+                if (options.includeDsGroups != null) localVarQueryParams.Add("include_ds_groups", this.ApiClient.ParameterToString(options.includeDsGroups)); // query parameter
             }
 
             // authentication (docusignAccessCode) required
@@ -2542,6 +2545,7 @@ namespace DocuSign.Admin.Api
                 if (options.accountId != null) localVarQueryParams.Add("account_id", this.ApiClient.ParameterToString(options.accountId)); // query parameter
                 if (options.organizationReservedDomainId != null) localVarQueryParams.Add("organization_reserved_domain_id", this.ApiClient.ParameterToString(options.organizationReservedDomainId)); // query parameter
                 if (options.lastModifiedSince != null) localVarQueryParams.Add("last_modified_since", this.ApiClient.ParameterToString(options.lastModifiedSince)); // query parameter
+                if (options.includeDsGroups != null) localVarQueryParams.Add("include_ds_groups", this.ApiClient.ParameterToString(options.includeDsGroups)); // query parameter
             }
 
             // authentication (docusignAccessCode) required
