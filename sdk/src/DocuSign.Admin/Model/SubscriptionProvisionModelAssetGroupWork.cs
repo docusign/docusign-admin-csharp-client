@@ -139,91 +139,91 @@ namespace DocuSign.Admin.Model
         }
 
                 /// <summary>
-        /// Defines CreatedByType
+        /// 0 stands for Application, 1 stands for User, 2 stands for Generic, 3 stands for RestAPIAuth, 4 stands for Resource, 5 stands for Restricted
         /// </summary>
-        [JsonConverter(typeof(StringEnumConverter))]
+        /// <value>0 stands for Application, 1 stands for User, 2 stands for Generic, 3 stands for RestAPIAuth, 4 stands for Resource, 5 stands for Restricted</value>
         public enum CreatedByTypeEnum
         {
             
             /// <summary>
-            /// Enum Application for value: Application
+            /// Enum NUMBER_0 for value: 0
             /// </summary>
-            [EnumMember(Value = "Application")]
-            Application = 1,
+            
+            NUMBER_0 = 0,
             
             /// <summary>
-            /// Enum User for value: User
+            /// Enum NUMBER_1 for value: 1
             /// </summary>
-            [EnumMember(Value = "User")]
-            User = 2,
+            
+            NUMBER_1 = 1,
             
             /// <summary>
-            /// Enum Generic for value: Generic
+            /// Enum NUMBER_2 for value: 2
             /// </summary>
-            [EnumMember(Value = "Generic")]
-            Generic = 3,
+            
+            NUMBER_2 = 2,
             
             /// <summary>
-            /// Enum RestAPIAuth for value: RestAPIAuth
+            /// Enum NUMBER_3 for value: 3
             /// </summary>
-            [EnumMember(Value = "RestAPIAuth")]
-            RestAPIAuth = 4,
+            
+            NUMBER_3 = 3,
             
             /// <summary>
-            /// Enum Resource for value: Resource
+            /// Enum NUMBER_4 for value: 4
             /// </summary>
-            [EnumMember(Value = "Resource")]
-            Resource = 5,
+            
+            NUMBER_4 = 4,
             
             /// <summary>
-            /// Enum Restricted for value: Restricted
+            /// Enum NUMBER_5 for value: 5
             /// </summary>
-            [EnumMember(Value = "Restricted")]
-            Restricted = 6
+            
+            NUMBER_5 = 5
         }
 
                 /// <summary>
-        /// Defines UpdatedByType
+        /// 0 stands for Application, 1 stands for User, 2 stands for Generic, 3 stands for RestAPIAuth, 4 stands for Resource, 5 stands for Restricted
         /// </summary>
-        [JsonConverter(typeof(StringEnumConverter))]
+        /// <value>0 stands for Application, 1 stands for User, 2 stands for Generic, 3 stands for RestAPIAuth, 4 stands for Resource, 5 stands for Restricted</value>
         public enum UpdatedByTypeEnum
         {
             
             /// <summary>
-            /// Enum Application for value: Application
+            /// Enum NUMBER_0 for value: 0
             /// </summary>
-            [EnumMember(Value = "Application")]
-            Application = 1,
+            
+            NUMBER_0 = 0,
             
             /// <summary>
-            /// Enum User for value: User
+            /// Enum NUMBER_1 for value: 1
             /// </summary>
-            [EnumMember(Value = "User")]
-            User = 2,
+            
+            NUMBER_1 = 1,
             
             /// <summary>
-            /// Enum Generic for value: Generic
+            /// Enum NUMBER_2 for value: 2
             /// </summary>
-            [EnumMember(Value = "Generic")]
-            Generic = 3,
+            
+            NUMBER_2 = 2,
             
             /// <summary>
-            /// Enum RestAPIAuth for value: RestAPIAuth
+            /// Enum NUMBER_3 for value: 3
             /// </summary>
-            [EnumMember(Value = "RestAPIAuth")]
-            RestAPIAuth = 4,
+            
+            NUMBER_3 = 3,
             
             /// <summary>
-            /// Enum Resource for value: Resource
+            /// Enum NUMBER_4 for value: 4
             /// </summary>
-            [EnumMember(Value = "Resource")]
-            Resource = 5,
+            
+            NUMBER_4 = 4,
             
             /// <summary>
-            /// Enum Restricted for value: Restricted
+            /// Enum NUMBER_5 for value: 5
             /// </summary>
-            [EnumMember(Value = "Restricted")]
-            Restricted = 6
+            
+            NUMBER_5 = 5
         }
 
         /// <summary>
@@ -237,13 +237,15 @@ namespace DocuSign.Admin.Model
         [DataMember(Name="Status", EmitDefaultValue=false)]
         public StatusEnum? Status { get; set; }
         /// <summary>
-        /// Gets or Sets CreatedByType
+        /// 0 stands for Application, 1 stands for User, 2 stands for Generic, 3 stands for RestAPIAuth, 4 stands for Resource, 5 stands for Restricted
         /// </summary>
+        /// <value>0 stands for Application, 1 stands for User, 2 stands for Generic, 3 stands for RestAPIAuth, 4 stands for Resource, 5 stands for Restricted</value>
         [DataMember(Name="CreatedByType", EmitDefaultValue=false)]
         public CreatedByTypeEnum? CreatedByType { get; set; }
         /// <summary>
-        /// Gets or Sets UpdatedByType
+        /// 0 stands for Application, 1 stands for User, 2 stands for Generic, 3 stands for RestAPIAuth, 4 stands for Resource, 5 stands for Restricted
         /// </summary>
+        /// <value>0 stands for Application, 1 stands for User, 2 stands for Generic, 3 stands for RestAPIAuth, 4 stands for Resource, 5 stands for Restricted</value>
         [DataMember(Name="UpdatedByType", EmitDefaultValue=false)]
         public UpdatedByTypeEnum? UpdatedByType { get; set; }
         /// <summary>
@@ -273,10 +275,10 @@ namespace DocuSign.Admin.Model
         /// <param name="SourceSystem">SourceSystem.</param>
         /// <param name="SourceId">SourceId.</param>
         /// <param name="CreatedBy">CreatedBy.</param>
-        /// <param name="CreatedByType">CreatedByType.</param>
+        /// <param name="CreatedByType">0 stands for Application, 1 stands for User, 2 stands for Generic, 3 stands for RestAPIAuth, 4 stands for Resource, 5 stands for Restricted.</param>
         /// <param name="CreatedDate">CreatedDate.</param>
         /// <param name="UpdatedBy">UpdatedBy.</param>
-        /// <param name="UpdatedByType">UpdatedByType.</param>
+        /// <param name="UpdatedByType">0 stands for Application, 1 stands for User, 2 stands for Generic, 3 stands for RestAPIAuth, 4 stands for Resource, 5 stands for Restricted.</param>
         /// <param name="UpdatedDate">UpdatedDate.</param>
         /// <param name="UpdateHistory">UpdateHistory.</param>
         public SubscriptionProvisionModelAssetGroupWork(Guid? AssetGroupWorkId = default(Guid?), Guid? AssetGroupId = default(Guid?), AssetGroupWorkTypeEnum? AssetGroupWorkType = default(AssetGroupWorkTypeEnum?), StatusEnum? Status = default(StatusEnum?), Guid? OrderId = default(Guid?), Guid? TargetAccountId = default(Guid?), Guid? SourceAccountId = default(Guid?), long? SourceAccountExternalId = default(long?), string SourceAccountName = default(string), string SourceAccountSite = default(string), Guid? CloneRequestId = default(Guid?), SubscriptionProvisionModelAccountCreateCreateAccountDetails CloneAccountDetails = default(SubscriptionProvisionModelAccountCreateCreateAccountDetails), SubscriptionProvisionModelAccountCreateCreateSubAccountDetails CreateSubAccountDetails = default(SubscriptionProvisionModelAccountCreateCreateSubAccountDetails), int? Attempts = default(int?), DateTime? RetryOn = default(DateTime?), string Message = default(string), string CreatedByName = default(string), string CreatedByEmail = default(string), SubscriptionProvisionModelServiceErrorDetails ErrorDetails = default(SubscriptionProvisionModelServiceErrorDetails), Guid? OldAssetGroupSubscriptionId = default(Guid?), Guid? NewAssetGroupSubscriptionId = default(Guid?), string SourceSystem = default(string), string SourceId = default(string), string CreatedBy = default(string), CreatedByTypeEnum? CreatedByType = default(CreatedByTypeEnum?), DateTime? CreatedDate = default(DateTime?), string UpdatedBy = default(string), UpdatedByTypeEnum? UpdatedByType = default(UpdatedByTypeEnum?), DateTime? UpdatedDate = default(DateTime?), List<SubscriptionProvisionModelChangeEvent> UpdateHistory = default(List<SubscriptionProvisionModelChangeEvent>))
