@@ -33,28 +33,29 @@ namespace DocuSign.Admin.Model
         }
 
                 /// <summary>
-        /// Defines BillingProfileType
+        /// 0 stands for Web, 1 stands for Direct
         /// </summary>
-        [JsonConverter(typeof(StringEnumConverter))]
+        /// <value>0 stands for Web, 1 stands for Direct</value>
         public enum BillingProfileTypeEnum
         {
             
             /// <summary>
-            /// Enum Web for value: Web
+            /// Enum NUMBER_0 for value: 0
             /// </summary>
-            [EnumMember(Value = "Web")]
-            Web = 1,
+            
+            NUMBER_0 = 0,
             
             /// <summary>
-            /// Enum Direct for value: Direct
+            /// Enum NUMBER_1 for value: 1
             /// </summary>
-            [EnumMember(Value = "Direct")]
-            Direct = 2
+            
+            NUMBER_1 = 1
         }
 
         /// <summary>
-        /// Gets or Sets BillingProfileType
+        /// 0 stands for Web, 1 stands for Direct
         /// </summary>
+        /// <value>0 stands for Web, 1 stands for Direct</value>
         [DataMember(Name="BillingProfileType", EmitDefaultValue=false)]
         public BillingProfileTypeEnum? BillingProfileType { get; set; }
         /// <summary>
@@ -67,7 +68,7 @@ namespace DocuSign.Admin.Model
         /// <param name="Site">Site.</param>
         /// <param name="Address">Address.</param>
         /// <param name="AdminUser">AdminUser.</param>
-        /// <param name="BillingProfileType">BillingProfileType.</param>
+        /// <param name="BillingProfileType">0 stands for Web, 1 stands for Direct.</param>
         public SubscriptionProvisionModelAccountCreateCreateSubAccountDetails(SubscriptionProvisionModelAccountCreateCreateAccountSubscriptionDetails SubscriptionDetails = default(SubscriptionProvisionModelAccountCreateCreateAccountSubscriptionDetails), string Name = default(string), string CountryCode = default(string), string Region = default(string), string Site = default(string), DocuSignAccountDomainModelAddress Address = default(DocuSignAccountDomainModelAddress), SubscriptionProvisionModelAccountCreateAccountAdmin AdminUser = default(SubscriptionProvisionModelAccountCreateAccountAdmin), BillingProfileTypeEnum? BillingProfileType = default(BillingProfileTypeEnum?))
         {
             this.SubscriptionDetails = SubscriptionDetails;
