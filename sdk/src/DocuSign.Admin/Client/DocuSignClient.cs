@@ -318,6 +318,47 @@ namespace DocuSign.Admin.Client
         }
 
         /// <summary>
+        /// Parses a CSV-formatted string and converts it into a list of dictionaries,
+        /// where each dictionary represents a record with column headers as keys.
+        /// </summary>
+        /// <param name="content">The CSV-formatted string to be deserialized.</param>
+        /// <returns>A list of dictionaries, each containing key-value pairs of column headers and their corresponding values.</returns>
+        private object DeserializeStringToCsv(string content)
+        {
+            var records = new List<Dictionary<string, object>>();
+
+            // Split the CSV string into lines
+            var lines = content.Split(new[] { '\n' }, StringSplitOptions.RemoveEmptyEntries);
+
+            // Check if there are any lines
+            if (lines.Length > 0)
+            {
+                // Read the header line
+                string[] headers = lines[0].Split(',');
+
+                // Read the rest of the lines
+                for (int i = 1; i < lines.Length; i++)
+                {
+                    string[] values = lines[i].Split(',');
+                    var record = new Dictionary<string, object>();
+
+                    for (int j = 0; j < headers.Length; j++)
+                    {
+                        // Ensure we don't exceed the number of values
+                        if (j < values.Length)
+                        {
+                            record[headers[j]] = values[j]; // Store the value in the dictionary
+                        }
+                    }
+
+                    records.Add(record); // Add the record to the list
+                }
+            }
+
+            return records; // Return the list of records
+        }
+
+        /// <summary>
         /// Deserialize the JSON string into a proper object.
         /// </summary>
         /// <param name="response">The HTTP response.</param>
@@ -344,6 +385,11 @@ namespace DocuSign.Admin.Client
             {
                 return ConvertType(response.Content, type);
             }
+
+            if(response.ContentType == "text/csv")
+            {
+                return DeserializeStringToCsv(response.Content);
+            }            
 
             // at this point, it must be a model (json)
             try
