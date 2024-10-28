@@ -1,6 +1,13 @@
 # DocuSign Admin C# Client Changelog
 See [DocuSign Support Center](https://support.docusign.com/en/releasenotes/) for Product Release Notes.
 
+## [v2.0.0] - Admin API v2.1-1.4.1 - 2024-10-28
+### Changed
+- Added support for version v2.1-1.4.1 of the DocuSign Admin API.
+- Fixes deserialization issue of text/csv type response
+- Removed the staging base path and OAuth path constant.
+- Updated the SDK release version.
+
 ## [v2.0.0-rc5] - Admin API v2.1-1.4.1 - 2024-10-22
 ### Changed
 - Added support for version v2.1-1.4.1 of the DocuSign Admin API.
