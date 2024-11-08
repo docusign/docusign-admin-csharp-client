@@ -814,8 +814,14 @@ namespace DocuSign.Admin.Client
         /// </returns>
         public OAuth.OAuthToken GenerateAccessToken(string clientId, string clientSecret, string code)
         {
-            CancellationTokenSource cts = new CancellationTokenSource();
-            return TryCatchWrapper(() => GenerateAccessTokenAsync(clientId, clientSecret, code, cts.Token).ConfigureAwait(false).GetAwaiter().GetResult());
+            using (var cts = new CancellationTokenSource())
+            {            
+                return TryCatchWrapper(() => {
+                    var task = Task.Run(async () => await GenerateAccessTokenAsync(clientId, clientSecret, code, cts.Token));
+                    task.Wait();
+                    return task.Result;
+                });
+            }
         }
 
         /// <summary>
@@ -830,7 +836,7 @@ namespace DocuSign.Admin.Client
         /// ApiException if the HTTP call status is different than 2xx.
         /// IOException  if there is a problem while parsing the reponse object.
         /// </returns>
-        public async Task<OAuth.OAuthToken> GenerateAccessTokenAsync(string clientId, string clientSecret, string code, CancellationToken cancellationToken)
+        public async Task<OAuth.OAuthToken> GenerateAccessTokenAsync(string clientId, string clientSecret, string code, CancellationToken cancellationToken = default)
         {
             if (string.IsNullOrEmpty(clientId) || string.IsNullOrEmpty(clientSecret) || string.IsNullOrEmpty(code))
             {
@@ -880,8 +886,14 @@ namespace DocuSign.Admin.Client
         /// <returns>The User Info model.</returns>
         public OAuth.UserInfo GetUserInfo(string accessToken)
         {
-            CancellationTokenSource cts = new CancellationTokenSource();
-            return TryCatchWrapper(() => GetUserInfoAsync(accessToken, cts.Token).ConfigureAwait(false).GetAwaiter().GetResult());
+            using (var cts = new CancellationTokenSource())
+            {              
+                return TryCatchWrapper(() => {
+                    var task = Task.Run(async () => await GetUserInfoAsync(accessToken, cts.Token));
+                    task.Wait();
+                    return task.Result;
+                });
+            }
         }
 
         /// <summary>
@@ -890,7 +902,7 @@ namespace DocuSign.Admin.Client
         /// <param name="accessToken"></param>
         /// <param name="cancellationToken">A CancellationToken which can be used to propagate notification that operations should be canceled. </param>
         /// <returns>The User Info model.</returns>
-        public async Task<OAuth.UserInfo> GetUserInfoAsync(string accessToken, CancellationToken cancellationToken)
+        public async Task<OAuth.UserInfo> GetUserInfoAsync(string accessToken, CancellationToken cancellationToken = default)
         {
             if (string.IsNullOrEmpty(accessToken))
             {
@@ -964,8 +976,14 @@ namespace DocuSign.Admin.Client
         /// <returns>The JWT user token</returns>
         public OAuth.OAuthToken RequestJWTUserToken(string clientId, string userId, string oauthBasePath, Stream privateKeyStream, int expiresInHours, List<string> scopes = null)
         {
-            CancellationTokenSource cts = new CancellationTokenSource();
-            return TryCatchWrapper(() => RequestJWTUserTokenAsync(clientId, userId, oauthBasePath, privateKeyStream, expiresInHours, scopes, cts.Token).ConfigureAwait(false).GetAwaiter().GetResult());
+            using (var cts = new CancellationTokenSource())
+            {              
+                return TryCatchWrapper(() => {
+                    var task = Task.Run(async () => await RequestJWTUserTokenAsync(clientId, userId, oauthBasePath, privateKeyStream, expiresInHours, scopes, cts.Token));
+                    task.Wait();
+                    return task.Result;
+                });
+            }
         }
 
         /// <summary>
@@ -985,12 +1003,12 @@ namespace DocuSign.Admin.Client
         /// <see cref="OAuth.Scope_SIGNATURE"/> <see cref="OAuth.Scope_IMPERSONATION"/> <see cref="OAuth.Scope_EXTENDED"/>
         /// </param>
         /// <returns>The JWT user token</returns>
-        public Task<OAuth.OAuthToken> RequestJWTUserTokenAsync(string clientId, string userId, string oauthBasePath, Stream privateKeyStream, int expiresInHours, List<string> scopes = null, CancellationToken cancellationToken = default)
+        public async Task<OAuth.OAuthToken> RequestJWTUserTokenAsync(string clientId, string userId, string oauthBasePath, Stream privateKeyStream, int expiresInHours, List<string> scopes = null, CancellationToken cancellationToken = default)
         {
             if (privateKeyStream != null && privateKeyStream.CanRead && privateKeyStream.Length > 0)
             {
                 byte[] privateKeyBytes = ReadAsBytes(privateKeyStream);
-                return this.RequestJWTUserTokenAsync(clientId, userId, oauthBasePath, privateKeyBytes, expiresInHours, scopes, cancellationToken);
+                return await this.RequestJWTUserTokenAsync(clientId, userId, oauthBasePath, privateKeyBytes, expiresInHours, scopes, cancellationToken);
             }
             else
             {
@@ -1016,8 +1034,15 @@ namespace DocuSign.Admin.Client
         /// <returns>The JWT user token</returns>
         public OAuth.OAuthToken RequestJWTUserToken(string clientId, string userId, string oauthBasePath, byte[] privateKeyBytes, int expiresInHours, List<string> scopes = null)
         {
-            CancellationTokenSource cts = new CancellationTokenSource();
-            return TryCatchWrapper(() => RequestJWTUserTokenAsync(clientId, userId, oauthBasePath, privateKeyBytes, expiresInHours, scopes, cts.Token).ConfigureAwait(false).GetAwaiter().GetResult());
+
+            using (var cts = new CancellationTokenSource())
+            {              
+                return TryCatchWrapper(() => {
+                    var task = Task.Run(async () => await RequestJWTUserTokenAsync(clientId, userId, oauthBasePath, privateKeyBytes, expiresInHours, scopes, cts.Token));
+                    task.Wait();
+                    return task.Result;
+                });
+            }
         }
 
         /// <summary>
@@ -1119,8 +1144,14 @@ namespace DocuSign.Admin.Client
         /// <returns>The JWT application token</returns>
         public OAuth.OAuthToken RequestJWTApplicationToken(string clientId, string oauthBasePath, byte[] privateKeyBytes, int expiresInHours, List<string> scopes = null)
         {
-            CancellationTokenSource cts = new CancellationTokenSource();
-            return TryCatchWrapper(() => RequestJWTApplicationTokenAsync(clientId, oAuthBasePath, privateKeyBytes, expiresInHours, scopes, cts.Token).ConfigureAwait(false).GetAwaiter().GetResult());
+            using (var cts = new CancellationTokenSource())
+            {              
+                return TryCatchWrapper(() => {
+                    var task = Task.Run(async () => await RequestJWTApplicationTokenAsync(clientId, oAuthBasePath, privateKeyBytes, expiresInHours, scopes, cts.Token));
+                    task.Wait();
+                    return task.Result;
+                });
+            }
         }
 
         /// <summary>
