@@ -42,7 +42,8 @@ namespace DocuSign.Admin.Model
         /// <param name="JobTitle">JobTitle.</param>
         /// <param name="SendActivation">SendActivation.</param>
         /// <param name="AccessCode">AccessCode.</param>
-        public UpdateMembershipRequest(Guid? AccountId = default(Guid?), PermissionProfileRequest PermissionProfile = default(PermissionProfileRequest), List<GroupRequest> Groups = default(List<GroupRequest>), string CompanyName = default(string), string JobTitle = default(string), bool? SendActivation = default(bool?), string AccessCode = default(string))
+        /// <param name="LicenseType">LicenseType.</param>
+        public UpdateMembershipRequest(Guid? AccountId = default(Guid?), PermissionProfileRequest PermissionProfile = default(PermissionProfileRequest), List<GroupRequest> Groups = default(List<GroupRequest>), string CompanyName = default(string), string JobTitle = default(string), bool? SendActivation = default(bool?), string AccessCode = default(string), string LicenseType = default(string))
         {
             // to ensure "AccountId" is required (not null)
             if (AccountId == null)
@@ -59,6 +60,7 @@ namespace DocuSign.Admin.Model
             this.JobTitle = JobTitle;
             this.SendActivation = SendActivation;
             this.AccessCode = AccessCode;
+            this.LicenseType = LicenseType;
         }
         
         /// <summary>
@@ -97,6 +99,11 @@ namespace DocuSign.Admin.Model
         [DataMember(Name="access_code", EmitDefaultValue=false)]
         public string AccessCode { get; set; }
         /// <summary>
+        /// Gets or Sets LicenseType
+        /// </summary>
+        [DataMember(Name="license_type", EmitDefaultValue=false)]
+        public string LicenseType { get; set; }
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -111,6 +118,7 @@ namespace DocuSign.Admin.Model
             sb.Append("  JobTitle: ").Append(JobTitle).Append("\n");
             sb.Append("  SendActivation: ").Append(SendActivation).Append("\n");
             sb.Append("  AccessCode: ").Append(AccessCode).Append("\n");
+            sb.Append("  LicenseType: ").Append(LicenseType).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -181,6 +189,11 @@ namespace DocuSign.Admin.Model
                     this.AccessCode == other.AccessCode ||
                     this.AccessCode != null &&
                     this.AccessCode.Equals(other.AccessCode)
+                ) && 
+                (
+                    this.LicenseType == other.LicenseType ||
+                    this.LicenseType != null &&
+                    this.LicenseType.Equals(other.LicenseType)
                 );
         }
 
@@ -209,6 +222,8 @@ namespace DocuSign.Admin.Model
                     hash = hash * 59 + this.SendActivation.GetHashCode();
                 if (this.AccessCode != null)
                     hash = hash * 59 + this.AccessCode.GetHashCode();
+                if (this.LicenseType != null)
+                    hash = hash * 59 + this.LicenseType.GetHashCode();
                 return hash;
             }
         }

@@ -43,10 +43,17 @@ namespace DocuSign.Admin.Model
         /// <param name="MembershipStatus">MembershipStatus.</param>
         /// <param name="Email">Email.</param>
         /// <param name="CreatedOn">CreatedOn.</param>
+        /// <param name="ClosedOn">ClosedOn.</param>
         /// <param name="MembershipCreatedOn">MembershipCreatedOn.</param>
+        /// <param name="MembershipClosedOn">MembershipClosedOn.</param>
         /// <param name="DsGroups">DsGroups.</param>
         /// <param name="MembershipId">MembershipId.</param>
-        public OrganizationUserResponse(Guid? Id = default(Guid?), string UserName = default(string), string FirstName = default(string), string LastName = default(string), string UserStatus = default(string), string MembershipStatus = default(string), string Email = default(string), DateTime? CreatedOn = default(DateTime?), DateTime? MembershipCreatedOn = default(DateTime?), List<DSGroupResponse> DsGroups = default(List<DSGroupResponse>), Guid? MembershipId = default(Guid?))
+        /// <param name="IsMembershipManagedByScim">IsMembershipManagedByScim.</param>
+        /// <param name="IsManagedByScim">IsManagedByScim.</param>
+        /// <param name="LicenseType">LicenseType.</param>
+        /// <param name="SubscriptionId">SubscriptionId.</param>
+        /// <param name="PlanName">PlanName.</param>
+        public OrganizationUserResponse(Guid? Id = default(Guid?), string UserName = default(string), string FirstName = default(string), string LastName = default(string), string UserStatus = default(string), string MembershipStatus = default(string), string Email = default(string), DateTime? CreatedOn = default(DateTime?), DateTime? ClosedOn = default(DateTime?), DateTime? MembershipCreatedOn = default(DateTime?), DateTime? MembershipClosedOn = default(DateTime?), List<DSGroupResponse> DsGroups = default(List<DSGroupResponse>), Guid? MembershipId = default(Guid?), bool? IsMembershipManagedByScim = default(bool?), bool? IsManagedByScim = default(bool?), string LicenseType = default(string), string SubscriptionId = default(string), string PlanName = default(string))
         {
             this.Id = Id;
             this.UserName = UserName;
@@ -56,9 +63,16 @@ namespace DocuSign.Admin.Model
             this.MembershipStatus = MembershipStatus;
             this.Email = Email;
             this.CreatedOn = CreatedOn;
+            this.ClosedOn = ClosedOn;
             this.MembershipCreatedOn = MembershipCreatedOn;
+            this.MembershipClosedOn = MembershipClosedOn;
             this.DsGroups = DsGroups;
             this.MembershipId = MembershipId;
+            this.IsMembershipManagedByScim = IsMembershipManagedByScim;
+            this.IsManagedByScim = IsManagedByScim;
+            this.LicenseType = LicenseType;
+            this.SubscriptionId = SubscriptionId;
+            this.PlanName = PlanName;
         }
         
         /// <summary>
@@ -102,10 +116,20 @@ namespace DocuSign.Admin.Model
         [DataMember(Name="created_on", EmitDefaultValue=false)]
         public DateTime? CreatedOn { get; set; }
         /// <summary>
+        /// Gets or Sets ClosedOn
+        /// </summary>
+        [DataMember(Name="closed_on", EmitDefaultValue=false)]
+        public DateTime? ClosedOn { get; set; }
+        /// <summary>
         /// Gets or Sets MembershipCreatedOn
         /// </summary>
         [DataMember(Name="membership_created_on", EmitDefaultValue=false)]
         public DateTime? MembershipCreatedOn { get; set; }
+        /// <summary>
+        /// Gets or Sets MembershipClosedOn
+        /// </summary>
+        [DataMember(Name="membership_closed_on", EmitDefaultValue=false)]
+        public DateTime? MembershipClosedOn { get; set; }
         /// <summary>
         /// Gets or Sets DsGroups
         /// </summary>
@@ -116,6 +140,31 @@ namespace DocuSign.Admin.Model
         /// </summary>
         [DataMember(Name="membership_id", EmitDefaultValue=false)]
         public Guid? MembershipId { get; set; }
+        /// <summary>
+        /// Gets or Sets IsMembershipManagedByScim
+        /// </summary>
+        [DataMember(Name="is_membership_managed_by_scim", EmitDefaultValue=false)]
+        public bool? IsMembershipManagedByScim { get; set; }
+        /// <summary>
+        /// Gets or Sets IsManagedByScim
+        /// </summary>
+        [DataMember(Name="is_managed_by_scim", EmitDefaultValue=false)]
+        public bool? IsManagedByScim { get; set; }
+        /// <summary>
+        /// Gets or Sets LicenseType
+        /// </summary>
+        [DataMember(Name="license_type", EmitDefaultValue=false)]
+        public string LicenseType { get; set; }
+        /// <summary>
+        /// Gets or Sets SubscriptionId
+        /// </summary>
+        [DataMember(Name="subscription_id", EmitDefaultValue=false)]
+        public string SubscriptionId { get; set; }
+        /// <summary>
+        /// Gets or Sets PlanName
+        /// </summary>
+        [DataMember(Name="plan_name", EmitDefaultValue=false)]
+        public string PlanName { get; set; }
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
@@ -132,9 +181,16 @@ namespace DocuSign.Admin.Model
             sb.Append("  MembershipStatus: ").Append(MembershipStatus).Append("\n");
             sb.Append("  Email: ").Append(Email).Append("\n");
             sb.Append("  CreatedOn: ").Append(CreatedOn).Append("\n");
+            sb.Append("  ClosedOn: ").Append(ClosedOn).Append("\n");
             sb.Append("  MembershipCreatedOn: ").Append(MembershipCreatedOn).Append("\n");
+            sb.Append("  MembershipClosedOn: ").Append(MembershipClosedOn).Append("\n");
             sb.Append("  DsGroups: ").Append(DsGroups).Append("\n");
             sb.Append("  MembershipId: ").Append(MembershipId).Append("\n");
+            sb.Append("  IsMembershipManagedByScim: ").Append(IsMembershipManagedByScim).Append("\n");
+            sb.Append("  IsManagedByScim: ").Append(IsManagedByScim).Append("\n");
+            sb.Append("  LicenseType: ").Append(LicenseType).Append("\n");
+            sb.Append("  SubscriptionId: ").Append(SubscriptionId).Append("\n");
+            sb.Append("  PlanName: ").Append(PlanName).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -212,9 +268,19 @@ namespace DocuSign.Admin.Model
                     this.CreatedOn.Equals(other.CreatedOn)
                 ) && 
                 (
+                    this.ClosedOn == other.ClosedOn ||
+                    this.ClosedOn != null &&
+                    this.ClosedOn.Equals(other.ClosedOn)
+                ) && 
+                (
                     this.MembershipCreatedOn == other.MembershipCreatedOn ||
                     this.MembershipCreatedOn != null &&
                     this.MembershipCreatedOn.Equals(other.MembershipCreatedOn)
+                ) && 
+                (
+                    this.MembershipClosedOn == other.MembershipClosedOn ||
+                    this.MembershipClosedOn != null &&
+                    this.MembershipClosedOn.Equals(other.MembershipClosedOn)
                 ) && 
                 (
                     this.DsGroups == other.DsGroups ||
@@ -225,6 +291,31 @@ namespace DocuSign.Admin.Model
                     this.MembershipId == other.MembershipId ||
                     this.MembershipId != null &&
                     this.MembershipId.Equals(other.MembershipId)
+                ) && 
+                (
+                    this.IsMembershipManagedByScim == other.IsMembershipManagedByScim ||
+                    this.IsMembershipManagedByScim != null &&
+                    this.IsMembershipManagedByScim.Equals(other.IsMembershipManagedByScim)
+                ) && 
+                (
+                    this.IsManagedByScim == other.IsManagedByScim ||
+                    this.IsManagedByScim != null &&
+                    this.IsManagedByScim.Equals(other.IsManagedByScim)
+                ) && 
+                (
+                    this.LicenseType == other.LicenseType ||
+                    this.LicenseType != null &&
+                    this.LicenseType.Equals(other.LicenseType)
+                ) && 
+                (
+                    this.SubscriptionId == other.SubscriptionId ||
+                    this.SubscriptionId != null &&
+                    this.SubscriptionId.Equals(other.SubscriptionId)
+                ) && 
+                (
+                    this.PlanName == other.PlanName ||
+                    this.PlanName != null &&
+                    this.PlanName.Equals(other.PlanName)
                 );
         }
 
@@ -255,12 +346,26 @@ namespace DocuSign.Admin.Model
                     hash = hash * 59 + this.Email.GetHashCode();
                 if (this.CreatedOn != null)
                     hash = hash * 59 + this.CreatedOn.GetHashCode();
+                if (this.ClosedOn != null)
+                    hash = hash * 59 + this.ClosedOn.GetHashCode();
                 if (this.MembershipCreatedOn != null)
                     hash = hash * 59 + this.MembershipCreatedOn.GetHashCode();
+                if (this.MembershipClosedOn != null)
+                    hash = hash * 59 + this.MembershipClosedOn.GetHashCode();
                 if (this.DsGroups != null)
                     hash = hash * 59 + this.DsGroups.GetHashCode();
                 if (this.MembershipId != null)
                     hash = hash * 59 + this.MembershipId.GetHashCode();
+                if (this.IsMembershipManagedByScim != null)
+                    hash = hash * 59 + this.IsMembershipManagedByScim.GetHashCode();
+                if (this.IsManagedByScim != null)
+                    hash = hash * 59 + this.IsManagedByScim.GetHashCode();
+                if (this.LicenseType != null)
+                    hash = hash * 59 + this.LicenseType.GetHashCode();
+                if (this.SubscriptionId != null)
+                    hash = hash * 59 + this.SubscriptionId.GetHashCode();
+                if (this.PlanName != null)
+                    hash = hash * 59 + this.PlanName.GetHashCode();
                 return hash;
             }
         }

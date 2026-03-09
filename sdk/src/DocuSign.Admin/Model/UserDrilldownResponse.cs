@@ -53,7 +53,11 @@ namespace DocuSign.Admin.Model
         /// <param name="Memberships">Memberships.</param>
         /// <param name="Identities">Identities.</param>
         /// <param name="DeviceVerificationEnabled">DeviceVerificationEnabled.</param>
-        public UserDrilldownResponse(Guid? Id = default(Guid?), int? SiteId = default(int?), string SiteName = default(string), string UserName = default(string), string FirstName = default(string), string LastName = default(string), string UserStatus = default(string), Guid? DefaultAccountId = default(Guid?), string DefaultAccountName = default(string), string LanguageCulture = default(string), string SelectedLanguages = default(string), string FederatedStatus = default(string), bool? IsOrganizationAdmin = default(bool?), DateTime? CreatedOn = default(DateTime?), DateTime? LastLogin = default(DateTime?), List<MembershipResponse> Memberships = default(List<MembershipResponse>), List<UserIdentityResponse> Identities = default(List<UserIdentityResponse>), bool? DeviceVerificationEnabled = default(bool?))
+        /// <param name="RequireTwoStepVerification">RequireTwoStepVerification.</param>
+        /// <param name="AllowTwoStepVerificationSnooze">AllowTwoStepVerificationSnooze.</param>
+        /// <param name="AllowExtendOrgAdminRightsToSelf">AllowExtendOrgAdminRightsToSelf.</param>
+        /// <param name="IsManagedByScim">IsManagedByScim.</param>
+        public UserDrilldownResponse(Guid? Id = default(Guid?), int? SiteId = default(int?), string SiteName = default(string), string UserName = default(string), string FirstName = default(string), string LastName = default(string), string UserStatus = default(string), Guid? DefaultAccountId = default(Guid?), string DefaultAccountName = default(string), string LanguageCulture = default(string), string SelectedLanguages = default(string), string FederatedStatus = default(string), bool? IsOrganizationAdmin = default(bool?), DateTime? CreatedOn = default(DateTime?), DateTime? LastLogin = default(DateTime?), List<MembershipResponse> Memberships = default(List<MembershipResponse>), List<UserIdentityResponse> Identities = default(List<UserIdentityResponse>), bool? DeviceVerificationEnabled = default(bool?), bool? RequireTwoStepVerification = default(bool?), bool? AllowTwoStepVerificationSnooze = default(bool?), bool? AllowExtendOrgAdminRightsToSelf = default(bool?), bool? IsManagedByScim = default(bool?))
         {
             this.Id = Id;
             this.SiteId = SiteId;
@@ -73,6 +77,10 @@ namespace DocuSign.Admin.Model
             this.Memberships = Memberships;
             this.Identities = Identities;
             this.DeviceVerificationEnabled = DeviceVerificationEnabled;
+            this.RequireTwoStepVerification = RequireTwoStepVerification;
+            this.AllowTwoStepVerificationSnooze = AllowTwoStepVerificationSnooze;
+            this.AllowExtendOrgAdminRightsToSelf = AllowExtendOrgAdminRightsToSelf;
+            this.IsManagedByScim = IsManagedByScim;
         }
         
         /// <summary>
@@ -166,6 +174,26 @@ namespace DocuSign.Admin.Model
         [DataMember(Name="device_verification_enabled", EmitDefaultValue=false)]
         public bool? DeviceVerificationEnabled { get; set; }
         /// <summary>
+        /// Gets or Sets RequireTwoStepVerification
+        /// </summary>
+        [DataMember(Name="require_two_step_verification", EmitDefaultValue=false)]
+        public bool? RequireTwoStepVerification { get; set; }
+        /// <summary>
+        /// Gets or Sets AllowTwoStepVerificationSnooze
+        /// </summary>
+        [DataMember(Name="allow_two_step_verification_snooze", EmitDefaultValue=false)]
+        public bool? AllowTwoStepVerificationSnooze { get; set; }
+        /// <summary>
+        /// Gets or Sets AllowExtendOrgAdminRightsToSelf
+        /// </summary>
+        [DataMember(Name="allow_extend_org_admin_rights_to_self", EmitDefaultValue=false)]
+        public bool? AllowExtendOrgAdminRightsToSelf { get; set; }
+        /// <summary>
+        /// Gets or Sets IsManagedByScim
+        /// </summary>
+        [DataMember(Name="is_managed_by_scim", EmitDefaultValue=false)]
+        public bool? IsManagedByScim { get; set; }
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -191,6 +219,10 @@ namespace DocuSign.Admin.Model
             sb.Append("  Memberships: ").Append(Memberships).Append("\n");
             sb.Append("  Identities: ").Append(Identities).Append("\n");
             sb.Append("  DeviceVerificationEnabled: ").Append(DeviceVerificationEnabled).Append("\n");
+            sb.Append("  RequireTwoStepVerification: ").Append(RequireTwoStepVerification).Append("\n");
+            sb.Append("  AllowTwoStepVerificationSnooze: ").Append(AllowTwoStepVerificationSnooze).Append("\n");
+            sb.Append("  AllowExtendOrgAdminRightsToSelf: ").Append(AllowExtendOrgAdminRightsToSelf).Append("\n");
+            sb.Append("  IsManagedByScim: ").Append(IsManagedByScim).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -316,6 +348,26 @@ namespace DocuSign.Admin.Model
                     this.DeviceVerificationEnabled == other.DeviceVerificationEnabled ||
                     this.DeviceVerificationEnabled != null &&
                     this.DeviceVerificationEnabled.Equals(other.DeviceVerificationEnabled)
+                ) && 
+                (
+                    this.RequireTwoStepVerification == other.RequireTwoStepVerification ||
+                    this.RequireTwoStepVerification != null &&
+                    this.RequireTwoStepVerification.Equals(other.RequireTwoStepVerification)
+                ) && 
+                (
+                    this.AllowTwoStepVerificationSnooze == other.AllowTwoStepVerificationSnooze ||
+                    this.AllowTwoStepVerificationSnooze != null &&
+                    this.AllowTwoStepVerificationSnooze.Equals(other.AllowTwoStepVerificationSnooze)
+                ) && 
+                (
+                    this.AllowExtendOrgAdminRightsToSelf == other.AllowExtendOrgAdminRightsToSelf ||
+                    this.AllowExtendOrgAdminRightsToSelf != null &&
+                    this.AllowExtendOrgAdminRightsToSelf.Equals(other.AllowExtendOrgAdminRightsToSelf)
+                ) && 
+                (
+                    this.IsManagedByScim == other.IsManagedByScim ||
+                    this.IsManagedByScim != null &&
+                    this.IsManagedByScim.Equals(other.IsManagedByScim)
                 );
         }
 
@@ -366,6 +418,14 @@ namespace DocuSign.Admin.Model
                     hash = hash * 59 + this.Identities.GetHashCode();
                 if (this.DeviceVerificationEnabled != null)
                     hash = hash * 59 + this.DeviceVerificationEnabled.GetHashCode();
+                if (this.RequireTwoStepVerification != null)
+                    hash = hash * 59 + this.RequireTwoStepVerification.GetHashCode();
+                if (this.AllowTwoStepVerificationSnooze != null)
+                    hash = hash * 59 + this.AllowTwoStepVerificationSnooze.GetHashCode();
+                if (this.AllowExtendOrgAdminRightsToSelf != null)
+                    hash = hash * 59 + this.AllowExtendOrgAdminRightsToSelf.GetHashCode();
+                if (this.IsManagedByScim != null)
+                    hash = hash * 59 + this.IsManagedByScim.GetHashCode();
                 return hash;
             }
         }
