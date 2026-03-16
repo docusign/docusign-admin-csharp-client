@@ -1,6 +1,11 @@
 # DocuSign Admin C# Client Changelog
 See [DocuSign Support Center](https://support.docusign.com/en/releasenotes/) for Product Release Notes.
 
+## [v2.1.0] - Admin API v2.1-1.4.3 - 2026-03-03
+### Changed
+- Added support for version v2.1-1.4.3 of the DocuSign Admin API.
+- Updated the SDK release version.
+
 ## [v2.0.2] - Admin API v2.1-1.4.1 - 2024-11-15
 ### Changed
 - Resolved an issue that prevented the use of `RequestJWTApplicationToken` with a production account URL.

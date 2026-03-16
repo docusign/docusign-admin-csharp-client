@@ -46,7 +46,8 @@ namespace DocuSign.Admin.Model
         /// <param name="UserCount">UserCount.</param>
         /// <param name="ExternalAccountId">ExternalAccountId.</param>
         /// <param name="AccountName">AccountName.</param>
-        public DSGroupResponse(Guid? DsGroupId = default(Guid?), Guid? AccountId = default(Guid?), string SourceProductName = default(string), string GroupId = default(string), string GroupName = default(string), string Description = default(string), bool? IsAdmin = default(bool?), DateTime? LastModifiedOn = default(DateTime?), int? UserCount = default(int?), long? ExternalAccountId = default(long?), string AccountName = default(string))
+        /// <param name="IsManagedByScim">IsManagedByScim.</param>
+        public DSGroupResponse(Guid? DsGroupId = default(Guid?), Guid? AccountId = default(Guid?), string SourceProductName = default(string), string GroupId = default(string), string GroupName = default(string), string Description = default(string), bool? IsAdmin = default(bool?), DateTime? LastModifiedOn = default(DateTime?), int? UserCount = default(int?), long? ExternalAccountId = default(long?), string AccountName = default(string), bool? IsManagedByScim = default(bool?))
         {
             this.DsGroupId = DsGroupId;
             this.AccountId = AccountId;
@@ -59,6 +60,7 @@ namespace DocuSign.Admin.Model
             this.UserCount = UserCount;
             this.ExternalAccountId = ExternalAccountId;
             this.AccountName = AccountName;
+            this.IsManagedByScim = IsManagedByScim;
         }
         
         /// <summary>
@@ -117,6 +119,11 @@ namespace DocuSign.Admin.Model
         [DataMember(Name="account_name", EmitDefaultValue=false)]
         public string AccountName { get; set; }
         /// <summary>
+        /// Gets or Sets IsManagedByScim
+        /// </summary>
+        [DataMember(Name="is_managed_by_scim", EmitDefaultValue=false)]
+        public bool? IsManagedByScim { get; set; }
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -135,6 +142,7 @@ namespace DocuSign.Admin.Model
             sb.Append("  UserCount: ").Append(UserCount).Append("\n");
             sb.Append("  ExternalAccountId: ").Append(ExternalAccountId).Append("\n");
             sb.Append("  AccountName: ").Append(AccountName).Append("\n");
+            sb.Append("  IsManagedByScim: ").Append(IsManagedByScim).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -225,6 +233,11 @@ namespace DocuSign.Admin.Model
                     this.AccountName == other.AccountName ||
                     this.AccountName != null &&
                     this.AccountName.Equals(other.AccountName)
+                ) && 
+                (
+                    this.IsManagedByScim == other.IsManagedByScim ||
+                    this.IsManagedByScim != null &&
+                    this.IsManagedByScim.Equals(other.IsManagedByScim)
                 );
         }
 
@@ -261,6 +274,8 @@ namespace DocuSign.Admin.Model
                     hash = hash * 59 + this.ExternalAccountId.GetHashCode();
                 if (this.AccountName != null)
                     hash = hash * 59 + this.AccountName.GetHashCode();
+                if (this.IsManagedByScim != null)
+                    hash = hash * 59 + this.IsManagedByScim.GetHashCode();
                 return hash;
             }
         }

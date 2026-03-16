@@ -41,7 +41,11 @@ namespace DocuSign.Admin.Model
         /// <param name="Groups">Groups.</param>
         /// <param name="CompanyName">CompanyName.</param>
         /// <param name="JobTitle">JobTitle.</param>
-        public NewUserResponseAccountProperties(Guid? Id = default(Guid?), int? SiteId = default(int?), PermissionProfileResponse PermissionProfile = default(PermissionProfileResponse), List<MemberGroupResponse> Groups = default(List<MemberGroupResponse>), string CompanyName = default(string), string JobTitle = default(string))
+        /// <param name="LicenseType">LicenseType.</param>
+        /// <param name="SubscriptionId">SubscriptionId.</param>
+        /// <param name="PlanName">PlanName.</param>
+        /// <param name="LicenseStatus">LicenseStatus.</param>
+        public NewUserResponseAccountProperties(Guid? Id = default(Guid?), int? SiteId = default(int?), PermissionProfileResponse PermissionProfile = default(PermissionProfileResponse), List<MemberGroupResponse> Groups = default(List<MemberGroupResponse>), string CompanyName = default(string), string JobTitle = default(string), string LicenseType = default(string), string SubscriptionId = default(string), string PlanName = default(string), string LicenseStatus = default(string))
         {
             this.Id = Id;
             this.SiteId = SiteId;
@@ -49,6 +53,10 @@ namespace DocuSign.Admin.Model
             this.Groups = Groups;
             this.CompanyName = CompanyName;
             this.JobTitle = JobTitle;
+            this.LicenseType = LicenseType;
+            this.SubscriptionId = SubscriptionId;
+            this.PlanName = PlanName;
+            this.LicenseStatus = LicenseStatus;
         }
         
         /// <summary>
@@ -82,6 +90,26 @@ namespace DocuSign.Admin.Model
         [DataMember(Name="job_title", EmitDefaultValue=false)]
         public string JobTitle { get; set; }
         /// <summary>
+        /// Gets or Sets LicenseType
+        /// </summary>
+        [DataMember(Name="license_type", EmitDefaultValue=false)]
+        public string LicenseType { get; set; }
+        /// <summary>
+        /// Gets or Sets SubscriptionId
+        /// </summary>
+        [DataMember(Name="subscription_id", EmitDefaultValue=false)]
+        public string SubscriptionId { get; set; }
+        /// <summary>
+        /// Gets or Sets PlanName
+        /// </summary>
+        [DataMember(Name="plan_name", EmitDefaultValue=false)]
+        public string PlanName { get; set; }
+        /// <summary>
+        /// Gets or Sets LicenseStatus
+        /// </summary>
+        [DataMember(Name="license_status", EmitDefaultValue=false)]
+        public string LicenseStatus { get; set; }
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -95,6 +123,10 @@ namespace DocuSign.Admin.Model
             sb.Append("  Groups: ").Append(Groups).Append("\n");
             sb.Append("  CompanyName: ").Append(CompanyName).Append("\n");
             sb.Append("  JobTitle: ").Append(JobTitle).Append("\n");
+            sb.Append("  LicenseType: ").Append(LicenseType).Append("\n");
+            sb.Append("  SubscriptionId: ").Append(SubscriptionId).Append("\n");
+            sb.Append("  PlanName: ").Append(PlanName).Append("\n");
+            sb.Append("  LicenseStatus: ").Append(LicenseStatus).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -160,6 +192,26 @@ namespace DocuSign.Admin.Model
                     this.JobTitle == other.JobTitle ||
                     this.JobTitle != null &&
                     this.JobTitle.Equals(other.JobTitle)
+                ) && 
+                (
+                    this.LicenseType == other.LicenseType ||
+                    this.LicenseType != null &&
+                    this.LicenseType.Equals(other.LicenseType)
+                ) && 
+                (
+                    this.SubscriptionId == other.SubscriptionId ||
+                    this.SubscriptionId != null &&
+                    this.SubscriptionId.Equals(other.SubscriptionId)
+                ) && 
+                (
+                    this.PlanName == other.PlanName ||
+                    this.PlanName != null &&
+                    this.PlanName.Equals(other.PlanName)
+                ) && 
+                (
+                    this.LicenseStatus == other.LicenseStatus ||
+                    this.LicenseStatus != null &&
+                    this.LicenseStatus.Equals(other.LicenseStatus)
                 );
         }
 
@@ -186,6 +238,14 @@ namespace DocuSign.Admin.Model
                     hash = hash * 59 + this.CompanyName.GetHashCode();
                 if (this.JobTitle != null)
                     hash = hash * 59 + this.JobTitle.GetHashCode();
+                if (this.LicenseType != null)
+                    hash = hash * 59 + this.LicenseType.GetHashCode();
+                if (this.SubscriptionId != null)
+                    hash = hash * 59 + this.SubscriptionId.GetHashCode();
+                if (this.PlanName != null)
+                    hash = hash * 59 + this.PlanName.GetHashCode();
+                if (this.LicenseStatus != null)
+                    hash = hash * 59 + this.LicenseStatus.GetHashCode();
                 return hash;
             }
         }

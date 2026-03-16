@@ -35,6 +35,7 @@ namespace DocuSign.Admin.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="MembershipResponse" /> class.
         /// </summary>
+        /// <param name="Id">Id.</param>
         /// <param name="Email">Email.</param>
         /// <param name="AccountId">AccountId.</param>
         /// <param name="ExternalAccountId">ExternalAccountId.</param>
@@ -45,8 +46,12 @@ namespace DocuSign.Admin.Model
         /// <param name="CreatedOn">CreatedOn.</param>
         /// <param name="Groups">Groups.</param>
         /// <param name="IsAdmin">IsAdmin.</param>
-        public MembershipResponse(string Email = default(string), Guid? AccountId = default(Guid?), string ExternalAccountId = default(string), string AccountName = default(string), bool? IsExternalAccount = default(bool?), string Status = default(string), PermissionProfileResponse PermissionProfile = default(PermissionProfileResponse), DateTime? CreatedOn = default(DateTime?), List<MemberGroupResponse> Groups = default(List<MemberGroupResponse>), bool? IsAdmin = default(bool?))
+        /// <param name="LicenseType">LicenseType.</param>
+        /// <param name="SubscriptionId">SubscriptionId.</param>
+        /// <param name="PlanName">PlanName.</param>
+        public MembershipResponse(Guid? Id = default(Guid?), string Email = default(string), Guid? AccountId = default(Guid?), string ExternalAccountId = default(string), string AccountName = default(string), bool? IsExternalAccount = default(bool?), string Status = default(string), PermissionProfileResponse PermissionProfile = default(PermissionProfileResponse), DateTime? CreatedOn = default(DateTime?), List<MemberGroupResponse> Groups = default(List<MemberGroupResponse>), bool? IsAdmin = default(bool?), string LicenseType = default(string), string SubscriptionId = default(string), string PlanName = default(string))
         {
+            this.Id = Id;
             this.Email = Email;
             this.AccountId = AccountId;
             this.ExternalAccountId = ExternalAccountId;
@@ -57,8 +62,16 @@ namespace DocuSign.Admin.Model
             this.CreatedOn = CreatedOn;
             this.Groups = Groups;
             this.IsAdmin = IsAdmin;
+            this.LicenseType = LicenseType;
+            this.SubscriptionId = SubscriptionId;
+            this.PlanName = PlanName;
         }
         
+        /// <summary>
+        /// Gets or Sets Id
+        /// </summary>
+        [DataMember(Name="id", EmitDefaultValue=false)]
+        public Guid? Id { get; set; }
         /// <summary>
         /// Gets or Sets Email
         /// </summary>
@@ -110,6 +123,21 @@ namespace DocuSign.Admin.Model
         [DataMember(Name="is_admin", EmitDefaultValue=false)]
         public bool? IsAdmin { get; set; }
         /// <summary>
+        /// Gets or Sets LicenseType
+        /// </summary>
+        [DataMember(Name="license_type", EmitDefaultValue=false)]
+        public string LicenseType { get; set; }
+        /// <summary>
+        /// Gets or Sets SubscriptionId
+        /// </summary>
+        [DataMember(Name="subscription_id", EmitDefaultValue=false)]
+        public string SubscriptionId { get; set; }
+        /// <summary>
+        /// Gets or Sets PlanName
+        /// </summary>
+        [DataMember(Name="plan_name", EmitDefaultValue=false)]
+        public string PlanName { get; set; }
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -117,6 +145,7 @@ namespace DocuSign.Admin.Model
         {
             var sb = new StringBuilder();
             sb.Append("class MembershipResponse {\n");
+            sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  Email: ").Append(Email).Append("\n");
             sb.Append("  AccountId: ").Append(AccountId).Append("\n");
             sb.Append("  ExternalAccountId: ").Append(ExternalAccountId).Append("\n");
@@ -127,6 +156,9 @@ namespace DocuSign.Admin.Model
             sb.Append("  CreatedOn: ").Append(CreatedOn).Append("\n");
             sb.Append("  Groups: ").Append(Groups).Append("\n");
             sb.Append("  IsAdmin: ").Append(IsAdmin).Append("\n");
+            sb.Append("  LicenseType: ").Append(LicenseType).Append("\n");
+            sb.Append("  SubscriptionId: ").Append(SubscriptionId).Append("\n");
+            sb.Append("  PlanName: ").Append(PlanName).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -163,6 +195,11 @@ namespace DocuSign.Admin.Model
                 return false;
 
             return 
+                (
+                    this.Id == other.Id ||
+                    this.Id != null &&
+                    this.Id.Equals(other.Id)
+                ) && 
                 (
                     this.Email == other.Email ||
                     this.Email != null &&
@@ -212,6 +249,21 @@ namespace DocuSign.Admin.Model
                     this.IsAdmin == other.IsAdmin ||
                     this.IsAdmin != null &&
                     this.IsAdmin.Equals(other.IsAdmin)
+                ) && 
+                (
+                    this.LicenseType == other.LicenseType ||
+                    this.LicenseType != null &&
+                    this.LicenseType.Equals(other.LicenseType)
+                ) && 
+                (
+                    this.SubscriptionId == other.SubscriptionId ||
+                    this.SubscriptionId != null &&
+                    this.SubscriptionId.Equals(other.SubscriptionId)
+                ) && 
+                (
+                    this.PlanName == other.PlanName ||
+                    this.PlanName != null &&
+                    this.PlanName.Equals(other.PlanName)
                 );
         }
 
@@ -226,6 +278,8 @@ namespace DocuSign.Admin.Model
             {
                 int hash = 41;
                 // Suitable nullity checks etc, of course :)
+                if (this.Id != null)
+                    hash = hash * 59 + this.Id.GetHashCode();
                 if (this.Email != null)
                     hash = hash * 59 + this.Email.GetHashCode();
                 if (this.AccountId != null)
@@ -246,6 +300,12 @@ namespace DocuSign.Admin.Model
                     hash = hash * 59 + this.Groups.GetHashCode();
                 if (this.IsAdmin != null)
                     hash = hash * 59 + this.IsAdmin.GetHashCode();
+                if (this.LicenseType != null)
+                    hash = hash * 59 + this.LicenseType.GetHashCode();
+                if (this.SubscriptionId != null)
+                    hash = hash * 59 + this.SubscriptionId.GetHashCode();
+                if (this.PlanName != null)
+                    hash = hash * 59 + this.PlanName.GetHashCode();
                 return hash;
             }
         }

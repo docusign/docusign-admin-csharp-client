@@ -46,7 +46,8 @@ namespace DocuSign.Admin.Model
         /// <param name="AccessCode">AccessCode.</param>
         /// <param name="FederatedStatus">FederatedStatus.</param>
         /// <param name="AutoActivateMemberships">AutoActivateMemberships.</param>
-        public NewMultiProductUserAddRequest(List<ProductPermissionProfileRequest> ProductPermissionProfiles = default(List<ProductPermissionProfileRequest>), List<DSGroupRequest> DsGroups = default(List<DSGroupRequest>), string UserName = default(string), string FirstName = default(string), string LastName = default(string), string Email = default(string), Guid? DefaultAccountId = default(Guid?), string LanguageCulture = default(string), string AccessCode = default(string), string FederatedStatus = default(string), bool? AutoActivateMemberships = default(bool?))
+        /// <param name="LicenseType">LicenseType.</param>
+        public NewMultiProductUserAddRequest(List<ProductPermissionProfileRequest> ProductPermissionProfiles = default(List<ProductPermissionProfileRequest>), List<DSGroupRequest> DsGroups = default(List<DSGroupRequest>), string UserName = default(string), string FirstName = default(string), string LastName = default(string), string Email = default(string), Guid? DefaultAccountId = default(Guid?), string LanguageCulture = default(string), string AccessCode = default(string), string FederatedStatus = default(string), bool? AutoActivateMemberships = default(bool?), string LicenseType = default(string))
         {
             // to ensure "ProductPermissionProfiles" is required (not null)
             if (ProductPermissionProfiles == null)
@@ -75,6 +76,7 @@ namespace DocuSign.Admin.Model
             this.AccessCode = AccessCode;
             this.FederatedStatus = FederatedStatus;
             this.AutoActivateMemberships = AutoActivateMemberships;
+            this.LicenseType = LicenseType;
         }
         
         /// <summary>
@@ -133,6 +135,11 @@ namespace DocuSign.Admin.Model
         [DataMember(Name="auto_activate_memberships", EmitDefaultValue=false)]
         public bool? AutoActivateMemberships { get; set; }
         /// <summary>
+        /// Gets or Sets LicenseType
+        /// </summary>
+        [DataMember(Name="license_type", EmitDefaultValue=false)]
+        public string LicenseType { get; set; }
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -151,6 +158,7 @@ namespace DocuSign.Admin.Model
             sb.Append("  AccessCode: ").Append(AccessCode).Append("\n");
             sb.Append("  FederatedStatus: ").Append(FederatedStatus).Append("\n");
             sb.Append("  AutoActivateMemberships: ").Append(AutoActivateMemberships).Append("\n");
+            sb.Append("  LicenseType: ").Append(LicenseType).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -241,6 +249,11 @@ namespace DocuSign.Admin.Model
                     this.AutoActivateMemberships == other.AutoActivateMemberships ||
                     this.AutoActivateMemberships != null &&
                     this.AutoActivateMemberships.Equals(other.AutoActivateMemberships)
+                ) && 
+                (
+                    this.LicenseType == other.LicenseType ||
+                    this.LicenseType != null &&
+                    this.LicenseType.Equals(other.LicenseType)
                 );
         }
 
@@ -277,6 +290,8 @@ namespace DocuSign.Admin.Model
                     hash = hash * 59 + this.FederatedStatus.GetHashCode();
                 if (this.AutoActivateMemberships != null)
                     hash = hash * 59 + this.AutoActivateMemberships.GetHashCode();
+                if (this.LicenseType != null)
+                    hash = hash * 59 + this.LicenseType.GetHashCode();
                 return hash;
             }
         }
